@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import Map from "./assets/Map/Map.jsx"
 
 function App() {
-  return ()
+  return (
+    <Map/>
+  );
 }
 
 export default App

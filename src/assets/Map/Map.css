@@ -1,0 +1,30 @@
+*{
+    background-color: #90DBC3;
+    overflow-x: auto;
+}
+.upperLogosWrapper{
+    display: block;
+    margin-left: 2em;
+}
+.Credits_Logo{
+    transition: filter 0.3s ease;
+    margin: 1em;
+}
+.Credits_Logo:hover{
+    filter: brightness(70%);
+}
+.Mail_Logo{
+    transition: filter 0.3s ease;
+    margin: 1em;
+    left: 40%;
+}
+.Mail_Logo:hover{
+    filter: brightness(70%);
+}
+.headerWrapper{
+    display: inline-block;
+}
+.headerWrapper .Header{
+    margin-left: 2em;
+    margin-top: 1rem;
+}

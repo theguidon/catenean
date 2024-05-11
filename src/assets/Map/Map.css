@@ -1,6 +1,12 @@
 *{
-    background-color: #90DBC3;
-    overflow-x: auto;
+    /*background-color: #90DBC3;*/
+    overflow-y: auto;
+}
+.backgroundWrapper{
+    background-image: url('../Map/Map_Images/Map_background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 .upperLogosWrapper{
     display: block;

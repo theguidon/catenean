@@ -1,12 +1,8 @@
 *{
-    /*background-color: #90DBC3;*/
-    overflow-y: auto;
+    background-color: #90DBC3;
 }
 .backgroundWrapper{
-    background-image: url('../Map/Map_Images/Map_background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    background-color: #90DBC3;
 }
 .upperLogosWrapper{
     display: block;
@@ -15,22 +11,51 @@
 .Credits_Logo{
     transition: filter 0.3s ease;
     margin: 1em;
+    background-color: transparent;
 }
 .Credits_Logo:hover{
     filter: brightness(70%);
 }
 .Mail_Logo{
-    transition: filter 0.3s ease;
     margin: 1em;
     left: 40%;
+    background-color: transparent;
 }
 .Mail_Logo:hover{
-    filter: brightness(70%);
+    display: none;
+}
+.Mail_Logo_Hover{
+    margin: 1em;
+    left: 40%;
+    background-color: transparent;
 }
 .headerWrapper{
-    display: inline-block;
+    position: absolute;
 }
 .headerWrapper .Header{
     margin-left: 2em;
     margin-top: 1rem;
+}
+.Button_Arete{
+    position: absolute;
+    bottom: -2em;
+    left: 5em;
+    background-color: transparent;
+}
+.Cats_Arete{
+    position: absolute;
+    bottom: -2.5em;
+    left: 12.5em;
+    background-color: transparent;
+}
+@media screen and (min-width: 720px) {
+    .mapWrapper{
+        background-image: url('../Map/Map_Images/Map_background.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    .Map_Campus{
+        visibility: hidden;
+    }
 }

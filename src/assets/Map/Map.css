@@ -111,6 +111,30 @@
     left: 40em;
     background-color: transparent;
 }
+.Decor_BlueButterfly{
+    position: absolute;
+    top: 5em;
+    left: 34em;
+    background-color: transparent;
+}
+.Decor_Tree1{
+    position: absolute;
+    top: 1em;
+    left: 43em;
+    background-color: transparent;
+}
+.Decor_Tree2{
+    position: absolute;
+    top: 3em;
+    left: 54em;
+    background-color: transparent;
+}
+.Decor_DoublePaw{
+    position: absolute;
+    top: 0em;
+    left: 52em;
+    background-color: transparent;
+}
 @media screen and (min-width: 720px) {
     .mapWrapper{
         background-image: url('../Map/Map_Images/Map_background.svg');

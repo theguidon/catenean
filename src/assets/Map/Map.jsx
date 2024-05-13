@@ -15,7 +15,11 @@ import Cats_CTC from "../Map/Map_Images/Cats_CTC.svg";
 import Cats_Faura from "../Map/Map_Images/Cats_Faura.svg";
 import Cats_MVP from "../Map/Map_Images/Cats_MVP.svg";
 import Cats_Schmitt from "../Map/Map_Images/Cats_Schmitt.svg";
+import Decor_BlueButterfly from "../Map/Map_Images/Decor_BlueButterfly.svg";
 import Decor_BlueCat from "../Map/Map_Images/Decor_BlueCat_Sleeping.svg";
+import Decor_DoublePaw from "../Map/Map_Images/Decor_DoublePaw.svg";
+import Decor_Tree1 from "../Map/Map_Images/Decor_Tree1.svg";
+import Decor_Tree2 from "../Map/Map_Images/Decor_Tree2.svg";
 
 function Map(){
     return(
@@ -46,6 +50,10 @@ function Map(){
                     <img className="Button_CTC" src={Button_CTC} alt="" />
                     <img className="Cats_CTC" src={Cats_CTC} alt="" />
                     <img className="Decor_BlueCat" src={Decor_BlueCat} alt="" />
+                    <img className="Decor_BlueButterfly" src={Decor_BlueButterfly} alt=""/>
+                    <img className="Decor_Tree1" src={Decor_Tree1} alt="" />
+                    <img className="Decor_Tree2" src={Decor_Tree2} alt="" />
+                    <img className="Decor_DoublePaw" src={Decor_DoublePaw} alt="" />
                 </div>
             </div>
         </>

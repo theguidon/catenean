@@ -38,14 +38,43 @@
 }
 .Button_Arete{
     position: absolute;
-    bottom: -2em;
+    height: 3em;
+    bottom: -0.5em;
     left: 5em;
     background-color: transparent;
 }
 .Cats_Arete{
     position: absolute;
-    bottom: -2.5em;
-    left: 12.5em;
+    bottom: -5.5em;
+    left: 12.8em;
+    background-color: transparent;
+}
+.Button_MVP{
+    position: absolute;
+    height: 3em;
+    top: 20em;
+    left: 37em;
+    background-color: transparent;
+}
+.Cats_MVP{
+    position: absolute;
+    height: 10em;
+    top: 15em;
+    left: 44em;
+    background-color: transparent;
+}
+.Button_Faura{
+    position: absolute;
+    height: 3em;
+    top: 32em;
+    left: 45.5em;
+    background-color: transparent;
+}
+.Cats_Faura{
+    position: absolute;
+    height: 10em;
+    top: 26.5em;
+    left: 33em;
     background-color: transparent;
 }
 @media screen and (min-width: 720px) {

@@ -4,9 +4,13 @@ import Credits_Logo from "../Map/Map_Images/Credits_Logo.svg";
 import Mail_Logo from "../Map/Map_Images/Mail_Logo.svg";
 import Mail_Logo_Hover from "../Map/Map_Images/Mail_Logo_Hover.svg";
 import Header from "../Map/Map_Images/Header.svg";
-import Cats_Arete from "../Map/Map_Images/Cats_Arete.svg";
 import Button_Arete from "../Map/Map_Images/Button_Arete.svg";
 import Button_Arete_Hover from "../Map/Map_Images/Button_Arete_Hover.svg";
+import Button_Faura from "../Map/Map_Images/Button_Faura.svg";
+import Button_MVP from "../Map/Map_Images/Button_MVP.svg";
+import Cats_Arete from "../Map/Map_Images/Cats_Arete.svg";
+import Cats_Faura from "../Map/Map_Images/Cats_Faura.svg";
+import Cats_MVP from "../Map/Map_Images/Cats_MVP.svg";
 
 function Map(){
     return(
@@ -28,6 +32,10 @@ function Map(){
                     <img className="Map_Campus" src={Map_Campus} alt="" />
                     <img className="Button_Arete" src={Button_Arete} alt="" />
                     <img className="Cats_Arete" src={Cats_Arete} alt="" />
+                    <img className="Button_MVP" src={Button_MVP} alt="" />
+                    <img className="Cats_MVP"  src={Cats_MVP} alt="" />
+                    <img className="Button_Faura" src={Button_Faura} alt="" />
+                    <img className="Cats_Faura" src={Cats_Faura} alt="" />
                 </div>
             </div>
         </>

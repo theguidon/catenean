@@ -6,11 +6,16 @@ import Mail_Logo_Hover from "../Map/Map_Images/Mail_Logo_Hover.svg";
 import Header from "../Map/Map_Images/Header.svg";
 import Button_Arete from "../Map/Map_Images/Button_Arete.svg";
 import Button_Arete_Hover from "../Map/Map_Images/Button_Arete_Hover.svg";
+import Button_CTC from "../Map/Map_Images/Button_CTC.svg";
 import Button_Faura from "../Map/Map_Images/Button_Faura.svg";
 import Button_MVP from "../Map/Map_Images/Button_MVP.svg";
+import Button_Schmitt from "../Map/Map_Images/Button_Schmitt.svg";
 import Cats_Arete from "../Map/Map_Images/Cats_Arete.svg";
+import Cats_CTC from "../Map/Map_Images/Cats_CTC.svg";
 import Cats_Faura from "../Map/Map_Images/Cats_Faura.svg";
 import Cats_MVP from "../Map/Map_Images/Cats_MVP.svg";
+import Cats_Schmitt from "../Map/Map_Images/Cats_Schmitt.svg";
+import Decor_BlueCat from "../Map/Map_Images/Decor_BlueCat_Sleeping.svg";
 
 function Map(){
     return(
@@ -36,6 +41,11 @@ function Map(){
                     <img className="Cats_MVP"  src={Cats_MVP} alt="" />
                     <img className="Button_Faura" src={Button_Faura} alt="" />
                     <img className="Cats_Faura" src={Cats_Faura} alt="" />
+                    <img className="Button_Schmitt" src={Button_Schmitt} alt="" />
+                    <img className="Cats_Schmitt" src={Cats_Schmitt} alt="" />
+                    <img className="Button_CTC" src={Button_CTC} alt="" />
+                    <img className="Cats_CTC" src={Cats_CTC} alt="" />
+                    <img className="Decor_BlueCat" src={Decor_BlueCat} alt="" />
                 </div>
             </div>
         </>

@@ -7,9 +7,13 @@ import Header from "../Map/Map_Images/Header.svg";
 import Button_Arete from "../Map/Map_Images/Button_Arete.svg";
 import Button_Arete_Hover from "../Map/Map_Images/Button_Arete_Hover.svg";
 import Button_CTC from "../Map/Map_Images/Button_CTC.svg";
+import Button_CTC_Hover from "../Map/Map_Images/Button_CTC_Hover.svg";
 import Button_Faura from "../Map/Map_Images/Button_Faura.svg";
+import Button_Faura_Hover from "../Map/Map_Images/Button_Faura_Hover.svg";
 import Button_MVP from "../Map/Map_Images/Button_MVP.svg";
+import Button_MVP_Hover from "../Map/Map_Images/Button_MVP_Hover.svg";
 import Button_Schmitt from "../Map/Map_Images/Button_Schmitt.svg";
+import Button_Schmitt_Hover from "../Map/Map_Images/Button_Schmitt_Hover.svg";
 import Cats_Arete from "../Map/Map_Images/Cats_Arete.svg";
 import Cats_CTC from "../Map/Map_Images/Cats_CTC.svg";
 import Cats_Faura from "../Map/Map_Images/Cats_Faura.svg";
@@ -27,8 +31,8 @@ function Map(){
             <div className="backgroundWrapper">
                 <div className="upperLogosWrapper">
                     <span className="Mail_Logo_Container">
-                        <img className="Mail_Logo" src={Mail_Logo} alt="" />
                         <img className="Mail_Logo_Hover" src={Mail_Logo_Hover} alt="" />
+                        <img className="Mail_Logo" src={Mail_Logo} alt="" />
                     </span>
                     <span className="Credits_Logo_Container">
                         <img className="Credits_Logo" src={Credits_Logo} alt="" />
@@ -54,6 +58,11 @@ function Map(){
                     <img className="Decor_Tree1" src={Decor_Tree1} alt="" />
                     <img className="Decor_Tree2" src={Decor_Tree2} alt="" />
                     <img className="Decor_DoublePaw" src={Decor_DoublePaw} alt="" />
+                    <img className="Button_Arete_Hover" src={Button_Arete_Hover} alt="" />
+                    <img className="Button_CTC_Hover" src={Button_CTC_Hover} alt="" />
+                    <img className="Button_Faura_Hover" src={Button_Faura_Hover} alt="" />
+                    <img className="Button_MVP_Hover" src={Button_MVP_Hover} alt="" />
+                    <img className="Button_Schmitt_Hover" src={Button_Schmitt_Hover} alt="" />
                 </div>
             </div>
         </>

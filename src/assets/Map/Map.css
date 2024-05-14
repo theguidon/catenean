@@ -9,7 +9,7 @@
     margin-left: 2em;
 }
 .Credits_Logo{
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease-in-out;
     margin: 1em;
     background-color: transparent;
 }
@@ -21,13 +21,16 @@
     left: 40%;
     background-color: transparent;
 }
-.Mail_Logo:hover{
-    display: none;
-}
 .Mail_Logo_Hover{
+    position: absolute;
     margin: 1em;
-    left: 40%;
+    left: 2.5em;
     background-color: transparent;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+.Mail_Logo_Hover:hover{
+    opacity: 1;
 }
 .headerWrapper{
     position: absolute;
@@ -43,6 +46,17 @@
     left: 5em;
     background-color: transparent;
 }
+.Button_Arete_Hover{
+    position: absolute;
+    height: 3.2em;
+    bottom: -0.7em;
+    left: 5em;
+    background-color: transparent;
+    opacity: 0;
+}
+.Button_Arete_Hover:hover{
+    opacity: 1;
+}
 .Cats_Arete{
     position: absolute;
     bottom: -5.5em;
@@ -55,6 +69,17 @@
     top: 20em;
     left: 37em;
     background-color: transparent;
+}
+.Button_MVP_Hover{
+    position: absolute;
+    height: 3.2em;
+    top: 20em;
+    left: 37em;
+    background-color: transparent;
+    opacity: 0;
+}
+.Button_MVP_Hover:hover{
+    opacity: 1;
 }
 .Cats_MVP{
     position: absolute;
@@ -70,6 +95,17 @@
     left: 45.5em;
     background-color: transparent;
 }
+.Button_Faura_Hover{
+    position: absolute;
+    height: 3.2em;
+    top: 32em;
+    left: 45.5em;
+    background-color: transparent;
+    opacity: 0;
+}
+.Button_Faura_Hover:hover{
+    opacity: 1;
+}
 .Cats_Faura{
     position: absolute;
     height: 10em;
@@ -84,6 +120,17 @@
     left: 59em;
     background-color: transparent;
 }
+.Button_Schmitt_Hover{
+    position: absolute;
+    height: 3.3em;
+    top: 12.5em;
+    left: 59em;
+    background-color: transparent;
+    opacity: 0;
+}
+.Button_Schmitt_Hover:hover{
+    opacity: 1;
+}
 .Cats_Schmitt{
     position: absolute;
     height: 10em;
@@ -97,6 +144,17 @@
     top: 42.5em;
     left: 63.5em;
     background-color: transparent;
+}
+.Button_CTC_Hover{
+    position: absolute;
+    height: 3.3em;
+    top: 42.5em;
+    left: 63.5em;
+    background-color: transparent;
+    opacity: 0;
+}
+.Button_CTC_Hover:hover{
+    opacity: 1;
 }
 .Cats_CTC{
     position: absolute;

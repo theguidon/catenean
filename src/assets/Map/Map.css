@@ -35,21 +35,27 @@
 .headerWrapper{
     position: absolute;
 }
-.headerWrapper .Header{
+.headerWrapper .Header_Mobile{
     margin-left: 2em;
     margin-top: 1rem;
+}
+.headerWrapper .Header_Desktop{
+    position: absolute;
+    top: -6em;
+    left: 2em;
+    background-color: transparent;
 }
 .Button_Arete{
     position: absolute;
     height: 3em;
-    bottom: -0.5em;
+    bottom: -3em;
     left: 5em;
     background-color: transparent;
 }
 .Button_Arete_Hover{
     position: absolute;
     height: 3.2em;
-    bottom: -0.7em;
+    bottom: -3.2em;
     left: 5em;
     background-color: transparent;
     opacity: 0;
@@ -193,14 +199,60 @@
     left: 52em;
     background-color: transparent;
 }
-@media screen and (min-width: 720px) {
-    .mapWrapper{
-        background-image: url('../Map/Map_Images/Map_background.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
+@media screen and (max-width: 1260px) {
+    .Header_Desktop{
+        display: none;
     }
+}
+@media screen and (min-width: 1260px) {
     .Map_Campus{
-        visibility: hidden;
+        width: 100%;
+        height: auto;
+    }
+    .Header_Desktop{
+        visibility: visible;
+    }
+    .Header_Mobile{
+        display: none;
+    }
+    .upperLogosWrapper{
+        float: right;
+        margin-right: 2em;
+    }
+    .Mail_Logo_Hover{
+        left: 76.10%;
+    }
+}
+@media screen and (min-width: 1307px){
+    .Mail_Logo_Hover{
+        left: 77.10%;
+    }
+}
+@media screen and (min-width: 1379px){
+    .Mail_Logo_Hover{
+        left: 78.30%;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .Mail_Logo_Hover{
+        left: 76.05em;
+    }
+    .Button_Arete{
+        height: 4em;
+        left: 6em;
+        bottom: -10em;
+    }
+    .Button_Arete_Hover{
+        height: 4.5em;
+        left: 6em;
+        bottom: -10.25em;
+    }
+    .Cats_Arete{
+        left: 16em;
+        bottom: -14em;
+    }
+    .Decor_BlueCat{
+        top: 50.5em;
+        left: 50em;
     }
 }

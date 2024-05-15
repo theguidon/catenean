@@ -3,7 +3,8 @@ import Map_Campus from "../Map/Map_Images/Map_background.svg";
 import Credits_Logo from "../Map/Map_Images/Credits_Logo.svg";
 import Mail_Logo from "../Map/Map_Images/Mail_Logo.svg";
 import Mail_Logo_Hover from "../Map/Map_Images/Mail_Logo_Hover.svg";
-import Header from "../Map/Map_Images/Header.svg";
+import Header_Desktop from "../Map/Map_Images/Header_Desktop.svg";
+import Header_Mobile from "../Map/Map_Images/Header_Mobile.svg";
 import Button_Arete from "../Map/Map_Images/Button_Arete.svg";
 import Button_Arete_Hover from "../Map/Map_Images/Button_Arete_Hover.svg";
 import Button_CTC from "../Map/Map_Images/Button_CTC.svg";
@@ -40,7 +41,8 @@ function Map(){
                 </div>
                 <div className="mapWrapper">
                     <div className="headerWrapper">
-                        <img className="Header" src={Header}/>
+                        <img className="Header_Mobile" src={Header_Mobile}/>
+                        <img className="Header_Desktop" src={Header_Desktop}/>
                     </div>
                     <img className="Map_Campus" src={Map_Campus} alt="" />
                     <img className="Button_Arete" src={Button_Arete} alt="" />

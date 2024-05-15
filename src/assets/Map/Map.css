@@ -251,6 +251,62 @@
         left: 16em;
         bottom: -14em;
     }
+    .Button_MVP{
+        height: 4em;
+        top: 22em;
+        left: 45em;
+    }
+    .Button_MVP_Hover{
+        height: 4.5em;
+        top: 22em;
+        left: 44.75em;
+    }
+    .Cats_MVP{
+        top: 16em;
+        left: 55em;
+    }
+    .Button_Faura{
+        height: 4em;
+        top: 37.5em;
+        left: 55em;
+    }
+    .Button_Faura_Hover{
+        height: 4.5em;
+        top: 37.5em;
+        left: 54.75em;
+    }
+    .Cats_Faura{
+        top: 33em;
+        left: 44em;
+    }
+    .Button_Schmitt{
+        height: 4em;
+        top: 13em;
+        left: 72em;
+    }
+    .Button_Schmitt_Hover{
+        height: 4.5em;
+        top: 13em;
+        left: 71.75em;
+    }
+    .Cats_Schmitt{
+        top: 16em;
+        left: 73em;
+    }
+    .Button_CTC{
+        height: 4em;
+        top: 50em;
+        left: 78em;
+    }
+    .Button_CTC_Hover{
+        height: 4.5em;
+        top: 50em;
+        left: 77.85em;
+    }
+    .Cats_CTC{
+        top: 46em;
+        left: 68em;
+    }
     .Decor_BlueCat{
         top: 50.5em;
         left: 50em;

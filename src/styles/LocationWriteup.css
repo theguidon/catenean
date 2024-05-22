@@ -1,36 +1,163 @@
+@font-face {
+  font-family: "AndesNeue Alt 2 Book";
+  src: url("../assets/fonts/AndesNeueAlt2-Book.ttf") format("truetype");
+  /* font-weight: normal;
+  font-style: normal; */
+}
+
+@font-face {
+  font-family: "AndesNeue Alt 2 Bold";
+  src: url("../assets/fonts/AndesNeueAlt2-Bold.ttf") format("truetype");
+  /* font-weight: normal;
+  font-style: bold; */
+}
+
+@font-face {
+  font-family: "Cedarville Cursive Regular";
+  src: url("../assets/fonts/CedarvilleCursive-Regular.ttf") format("truetype");
+  /* font-weight: normal;
+  font-style: bold; */
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+a, a:visited {
+  color: #2074A4;
+  text-decoration: underline;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+
+body {
+  background: #A0D8CF;
+}
+
 .container {
-  background: red;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.2;
+  mix-blend-mode: luminosity;
+  background: url("../assets/images/location-bg.png");
+  background-repeat: repeat;
+}
+
 .content {
-  background: green;
   width: 80%;
-  height: 80%;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 13rem 0 5rem 0;
 }
 
-.content__photo-set, .content__writing {
+.photo-container,
+.writing-container {
   height: 100%;
 }
 
-.content__photo-set {
-  background: yellow;
+.photo-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
 }
 
-.content__writing {
-  background: blue;
+.photo-container__photo {
+  width: 90%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-container__photo img {
+  width: 100%;
+  height: auto;
+}
+
+.photo-container__photo p {
+  position: absolute;
+  bottom: 8px;
+  font-family: "Cedarville Cursive Regular";
+  color: #106EA2;
+  font-size: 1.2rem;
+}
+
+.writing-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  height: fit-content;
+}
+
+.writing-container__title {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  color: #106EA2;
+  font-size: 3rem;
+  font-family: "AndesNeue Alt 2 Bold";
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 1rem 0 2rem 0;
+  z-index: 1;
+}
+
+.writing-container__title h1 {
+  opacity: 0;
+}
+
+.writing-container__building {
+  position: absolute;
+  top: -200px;
+  right: 20px;
+  width: 18rem;
+}
+
+.writing-container__writing {
+  background: #ffffff;
+  height: 90%;
+  width: 100%;
+  border-radius: 12px;
+  font-family: "AndesNeue Alt 2 Book";
+  padding: 5rem 3rem 3rem 3rem;
+}
+
+.writing-container__writing h2 {
+  margin: 1rem 0 2rem 0;
+  color: #DB6F24;
+  font-size: 2rem;
+  font-family: "AndesNeue Alt 2 Bold";
+}
+
+.writing-container__writing p {
+  margin: 1.5rem 0;
 }

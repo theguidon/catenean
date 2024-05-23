@@ -48,13 +48,36 @@ body {
   align-items: center;
 }
 
+.map-fold {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95px;
+  height: 102px;
+  z-index: 1;
+}
+
+.map-fold:hover > a > .map-fold__fold {
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  transition: 0.3s all ease-out;
+}
+
+.map-fold__fold {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  z-index: -1;
+}
+
 .background {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: -1;
+  z-index: -3;
   opacity: 0.2;
   mix-blend-mode: luminosity;
   background: url("../assets/images/location-bg.png");

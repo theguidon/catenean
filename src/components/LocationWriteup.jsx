@@ -6,6 +6,7 @@ import Cat1 from "../assets/images/location-mvp-cat-1.svg";
 import Cat2 from "../assets/images/location-mvp-cat-2.svg";
 import Building from "../assets/images/location-mvp-building.svg";
 import Title from "../assets/images/location-mvp-title.svg";
+import MapFold from "../assets/images/location-map-fold.svg";
 
 export default function LocationWriteup() {
   return (
@@ -43,7 +44,7 @@ export default function LocationWriteup() {
                 Dongyan and Barbie playing chase by the MVP entrance. Other
                 times, they would sit proudly on the front desk, nap on the
                 press stands by the staircase, or pose for the students{" "}
-                <a href="https://www.facebook.com/ateneo.osa/posts/pfbid02KDnFNubVpcURMain4fSoCNeC1bkpjEupDhtpZinj9HoEjDuf2MT3W93Fn1CjEyuDl">
+                <a href="https://www.facebook.com/ateneo.osa/posts/pfbid02KDnFNubVpcURMain4fSoCNeC1bkpjEupDhtpZinj9HoEjDuf2MT3W93Fn1CjEyuDl" target="_blank">
                   taking photographs
                 </a>{" "}
                 of them.
@@ -68,6 +69,11 @@ export default function LocationWriteup() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="map-fold">
+        <a href="https://www.google.com/">
+          <img src={MapFold} className="map-fold__fold" />
+        </a>
       </div>
       <div className="background"></div>
     </div>

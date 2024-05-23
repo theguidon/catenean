@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/LocationWriteup.css";
+import styles from "../styles/LocationWriteup.module.css";
 
 import Pin from "../assets/images/location-pin.svg";
 import Cat1 from "../assets/images/location-mvp-cat-1.svg";
@@ -10,26 +10,26 @@ import MapFold from "../assets/images/location-map-fold.svg";
 
 export default function LocationWriteup() {
   return (
-    <div className="container">
-      <div className="content">
-        <div className="photo-container">
-          <div className="photo-container__photo">
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <div className={styles.photoContainer}>
+          <div className={styles.photoContainerPhoto}>
             <img src={Cat1} />
             <p>Dongyan</p>
           </div>
-          <div className="photo-container__photo">
+          <div className={styles.photoContainerPhoto}>
             <img src={Cat2} />
             <p>Barbie</p>
           </div>
         </div>
-        <div className="writing-container">
-          <div className="writing-container__title">
+        <div className={styles.writingContainer}>
+          <div className={styles.writingContainerTitle}>
             <img src={Pin} />
             <img src={Title} />
             <h1>MVP</h1>
           </div>
-          <img className="writing-container__building" src={Building} />
-          <div className="writing-container__writing">
+          <img className={styles.writingContainerBuilding} src={Building} />
+          <div className={styles.writingContainerWriting}>
             <h2>A cat’s playground</h2>
             <div>
               <p>
@@ -70,12 +70,12 @@ export default function LocationWriteup() {
           </div>
         </div>
       </div>
-      <div className="map-fold">
+      <div className={styles.mapFold}>
         <a href="https://www.google.com/">
-          <img src={MapFold} className="map-fold__fold" />
+          <img src={MapFold} className={styles.fold} />
         </a>
       </div>
-      <div className="background"></div>
+      <div className={styles.background}></div>
     </div>
   );
 }

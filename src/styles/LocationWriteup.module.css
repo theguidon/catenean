@@ -19,19 +19,20 @@
   box-sizing: border-box;
 }
 
-a, a:visited {
-  color: #2074A4;
+a,
+a:visited {
+  color: #2074a4;
   text-decoration: underline;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
 
-
 body {
-  background: #A0D8CF;
+  background: #a0d8cf;
 }
 
 .container {
@@ -58,7 +59,7 @@ body {
   transition: 0.3s all ease-out;
 }
 
-.mapFold {
+.fold {
   position: absolute;
   top: -100px;
   left: -100px;
@@ -120,7 +121,7 @@ body {
   position: absolute;
   bottom: 8px;
   font-family: "Cedarville Cursive Regular";
-  color: #106EA2;
+  color: #106ea2;
   font-size: 1.2rem;
 }
 
@@ -137,9 +138,6 @@ body {
   position: absolute;
   top: -80px;
   left: 0;
-  color: #106EA2;
-  font-size: 3rem;
-  font-family: "AndesNeue Alt 2 Bold";
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -149,7 +147,9 @@ body {
 }
 
 .writingContainerTitle h1 {
+  position: absolute !important;
   opacity: 0;
+  pointer-events: none;
 }
 
 .writingContainerBuilding {
@@ -170,11 +170,60 @@ body {
 
 .writingContainerWriting h2 {
   margin: 1rem 0 2rem 0;
-  color: #DB6F24;
+  color: #db6f24;
   font-size: 2rem;
   font-family: "AndesNeue Alt 2 Bold";
 }
 
 .writingContainerWriting p {
   margin: 1.5rem 0;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .photoContainer,
+  .writingContainer {
+    width: 100%;
+  }
+
+  .writingContainerTitle {
+    top: -60px;
+  }
+
+  .writingContainerTitle img:nth-child(1) {
+    width: 100px;
+    height: auto;
+  }
+
+  .writingContainerTitle img:nth-child(2) {
+    width: 200px;
+    height: auto;
+  }
+
+  .content {
+    flex-direction: column-reverse;
+  }
+
+  .photoContainer {
+    flex-direction: row;
+    height: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .photoContainerPhoto {
+    height: 90%;
+    width: fit-content;
+  }
+
+  .photoContainerPhoto img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .photoContainer {
+    justify-content: space-between;
+  }
 }

@@ -44,7 +44,10 @@ export default function LocationWriteup() {
                 Dongyan and Barbie playing chase by the MVP entrance. Other
                 times, they would sit proudly on the front desk, nap on the
                 press stands by the staircase, or pose for the students{" "}
-                <a href="https://www.facebook.com/ateneo.osa/posts/pfbid02KDnFNubVpcURMain4fSoCNeC1bkpjEupDhtpZinj9HoEjDuf2MT3W93Fn1CjEyuDl" target="_blank">
+                <a
+                  href="https://www.facebook.com/ateneo.osa/posts/pfbid02KDnFNubVpcURMain4fSoCNeC1bkpjEupDhtpZinj9HoEjDuf2MT3W93Fn1CjEyuDl"
+                  target="_blank"
+                >
                   taking photographs
                 </a>{" "}
                 of them.

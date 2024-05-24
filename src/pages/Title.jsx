@@ -1,5 +1,5 @@
-import "../stylesheets/title.css";
-
+import "../styles/title.css";
+import HeartImages from "../components/HeartImages";
 function Title() {
   return (
     <section className="title">
@@ -9,6 +9,7 @@ function Title() {
         <h2 className="subtitle-text">teach us about love</h2>
         <div className="start-btn">Start</div>
       </div>
+      <HeartImages />
     </section>
   );
 }

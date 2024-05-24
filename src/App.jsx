@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import Title from "./pages/Title.jsx";
 
 function App() {
-  return ()
+  return <Title />;
 }
 
-export default App
+export default App;

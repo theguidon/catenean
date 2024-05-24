@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Blairesque Gothic";
+  src: url("./assets/fonts/Blairesque Gothic/Blairesque Gothic JF Regular.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AndesNeue Alt 2";
+  src: url("./assets/fonts/Andes Neue/[1] Book/AndesNeueAlt2-Book.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}

@@ -62,3 +62,19 @@
   font-weight: 700;
   line-height: 120%;
 }
+
+.start-btn:hover {
+  cursor: url("../assets/images/arrow.svg"), auto;
+}
+
+.home-cat {
+  width: 30vw;
+  position: absolute;
+  bottom: -100%;
+  transition: transform 500ms;
+  transform: translate3d(0, calc(100% - 10rem), 0);
+}
+
+.start-btn:hover + .home-cat {
+  bottom: 0;
+}

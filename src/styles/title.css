@@ -70,11 +70,10 @@
 .home-cat {
   width: 30vw;
   position: absolute;
-  bottom: -100%;
-  transition: transform 500ms;
-  transform: translate3d(0, calc(100% - 10rem), 0);
+  bottom: 0;
 }
 
-.start-btn:hover + .home-cat {
-  bottom: 0;
+.home-cat.show {
+  transform: translate3d(0, calc(100% - 10rem), 0);
+  transition: transform 500ms ease-in-out;
 }

@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import LocationWriteup from "./components/LocationWriteup";
+import Title from "./pages/Title.jsx";
 
 function App() {
-  return <LocationWriteup />
+  return <Title />;
 }
 
-export default App
+export default App;

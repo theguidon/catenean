@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'AndesNeue Alt 2 Bold it';
+    src: url('AndesNeueAlt2-Boldit.eot');
+    src: local('AndesNeue Alt 2 Bold it'), local('AndesNeueAlt2-Boldit'),
+        url('AndesNeueAlt2-Boldit.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Boldit.woff2') format('woff2'),
+        url('AndesNeueAlt2-Boldit.woff') format('woff'),
+        url('AndesNeueAlt2-Boldit.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2 Book it';
+    src: url('AndesNeueAlt2-Bookit.eot');
+    src: local('AndesNeue Alt 2 Book it'), local('AndesNeueAlt2-Bookit'),
+        url('AndesNeueAlt2-Bookit.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Bookit.woff2') format('woff2'),
+        url('AndesNeueAlt2-Bookit.woff') format('woff'),
+        url('AndesNeueAlt2-Bookit.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2 Book';
+    src: url('AndesNeueAlt2-Book.eot');
+    src: local('AndesNeue Alt 2 Book'), local('AndesNeueAlt2-Book'),
+        url('AndesNeueAlt2-Book.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Book.woff2') format('woff2'),
+        url('AndesNeueAlt2-Book.woff') format('woff'),
+        url('AndesNeueAlt2-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2';
+    src: url('AndesNeueAlt2-Light.eot');
+    src: local('AndesNeue Alt 2 Light'), local('AndesNeueAlt2-Light'),
+        url('AndesNeueAlt2-Light.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Light.woff2') format('woff2'),
+        url('AndesNeueAlt2-Light.woff') format('woff'),
+        url('AndesNeueAlt2-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2 Thin it';
+    src: url('AndesNeueAlt2-Thinit.eot');
+    src: local('AndesNeue Alt 2 Thin it'), local('AndesNeueAlt2-Thinit'),
+        url('AndesNeueAlt2-Thinit.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Thinit.woff2') format('woff2'),
+        url('AndesNeueAlt2-Thinit.woff') format('woff'),
+        url('AndesNeueAlt2-Thinit.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2';
+    src: url('AndesNeueAlt2-Bold.eot');
+    src: local('AndesNeue Alt 2 Bold'), local('AndesNeueAlt2-Bold'),
+        url('AndesNeueAlt2-Bold.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Bold.woff2') format('woff2'),
+        url('AndesNeueAlt2-Bold.woff') format('woff'),
+        url('AndesNeueAlt2-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2';
+    src: url('AndesNeueAlt2-Black.eot');
+    src: local('AndesNeue Alt 2 Black'), local('AndesNeueAlt2-Black'),
+        url('AndesNeueAlt2-Black.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Black.woff2') format('woff2'),
+        url('AndesNeueAlt2-Black.woff') format('woff'),
+        url('AndesNeueAlt2-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2 Medium it';
+    src: url('AndesNeueAlt2-Mediumit.eot');
+    src: local('AndesNeue Alt 2 Medium it'), local('AndesNeueAlt2-Mediumit'),
+        url('AndesNeueAlt2-Mediumit.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Mediumit.woff2') format('woff2'),
+        url('AndesNeueAlt2-Mediumit.woff') format('woff'),
+        url('AndesNeueAlt2-Mediumit.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2';
+    src: url('AndesNeueAlt2-Medium.eot');
+    src: local('AndesNeue Alt 2 Medium'), local('AndesNeueAlt2-Medium'),
+        url('AndesNeueAlt2-Medium.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Medium.woff2') format('woff2'),
+        url('AndesNeueAlt2-Medium.woff') format('woff'),
+        url('AndesNeueAlt2-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2 ExtraLight it';
+    src: url('AndesNeueAlt2-ExtraLightit.eot');
+    src: local('AndesNeue Alt 2 ExtraLight it'), local('AndesNeueAlt2-ExtraLightit'),
+        url('AndesNeueAlt2-ExtraLightit.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-ExtraLightit.woff2') format('woff2'),
+        url('AndesNeueAlt2-ExtraLightit.woff') format('woff'),
+        url('AndesNeueAlt2-ExtraLightit.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2';
+    src: url('AndesNeueAlt2-ExtraLight.eot');
+    src: local('AndesNeue Alt 2 ExtraLight'), local('AndesNeueAlt2-ExtraLight'),
+        url('AndesNeueAlt2-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-ExtraLight.woff2') format('woff2'),
+        url('AndesNeueAlt2-ExtraLight.woff') format('woff'),
+        url('AndesNeueAlt2-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2 Black it';
+    src: url('AndesNeueAlt2-Blackit.eot');
+    src: local('AndesNeue Alt 2 Black it'), local('AndesNeueAlt2-Blackit'),
+        url('AndesNeueAlt2-Blackit.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Blackit.woff2') format('woff2'),
+        url('AndesNeueAlt2-Blackit.woff') format('woff'),
+        url('AndesNeueAlt2-Blackit.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2';
+    src: url('AndesNeueAlt2-Thin.eot');
+    src: local('AndesNeue Alt 2 Thin'), local('AndesNeueAlt2-Thin'),
+        url('AndesNeueAlt2-Thin.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Thin.woff2') format('woff2'),
+        url('AndesNeueAlt2-Thin.woff') format('woff'),
+        url('AndesNeueAlt2-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AndesNeue Alt 2 Light it';
+    src: url('AndesNeueAlt2-Lightit.eot');
+    src: local('AndesNeue Alt 2 Light it'), local('AndesNeueAlt2-Lightit'),
+        url('AndesNeueAlt2-Lightit.eot?#iefix') format('embedded-opentype'),
+        url('AndesNeueAlt2-Lightit.woff2') format('woff2'),
+        url('AndesNeueAlt2-Lightit.woff') format('woff'),
+        url('AndesNeueAlt2-Lightit.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+

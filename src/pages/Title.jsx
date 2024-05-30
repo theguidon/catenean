@@ -1,8 +1,21 @@
 import "../styles/title.css";
 import HeartImages from "../components/HeartImages";
 import GuidonLogo from "../assets/images/guidon.svg";
+import HeartBG from "../assets/images/heart-background.png";
+import PawBG from "../assets/images/paw-background.png";
+
+import { useState, useEffect } from "react";
 
 function Title() {
+  const [isBgHeart, setIsBgHeart] = useState(true);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsBgHeart(!isBgHeart);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [isBgHeart]);
+
   return (
     <section className="title">
       <div className="middle-container">
@@ -14,6 +27,7 @@ function Title() {
         </div>
         <div className="start-btn">Start</div>
       </div>
+      <img src={isBgHeart ? HeartBG : PawBG} className="title-background" />
       <HeartImages />
     </section>
   );

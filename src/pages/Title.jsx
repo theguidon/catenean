@@ -1,33 +1,18 @@
-import { useState } from "react";
 import "../styles/title.css";
 import HeartImages from "../components/HeartImages";
-import HomeCat from "../assets/images/home-cat.png";
+import GuidonLogo from "../assets/images/guidon.svg";
 
 function Title() {
-  const [showCat, setShowCat] = useState(false);
-
   return (
     <section className="title">
       <div className="middle-container">
-        <h2 className="subtitle-text">What the</h2>
-        <h1 className="title-text">Cateneans</h1>
-        <h2 className="subtitle-text">teach us about love</h2>
-        <div
-          className="start-btn"
-          onMouseEnter={() => setShowCat(true)}
-          onMouseLeave={() => setShowCat(false)}
-        >
-          Start
+        <img src={GuidonLogo} className="guidon-logo" />
+        <div className="interactive-title">
+          <h2 className="subtitle-text">What the</h2>
+          <h1 className="title-text">Cateneans</h1>
+          <h2 className="subtitle-text">teach us about love</h2>
         </div>
-        {showCat ? (
-          <img
-            className={`home-cat ${showCat ? "show" : "hide"}`}
-            src={HomeCat}
-            alt="Home Cat"
-          />
-        ) : (
-          ""
-        )}
+        <div className="start-btn">Start</div>
       </div>
       <HeartImages />
     </section>

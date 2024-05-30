@@ -10,72 +10,95 @@
 
 .heart-image {
   position: absolute;
-  width: 13vw; /* change depending on need */
-  height: 8vw; /* change depending on need */
-  border: 12px solid #fff;
+  width: 5rem; /* change depending on need */
+  height: 3rem; /* change depending on need */
+  border: 5px solid #fff;
+	inset: 50% 0 0 50%;
+	transform: translate(-50%, -50%);
 }
 
 .heart-image:nth-child(1) {
-  top: 5vh;
-  left: 0vw;
+	translate: -230% 0%;
 }
 .heart-image:nth-child(2) {
-  top: 0vh;
-  left: 15vw;
+	translate: -220% -180%;
 }
 .heart-image:nth-child(3) {
-  top: 0vh;
-  left: 30vw;
+	translate: -210% -300%;
 }
 .heart-image:nth-child(4) {
-  top: 8vh;
-  left: 45vw;
+	translate: -110% -430%;
 }
 .heart-image:nth-child(5) {
-  top: 0vh;
-  left: 60vw;
+	translate: -0% -350%;
 }
 .heart-image:nth-child(6) {
-  top: 0vh;
-  left: 75vw;
+	translate: 110% -430%;
 }
 .heart-image:nth-child(7) {
-  top: 5vh;
-  left: 90vw;
+	translate: 220% -180%;
 }
 .heart-image:nth-child(8) {
-  top: 25vh;
-  left: 90vw;
+	translate: 210% -300%;
 }
 .heart-image:nth-child(9) {
-  top: 45vh;
-  left: 85vw;
+	translate: 230% -60%;
 }
 .heart-image:nth-child(10) {
-  top: 65vh;
-  left: 75vw;
+	translate: 210% 60%;
 }
 .heart-image:nth-child(11) {
-  top: 75vh;
-  left: 60vw;
+	translate: 180% 180%;
 }
 .heart-image:nth-child(12) {
-  top: 85vh;
-  left: 45vw;
+	translate: 100% 280%;
 }
 .heart-image:nth-child(13) {
-  top: 75vh;
-  left: 30vw;
+	translate: 0% 350%;
 }
 .heart-image:nth-child(14) {
-  top: 65vh;
-  left: 15vw;
+	translate: -100% 280%;
 }
 .heart-image:nth-child(15) {
-  top: 45vh;
-  left: 5vw;
+	translate: -180% 160%;
 }
 .heart-image:nth-child(16) {
-  top: 25vh;
-  left: 0vw;
+	display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+	.heart-image:nth-child(1) {
+	}
+	.heart-image:nth-child(2) {
+	}
+	.heart-image:nth-child(3) {
+	}
+	.heart-image:nth-child(4) {
+	}
+	.heart-image:nth-child(5) {
+	}
+	.heart-image:nth-child(6) {
+	}
+	.heart-image:nth-child(7) {
+	}
+	.heart-image:nth-child(8) {
+	}
+	.heart-image:nth-child(9) {
+	}
+	.heart-image:nth-child(10) {
+	}
+	.heart-image:nth-child(11) {
+	}
+	.heart-image:nth-child(12) {
+	}
+	.heart-image:nth-child(13) {
+	}
+	.heart-image:nth-child(14) {
+	}
+	.heart-image:nth-child(15) {
+	}
+	.heart-image:nth-child(16) {
+		display: block;
+	}
 }

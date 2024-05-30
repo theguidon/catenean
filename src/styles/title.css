@@ -1,32 +1,39 @@
 @import url("../fonts.css");
-@import url("https://fonts.cdnfonts.com/css/chi-font");
 
 .title {
   background-color: #cdedff;
   height: 100vh;
+	width: 100vw;
   margin: 0;
   padding: 0;
 }
 
 .middle-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	inset: 50% 0% 0 0;
+	translate: 0% -50%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   gap: 8px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 2;
+	padding-block: 15%;
+}
+
+.interactive-title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .title-text {
   color: #f08f68;
   text-align: center;
-  font-family: "Blairesque Gothic"; /* change to chi font*/
-  font-size: 112px;
+  font-family: "Chi Regular"; /* change to chi font*/
+  font-size: 3rem;
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
@@ -38,42 +45,28 @@
   color: #2074a4;
   text-align: center;
   font-family: "Blairesque Gothic";
-  font-size: 80px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
   letter-spacing: -1.52px;
   margin: 0;
+	max-width: 9rem;
 }
 
 .start-btn {
-  display: inline-flex;
-  padding: 12px 80px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  padding: 0.75rem 5rem;
   border-radius: 40px;
   background: #f2ddaf;
   color: #a56953;
   text-align: center;
   font-family: "AndesNeue Alt 2";
-  font-size: 36px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
 }
 
-.start-btn:hover {
-  cursor: url("../assets/images/arrow.svg"), auto;
-}
-
-.home-cat {
-  width: 30vw;
-  position: absolute;
-  bottom: 0;
-}
-
-.home-cat.show {
-  transform: translate3d(0, calc(100% - 10rem), 0);
-  transition: transform 500ms ease-in-out;
+.guidon-logo {
+	width: 16.875rem;
 }

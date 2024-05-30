@@ -1,7 +1,7 @@
 /* src/components/HeartImages.css */
 
 .heart-container {
-  position: relative;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -68,37 +68,55 @@
 
 
 @media screen and (min-width: 768px) {
+	.heart-image {
+		width: 15rem;
+		height: 9rem;
+		border-width: 12px;
+	}
+
 	.heart-image:nth-child(1) {
+		translate: -230% 0%;
 	}
 	.heart-image:nth-child(2) {
+		translate: -270% -120%;
 	}
 	.heart-image:nth-child(3) {
+		translate: -250% -240%;
 	}
 	.heart-image:nth-child(4) {
+		translate: -130% -280%;
 	}
 	.heart-image:nth-child(5) {
+		translate: -0% -220%;
 	}
 	.heart-image:nth-child(6) {
+		translate: 130% -280%;
 	}
 	.heart-image:nth-child(7) {
+		display: none;
 	}
 	.heart-image:nth-child(8) {
+		translate: 250% -240%;
 	}
 	.heart-image:nth-child(9) {
+		translate: 270% -120%;
 	}
 	.heart-image:nth-child(10) {
+		translate: 230% 0%;
 	}
 	.heart-image:nth-child(11) {
+		translate: 210% 130%;
 	}
 	.heart-image:nth-child(12) {
+		translate: 110% 230%;
 	}
 	.heart-image:nth-child(13) {
+		translate: 0% 260%;
 	}
 	.heart-image:nth-child(14) {
+		translate: -110% 230%;
 	}
 	.heart-image:nth-child(15) {
-	}
-	.heart-image:nth-child(16) {
-		display: block;
+		translate: -210% 130%;
 	}
 }

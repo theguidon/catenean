@@ -1,87 +1,100 @@
-*{
-    background-color: #90DBC3;
+.Map_Campus {
+	height: 100vh;
+	position: absolute;
+	inset: 0 auto auto 0;
+	z-index: 0;
+}
+.mapWrapper {
+	position: relative;
+	height: 100vh;
+	aspect-ratio: calc(1440/1024);
 }
 .backgroundWrapper{
-    background-color: #90DBC3;
+	position: relative;
+	background: #90DBC3;
+	overflow-y: hidden;
 }
 .upperLogosWrapper{
-    display: block;
-    margin-left: 2em;
+	position: absolute;
+    display: flex;
+		flex-direction: column;
+    margin-left: 2rem;
+		z-index: 10;
 }
 .Credits_Logo{
     transition: filter 0.3s ease-in-out;
-    margin: 1em;
-    background-color: transparent;
+    margin: 1rem;
 }
 .Credits_Logo:hover{
     filter: brightness(70%);
 }
+.upperButtonsContainer {
+	position: fixed;
+	top: 0;
+	left: 2rem;
+}
 .Mail_Logo{
-    margin: 1em;
+    margin: 1rem;
     left: 40%;
-    background-color: transparent;
 }
 .Mail_Logo_Hover{
     position: absolute;
-    margin: 1em;
-    left: 2.5em;
-    background-color: transparent;
+    margin: 1rem;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
 }
 .Mail_Logo_Hover:hover{
     opacity: 1;
 }
-.headerWrapper{
-    position: absolute;
+.aboutCard {
+	position: absolute;
+	background: white;
+	top: 9.5rem;
+	width: 19.5rem;
+	padding: 2rem;
+	border-radius: 1.5rem;
 }
-.headerWrapper .Header_Mobile{
-    margin-left: 2em;
-    margin-top: 1rem;
+.aboutCard img {
+	width: 16rem;
 }
-.headerWrapper .Header_Desktop{
-    position: absolute;
-    top: -6em;
-    left: 2em;
-    background-color: transparent;
+.aboutCard p {
+	/* TODO: set font family AndesNeue Alt 2 */
+	font-size: 0.875rem;
+	color: #2074A4;
 }
 .Button_Arete{
     position: absolute;
-    height: 3em;
-    bottom: 0em;
-    left: 5em;
-    background-color: transparent;
+    height: 3.42rem;
+		top: 72%;
+    left: 5%;
 }
 .Button_Arete_Hover{
     position: absolute;
-    height: 3.2em;
-    bottom: -0.2em;
-    left: 5em;
-    background-color: transparent;
+    height: 3.72rem;
+		top: 72%;
+    left: 5%;
     opacity: 0;
+		cursor: pointer;
 }
 .Button_Arete_Hover:hover{
     opacity: 1;
 }
 .Cats_Arete{
     position: absolute;
-    bottom: -3.5em;
-    left: 12.8em;
-    background-color: transparent;
+		top: 68%;
+    left: 18%;
 }
 .Button_MVP{
     position: absolute;
-    height: 3em;
-    top: 20em;
-    left: 37em;
-    background-color: transparent;
+    height: 3.42rem;
+		top: 35%;
+		left: 47%;
 }
 .Button_MVP_Hover{
     position: absolute;
-    height: 3.2em;
-    top: 20em;
-    left: 37em;
-    background-color: transparent;
+    height: 3.72rem;
+		top: 35%;
+		left: 47%;
     opacity: 0;
 }
 .Button_MVP_Hover:hover{
@@ -89,24 +102,21 @@
 }
 .Cats_MVP{
     position: absolute;
-    height: 10em;
-    top: 15em;
-    left: 44em;
-    background-color: transparent;
+    height: 10rem;
+		top: 26%;
+		left: 58%;
 }
 .Button_Faura{
     position: absolute;
-    height: 3em;
-    top: 32em;
-    left: 45.5em;
-    background-color: transparent;
+    height: 3.42rem;
+    top: 58%;
+    left: 57%;
 }
 .Button_Faura_Hover{
     position: absolute;
-    height: 3.2em;
-    top: 32em;
-    left: 45.5em;
-    background-color: transparent;
+    height: 3.72rem;
+    top: 58%;
+    left: 57%;
     opacity: 0;
 }
 .Button_Faura_Hover:hover{
@@ -114,24 +124,21 @@
 }
 .Cats_Faura{
     position: absolute;
-    height: 10em;
-    top: 26.5em;
-    left: 33em;
-    background-color: transparent;
+    height: 10rem;
+    top: 49%;
+    left: 43%;
 }
 .Button_Schmitt{
     position: absolute;
-    height: 3em;
-    top: 12.5em;
-    left: 59em;
-    background-color: transparent;
+    height: 3.42rem;
+		top: 20%;
+		left: 76%;
 }
 .Button_Schmitt_Hover{
     position: absolute;
-    height: 3.3em;
-    top: 12.5em;
-    left: 59em;
-    background-color: transparent;
+    height: 3.72rem;
+		top: 20%;
+		left: 76%;
     opacity: 0;
 }
 .Button_Schmitt_Hover:hover{
@@ -139,24 +146,21 @@
 }
 .Cats_Schmitt{
     position: absolute;
-    height: 10em;
-    top: 14em;
-    left: 57.5em;
-    background-color: transparent;
+    height: 10rem;
+		top: 24%;
+		left: 76%;
 }
 .Button_CTC{
     position: absolute;
-    height: 3em;
-    top: 42.5em;
-    left: 63.5em;
-    background-color: transparent;
+    height: 3.42rem;
+		top: 74%;
+		left: 83%;
 }
 .Button_CTC_Hover{
     position: absolute;
-    height: 3.3em;
-    top: 42.5em;
-    left: 63.5em;
-    background-color: transparent;
+    height: 3.72rem;
+		top: 74%;
+		left: 83%;
     opacity: 0;
 }
 .Button_CTC_Hover:hover{
@@ -164,45 +168,9 @@
 }
 .Cats_CTC{
     position: absolute;
-    height: 10em;
-    top: 38em;
-    left: 54em;
-    background-color: transparent;
-}
-.Decor_BlueCat{
-    position: absolute;
-    top: 42em;
-    left: 40em;
-    background-color: transparent;
-}
-.Decor_BlueButterfly{
-    position: absolute;
-    top: 5em;
-    left: 34em;
-    background-color: transparent;
-}
-.Decor_Tree1{
-    position: absolute;
-    top: 1em;
-    left: 43em;
-    background-color: transparent;
-}
-.Decor_Tree2{
-    position: absolute;
-    top: 3em;
-    left: 54em;
-    background-color: transparent;
-}
-.Decor_DoublePaw{
-    position: absolute;
-    top: 0em;
-    left: 52em;
-    background-color: transparent;
-}
-@media screen and (max-width: 1260px) {
-    .Header_Desktop{
-        display: none;
-    }
+    height: 10rem;
+		top: 67%;
+		left: 72%;
 }
 @media screen and (min-width: 1260px) {
     .Map_Campus{
@@ -217,19 +185,19 @@
     }
     .upperLogosWrapper{
         float: right;
-        margin-right: 2em;
+        margin-right: 2rem;
     }
     .Mail_Logo_Hover{
         left: 76.10%;
     }
     .Button_Arete{
-        bottom: 0em;
+        bottom: 0rem;
     }
     .Button_Arete_Hover{
-        bottom: -0.2em;
+        bottom: -0.2rem;
     }
     .Cats_Arete{
-        bottom: -2em;
+        bottom: -2rem;
     }
 }
 @media screen and (min-width: 1307px){
@@ -244,92 +212,92 @@
 }
 @media screen and (min-width: 1500px) {
     .Mail_Logo_Hover{
-        left: 76.05em;
+        left: 76.05rem;
     }
     .Button_Arete{
-        height: 4em;
-        left: 6em;
-        bottom: -10em;
+        height: 4rem;
+        left: 6rem;
+        bottom: -10rem;
     }
     .Button_Arete_Hover{
-        height: 4.5em;
-        left: 6em;
-        bottom: -10.25em;
+        height: 4.5rem;
+        left: 6rem;
+        bottom: -10.25rem;
     }
     .Cats_Arete{
-        left: 16em;
-        bottom: -14em;
+        left: 16rem;
+        bottom: -14rem;
     }
     .Button_MVP{
-        height: 4em;
-        top: 22em;
-        left: 45em;
+        height: 4rem;
+        top: 22rem;
+        left: 45rem;
     }
     .Button_MVP_Hover{
-        height: 4.5em;
-        top: 22em;
-        left: 44.75em;
+        height: 4.5rem;
+        top: 22rem;
+        left: 44.75rem;
     }
     .Cats_MVP{
-        top: 16em;
-        left: 55em;
+        top: 16rem;
+        left: 55rem;
     }
     .Button_Faura{
-        height: 4em;
-        top: 37.5em;
-        left: 55em;
+        height: 4rem;
+        top: 37.5rem;
+        left: 55rem;
     }
     .Button_Faura_Hover{
-        height: 4.5em;
-        top: 37.5em;
-        left: 54.75em;
+        height: 4.5rem;
+        top: 37.5rem;
+        left: 54.75rem;
     }
     .Cats_Faura{
-        top: 33em;
-        left: 44em;
+        top: 33rem;
+        left: 44rem;
     }
     .Button_Schmitt{
-        height: 4em;
-        top: 13em;
-        left: 72em;
+        height: 4rem;
+        top: 13rem;
+        left: 72rem;
     }
     .Button_Schmitt_Hover{
-        height: 4.5em;
-        top: 13em;
-        left: 71.75em;
+        height: 4.5rem;
+        top: 13rem;
+        left: 71.75rem;
     }
     .Cats_Schmitt{
-        top: 16em;
-        left: 73em;
+        top: 16rem;
+        left: 73rem;
     }
     .Button_CTC{
-        height: 4em;
-        top: 50em;
-        left: 78em;
+        height: 4rem;
+        top: 50rem;
+        left: 78rem;
     }
     .Button_CTC_Hover{
-        height: 4.5em;
-        top: 50em;
-        left: 77.85em;
+        height: 4.5rem;
+        top: 50rem;
+        left: 77.85rem;
     }
     .Cats_CTC{
-        top: 46em;
-        left: 68em;
+        top: 46rem;
+        left: 68rem;
     }
     .Decor_BlueCat{
-        top: 50.5em;
-        left: 50em;
+        top: 50.5rem;
+        left: 50rem;
     }
     .Decor_BlueButterfly{
-        left: 42em;
+        left: 42rem;
     }
     .Decor_Tree1{
-        left: 53em;
+        left: 53rem;
     }
     .Decor_Tree2{
-        left: 69em;
+        left: 69rem;
     }
     .Decor_DoublePaw{
-        left: 66em;
+        left: 66rem;
     }
 }

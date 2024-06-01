@@ -26,13 +26,13 @@ function Map() {
       <div className="backgroundWrapper">
         <div className="upperLogosWrapper">
           <div className="upperButtonsContainer">
-            <span className="Mail_Logo_Container">
+            <div className="Mail_Logo_Container">
               <img className="Mail_Logo_Hover" src={Mail_Logo_Hover} alt="" />
               <img className="Mail_Logo" src={Mail_Logo} alt="" />
-            </span>
-            <span className="Credits_Logo_Container">
+            </div>
+            <div className="Credits_Logo_Container">
               <img className="Credits_Logo" src={Credits_Logo} alt="" />
-            </span>
+            </div>
           </div>
           <div className="aboutCard">
             <img src={Catenean_Logo} />
@@ -44,8 +44,7 @@ function Map() {
             </p>
           </div>
         </div>
-        <div className="mapWrapper">
-          <img className="Map_Campus" src={Map_Campus} alt="" />
+        <div className="mapWrapper" style={{backgroundImage: `url(${Map_Campus})`}}>
           <div>
             <img className="Button_Arete" src={Button_Arete} alt="" />
             <img className="Cats_Arete" src={Cats_Arete} alt="" />

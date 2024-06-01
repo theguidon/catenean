@@ -81,6 +81,34 @@
 	color: #FAA685;
 }
 
+.photoCards {
+	height: 31rem;
+	position: relative;
+}
+.photoCards img {
+	width: 7.6rem;
+	height: 8rem;
+	object-fit: cover;
+	padding: 0.3rem 0.3rem 1.5rem;
+	background: white;
+	position: absolute;
+	inset: 50% auto auto 50%;
+	transform: translate(-50%, -50%);
+	filter: drop-shadow(1.451px 1.451px 1.741px rgba(0, 0, 0, 0.15));
+}
+.photoCards img:nth-of-type(1) {
+	rotate: 5deg;
+	translate: -65% -130%;
+}
+.photoCards img:nth-of-type(2) {
+	rotate: -9.6deg;
+	translate: 65% -50%;
+}
+.photoCards img:nth-of-type(3) {
+	rotate: -9.6deg;
+	translate: -0% 80%;
+}
+
 .credits {
 	color: #2074A4;
 	display: flex;

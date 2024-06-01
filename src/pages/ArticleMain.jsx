@@ -1,6 +1,9 @@
 import styles from "../styles/ArticleMain.module.css";
 import squiggle from "../assets/images/squiggle.svg";
 import mapCorner from "../assets/images/map-corner.svg";
+import cat1 from "../assets/images/cats/2.jpeg";
+import cat2 from "../assets/images/cats/7.jpeg";
+import cat3 from "../assets/images/cats/6.jpeg";
 
 const ArticleMain = () => {
   return (
@@ -35,6 +38,11 @@ const ArticleMain = () => {
         display of love, students, faculty, and staff alike show that love for
         animals is just as important as love for anyone else.
       </p>
+      <div className={styles.photoCards}>
+		<img src={cat1}  />
+		<img src={cat2}  />
+		<img src={cat3}  />
+		</div>
       <h3>Fur-miliar faces</h3>
       <p>
         Jesus “Jhess” Resuello is a humble member of the maintenance staff at

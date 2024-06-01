@@ -1,9 +1,13 @@
 import styles from "../styles/ArticleMain.module.css";
 import squiggle from "../assets/images/squiggle.svg";
+import mapCorner from "../assets/images/map-corner.svg";
 
 const ArticleMain = () => {
   return (
     <main className={styles.main}>
+      <button className={styles.mapCorner}>
+        <img src={mapCorner} />
+      </button>
       <h1 className={styles.title}>
         What the{" "}
         <span className={styles.cateneans}>

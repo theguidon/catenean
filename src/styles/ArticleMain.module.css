@@ -1,9 +1,11 @@
 @import url("../fonts.css");
 
 .main {
+	position: relative;
 	background: #F2DDAF;
 	padding: 5rem 1.5rem 3rem;
-	font-family: "AndesNeue Alt 2 Book"
+	font-family: "AndesNeue Alt 2 Book";
+	overflow: hidden;
 }
 .title {
 	font-family: "Blairesque Gothic";
@@ -30,4 +32,51 @@
 
 .main p {
 	margin-bottom: 1rem;
+}
+
+.mapCorner {
+	position: absolute;
+	inset: 0 0 auto auto;
+	width: 5.375rem;
+	height: 5.375rem;
+	border: none;
+	cursor: pointer;
+}
+.mapCorner img {
+	position: absolute;
+	inset: -16px auto auto -18px;
+	pointer-events: none;
+}
+
+.main h3 {
+	font-family: "AndesNeue Alt 2 Bold";
+	margin-bottom: 0.75rem;
+}
+
+.quote {
+	font-family: "AndesNeue Alt 2 Bold";
+	font-size: 1.5rem;
+	background: #b9d9c5;
+	border: 1rem solid #d3dbbc;
+	border-radius: 2.5rem;
+	padding: 1.5rem;
+	margin-block: 1.5rem;
+	position: relative;
+}
+.quote::before {
+	content: "“";
+	position: absolute;
+	inset: 0 auto auto 0;
+	translate: -50% -25%;
+	font-size: 7rem;
+	color: #FAA685;
+}
+.quote::after {
+	content: "“";
+	scale: -1 1;
+	position: absolute;
+	inset: auto 0 0 auto;
+	translate: 50% 55%;
+	font-size: 7rem;
+	color: #FAA685;
 }

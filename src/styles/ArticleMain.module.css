@@ -80,3 +80,18 @@
 	font-size: 7rem;
 	color: #FAA685;
 }
+
+.credits {
+	color: #2074A4;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-top: 1.5rem;
+}
+.credits h3, .credits p {
+	margin: 0;
+}
+.credits h3 {
+	font-family: "Blairesque Gothic";
+	font-size: 1.5rem;
+}

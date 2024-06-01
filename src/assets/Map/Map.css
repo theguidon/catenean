@@ -61,14 +61,15 @@
 	font-size: 0.875rem;
 	color: #2074A4;
 }
+.mapWrapper div img {
+	position: absolute;
+}
 .Button_Arete{
-    position: absolute;
     height: 3.42rem;
 		top: 72%;
     left: 5%;
 }
 .Button_Arete_Hover{
-    position: absolute;
     height: 3.72rem;
 		top: 72%;
     left: 5%;
@@ -79,18 +80,15 @@
     opacity: 1;
 }
 .Cats_Arete{
-    position: absolute;
 		top: 68%;
     left: 18%;
 }
 .Button_MVP{
-    position: absolute;
     height: 3.42rem;
 		top: 35%;
 		left: 47%;
 }
 .Button_MVP_Hover{
-    position: absolute;
     height: 3.72rem;
 		top: 35%;
 		left: 47%;
@@ -101,19 +99,16 @@
     opacity: 1;
 }
 .Cats_MVP{
-    position: absolute;
     height: 10rem;
 		top: 26%;
 		left: 58%;
 }
 .Button_Faura{
-    position: absolute;
     height: 3.42rem;
     top: 58%;
     left: 57%;
 }
 .Button_Faura_Hover{
-    position: absolute;
     height: 3.72rem;
     top: 58%;
     left: 57%;
@@ -124,19 +119,16 @@
     opacity: 1;
 }
 .Cats_Faura{
-    position: absolute;
     height: 10rem;
     top: 49%;
     left: 43%;
 }
 .Button_Schmitt{
-    position: absolute;
     height: 3.42rem;
 		top: 20%;
 		left: 76%;
 }
 .Button_Schmitt_Hover{
-    position: absolute;
     height: 3.72rem;
 		top: 20%;
 		left: 76%;
@@ -147,19 +139,16 @@
     opacity: 1;
 }
 .Cats_Schmitt{
-    position: absolute;
     height: 10rem;
 		top: 24%;
 		left: 76%;
 }
 .Button_CTC{
-    position: absolute;
     height: 3.42rem;
 		top: 74%;
 		left: 83%;
 }
 .Button_CTC_Hover{
-    position: absolute;
     height: 3.72rem;
 		top: 74%;
 		left: 83%;
@@ -170,12 +159,11 @@
     opacity: 1;
 }
 .Cats_CTC{
-    position: absolute;
     height: 10rem;
 		top: 67%;
 		left: 72%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px){
 	.upperLogosWrapper {
 		flex-direction: row;
 	}
@@ -183,8 +171,6 @@
 		inset: 0 2rem auto auto;
 	}
 	.aboutCard {
-		top: 1rem;
+		inset: 3rem auto auto 3rem;;
 	}
-}
-@media screen and (min-width: 1024px){
 }

@@ -1,0 +1,33 @@
+@import url("../fonts.css");
+
+.main {
+	background: #F2DDAF;
+	padding: 5rem 1.5rem 3rem;
+	font-family: "AndesNeue Alt 2 Book"
+}
+.title {
+	font-family: "Blairesque Gothic";
+	color: #2074A4;
+	text-align: center;
+	font-size: 2.75rem;
+}
+.cateneans {
+	color: #F08F68;
+	position: relative;
+}
+.cateneans img {
+	position: absolute;
+	width: 100%;
+	inset: 50% auto auto 50%;
+	translate: -50% 100%;
+}
+.writerCredits {
+  font-family: "Cedarville Cursive Regular";
+	text-align: center;
+	font-size: 1.25rem;
+	margin-bottom: 1.5rem;
+}
+
+.main p {
+	margin-bottom: 1rem;
+}

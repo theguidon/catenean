@@ -4,6 +4,21 @@ import mapCorner from "../assets/images/map-corner.svg";
 import cat1 from "../assets/images/cats/2.jpeg";
 import cat2 from "../assets/images/cats/7.jpeg";
 import cat3 from "../assets/images/cats/6.jpeg";
+import helloCat from "../assets/images/hello-cat.png";
+import cloud from "../assets/images/cloud.svg";
+import heartCatSmall1 from "../assets/images/heart-cat-small-1.png";
+import heartCatSmall2 from "../assets/images/heart-cat-small-2.png";
+import heartCatSmall3 from "../assets/images/heart-cat-small-3.png";
+import heartCatBig from "../assets/images/heart-cat-big.png";
+import circleCat from "../assets/images/circle-cat.png";
+import mag1 from "../assets/images/mag1.png";
+import mag2 from "../assets/images/mag2.png";
+import heartHighFive from "../assets/images/heart-high-five.svg";
+import cloudCat from "../assets/images/cloud-cat.png";
+import bigCloud from "../assets/images/big-cloud.png";
+import grass from "../assets/images/grass.png";
+import paopao from "../assets/images/paopao.png";
+import brownEllipses from "../assets/images/brown-ellipses.svg";
 
 const ArticleMain = () => {
   return (
@@ -11,6 +26,7 @@ const ArticleMain = () => {
       <button className={styles.mapCorner}>
         <img src={mapCorner} />
       </button>
+		<div className={styles.mainArticle}>
       <h1 className={styles.title}>
         What the{" "}
         <span className={styles.cateneans}>
@@ -39,10 +55,10 @@ const ArticleMain = () => {
         animals is just as important as love for anyone else.
       </p>
       <div className={styles.photoCards}>
-		<img src={cat1}  />
-		<img src={cat2}  />
-		<img src={cat3}  />
-		</div>
+        <img src={cat1} />
+        <img src={cat2} />
+        <img src={cat3} />
+      </div>
       <h3>Fur-miliar faces</h3>
       <p>
         Jesus “Jhess” Resuello is a humble member of the maintenance staff at
@@ -59,17 +75,22 @@ const ArticleMain = () => {
         Many other cats also stay near the Philippine Institute of Pure and
         Applied Chemistry (PIPAC) and the ground floor of the CTC building.
       </p>
+      <div className={styles.helloCatWrapper}>
+        <img src={cloud} className={styles.cloud} />
+        <img src={cloud} className={styles.cloud} />
+        <img src={helloCat} />
+      </div>
       <p>
         Feeding so many cats on the regular is a costly undertaking, but it is
         one that Resuello has readily shouldered despite the difficulty.
       </p>
       <p>He admits,</p>
-      <div className={styles.quote}>
+      <p className={styles.quote}>
         Medyo nasasaktan ako dahil medyo mabigat [sa bulsa] ‘yung binibili kong
         pagkain, ‘yung Oc [cat food brand] Php 175 isang kilo. Eh halos minsan
         isang kilo, [k]aunti natitira sa isang araw kasi umaga-hapon ang pakain
         ko.
-      </div>
+      </p>
       <p>
         (It hurts [my wallet] a bit since the price of the cat food I buy, Oc,
         is hefty, around Php 175 per kilo. Almost always, only a small amount of
@@ -82,10 +103,10 @@ const ArticleMain = () => {
         resided in CTC for years. When the COVID-19 pandemic hit, he decided to
         feed the other cats as well, eventually committing to this routine.
       </p>
-      <div className={styles.quote}>
+      <p className={styles.quote}>
         Kinukumpara ko [sa] tao ito. Naisip ko, ‘kawawa naman,’ sabi kong
         ganoon. Kaya ang ginawa ko, naisip kong alagaan [at] pakainin sila.
-      </div>
+      </p>
       <p>
         (I liken them to humans and think, ‘how pitiful.’ That is why I thought
         of taking care and feeding them.)
@@ -97,6 +118,9 @@ const ArticleMain = () => {
         solidarity between Ateneans and Cateneans became especially prominent at
         the height of the pandemic.
       </p>
+      <div className={styles.heartCatWrapper}>
+        <img src={heartCatSmall1} />
+      </div>
       <p>
         One of the people who observed this solidarity was Assistant Professor
         at the Department of Chemistry and Ateneans Guided and Inspired by their
@@ -108,6 +132,9 @@ const ArticleMain = () => {
         this endeavor is her spouse, Department of Theology Instructor Joseph
         Johnson, JCL.
       </p>
+      <div className={styles.heartCatWrapper}>
+        <img src={heartCatBig} />
+      </div>
       <p>
         In instances when some cats require medical attention, the couple does
         their best to attend to these concerns. For instance, they took care of
@@ -117,20 +144,23 @@ const ArticleMain = () => {
         own pockets, although they are grateful to those who have helped with
         the costs.
       </p>
+      <div className={styles.heartCatWrapper}>
+        <img src={heartCatSmall2} />
+      </div>
       <p>
         Johnson references the Laudato si' encyclical when talking about the
         importance of caring for animals, mentioning that the way we treat the
         vulnerable, including animals, reflects who we are as people.
       </p>
-      <div className={styles.quote}>
+      <p className={styles.quote}>
         Here’s a vulnerable life that needs to be cared for, needs to be helped.
         That’s just it, he remarks.
-      </div>
+      </p>
       <p>he remarks.</p>
-      <div className={styles.quote}>
+      <p className={styles.quote}>
         They can’t speak, they can’t act like humans. They are at our mercy, so
         we should show our mercy towards them,
-      </div>
+      </p>
       <p>Buenafe adds.</p>
       <p>
         The couple embodies this mercy by providing their support to the student
@@ -138,6 +168,10 @@ const ArticleMain = () => {
         veterinarian as needed. AGILA’s advocacy is to safeguard the welfare of
         stray animals and wildlife, including the Cateneans.
       </p>
+      <div className={styles.circleCatWrapper}>
+        <img src={circleCat} />
+        <p>Meow! You found me!</p>
+      </div>
       <h3>In caring, caution and commitment</h3>
       <p>
         To maintain students’ and the campus cats’ safety, one of AGILA’s
@@ -148,6 +182,12 @@ const ArticleMain = () => {
         personnel changes within the Ateneo Institute of Sustainability (AIS)
         and the Ateneo Community Cat Program (ACCaP).
       </p>
+      <div className={styles.magContainerWrapper}>
+        <div className={styles.magContainer}>
+          <img src={mag1} />
+          <img src={mag2} />
+        </div>
+      </div>
       <p>
         AGILA, ACCaP, and AIS normally collaborate with each other on
         initiatives that help the Cateneans, including AGILA’s cat census. Guce
@@ -162,10 +202,10 @@ const ArticleMain = () => {
         </a>{" "}
         manages the cat population through various University-wide programs.
       </p>
-      <div className={styles.quote}>
+      <p className={styles.quote}>
         “The best thing [students] can do regarding animal welfare advocacy, and
         in support of AGILA na rin, [is to] act with empathy,”
-      </div>
+      </p>
       <p>Guce suggests.</p>
       <p>
         For him, supporting animal welfare advocacy means being persons for
@@ -173,6 +213,9 @@ const ArticleMain = () => {
         manifest through slowing vehicles down for animals and segregating trash
         so that stray animals do not try to eat them.
       </p>
+      <div className={styles.heartCatWrapper}>
+        <img src={heartCatSmall3} />
+      </div>
       <p>
         Through caring for the Cateneans and their safety, a deeper
         understanding of animal welfare advocacy may become easier to develop.
@@ -190,6 +233,9 @@ const ArticleMain = () => {
         as unsocialized animals and prefer to be kept feral, as it helps
         maintain their independence and role as pest control on campus.
       </p>
+      <div className={styles.heartCatWrapper}>
+        <img src={heartHighFive} />
+      </div>
       <h3>Cats come and go</h3>
       <p>
         Encountering a Catenean is practically unavoidable, with one or two
@@ -214,12 +260,15 @@ const ArticleMain = () => {
         crowd of around 70 students gathering by the Schmitt Hall before they
         headed to the SOM Forest, where Pao-Pao was buried.
       </p>
-      <div className={styles.quote}>
+      <div className={styles.heartCatWrapper}>
+        <img src={cloudCat} />
+      </div>
+      <p className={styles.quote}>
         These small things which are part of our experience, [...] they’re more
         important than we think. Sometimes, we only notice them when they're
         absent, [...] we realize how much we’ve missed them—how much of the
         experience they are
-      </div>
+      </p>
       <p>Johnson says.</p>
       <p>
         The Cateneans stand as a testament to the human capacity to go above and
@@ -231,13 +280,27 @@ const ArticleMain = () => {
         the world’s inhabitants reflect a need for respect, kindness, and
         empathy to build safe communities for all.
       </p>
-      <p className={styles.cloud}>
-        Beyond attention and affection, love has manifested in the Ateneo
-        community through a commitment to caring for the Cateneans and an
-        acknowledgement of their value as living beings.
+      <p className={styles.bigCloud}>
+        <img src={bigCloud} />
+        <p>
+          Beyond attention and affection, love has manifested in the Ateneo
+          community through a commitment to caring for the Cateneans and an
+          acknowledgement of their value as living beings.
+        </p>
       </p>
       <p>With reports by Gabrielle Christina A. Cortes</p>
+		</div>
       <section className={styles.credits}>
+        <div className={styles.grassCatContainer}>
+          <img src={grass} className={styles.grass} />
+          <img src={paopao} className={styles.paopao} />
+          <div className={styles.navigationButtons}>
+            <button>
+              <a href="#">Back to Top</a>
+            </button>
+            <button>Meet the cateneans!</button>
+          </div>
+        </div>
         <div>
           <h3>Written by</h3>
           <p>Isabel&nbsp;Victorino and Alyssa&nbsp;E.&nbsp;Duque</p>
@@ -261,7 +324,8 @@ const ArticleMain = () => {
           </p>
         </div>
       </section>
-    </main>
+		<img src={brownEllipses} className={styles.brownEllipses} />
+		</main>
   );
 };
 

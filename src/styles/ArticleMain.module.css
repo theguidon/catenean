@@ -7,6 +7,10 @@
 	font-family: "AndesNeue Alt 2 Book";
 	overflow: hidden;
 }
+.mainArticle {
+	z-index: 10;
+	position: relative;
+}
 .title {
 	font-family: "Blairesque Gothic";
 	color: #2074A4;
@@ -32,6 +36,9 @@
 
 .main p {
 	margin-bottom: 1rem;
+}
+.main h3 {
+	font-size: 1.5rem;
 }
 
 .mapCorner {
@@ -109,6 +116,131 @@
 	translate: -0% 80%;
 }
 
+.helloCatWrapper {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 19rem;
+}
+.helloCatWrapper .cloud:nth-of-type(1) {
+	inset: 0 auto auto 0;
+	translate: -50% 0%;
+}
+.helloCatWrapper .cloud:nth-of-type(2) {
+	inset: 0 0 auto auto;
+	translate: 70% 50%;
+}
+
+.main h3:nth-of-type(2) {
+	margin-top: 10rem;
+}
+.heartCatWrapper {
+	text-align: center;
+	margin-block: 1rem;
+	max-width: 90vw;
+}
+.heartCatWrapper img {
+	max-width: 100%
+}
+
+.circleCatWrapper {
+	text-align: center;
+	max-width: 90vw;
+}
+.circleCatWrapper img {
+	max-width: 100%
+}
+.circleCatWrapper p {
+	font-family: "Cedarville Cursive Regular";
+	color: #2074A4;
+	translate: 20% 0;
+}
+
+.magContainerWrapper {
+	width: 100%;
+	max-width: 40rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.magContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 120%;
+}
+
+.bigCloud {
+	position: relative;
+	text-align: center;
+	height: 24rem;
+}
+.bigCloud img {
+	position: absolute;
+	inset: 50% auto auto 50%;
+	translate: -50% -50%;
+	width: 47.25rem;
+}
+.bigCloud p {
+	width: 100%;
+	max-width: 30rem;
+	position: absolute;
+	inset: 50% auto auto 50%;
+	translate: -50% -40%;
+	font-size: 1.5rem;
+	color: #2074A4;
+	font-family: "AndesNeue Alt 2 Bold"
+}
+
+.grassCatContainer {
+	height: 28rem;
+	margin: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+.grassCatContainer .grass {
+	height: 100%
+}
+.paopao {
+	position: absolute;
+	inset: 0 0 auto auto;
+	translate: 30% 10%;
+	width: 15rem;
+	aspect-ratio: 1;
+}
+.grassCatContainer button {
+	border: none;
+	font-family: "AndesNeue Alt 2 Bold";
+	width: 19rem;
+	padding-block: 0.75rem;
+	font-size: 1.5rem;
+	border-radius: 2.5rem;
+}
+.grassCatContainer button:nth-of-type(1) {
+	background: white;
+	color: #2074A4;
+}
+.grassCatContainer button:nth-of-type(2) {
+	background: #2074A4;
+	color: white;
+	margin-top: 1rem;
+}
+.navigationButtons {
+	position: absolute;
+	inset: 50% auto auto 50%;
+	translate: -50% -50%;
+	cursor: pointer;
+	text-align: center;
+}
+.navigationButtons a {
+	text-decoration: none;
+	color: #2074A4;
+}
+
 .credits {
 	color: #2074A4;
 	display: flex;
@@ -122,4 +254,15 @@
 .credits h3 {
 	font-family: "Blairesque Gothic";
 	font-size: 1.5rem;
+}
+
+.cloud {
+	position: absolute;
+}
+.brownEllipses {
+	position: absolute;
+	inset: 53% auto auto 50%;
+	translate: -50% 0;
+	z-index: 0;
+	max-height: 100rem;
 }

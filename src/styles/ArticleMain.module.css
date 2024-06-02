@@ -10,12 +10,16 @@
 .mainArticle {
 	z-index: 10;
 	position: relative;
+	max-width: 65rem;
+	margin: 0 auto;
 }
 .title {
 	font-family: "Blairesque Gothic";
 	color: #2074A4;
 	text-align: center;
 	font-size: 2.75rem;
+	max-width: 65rem;
+	margin: 0 auto;
 }
 .cateneans {
 	color: #F08F68;
@@ -144,12 +148,17 @@
 	max-width: 100%
 }
 
+.heartCatSmall3Wrapper {
+	text-align: center;
+}
+
 .circleCatWrapper {
 	text-align: center;
-	max-width: 90vw;
 }
 .circleCatWrapper img {
-	max-width: 100%
+	max-width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 .circleCatWrapper p {
 	font-family: "Cedarville Cursive Regular";
@@ -181,14 +190,14 @@
 	position: absolute;
 	inset: 50% auto auto 50%;
 	translate: -50% -50%;
-	width: 47.25rem;
+	height: 100%;
 }
 .bigCloud p {
 	width: 100%;
-	max-width: 30rem;
+	max-width: 45rem;
 	position: absolute;
 	inset: 50% auto auto 50%;
-	translate: -50% -40%;
+	translate: -50% -10%;
 	font-size: 1.5rem;
 	color: #2074A4;
 	font-family: "AndesNeue Alt 2 Bold"
@@ -265,4 +274,74 @@
 	translate: -50% 0;
 	z-index: 0;
 	max-height: 100rem;
+}
+
+
+@media screen and (min-width: 920px){
+	.helloCatWrapper {
+		height: 10%;
+	}
+	
+	.circleCatWrapper {
+		height: 30vh;
+		margin-block: 4rem;
+	}
+}
+@media screen and (min-width: 1024px){
+	.title {
+		font-size: 5rem;
+	}
+	.writerCredits {
+		font-size: 2rem;
+	}
+	.mainArticle {
+		font-size: 1.5rem;
+	}
+	.main h3 {
+		font-size: 2.5rem;
+	}
+	.quote {
+		font-size: 2rem;
+	}
+
+	.photoCards img {
+		width: 13rem;
+		height: 13.7rem;
+		padding: 0.5rem 0.5rem 2.6rem 0.5rem;
+	}
+	.photoCards img:nth-of-type(1) {
+		translate: -50% -30%;
+	}
+	.photoCards img:nth-of-type(2) {
+		translate: 140% -40%;
+	}
+	.photoCards img:nth-of-type(3) {
+		translate: 300% -70%;
+	}
+
+	.magContainerWrapper {
+		position: absolute;
+		top: 65%;
+		max-width: none;
+	}
+	.magContainer {
+		width: 140%;
+		height: 30rem;
+	}
+	.magContainer img {
+		height: 11rem;
+	}
+	.magContainer img:nth-of-type(1) {
+		align-self: end;
+	}
+
+	.heartCatSmall3Wrapper {
+		position: absolute;
+		right: 0;
+		translate: 110% -50%;
+	}
+
+	.bigCloud p {
+		font-size: 2rem;
+	}
 }

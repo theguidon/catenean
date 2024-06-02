@@ -3,7 +3,7 @@
 .main {
 	position: relative;
 	background: #F2DDAF;
-	padding: 5rem 1.5rem 3rem;
+	padding: 5rem 1.5rem 0rem;
 	font-family: "AndesNeue Alt 2 Book";
 	overflow: hidden;
 }
@@ -212,7 +212,8 @@
 	position: relative;
 }
 .grassCatContainer .grass {
-	height: 100%
+	height: 100%;
+	min-width: 120%;
 }
 .paopao {
 	position: absolute;
@@ -221,7 +222,7 @@
 	width: 15rem;
 	aspect-ratio: 1;
 }
-.grassCatContainer button {
+.navigationButtons button {
 	border: none;
 	font-family: "AndesNeue Alt 2 Bold";
 	width: 19rem;
@@ -229,14 +230,13 @@
 	font-size: 1.5rem;
 	border-radius: 2.5rem;
 }
-.grassCatContainer button:nth-of-type(1) {
+.navigationButtons button:nth-of-type(1) {
 	background: white;
 	color: #2074A4;
 }
-.grassCatContainer button:nth-of-type(2) {
+.navigationButtons button:nth-of-type(2) {
 	background: #2074A4;
 	color: white;
-	margin-top: 1rem;
 }
 .navigationButtons {
 	position: absolute;
@@ -244,6 +244,9 @@
 	translate: -50% -50%;
 	cursor: pointer;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
 }
 .navigationButtons a {
 	text-decoration: none;
@@ -251,11 +254,16 @@
 }
 
 .credits {
+	padding-bottom: 3rem;
+}
+.creditsNames {
 	color: #2074A4;
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
-	margin-top: 1.5rem;
+	row-gap: 1.5rem;
+}
+.creditsNames div {
+	width: fit-content;
 }
 .credits h3, .credits p {
 	margin: 0;
@@ -343,5 +351,30 @@
 
 	.bigCloud p {
 		font-size: 2rem;
+	}
+
+	.credits {
+		position: relative;
+		padding: 0;
+		margin-top: 5rem;
+	}
+	.grassCatContainer {
+		margin: 0;
+	}
+	.navigationButtons {
+		translate: -50% -250%;
+		column-gap: 1.5rem;
+		flex-direction: row;
+	}
+	.paopao {
+		translate: 0% -30%;
+		width: 25rem;
+	}
+	.creditsNames {
+		flex-direction: row;
+		justify-content: space-evenly;
+		column-gap: 2rem;
+		position: absolute;
+		inset: auto 3rem 5rem;
 	}
 }

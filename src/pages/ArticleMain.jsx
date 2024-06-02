@@ -304,27 +304,29 @@ const ArticleMain = () => {
             <button>Meet the cateneans!</button>
           </div>
         </div>
-        <div>
-          <h3>Written by</h3>
-          <p>Isabel&nbsp;Victorino and Alyssa&nbsp;E.&nbsp;Duque</p>
-        </div>
-        <div>
-          <h3>Photos by</h3>
-          <p>need bylines no bylines</p>
-        </div>
-        <div>
-          <h3>Designed by</h3>
-          <p>
-            Bea&nbsp;Gan, Juan&nbsp;Lacanienta, Frants&nbsp;Reyes, and
-            Razel&nbsp;Tan
-          </p>
-        </div>
-        <div>
-          <h3>Developed by</h3>
-          <p>
-            Luigi&nbsp;Rodriguez, Ysabella&nbsp;B.&nbsp;Panghulan,
-            Chesca&nbsp;Reyes, and Waleed&nbsp;Lugod
-          </p>
+        <div className={styles.creditsNames}>
+          <div>
+            <h3>Written&nbsp;by</h3>
+            <p>Isabel&nbsp;Victorino and Alyssa&nbsp;E.&nbsp;Duque</p>
+          </div>
+          <div>
+            <h3>Photos&nbsp;by</h3>
+            <p>need bylines no bylines</p>
+          </div>
+          <div>
+            <h3>Designed&nbsp;by</h3>
+            <p>
+              Bea&nbsp;Gan, Juan&nbsp;Lacanienta, Frants&nbsp;Reyes, and
+              Razel&nbsp;Tan
+            </p>
+          </div>
+          <div>
+            <h3>Developed&nbsp;by</h3>
+            <p>
+              Luigi&nbsp;Rodriguez, Ysabella&nbsp;B.&nbsp;Panghulan,
+              Chesca&nbsp;Reyes, and Waleed&nbsp;Lugod
+            </p>
+          </div>
         </div>
       </section>
       <img src={brownEllipses} className={styles.brownEllipses} />

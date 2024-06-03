@@ -295,6 +295,9 @@ const ArticleMain = () => {
           respect, kindness, and empathy to build safe communities for all.
         </p>
         <p className={styles.bigCloud}>
+          <img src={cloud} className={styles.cloud} />
+          <img src={cloud} className={styles.cloud} />
+          <img src={cloud} className={styles.cloud} />
           <img src={bigCloud} />
           <p>
             Beyond attention and affection, love has manifested in the Ateneo
@@ -340,6 +343,7 @@ const ArticleMain = () => {
           </div>
         </div>
       </section>
+      <img src={brownEllipses} className={styles.brownEllipses} />
       <img src={brownEllipses} className={styles.brownEllipses} />
       <img src={bigHeart} className={styles.bigHeart} />
     </main>

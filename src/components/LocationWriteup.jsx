@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../styles/LocationWriteup.module.css";
 
 import Pin from "../assets/images/location-pin.svg";

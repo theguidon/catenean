@@ -52,6 +52,7 @@
 	height: 5.375rem;
 	border: none;
 	cursor: pointer;
+	z-index: 50;
 }
 .mapCorner img {
 	position: absolute;
@@ -96,7 +97,7 @@
 	height: 31rem;
 	position: relative;
 }
-.photoCards img {
+.photoCards img:not(.photoCardsLine) {
 	width: 7.6rem;
 	height: 8rem;
 	object-fit: cover;
@@ -106,6 +107,7 @@
 	inset: 50% auto auto 50%;
 	transform: translate(-50%, -50%);
 	filter: drop-shadow(1.451px 1.451px 1.741px rgba(0, 0, 0, 0.15));
+	z-index: 10;
 }
 .photoCards img:nth-of-type(1) {
 	rotate: 5deg;
@@ -118,6 +120,13 @@
 .photoCards img:nth-of-type(3) {
 	rotate: -9.6deg;
 	translate: -0% 80%;
+}
+.photoCardsLine {
+	position: absolute;
+	width: 150vw;
+	left: -25%;
+	top: 0%;
+	rotate: 20deg;
 }
 
 .helloCatWrapper {
@@ -139,17 +148,24 @@
 .main h3:nth-of-type(2) {
 	margin-top: 10rem;
 }
-.heartCatWrapper {
+.centerImageWrapper, .heartCatWrapper, .heartCatSmall3Wrapper {
 	text-align: center;
-	margin-block: 1rem;
+	margin-block: 2rem;
 	max-width: 90vw;
+	position: relative;
 }
-.heartCatWrapper img {
+.centerImageWrapper img, .heartCatWrapper img, .heartCatSmall3Wrapper img {
 	max-width: 100%
 }
+.threeCats {
+	position: absolute;
+	inset: auto auto 0 50%;
+	translate: -50% 20%;
+}
 
-.heartCatSmall3Wrapper {
-	text-align: center;
+.groupCatHeartContainer {
+	display: none;
+	position: relative;
 }
 
 .circleCatWrapper {
@@ -278,10 +294,24 @@
 }
 .brownEllipses {
 	position: absolute;
-	inset: 53% auto auto 50%;
-	translate: -50% 0;
 	z-index: 0;
 	max-height: 100rem;
+}
+.brownEllipses:nth-of-type(1) {
+	inset: 0 auto auto 50%;
+	translate: -50% -10%;
+	height: 12%;
+}
+.brownEllipses:nth-of-type(2) {
+	inset: 53% auto auto 50%;
+	translate: -50% 0;
+}
+.bigHeart {
+	position: absolute;
+	top: 27%;
+	left: 50%;
+	height: 40rem;
+	translate: -50% 0;
 }
 
 
@@ -312,7 +342,7 @@
 		font-size: 2rem;
 	}
 
-	.photoCards img {
+	.photoCards img:not(.photoCardsLine) {
 		width: 13rem;
 		height: 13.7rem;
 		padding: 0.5rem 0.5rem 2.6rem 0.5rem;
@@ -325,6 +355,28 @@
 	}
 	.photoCards img:nth-of-type(3) {
 		translate: 300% -70%;
+	}
+	.photoCardsLine {
+		rotate: 0deg;
+		top: -40%;
+	}
+
+	.heartCatWrapper {
+		display: none;
+	}
+
+	.groupCatHeartContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 3rem;
+	}
+	.groupCatHeartContainer img {
+		align-self: center;
+	}
+	.bigHeart {
+		top: 33%;
+		height: auto;
 	}
 
 	.magContainerWrapper {
@@ -376,5 +428,9 @@
 		column-gap: 2rem;
 		position: absolute;
 		inset: auto 3rem 5rem;
+	}
+
+	.brownEllipses:nth-of-type(1) {
+		height: auto;
 	}
 }

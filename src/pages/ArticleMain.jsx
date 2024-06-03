@@ -4,6 +4,7 @@ import mapCorner from "../assets/images/map-corner.svg";
 import cat1 from "../assets/images/cats/2.jpeg";
 import cat2 from "../assets/images/cats/7.jpeg";
 import cat3 from "../assets/images/cats/6.jpeg";
+import photoCardsLine from "../assets/images/photo-cards-line.svg";
 import helloCat from "../assets/images/hello-cat.png";
 import cloud from "../assets/images/cloud.svg";
 import heartCatSmall1 from "../assets/images/heart-cat-small-1.png";
@@ -19,6 +20,8 @@ import bigCloud from "../assets/images/big-cloud.png";
 import grass from "../assets/images/grass.png";
 import paopao from "../assets/images/paopao.png";
 import brownEllipses from "../assets/images/brown-ellipses.svg";
+import bigHeart from "../assets/images/big-heart.svg";
+import threeCats from "../assets/images/three-cats.png";
 
 const ArticleMain = () => {
   return (
@@ -58,6 +61,7 @@ const ArticleMain = () => {
           <img src={cat1} />
           <img src={cat2} />
           <img src={cat3} />
+          <img src={photoCardsLine} className={styles.photoCardsLine} />
         </div>
         <h3>Fur-miliar faces</h3>
         <p>
@@ -122,6 +126,12 @@ const ArticleMain = () => {
         <div className={styles.heartCatWrapper}>
           <img src={heartCatSmall1} />
         </div>
+        <div className={styles.groupCatHeartContainer}>
+          <img src={heartCatSmall1} />
+          <img src={heartCatBig} />
+          <img src={heartCatSmall2} />
+          <img src={threeCats} className={styles.threeCats} />
+        </div>
         <p>
           One of the people who observed this solidarity was Assistant Professor
           at the Department of Chemistry and Ateneans Guided and Inspired by
@@ -135,6 +145,7 @@ const ArticleMain = () => {
         </p>
         <div className={styles.heartCatWrapper}>
           <img src={heartCatBig} />
+          <img src={threeCats} className={styles.threeCats} />
         </div>
         <p>
           In instances when some cats require medical attention, the couple does
@@ -236,7 +247,7 @@ const ArticleMain = () => {
           it helps maintain their independence and role as pest control on
           campus.
         </p>
-        <div className={styles.heartCatWrapper}>
+        <div className={styles.centerImageWrapper}>
           <img src={heartHighFive} />
         </div>
         <h3>Cats come and go</h3>
@@ -263,7 +274,7 @@ const ArticleMain = () => {
           crowd of around 70 students gathering by the Schmitt Hall before they
           headed to the SOM Forest, where Pao-Pao was buried.
         </p>
-        <div className={styles.heartCatWrapper}>
+        <div className={styles.centerImageWrapper}>
           <img src={cloudCat} />
         </div>
         <p className={styles.quote}>
@@ -330,6 +341,7 @@ const ArticleMain = () => {
         </div>
       </section>
       <img src={brownEllipses} className={styles.brownEllipses} />
+      <img src={bigHeart} className={styles.bigHeart} />
     </main>
   );
 };

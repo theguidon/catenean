@@ -1,24 +1,24 @@
-import "./Map.css";
-import Map_Campus from "../Map/Map_Images/Map_background.svg";
-import Credits_Logo from "../Map/Map_Images/Credits_Logo.svg";
-import Mail_Logo from "../Map/Map_Images/Mail_Logo.svg";
-import Mail_Logo_Hover from "../Map/Map_Images/Mail_Logo_Hover.svg";
-import Button_Arete from "../Map/Map_Images/Button_Arete.svg";
-import Button_Arete_Hover from "../Map/Map_Images/Button_Arete_Hover.svg";
-import Button_CTC from "../Map/Map_Images/Button_CTC.svg";
-import Button_CTC_Hover from "../Map/Map_Images/Button_CTC_Hover.svg";
-import Button_Faura from "../Map/Map_Images/Button_Faura.svg";
-import Button_Faura_Hover from "../Map/Map_Images/Button_Faura_Hover.svg";
-import Button_MVP from "../Map/Map_Images/Button_MVP.svg";
-import Button_MVP_Hover from "../Map/Map_Images/Button_MVP_Hover.svg";
-import Button_Schmitt from "../Map/Map_Images/Button_Schmitt.svg";
-import Button_Schmitt_Hover from "../Map/Map_Images/Button_Schmitt_Hover.svg";
-import Cats_Arete from "../Map/Map_Images/Cats_Arete.svg";
-import Cats_CTC from "../Map/Map_Images/Cats_CTC.svg";
-import Cats_Faura from "../Map/Map_Images/Cats_Faura.svg";
-import Cats_MVP from "../Map/Map_Images/Cats_MVP.svg";
-import Cats_Schmitt from "../Map/Map_Images/Cats_Schmitt.svg";
-import Catenean_Logo from "../Map/Map_Images/Catenean_Logo.svg";
+import "../styles/Map.css";
+import Map_Campus from "../assets/Map/Map_Images/Map_background.svg";
+import Credits_Logo from "../assets/Map/Map_Images/Credits_Logo.svg";
+import Mail_Logo from "../assets/Map/Map_Images/Mail_Logo.svg";
+import Mail_Logo_Hover from "../assets/Map/Map_Images/Mail_Logo_Hover.svg";
+import Button_Arete from "../assets/Map/Map_Images/Button_Arete.svg";
+import Button_Arete_Hover from "../assets/Map/Map_Images/Button_Arete_Hover.svg";
+import Button_CTC from "../assets/Map/Map_Images/Button_CTC.svg";
+import Button_CTC_Hover from "../assets/Map/Map_Images/Button_CTC_Hover.svg";
+import Button_Faura from "../assets/Map/Map_Images/Button_Faura.svg";
+import Button_Faura_Hover from "../assets/Map/Map_Images/Button_Faura_Hover.svg";
+import Button_MVP from "../assets/Map/Map_Images/Button_MVP.svg";
+import Button_MVP_Hover from "../assets/Map/Map_Images/Button_MVP_Hover.svg";
+import Button_Schmitt from "../assets/Map/Map_Images/Button_Schmitt.svg";
+import Button_Schmitt_Hover from "../assets/Map/Map_Images/Button_Schmitt_Hover.svg";
+import Cats_Arete from "../assets/Map/Map_Images/Cats_Arete.svg";
+import Cats_CTC from "../assets/Map/Map_Images/Cats_CTC.svg";
+import Cats_Faura from "../assets/Map/Map_Images/Cats_Faura.svg";
+import Cats_MVP from "../assets/Map/Map_Images/Cats_MVP.svg";
+import Cats_Schmitt from "../assets/Map/Map_Images/Cats_Schmitt.svg";
+import Catenean_Logo from "../assets/Map/Map_Images/Catenean_Logo.svg";
 
 function Map() {
   return (

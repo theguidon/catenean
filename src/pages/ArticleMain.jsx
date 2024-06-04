@@ -1,6 +1,6 @@
 import styles from "../styles/ArticleMain.module.css";
 import squiggle from "../assets/images/squiggle.svg";
-import mapCorner from "../assets/images/map-corner.svg";
+import MapFold from "../assets/images/location-map-fold.svg";
 import cat1 from "../assets/images/cats/2.jpeg";
 import cat2 from "../assets/images/cats/7.jpeg";
 import cat3 from "../assets/images/cats/6.jpeg";
@@ -26,9 +26,9 @@ import threeCats from "../assets/images/three-cats.png";
 const ArticleMain = () => {
   return (
     <main className={styles.main}>
-      <button className={styles.mapCorner}>
-        <img src={mapCorner} />
-      </button>
+      <div className={styles.mapCorner}>
+        <img src={MapFold} />
+      </div>
       <div className={styles.mainArticle}>
         <h1 className={styles.title}>
           What the{" "}

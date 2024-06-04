@@ -1,24 +1,12 @@
 @import url("../fonts.css");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 a,
 a:visited {
   color: #2074a4;
   text-decoration: underline;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
-body {
+.background {
   background: #a0d8cf;
 }
 
@@ -37,20 +25,7 @@ body {
   width: 95px;
   height: 102px;
   z-index: 1;
-}
-
-.mapFold:hover > a > .fold {
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  transition: 0.3s all ease-out;
-}
-
-.fold {
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  z-index: -1;
+	cursor: pointer;
 }
 
 .background {
@@ -93,10 +68,14 @@ body {
 
 .photoContainerPhoto {
   width: 90%;
+	padding: 1rem;
+	padding-bottom: 3rem;
+	background: white;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+	filter: drop-shadow(1.451px 1.451px 1.741px rgba(0, 0, 0, 0.15));
 }
 
 .photoContainerPhoto img {

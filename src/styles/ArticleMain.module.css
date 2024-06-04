@@ -46,17 +46,16 @@
 }
 
 .mapCorner {
-	position: absolute;
-	inset: 0 0 auto auto;
-	width: 5.375rem;
-	height: 5.375rem;
-	border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95px;
+  height: 102px;
+  z-index: 1;
 	cursor: pointer;
-	z-index: 50;
 }
 .mapCorner img {
 	position: absolute;
-	inset: -16px auto auto -18px;
 	pointer-events: none;
 }
 

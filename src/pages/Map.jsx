@@ -21,11 +21,13 @@ import Cats_Schmitt from "../assets/Map/Map_Images/Cats_Schmitt.svg";
 import Catenean_Logo from "../assets/Map/Map_Images/Catenean_Logo.svg";
 
 import Credits from "../components/Credits.jsx";
+import Letter from "../components/Letter.jsx";
 
 import { useState } from "react";
 
 function Map({ setPage }) {
   const [isCreditsVisible, setIsCreditsVisible] = useState(false);
+  const [isLetterVisible, setIsLetterVisible] = useState(false);
 
   return (
     <>
@@ -33,7 +35,14 @@ function Map({ setPage }) {
         <div className="upperLogosWrapper">
           <div className="upperButtonsContainer">
             <div className="Mail_Logo_Container">
-              <img className="Mail_Logo_Hover" src={Mail_Logo_Hover} alt="" />
+              <img
+                className="Mail_Logo_Hover"
+                src={Mail_Logo_Hover}
+                alt=""
+                onClick={() => {
+                  setIsLetterVisible(true);
+                }}
+              />
               <img className="Mail_Logo" src={Mail_Logo} alt="" />
             </div>
             <div className="Credits_Logo_Container">
@@ -116,6 +125,11 @@ function Map({ setPage }) {
       <Credits
         isCreditsVisible={isCreditsVisible}
         setIsCreditsVisible={setIsCreditsVisible}
+      />
+      <Letter
+        isLetterVisible={isLetterVisible}
+        setIsLetterVisible={setIsLetterVisible}
+        setPage={setPage}
       />
     </>
   );

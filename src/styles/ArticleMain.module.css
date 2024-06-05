@@ -46,12 +46,12 @@
 }
 
 .mapCorner {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 95px;
   height: 102px;
-  z-index: 1;
+  z-index: 50;
 	cursor: pointer;
 }
 .mapCorner img {

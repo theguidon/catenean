@@ -23,10 +23,10 @@ import brownEllipses from "../assets/images/brown-ellipses.svg";
 import bigHeart from "../assets/images/big-heart.svg";
 import threeCats from "../assets/images/three-cats.png";
 
-const ArticleMain = () => {
+const ArticleMain = ({ setPage }) => {
   return (
     <main className={styles.main}>
-      <div className={styles.mapCorner}>
+      <div className={styles.mapCorner} onClick={() => setPage("map")}>
         <img src={MapFold} />
       </div>
       <div className={styles.mainArticle}>

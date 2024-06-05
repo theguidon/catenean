@@ -25,6 +25,8 @@ const Navigation = () => {
         <SchmittWriteup setPage={setPage} />
       ) : page === "ctc" ? (
         <CTCWriteup setPage={setPage} />
+      ) : page === "letter" ? (
+        <ArticleMain setPage={setPage} />
       ) : (
         <Title setPage={setPage} />
       )}

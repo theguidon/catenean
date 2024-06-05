@@ -315,7 +315,7 @@ const ArticleMain = ({ setPage }) => {
             <button>
               <a href="#">Back to Top</a>
             </button>
-            <button>Meet the cateneans!</button>
+            <button onClick={() => setPage("map")}>Meet the cateneans!</button>
           </div>
         </div>
         <div className={styles.creditsNames}>

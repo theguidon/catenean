@@ -113,6 +113,13 @@ a:visited {
   z-index: 1;
 }
 
+.writingContainerTitle img:nth-child(1) {
+	max-width: 8vw;
+}
+.writingContainerTitle img:nth-child(2) {
+	max-width: 30vw;
+}
+
 .writingContainerTitle h1 {
   position: absolute !important;
   opacity: 0;

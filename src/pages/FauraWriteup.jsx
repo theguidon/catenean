@@ -2,8 +2,8 @@ import styles from "../styles/FauraWriteup.module.css";
 
 import Pin from "../assets/images/location-pin.svg";
 import Cat1 from "../assets/Map/Map_Images/Cats_Faura.svg";
-import Building from "../assets/images/location-mvp-building.svg";
-import Title from "../assets/images/location-mvp-title.svg";
+import Building from "../assets/images/location-faura-building.svg";
+import Title from "../assets/images/location-faura-title.svg";
 import MapFold from "../assets/images/location-map-fold.svg";
 
 export default function LocationWriteup({ setPage }) {

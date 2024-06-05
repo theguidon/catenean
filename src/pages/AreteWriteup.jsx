@@ -2,7 +2,7 @@ import styles from "../styles/AreteWriteup.module.css";
 
 import Pin from "../assets/images/location-pin.svg";
 import Cat1 from "../assets/Map/Map_Images/Cats_Arete.svg";
-import Building from "../assets/images/location-mvp-building.svg";
+import Building from "../assets/images/location-arete-building.svg";
 import Title from "../assets/images/location-arete-title.svg";
 import MapFold from "../assets/images/location-map-fold.svg";
 

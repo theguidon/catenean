@@ -1,20 +1,21 @@
 .mapWrapper {
 	position: relative;
-	min-width: 100vw;
-	min-height: 100vh;
+	min-width: 100dvw;
+	min-height: 100dvh;
 	aspect-ratio: calc(1440/1024);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 .backgroundWrapper{
 	position: relative;
+	overflow: scroll;
 }
 .upperLogosWrapper{
 	position: absolute;
   display: flex;
 	flex-direction: column;
 	z-index: 10;
-	width: 100vw;
+	width: 100dvw;
 	height: fit-content;
 }
 .Credits_Logo{
@@ -41,12 +42,13 @@
 		inset: 0 auto auto 0;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
+		cursor: pointer;
 }
 .Mail_Logo_Container:hover > .Mail_Logo_Hover{
     opacity: 1;
 }
 .aboutCard {
-	position: fixed;
+	position: absolute;
 	background: white;
 	inset: 9.5rem auto auto 1rem;
 	width: 19.5rem;
@@ -57,7 +59,7 @@
 	width: 16rem;
 }
 .aboutCard p {
-	/* TODO: set font family AndesNeue Alt 2 */
+	font-family: "AndesNeue Alt 2 Book";
 	font-size: 0.875rem;
 	color: #2074A4;
 }

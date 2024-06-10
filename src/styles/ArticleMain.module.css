@@ -46,17 +46,16 @@
 }
 
 .mapCorner {
-	position: absolute;
-	inset: 0 0 auto auto;
-	width: 5.375rem;
-	height: 5.375rem;
-	border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95px;
+  height: 102px;
+  z-index: 50;
 	cursor: pointer;
-	z-index: 50;
 }
 .mapCorner img {
 	position: absolute;
-	inset: -16px auto auto -18px;
 	pointer-events: none;
 }
 
@@ -325,6 +324,45 @@
 	height: 40rem;
 	translate: -50% 0;
 }
+.paw {
+	position: absolute;
+	inset: 0 auto auto 50%;
+	transform: translate(-50%, 0);
+	display: none;
+}
+.paw:nth-of-type(1) {
+	translate: 250% 300%;
+	display: block;
+}
+.paw:nth-of-type(2) {
+	translate: 220% 500%;
+	display: block;
+}
+.paw:nth-of-type(3) {
+	translate: -220% 900%;
+	display: block;
+}
+
+.heart {
+	position: absolute;
+	inset: 0 auto auto 50%;
+	transform: translate(-50%, 0);
+}
+.heart:nth-of-type(1) {
+	translate: -600% 900%;
+}
+.heart:nth-of-type(2) {
+	translate: -650% 7200%;
+}
+.heart:nth-of-type(3) {
+	translate: 650% 7600%;
+}
+.heart:nth-of-type(4) {
+	translate: -550% 8000%;
+}
+.heart:nth-of-type(5) {
+	translate: 500% 8100%;
+}
 
 
 @media screen and (min-width: 920px){
@@ -335,6 +373,43 @@
 	.circleCatWrapper {
 		height: 30vh;
 		margin-block: 4rem;
+	}
+
+	.pawContainer .paw {
+		display: block;
+		translate: 0 0;
+		transform: translate(0, 0);
+	}
+	.paw:nth-of-type(1) {
+		inset: 5% 1% auto auto;
+	}
+	.paw:nth-of-type(2) {
+		inset: 6% auto auto 3%;
+	}
+	.paw:nth-of-type(3) {
+		inset: 10% auto auto 20%;
+	}
+	.paw:nth-of-type(4) {
+		translate: 550% 2000%;
+		display: block;
+		scale: -1 1;
+	}
+	.paw:nth-of-type(5) {
+		translate: -700% 2400%;
+		display: block;
+	}
+	.paw:nth-of-type(6) {
+		translate: 650% 2600%;
+		display: block;
+	}
+	.paw:nth-of-type(7) {
+		translate: 570% 3500%;
+		scale: -1 1;
+		display: block;
+	}
+	.paw:nth-of-type(8) {
+		translate: -700% 4000%;
+		display: block;
 	}
 }
 @media screen and (min-width: 1024px){

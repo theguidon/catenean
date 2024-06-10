@@ -1,9 +1,7 @@
-import Title from "./pages/Title.jsx";
-import Map from "./pages/Map.jsx"
-import ArticleMain from "./pages/ArticleMain.jsx"
+import Navigation from "./Navigation.jsx"
 
 function App() {
-  return <ArticleMain />;
+  return <Navigation />;
 }
 
 export default App;

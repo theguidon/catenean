@@ -6,7 +6,7 @@ import PawBG from "../assets/images/paw-background.png";
 
 import { useState, useEffect } from "react";
 
-function Title() {
+function Title({ setPage }) {
   const [isBgHeart, setIsBgHeart] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +25,7 @@ function Title() {
           <h1 className="title-text">Cateneans</h1>
           <h2 className="subtitle-text">teach us about love</h2>
         </div>
-        <div className="start-btn">Start</div>
+        <button className="start-btn" onClick={() => setPage("map")}>Start</button>
       </div>
       <img src={isBgHeart ? HeartBG : PawBG} className="title-background" />
       <HeartImages />

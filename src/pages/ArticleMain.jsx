@@ -1,6 +1,6 @@
 import styles from "../styles/ArticleMain.module.css";
 import squiggle from "../assets/images/squiggle.svg";
-import mapCorner from "../assets/images/map-corner.svg";
+import MapFold from "../assets/images/location-map-fold.svg";
 import cat1 from "../assets/images/cats/2.jpeg";
 import cat2 from "../assets/images/cats/7.jpeg";
 import cat3 from "../assets/images/cats/6.jpeg";
@@ -22,13 +22,15 @@ import paopao from "../assets/images/paopao.png";
 import brownEllipses from "../assets/images/brown-ellipses.svg";
 import bigHeart from "../assets/images/big-heart.svg";
 import threeCats from "../assets/images/three-cats.png";
+import paw from "../assets/images/paw.svg";
+import heart from "../assets/images/heart.svg";
 
-const ArticleMain = () => {
+const ArticleMain = ({ setPage }) => {
   return (
     <main className={styles.main}>
-      <button className={styles.mapCorner}>
-        <img src={mapCorner} />
-      </button>
+      <div className={styles.mapCorner} onClick={() => setPage("map")}>
+        <img src={MapFold} />
+      </div>
       <div className={styles.mainArticle}>
         <h1 className={styles.title}>
           What the{" "}
@@ -315,7 +317,7 @@ const ArticleMain = () => {
             <button>
               <a href="#">Back to Top</a>
             </button>
-            <button>Meet the cateneans!</button>
+            <button onClick={() => setPage("map")}>Meet the cateneans!</button>
           </div>
         </div>
         <div className={styles.creditsNames}>
@@ -346,6 +348,23 @@ const ArticleMain = () => {
       <img src={brownEllipses} className={styles.brownEllipses} />
       <img src={brownEllipses} className={styles.brownEllipses} />
       <img src={bigHeart} className={styles.bigHeart} />
+      <div className={styles.pawContainer}>
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+      </div>
+      <div>
+        <img src={heart} className={styles.heart} />
+        <img src={heart} className={styles.heart} />
+        <img src={heart} className={styles.heart} />
+        <img src={heart} className={styles.heart} />
+        <img src={heart} className={styles.heart} />
+      </div>
     </main>
   );
 };

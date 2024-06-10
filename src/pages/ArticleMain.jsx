@@ -22,6 +22,8 @@ import paopao from "../assets/images/paopao.png";
 import brownEllipses from "../assets/images/brown-ellipses.svg";
 import bigHeart from "../assets/images/big-heart.svg";
 import threeCats from "../assets/images/three-cats.png";
+import paw from "../assets/images/paw.svg";
+import heart from "../assets/images/heart.svg";
 
 const ArticleMain = ({ setPage }) => {
   return (
@@ -346,6 +348,23 @@ const ArticleMain = ({ setPage }) => {
       <img src={brownEllipses} className={styles.brownEllipses} />
       <img src={brownEllipses} className={styles.brownEllipses} />
       <img src={bigHeart} className={styles.bigHeart} />
+      <div className={styles.pawContainer}>
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+        <img src={paw} className={styles.paw} />
+      </div>
+      <div>
+        <img src={heart} className={styles.heart} />
+        <img src={heart} className={styles.heart} />
+        <img src={heart} className={styles.heart} />
+        <img src={heart} className={styles.heart} />
+        <img src={heart} className={styles.heart} />
+      </div>
     </main>
   );
 };

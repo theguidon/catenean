@@ -2,6 +2,7 @@ import creditStyles from "../../styles/mainCredits.module.css";
 import envelope from "../../assets/images/letter.svg";
 import paopao from "../../assets/images/cats/2.jpeg";
 import back from "../../assets/images/back_to_start.svg";
+import { easeIn, easeInOut, motion, MotionConfig, stagger } from "motion/react";
 
 const Conclusion = () => {
   const bylines = [
@@ -21,46 +22,57 @@ const Conclusion = () => {
   }
   return (
     <>
-      <img
-        src={envelope}
-        className={creditStyles.envelope}
-      />
-      <section className={creditStyles.letter}>
-        <p>The Cateneans stand as a testament to the human capacity
-          to go above and beyond for animals. Resuello, Beunafe, Johnson, and
-          the AGILA members are only among countless people who give the animals
-          the same value as fellow humans.</p>
-        <p>The Ateneo community&apos;s efforts of caring for the campus cats only concretize
-          the importance of empathy and respect for other living beings. Be it animals
-          or another human, the interconnectedness of the world&apos;s inhabitants reflect a need for respect, kindness, and empathy to build safe communities for all.
-        </p>
-        <p>Beyond attention and affection, love has manifested in the Ateneo community through a commitment to caring for the Cateneans and an acknowledgement of their value as living beings.</p>
-      </section>
-      <article
-        className={creditStyles.polaroid}
-        style={{
-          transform: "rotate(-10deg)",
-          right: "10%"
-        }}
+      <MotionConfig
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.500, ease: easeInOut }}
       >
-        <img
-          src={paopao}
-          alt="A catenean."
+        <motion.img
+          src={envelope}
+          className={creditStyles.envelope}
+          style={{ rotate: "-10deg" }}
         />
-      </article>
-      <article
-        className={creditStyles.polaroid}
-        style={{
-          transform: "rotate(10deg)",
-          left: "10%",
-          bottom: 120
-        }}
-      >
-        <img
-          src={paopao}
-          alt="A catenean."
-        />
-      </article>
+        <motion.section
+          className={creditStyles.letter}
+          style={{ rotate: "5deg" }}
+        >
+          <p>The Cateneans stand as a testament to the human capacity
+            to go above and beyond for animals. Resuello, Beunafe, Johnson, and
+            the AGILA members are only among countless people who give the animals
+            the same value as fellow humans.</p>
+          <p>The Ateneo community&apos;s efforts of caring for the campus cats only concretize
+            the importance of empathy and respect for other living beings. Be it animals
+            or another human, the interconnectedness of the world&apos;s inhabitants reflect a need for respect, kindness, and empathy to build safe communities for all.
+          </p>
+          <p>Beyond attention and affection, love has manifested in the Ateneo community through a commitment to caring for the Cateneans and an acknowledgement of their value as living beings.</p>
+        </motion.section>
+        <motion.article
+          className={creditStyles.polaroid}
+          style={{
+            rotate: "-10deg",
+            right: "10%"
+          }}
+        >
+          <img
+            src={paopao}
+            alt="A catenean."
+          />
+        </motion.article>
+        <motion.article
+          className={creditStyles.polaroid}
+          style={{
+            rotate: "10deg",
+            left: "10%",
+            bottom: 120
+          }}
+          transition={{ duration: 0.500, ease: easeInOut, delay: 0.5 }}
+        >
+          <img
+            src={paopao}
+            alt="A catenean."
+          />
+        </motion.article>
+      </MotionConfig>
       <section className={creditStyles.buttons}>
         <button className={creditStyles.button}>Play game</button>
         <button className={creditStyles.button}>View map</button>

@@ -1,6 +1,5 @@
 .envelope {
   width: 120%;
-  transform: rotate(-10deg);
   box-shadow: 0px 4px 18px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5%;
   position: relative;
@@ -14,7 +13,6 @@
   padding: 48px;
   background: #f9f4eb;
   border: 8px solid #faa685;
-  transform: rotate(5deg);
   left: 7%;
   font-family: "Outfit", sans-serif;
   color: #522222;

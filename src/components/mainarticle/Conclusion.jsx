@@ -2,15 +2,10 @@ import creditStyles from "../../styles/mainCredits.module.css";
 import envelope from "../../assets/images/letter.svg";
 import paopao from "../../assets/images/cats/2.jpeg";
 import back from "../../assets/images/back_to_start.svg";
-import { easeIn, easeInOut, motion, MotionConfig, stagger } from "motion/react";
+import { easeInOut, motion, MotionConfig } from "motion/react";
+import bylines from "../../data/bylines.json"
 
 const Conclusion = () => {
-  const bylines = [
-    { "header": "Written by", "bylines": ["Name 1"] },
-    { "header": "Photos by", "bylines": ["Name 1", "Name 2"] },
-    { "header": "Designed by", "bylines": ["Name 1", "Name 2", "Name 3"] },
-    { "header": "Developed by", "bylines": ["Name 1", "Name 2", "Name 3"] },
-  ]
 
   const joinBylines = (bylines) => {
     switch (bylines.length) {

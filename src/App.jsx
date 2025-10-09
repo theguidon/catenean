@@ -1,7 +1,7 @@
-import Navigation from "./Navigation.jsx"
+import InCaring from "./components/mainarticle/InCaring.jsx";
 
 function App() {
-  return <Navigation />;
+  return <InCaring />;
 }
 
 export default App;

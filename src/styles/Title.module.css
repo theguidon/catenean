@@ -1,0 +1,20 @@
+.main {
+  background-color: #f2daad;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.bg {
+  position: absolute;
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bg div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

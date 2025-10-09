@@ -1,0 +1,35 @@
+[
+	{
+		"header": "Written by",
+		"bylines": [
+			"Name 1"
+		]
+	},
+	{
+		"header": "Photos by",
+		"bylines": [
+			"Name 1",
+			"Name 2"
+		]
+	},
+	{
+		"header": "Designed by",
+		"bylines": [
+			"Abby Montayre",
+			"Bea Gan",
+			"Diego Andal",
+			"Helena Leaño",
+			"Jim Aban"
+		]
+	},
+	{
+		"header": "Developed by",
+		"bylines": [
+			"Abby Montayre",
+			"Cheska Huang",
+			"EJ Jaso",
+			"Paige Carbonell",
+			"Waleed Lugod"
+		]
+	}
+]

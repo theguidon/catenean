@@ -1,4 +1,5 @@
 import styles from "../../styles/ComeAndGoMobile.module.css";
+import building from "../../assets/images/location-faura-building.svg";
 import squiggle from "../../assets/images/squiggle.svg";
 import MapFold from "../../assets/images/location-map-fold.svg";
 import cat1 from "../../assets/images/cats/2.jpeg";
@@ -30,6 +31,8 @@ const ComeAndGo = ({ setPage }) => {
     <main className={styles.main}>
       <div className={styles.mainArticle}>
         <h3>Cats come and go</h3>
+        <img className={styles.building} src={building} />
+
         <p>
           Encountering a Catenean is practically unavoidable, with one or two
           always roaming around each corner.
@@ -46,6 +49,7 @@ const ComeAndGo = ({ setPage }) => {
           them are lucky enough to reach old age, some succumb to sickness, and
           some unfortunately fall victim to human callousness.
         </p>
+
         <p>
           Johnson recounts the day Pao-Pao was run over because of “the reckless
           imprudence of drivers.” He first heard the news of Pao-Pao’s passing
@@ -53,94 +57,6 @@ const ComeAndGo = ({ setPage }) => {
           crowd of around 70 students gathering by the Schmitt Hall before they
           headed to the SOM Forest, where Pao-Pao was buried.
         </p>
-        <div className={styles.centerImageWrapper}>
-          <img src={cloudCat} />
-        </div>
-        <p className={styles.quote}>
-          These small things which are part of our experience, [...] they’re
-          more important than we think. Sometimes, we only notice them when
-          they're absent, [...] we realize how much we’ve missed them—how much
-          of the experience they are
-        </p>
-        <p>Johnson says.</p>
-        <p>
-          The Cateneans stand as a testament to the human capacity to go above
-          and beyond for animals. Resuello, Buenafe, Johnson, and the AGILA
-          members are only among countless people who give animals the same
-          value as fellow humans. The Ateneo community’s efforts of caring for
-          the campus cats only concretize the importance of empathy and respect
-          for other living beings. Be it animals or another human, the
-          interconnectedness of the world’s inhabitants reflect a need for
-          respect, kindness, and empathy to build safe communities for all.
-        </p>
-        <p className={styles.bigCloud}>
-          <img src={cloud} className={styles.cloud} />
-          <img src={cloud} className={styles.cloud} />
-          <img src={cloud} className={styles.cloud} />
-          <img src={bigCloud} />
-          <p>
-            Beyond attention and affection, love has manifested in the Ateneo
-            community through a commitment to caring for the Cateneans and an
-            acknowledgement of their value as living beings.
-          </p>
-        </p>
-        <p>With reports by Gabrielle Christina A. Cortes</p>
-      </div>
-      <section className={styles.credits}>
-        <div className={styles.grassCatContainer}>
-          <img src={grass} className={styles.grass} />
-          <img src={paopao} className={styles.paopao} />
-          <div className={styles.navigationButtons}>
-            <button>
-              <a href="#">Back to Top</a>
-            </button>
-            <button onClick={() => setPage("map")}>Meet the cateneans!</button>
-          </div>
-        </div>
-        <div className={styles.creditsNames}>
-          <div>
-            <h3>Written&nbsp;by</h3>
-            <p>Isabel&nbsp;Victorino and Alyssa&nbsp;E.&nbsp;Duque</p>
-          </div>
-          <div>
-            <h3>Photos&nbsp;by</h3>
-            <p>need bylines no bylines</p>
-          </div>
-          <div>
-            <h3>Designed&nbsp;by</h3>
-            <p>
-              Bea&nbsp;Gan, Juan&nbsp;Lacanienta, Frants&nbsp;Reyes, and
-              Razel&nbsp;Tan
-            </p>
-          </div>
-          <div>
-            <h3>Developed&nbsp;by</h3>
-            <p>
-              Luigi&nbsp;Rodriguez, Ysabella&nbsp;B.&nbsp;Panghulan,
-              Chesca&nbsp;Reyes, and Waleed&nbsp;Lugod
-            </p>
-          </div>
-        </div>
-      </section>
-      <img src={brownEllipses} className={styles.brownEllipses} />
-      <img src={brownEllipses} className={styles.brownEllipses} />
-      <img src={bigHeart} className={styles.bigHeart} />
-      <div className={styles.pawContainer}>
-        <img src={paw} className={styles.paw} />
-        <img src={paw} className={styles.paw} />
-        <img src={paw} className={styles.paw} />
-        <img src={paw} className={styles.paw} />
-        <img src={paw} className={styles.paw} />
-        <img src={paw} className={styles.paw} />
-        <img src={paw} className={styles.paw} />
-        <img src={paw} className={styles.paw} />
-      </div>
-      <div>
-        <img src={heart} className={styles.heart} />
-        <img src={heart} className={styles.heart} />
-        <img src={heart} className={styles.heart} />
-        <img src={heart} className={styles.heart} />
-        <img src={heart} className={styles.heart} />
       </div>
     </main>
   );

@@ -7,17 +7,21 @@
 /* BACKGROUND */
 .bg {
   position: absolute;
-  height: 100dvh;
-  width: 100dvw;
+  min-height: 100dvh;
+  min-width: 100dvw;
+  left: 50%;
+  translate: -50% 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 2rem;
 }
 
-.bg div {
+.bg .bgRow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 /* MIDDLEGROUND */
@@ -47,7 +51,8 @@
 }
 
 .title {
-  width: 20rem;
+  max-width: 90%;
+  width: 22rem;
   height: min-content;
   font-family: "Outfit";
   text-align: center;

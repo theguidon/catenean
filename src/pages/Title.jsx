@@ -8,8 +8,8 @@ function Title() {
   return (
     <section className={styles.main}>
       <div className={styles.bg}>
-        {[...Array(7).keys()].map((e, i) => (
-          <div>
+        {[...Array(10).keys()].map((e, i) => (
+          <div className={styles.bgRow}>
             {i % 2 != 0 ? <div /> : <></>}
             {[...Array(10).keys()].map(() => (
               <img src={paw} alt="" />

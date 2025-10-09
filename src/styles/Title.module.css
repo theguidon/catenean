@@ -20,21 +20,32 @@
 }
 
 .fg {
-  position: relative;
-  height: 100dvh;
-  width: 100dvw;
+  position: absolute;
+  inset: 50% 0 0 50%;
+  translate: -50% -50%;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
 }
 
 .title {
-  position: absolute;
-  inset: 0 0 0 50%;
-  translate: -50% 0;
-  border: 1px solid red;
   width: 20rem;
   height: min-content;
 }
 
 .title img {
+  width: 100%;
+}
+
+.fg button {
+  background: none;
+  border: none;
+  width: 5rem;
+}
+
+.fg button img {
   width: 100%;
 }

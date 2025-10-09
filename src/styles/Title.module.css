@@ -18,3 +18,23 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.fg {
+  position: relative;
+  height: 100dvh;
+  width: 100dvw;
+  z-index: 10;
+}
+
+.title {
+  position: absolute;
+  inset: 0 0 0 50%;
+  translate: -50% 0;
+  border: 1px solid red;
+  width: 20rem;
+  height: min-content;
+}
+
+.title img {
+  width: 100%;
+}

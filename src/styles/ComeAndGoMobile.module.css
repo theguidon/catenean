@@ -553,4 +553,10 @@
     font-family: "Outfit";
     color: #522222;
   }
+
+  .main .cat1 {
+    width: 100vw;
+    height: auto;
+    display: block;
+  }
 }

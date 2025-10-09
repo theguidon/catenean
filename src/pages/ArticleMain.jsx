@@ -24,11 +24,15 @@ import bigHeart from "../assets/images/big-heart.svg";
 import threeCats from "../assets/images/three-cats.png";
 import paw from "../assets/images/paw.svg";
 import heart from "../assets/images/heart.svg";
+import FurmiliarFaces from "../components/mainarticle/FurmiliarFaces.jsx";
+import Credits from "../components/mainarticle/Conclusion.jsx";
 
 const ArticleMain = ({ setPage }) => {
   return (
     <main className={styles.main}>
-      <div className={styles.mapCorner} onClick={() => setPage("map")}>
+      <FurmiliarFaces></FurmiliarFaces>
+      <Credits></Credits>
+      {/* <div className={styles.mapCorner} onClick={() => setPage("map")}>
         <img src={MapFold} />
       </div>
       <div className={styles.mainArticle}>
@@ -364,7 +368,7 @@ const ArticleMain = ({ setPage }) => {
         <img src={heart} className={styles.heart} />
         <img src={heart} className={styles.heart} />
         <img src={heart} className={styles.heart} />
-      </div>
+      </div> */}
     </main>
   );
 };

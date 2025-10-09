@@ -1,0 +1,111 @@
+
+.main {
+  position: relative;
+}
+
+.main h3 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: "Cherry Swash";
+    text-align: center;
+    color: #E07329; 
+    -webkit-text-stroke: 12px #F9F4EB;
+    paint-order: stroke fill; 
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
+    line-height: 110%; 
+    letter-spacing: -2.4px;
+}
+
+.main p {
+  color: #522222;
+}
+
+.hero {
+  position: relative;
+  height: 20em;
+  width: 100%;
+  max-width: 40em;
+  margin: 0 auto;
+  min-height: 200px;
+}
+
+.house {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  height: auto;
+}
+
+.grass {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  height: auto;
+}
+
+.bush {
+  position: absolute;
+  bottom: 15%;
+  z-index: 3;
+  width: 18%;
+  height: auto;
+}
+
+.bush:first-of-type {
+  left: 15%;
+}
+
+.bush:last-of-type {
+  right: 15%;
+}
+
+article {
+  margin-top: 2em; 
+}
+
+article + article {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.quoteSection {
+  position: relative;
+  height: 25em;
+}
+
+.quote {
+  position: absolute;
+  color: #FAA685;
+  font-size: 5em;
+  font-weight: 700;
+  font-family: "Cherry Swash";
+}
+
+.quote:first-of-type {
+  left: 2%;
+}
+
+.quote:last-of-type {
+  right: 2%;
+}
+
+.quoteSection > p {
+  margin: 4em;
+}
+
+.helloCats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.helloCats img {
+  max-width: 80%;
+  height: auto;
+  width: 100%;
+}

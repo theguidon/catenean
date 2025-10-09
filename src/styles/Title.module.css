@@ -4,6 +4,7 @@
   width: 100dvw;
 }
 
+/* BACKGROUND */
 .bg {
   position: absolute;
   height: 100dvh;
@@ -19,6 +20,20 @@
   justify-content: space-between;
 }
 
+/* MIDDLEGROUND */
+.mg {
+  position: absolute;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.mg .catHouse {
+  width: 10rem;
+  position: absolute;
+  inset: auto auto 3rem -2rem;
+}
+
+/* FOREGROUND */
 .fg {
   position: absolute;
   inset: 50% 0 0 50%;
@@ -34,10 +49,17 @@
 .title {
   width: 20rem;
   height: min-content;
+  font-family: "Outfit";
+  text-align: center;
 }
 
 .title img {
   width: 100%;
+}
+
+.title p {
+  margin-top: 0.15rem;
+  margin-bottom: 1.5rem;
 }
 
 .fg button {

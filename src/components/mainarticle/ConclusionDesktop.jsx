@@ -5,10 +5,10 @@ import bylines from "../../data/bylines.json";
 import joinBylines from "../../utils/joinBylines";
 import cat1 from "../../assets/images/cats/1.jpeg";
 import cat2 from "../../assets/images/cats/2.jpeg";
-import { easeIn, easeInOut, easeOut, motion } from "motion/react";
-import { useState } from "react";
+import { easeInOut, easeOut, motion } from "motion/react";
 
 const ConclusionDesktop = () => {
+  // will remove overflow properties and background later on
   return (
     <section
       style={{

@@ -5,7 +5,7 @@ import bylines from "../../data/bylines.json";
 import joinBylines from "../../utils/joinBylines";
 import cat1 from "../../assets/images/cats/1.jpeg";
 import cat2 from "../../assets/images/cats/2.jpeg";
-import { easeInOut, easeOut, motion } from "motion/react";
+import { easeIn, easeInOut, easeOut, motion } from "motion/react";
 import { useState } from "react";
 
 const ConclusionDesktop = () => {
@@ -73,11 +73,12 @@ const ConclusionDesktop = () => {
       </section>
       <motion.section
         className={creditStyles.letter}
+        initial={{ top: "10vh", rotate: 0 }}
+        whileInView={{ top: "5vh", rotate: "5deg" }}
+        transition={{ duration: 0.75, ease: easeInOut }}
         style={{
           height: "100vh",
           position: "relative",
-          top: "5vh",
-          rotate: "5deg",
           minWidth: 528,
         }}
       >
@@ -101,13 +102,14 @@ const ConclusionDesktop = () => {
           or another human, the interconnectedness of the world&apos;s inhabitants reflect a need for respect, kindness, and empathy to build safe communities for all.
         </motion.p>
       </motion.section>
-      <section
+      <motion.section
         className={creditStyles.letter}
+        initial={{ top: "35vh", rotate: 0 }}
+        whileInView={{ top: "30vh", rotate: "-5deg" }}
+        transition={{ duration: 0.75, ease: easeInOut, delay: 0.2 }}
         style={{
           height: "100vh",
           position: "relative",
-          top: "30vh",
-          rotate: "-5deg",
           minWidth: 528,
         }}
       >
@@ -117,7 +119,7 @@ const ConclusionDesktop = () => {
           transition={{ duration: 2, ease: easeInOut }}
         >Beyond attention and affection, love has manifested in the Ateneo community through a commitment to caring for the Cateneans and an acknowledgement of their value as living beings.
         </motion.p>
-      </section>
+      </motion.section>
       <img
         src={paopao}
         style={{

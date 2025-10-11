@@ -1,8 +1,4 @@
 
-.main {
-  position: relative;
-}
-
 .main h3 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -14,57 +10,54 @@
     filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
     line-height: 110%; 
     letter-spacing: -2.4px;
+    margin-bottom: 1em;
+    
+}
+
+.main {
+  position: relative;
 }
 
 .main p {
   color: #522222;
 }
 
-.hero {
-  position: relative;
-  height: 20em;
-  width: 100%;
-  max-width: 40em;
-  margin: 0 auto;
-  min-height: 200px;
+.landingImage {
+  background-color: red;
 }
 
-.house {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
+.building {
+  position: relative;
+  left: 5%;
+  top: 10px;
   z-index: 2;
+  width: 90%;
   height: auto;
 }
 
 .grass {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  position: relative;
+  width: 150%;
+  right: 25%;
   height: auto;
 }
 
-.bush {
-  position: absolute;
-  bottom: 15%;
+.bushLeft {
+  position: relative;
+  right: 10%;
+  bottom: 110px;
   z-index: 3;
-  width: 18%;
+  width: 40%;
   height: auto;
 }
 
-.bush:first-of-type {
-  left: 15%;
-}
-
-.bush:last-of-type {
-  right: 15%;
-}
-
-article {
-  margin-top: 2em; 
+.bushRight {
+  position: relative;
+  left: 30%;
+  bottom: 110px;
+  z-index: 3;
+  width: 40%;
+  height: 100%;
 }
 
 article + article {
@@ -74,38 +67,69 @@ article + article {
 
 .quoteSection {
   position: relative;
-  height: 25em;
-}
-
-.quote {
-  position: absolute;
-  color: #FAA685;
-  font-size: 5em;
-  font-weight: 700;
-  font-family: "Cherry Swash";
-}
-
-.quote:first-of-type {
-  left: 2%;
-}
-
-.quote:last-of-type {
-  right: 2%;
+  height: auto;
 }
 
 .quoteSection > p {
+  position: relative;
   margin: 4em;
+  z-index: 5;
 }
 
 .helloCats {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2em 0;
+  width: 100%;
+  height: auto;
 }
 
 .helloCats img {
+  position: relative;
   max-width: 80%;
   height: auto;
   width: 100%;
+  left: 10%;
+}
+
+.helloCats h4 {
+  position: relative;
+  bottom: 80px;
+  right: 30%;
+  font-size: 1.5rem;
+  font-weight: 200;
+  font-family: "Cedarville Cursive Regular";
+  color: #2074A4;
+}
+
+.quoteBackground{
+  position: absolute;
+  top: -20%;
+  left: -25%;
+  width: 140%;
+  height: auto;
+  z-index: 0;
+  opacity: 75%;
+}
+
+.quotatiomarkLeft {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  font-family:  "Blairesque Gothic";
+  font-size: 20vw;
+  z-index: 5;
+  color: #FAA685;
+}
+
+.quotatiomarkRight {
+  position: absolute;
+  bottom: -20%;
+  font-family: "Blairesque Gothic";
+  right: 30px;
+  font-size: 20vw;
+  z-index: 5;  
+  color: #FAA685;
 }

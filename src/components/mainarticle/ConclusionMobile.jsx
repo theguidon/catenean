@@ -29,7 +29,7 @@ const Conclusion = () => {
         />
         <motion.section
           className={creditStyles.letter}
-          style={{ rotate: "5deg" }}
+          style={{ rotate: "5deg", width: "120%" }}
         >
           <p>The Cateneans stand as a testament to the human capacity
             to go above and beyond for animals. Resuello, Beunafe, Johnson, and

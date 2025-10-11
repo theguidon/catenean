@@ -1,5 +1,7 @@
 import styles from "../../styles/ComeAndGoMobile.module.css";
 import building from "../../assets/images/location-faura-building.svg";
+import cloud1 from "../../assets/images/cloud1.svg";
+import cloud2 from "../../assets/images/cloud2.svg";
 import cat1 from "../../assets/images/cats/17.png";
 
 const ComeAndGo = ({ setPage }) => {
@@ -25,14 +27,24 @@ const ComeAndGo = ({ setPage }) => {
           them are lucky enough to reach old age, some succumb to sickness, and
           some unfortunately fall victim to human callousness.
         </p>
-        <img className={styles.cat1} src={cat1} />
-        <p>
-          Johnson recounts the day Pao-Pao was run over because of “the reckless
-          imprudence of drivers.” He first heard the news of Pao-Pao’s passing
-          before his 5:00 PM class. When he came back at 6:30 PM, he recalled a
-          crowd of around 70 students gathering by the Schmitt Hall before they
-          headed to the SOM Forest, where Pao-Pao was buried.
-        </p>
+
+        <div className={styles.cloudWrapper}>
+          <img className={styles.cloud1} src={cloud1} />
+          <img className={styles.cloud2} src={cloud2} />
+          <img className={styles.cat1} src={cat1} />
+        </div>
+
+        <div style={{ backgroundColor: "#FFFAE9", padding: "2rem" }}>
+          {" "}
+          <p>
+            Johnson recounts the day Pao-Pao was run over because of “the
+            reckless imprudence of drivers.” He first heard the news of
+            Pao-Pao’s passing before his 5:00 PM class. When he came back at
+            6:30 PM, he recalled a crowd of around 70 students gathering by the
+            Schmitt Hall before they headed to the SOM Forest, where Pao-Pao was
+            buried.
+          </p>
+        </div>
       </div>
     </main>
   );

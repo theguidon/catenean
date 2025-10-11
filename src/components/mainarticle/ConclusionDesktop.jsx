@@ -74,7 +74,8 @@ const ConclusionDesktop = () => {
       <motion.section
         className={creditStyles.letter}
         initial={{ top: "10vh", rotate: 0 }}
-        whileInView={{ top: "5vh", rotate: "5deg" }}
+        whileInView={{ top: "7vh", rotate: "5deg" }}
+        whileHover={{ top: "3vh", rotate: "7deg" }}
         transition={{ duration: 0.75, ease: easeInOut }}
         style={{
           height: "100vh",
@@ -105,7 +106,8 @@ const ConclusionDesktop = () => {
       <motion.section
         className={creditStyles.letter}
         initial={{ top: "35vh", rotate: 0 }}
-        whileInView={{ top: "30vh", rotate: "-5deg" }}
+        whileInView={{ top: "32vh", rotate: "-5deg" }}
+        whileHover={{ top: "30vh", rotate: "-7deg" }}
         transition={{ duration: 0.75, ease: easeInOut, delay: 0.2 }}
         style={{
           height: "100vh",

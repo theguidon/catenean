@@ -1,0 +1,33 @@
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 16px;
+  grid-template-rows: 100%;
+  padding: 8vh 5vw 5vh;
+}
+
+.writeup {
+  grid-column: 1 / 9;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+.writeup>.heading {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.writeup>.content {
+  flex-grow: 3;
+  background: #ffffec;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 10px 10px 2px 0 rgba(94, 89, 82, 0.2);
+  white-space: pre-line;
+  font-family: "Outfit", sans-serif;
+}

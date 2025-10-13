@@ -8,19 +8,22 @@ function Game() {
     <>
     <section className={styles}>
         <main>
-        <div className={styles.nav}>
+        <div className={styles.heading}>
           <img src={VantLogo}></img>
-          <h1>Find Meow  <br/> way back home</h1>
+          <h1>Find Meow<br/> way back home</h1>
         </div>
           <div className={styles.gamearea}>
+            <div className={styles.droppable} style={{ left: '270px', top: '240px' }}></div>
+            <div className={styles.droppable} style={{ left: '230px', top: '90px' }}></div>
+            <div className={styles.droppable} style={{ right: '170px', top: '90px' }}></div>
+            <div className={styles.droppable} style={{ right: '105px', bottom: '220px' }}></div>
+            <div className={styles.droppable} style={{ left: '40px', bottom: '190px' }}></div>
             <img src={Map}></img>
             <h1 className={styles.submit}>Submit</h1>
           </div>
         </main>
         <aside>
-          <div>
-
-          </div>
+          {/* nav bar section */}
         </aside>
     </section>
     </>

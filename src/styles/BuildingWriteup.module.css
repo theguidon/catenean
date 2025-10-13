@@ -24,12 +24,15 @@
 
 .titleCaption h1 {
   font-family: "Solway", serif;
-  font-size: 4.5rem;
+  font-size: 8rem;
+  line-height: 6rem;
+  margin-top: 2.3rem;
 }
 
 .titleCaption h2 {
   font-family: "Outfit", sans-serif;
   font-weight: bold;
+  font-size: 2.5rem;
 }
 
 .writeup>.content {

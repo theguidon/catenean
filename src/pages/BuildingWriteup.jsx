@@ -15,8 +15,8 @@ export default function BuildingWriteup() {
         <section className={styles.heading}>
           <img src={`src/assets/images/${data.bldgImage}`} />
           <section className={styles.titleCaption}>
-            <h1>{data.name}</h1>
-            <h2>{data.caption}</h2>
+            <h1 style={{ color: data.nameColor }}>{data.name}</h1>
+            <h2 style={{ color: data.captionColor }}>{data.caption}</h2>
           </section>
         </section>
         <p className={styles.content}>

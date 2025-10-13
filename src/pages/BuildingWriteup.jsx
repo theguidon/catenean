@@ -17,8 +17,9 @@ export default function BuildingWriteup() {
         src={back}
         style={{
           position: "absolute",
-          top: "5%",
-          right: "5%",
+          top: "3vh",
+          right: "5vw",
+          width: "5vw"
         }}
       />
       <section className={styles.writeup}>

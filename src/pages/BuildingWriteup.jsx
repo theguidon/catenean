@@ -15,12 +15,7 @@ export default function BuildingWriteup() {
     >
       <img
         src={back}
-        style={{
-          position: "absolute",
-          top: "3vh",
-          right: "5vw",
-          width: "5vw"
-        }}
+        className={styles.backButton}
       />
       <section className={styles.writeup}>
         <section className={styles.heading}>

@@ -1,7 +1,7 @@
 import styles from "../../styles/InCaring.module.css";
 import building from "../../assets/images/schmitt-hall-w-deco.svg";
 import mag1 from "../../assets/images/mag1.svg";
-import catImg from "../../assets/images/cats/1.jpeg";
+import catImg from "../../assets/images/two_cats_plain.png";
 
 const InCaring = () => {
   return (
@@ -9,7 +9,7 @@ const InCaring = () => {
       <div className={styles.mainArticle}>
         <h3>In caring, caution, and commitment</h3>
 
-        <img className={styles.building} src={building} alt="" />
+        <img className={styles.building} src={building} alt="asset of schmitt hall"/>
 
         <p>
           To maintain students’ and the campus cats’ safety, one of AGILA’s
@@ -38,7 +38,7 @@ const InCaring = () => {
           manages the cat population through various University-wide programs.
         </p>
 
-        <img className={styles.imgStyle} src={mag1} alt="" />
+        <img className={styles.imgStyle} src={mag1} alt="image of cat"/>
 
         <p className={styles.quote}>
           “The best thing [students] can do regarding animal welfare advocacy,
@@ -64,7 +64,7 @@ const InCaring = () => {
           pets at home,” Guce says.
         </p>
 
-        <img className={styles.imgStyle} src={catImg} alt="" />
+        <img className={styles.twoCats} src={catImg} alt="image of 2 cats"/>
         
         <p>
           Those with pets at home may find it easy to approach the cats with

@@ -46,6 +46,14 @@
     margin: 3rem auto;
 }
 
+.twoCats {
+    width: 99%;
+    display: block;
+    margin: 4rem auto;
+    transform: rotate(-3deg);
+    outline: 7px solid white;
+}
+
 .quote {
     font-family: "Outfit";
     font-size: 1rem;

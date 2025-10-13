@@ -187,4 +187,17 @@
   .backButton {
     width: 10vw;
   }
+
+  .navArrows {
+    justify-content: start;
+    gap: 16px;
+  }
+
+  .navArrows .link p {
+    font-size: 4vw;
+  }
+
+  .navArrows .link img {
+    width: 6vw;
+  }
 }

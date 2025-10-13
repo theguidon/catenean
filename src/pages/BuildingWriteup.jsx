@@ -3,9 +3,25 @@ import styles from "../styles/BuildingWriteup.module.css";
 import bg from "../assets/images/Background.svg";
 import arrow from "../assets/images/Union.svg";
 import back from "../assets/images/Back.svg";
+import { useMediaQuery } from "react-responsive";
 
 export default function BuildingWriteup() {
   const data = buildings[0];
+  const isMobile = useMediaQuery({ query: '(max-width: 699px)' });
+
+  const NavArrows = () => (
+    <section className={styles.navArrows}>
+      <section className={`${styles.link} ${styles.back}`}>
+        <img src={arrow} />
+        <p>{data.back.toUpperCase()}</p>
+      </section>
+      <section className={`${styles.link} ${styles.next}`}>
+        <p>{data.next.toUpperCase()}</p>
+        <img src={arrow} />
+      </section>
+    </section>
+  );
+
   return (
     <main
       className={styles.main}
@@ -18,6 +34,7 @@ export default function BuildingWriteup() {
         className={styles.backButton}
       />
       <section className={styles.writeup}>
+        {isMobile && <NavArrows />}
         <section className={styles.heading}>
           <img src={`src/assets/images/${data.bldgImage}`} />
           <section className={styles.titleCaption}>
@@ -38,16 +55,7 @@ export default function BuildingWriteup() {
           <img src={`src/assets/images/cats/${data.cats[1].pic}`} />
           <p style={{ color: data.nameColor }} >{data.cats[1].name}</p>
         </article>
-        <section className={styles.navArrows}>
-          <section className={`${styles.link} ${styles.back}`}>
-            <img src={arrow} />
-            <p>{data.back.toUpperCase()}</p>
-          </section>
-          <section className={`${styles.link} ${styles.next}`}>
-            <p>{data.next.toUpperCase()}</p>
-            <img src={arrow} />
-          </section>
-        </section>
+        {!isMobile && <NavArrows />}
       </section>
     </main>
   );

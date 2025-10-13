@@ -1,4 +1,4 @@
-import styles from '../../styles/ArticleMainSectionLoneliness.module.css';
+import styles from '../../styles/InLonelinessMobile.module.css';
 import heartCatSmall1 from '../../assets/images/heart-cat-small-1-v2.png';
 import heartCatSmall2 from '../../assets/images/heart-cat-small-2-v2.png';
 import highFiveHeartBackground from '../../assets/images/highfive-heart-background.svg'
@@ -12,9 +12,9 @@ import darkBrownEllipses from '../../assets/images/dark-brown-ellipses.svg';
 import heartBackgroundShape from '../../assets/images/heart-background-shape.svg';
 import title from '../../assets/images/in-loneliness-furry-companions-title-mobile.svg';
 import { motion } from "framer-motion";
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-const ArticleSectionLoneliness = () => {
+const InLonelinessMobile = () => {
     const highFiveContainerRef = useRef(null);
     const highFiveWrapperRef = useRef(null);
 
@@ -58,19 +58,19 @@ const ArticleSectionLoneliness = () => {
                 <motion.img src={heartBackgroundShape}
                     initial={{opacity: 0, scale: 0}}
                     whileInView={{opacity: [1, 1, 1], scale: [0, 1.1, 1]}}
-                    transition={{duration: 1, ease: "easeOut", times:[0, 0.8, 1]}}
+                    transition={{duration: 0.5, ease: "easeOut", times:[0, 0.8, 1]}}
                     viewport={{ amount: 1, once: true }}
                 />
                 <motion.img src={heartBackgroundShape}
                     initial={{opacity: 0, scale: 0}}
                     whileInView={{opacity: [1, 1, 1], scale: [0, 1.1, 1]}}
-                    transition={{duration: 1, ease: "easeOut", times:[0, 0.8, 1], delay: 0.25}}
+                    transition={{duration: 0.5, ease: "easeOut", times:[0, 0.8, 1], delay: 0.125}}
                     viewport={{ amount: 1, once: true }}
                 />
                 <motion.img src={heartCatSmall1}
                     initial={{opacity: 0, scale: 0}}
                     whileInView={{opacity: [1, 1, 1], scale: [0, 1.1, 1]}}
-                    transition={{duration: 1, ease: "easeOut", times:[0, 0.8, 1], delay: 0.5}}
+                    transition={{duration: 0.5, ease: "easeOut", times:[0, 0.8, 1], delay: 0.25}}
                     viewport={{ amount: 1, once: true }}
                 />
             </motion.div>
@@ -90,19 +90,19 @@ const ArticleSectionLoneliness = () => {
                 <motion.img src={heartBackgroundShape}
                     initial={{opacity: 0, scale: 0}}
                     whileInView={{opacity: [1, 1, 1], scale: [0, 1.1, 1]}}
-                    transition={{duration: 1, ease: "easeOut", times:[0, 0.8, 1]}}
+                    transition={{duration: 0.5, ease: "easeOut", times:[0, 0.8, 1]}}
                     viewport={{ amount: 1, once: true }}
                 />
                 <motion.img src={heartBackgroundShape}
                     initial={{opacity: 0, scale: 0}}
                     whileInView={{opacity: [1, 1, 1], scale: [0, 1.1, 1]}}
-                    transition={{duration: 1, ease: "easeOut", times:[0, 0.8, 1], delay: 0.25}}
+                    transition={{duration: 0.5, ease: "easeOut", times:[0, 0.8, 1], delay: 0.125}}
                     viewport={{ amount: 1, once: true }}
                 />
                 <motion.img src={heartCatSmall2} 
                     initial={{opacity: 0, scale: 0}}
                     whileInView={{opacity: [1, 1, 1], scale: [0, 1.1, 1]}}
-                    transition={{duration: 1, ease: "easeOut", times:[0, 0.8, 1], delay: 0.5}}
+                    transition={{duration: 0.5, ease: "easeOut", times:[0, 0.8, 1], delay: 0.25}}
                     viewport={{ amount: 1, once: true }}
                 />
             </motion.div>
@@ -124,13 +124,13 @@ const ArticleSectionLoneliness = () => {
                 <motion.div className={styles.quote}
                 initial={{opacity: 0, y: 30}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 1, ease: "easeOut"}}
+                transition={{duration: 0.5, ease: "easeOut"}}
                 viewport={{ amount: 1, once: true }} 
                 >
                     <motion.p
                     initial={{opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 1, ease: "easeOut", delay: 1.5}} 
+                    transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
                     viewport={{ amount: 1, once: true }}
                     >
                         Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
@@ -139,7 +139,7 @@ const ArticleSectionLoneliness = () => {
                 <motion.p
                     initial={{opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 1, ease: "easeOut", delay: 2.5}} 
+                    transition={{duration: 0.5, ease: "easeOut", delay: 1.0}} 
                     viewport={{ amount: 1, once: true }}
                 >
                     he remarks.
@@ -149,13 +149,13 @@ const ArticleSectionLoneliness = () => {
                  <motion.div className={styles.quote}
                 initial={{opacity: 0, y: 30}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 1, ease: "easeOut"}}
+                transition={{duration: 0.5, ease: "easeOut"}}
                 viewport={{ amount: 1, once: true }} 
                 >
                     <motion.p
                     initial={{opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 1, ease: "easeOut", delay: 1.5}} 
+                    transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
                     viewport={{ amount: 1, once: true }}
                     >
                         They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
@@ -164,7 +164,7 @@ const ArticleSectionLoneliness = () => {
                 <motion.p
                     initial={{opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 1, ease: "easeOut", delay: 3}} 
+                    transition={{duration: 0.5, ease: "easeOut", delay: 1.0}} 
                     viewport={{ amount: 1, once: true }}
                 >
                     Buenafe adds.
@@ -189,4 +189,4 @@ const ArticleSectionLoneliness = () => {
     );
 }
 
-export default ArticleSectionLoneliness;
+export default InLonelinessMobile;

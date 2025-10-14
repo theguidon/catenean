@@ -1,7 +1,7 @@
-import ComeAndGoMobile from "./components/mainarticle/ComeAndGoMobile.jsx";
+import Navigation from "./Navigation.jsx";
 
 function App() {
-  return <ComeAndGoMobile />;
+  return <Navigation />;
 }
 
 export default App;

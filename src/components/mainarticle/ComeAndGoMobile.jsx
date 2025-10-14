@@ -34,7 +34,7 @@ const ComeAndGo = ({ setPage }) => {
           <img className={styles.cat1} src={cat1} />
         </div>
 
-        <div style={{ backgroundColor: "#FFFAE9", padding: "2rem" }}>
+        <div style={{ backgroundColor: "#FFFAE9", padding: "1rem 0 1rem" }}>
           {" "}
           <p>
             Johnson recounts the day Pao-Pao was run over because of “the

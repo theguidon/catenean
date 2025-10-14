@@ -1,70 +1,50 @@
-
-.main h3 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    font-family: "Cherry Swash";
-    text-align: center;
-    color: #E07329; 
-    -webkit-text-stroke: 12px #F9F4EB;
-    paint-order: stroke fill; 
-    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
-    line-height: 110%; 
-    letter-spacing: -2.4px;
-    margin-bottom: 1em;
-    
+.main {
+  background: #F2DAAD;
 }
 
-.main {
-  position: relative;
+.main h3 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Solway";
+  text-align: center;
+  color: #E07329; 
+  -webkit-text-stroke: 12px #F9F4EB;
+  paint-order: stroke fill; 
+  filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
+  line-height: 110%; 
+  letter-spacing: -2.4px;
+  padding: 1em 0;
+  
 }
 
 .main p {
   color: #522222;
+  font-family: "AndesNeue Alt 2 Book";
+  padding: 0 3em 2em 3em;
 }
 
-.landingImage {
-  background-color: red;
-}
-
-.building {
+section {
   position: relative;
-  left: 5%;
-  top: 10px;
-  z-index: 2;
-  width: 90%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   height: auto;
 }
 
-.grass {
-  position: relative;
-  width: 150%;
-  right: 25%;
-  height: auto;
+article {
+  margin: 4em 0;
 }
 
-.bushLeft {
-  position: relative;
-  right: 10%;
-  bottom: 110px;
-  z-index: 3;
-  width: 40%;
-  height: auto;
+.hero {
+  width: 100%;
+  overflow: hidden;
+  height: 25vh;
 }
 
-.bushRight {
-  position: relative;
-  left: 30%;
-  bottom: 110px;
-  z-index: 3;
-  width: 40%;
-  height: 100%;
+img {
+  position: absolute;
+  transform-origin: 50% 50%;  
 }
-
-article + article {
-  margin-top: 5em;
-  margin-bottom: 5em;
-}
-
 .quoteSection {
   position: relative;
   height: auto;
@@ -72,64 +52,33 @@ article + article {
 
 .quoteSection > p {
   position: relative;
-  margin: 4em;
-  z-index: 5;
+
+  z-index: 2;
 }
 
-.helloCats {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2em 0;
-  width: 100%;
-  height: auto;
+.helloCats{
+  height: 50vh;
+}
+
+.helloCats h4{
+  position: absolute;
+  color: #2074A4;
+  font-family: 'Outfit';
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  /* Position relative to the speech bubble - adjust these values as needed */
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
 }
 
 .helloCats img {
-  position: relative;
-  max-width: 80%;
-  height: auto;
+  bottom: 2%;
+  left: 2%;
   width: 100%;
-  left: 10%;
 }
 
-.helloCats h4 {
-  position: relative;
-  bottom: 80px;
-  right: 30%;
-  font-size: 1.5rem;
-  font-weight: 200;
-  font-family: "Cedarville Cursive Regular";
-  color: #2074A4;
-}
-
-.quoteBackground{
-  position: absolute;
-  top: -20%;
-  left: -25%;
-  width: 140%;
-  height: auto;
-  z-index: 0;
-  opacity: 75%;
-}
-
-.quotatiomarkLeft {
-  position: absolute;
-  top: -10%;
-  left: 0;
-  font-family:  "Blairesque Gothic";
-  font-size: 20vw;
-  z-index: 5;
-  color: #FAA685;
-}
-
-.quotatiomarkRight {
-  position: absolute;
-  bottom: -20%;
-  font-family: "Blairesque Gothic";
-  right: 30px;
-  font-size: 20vw;
-  z-index: 5;  
-  color: #FAA685;
+.quote  {
+  font-family: 'Outfit';
+  color: black;
 }

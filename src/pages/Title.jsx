@@ -7,17 +7,6 @@ import catHouse from "../assets/images/cat-house.svg";
 function Title() {
   return (
     <section className={styles.main}>
-      <div className={styles.bg}>
-        {[...Array(10).keys()].map((e, i) => (
-          <div className={styles.bgRow}>
-            {i % 2 != 0 ? <div /> : <></>}
-            {[...Array(10).keys()].map(() => (
-              <img src={paw} alt="" />
-            ))}
-            {i % 2 == 0 ? <div /> : <></>}
-          </div>
-        ))}
-      </div>
       <div className={styles.mg}>
         <img className={styles.catHouse} src={catHouse} alt="" />
       </div>

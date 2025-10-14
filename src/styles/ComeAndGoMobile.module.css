@@ -548,7 +548,7 @@
 
   .main p {
     font-weight: 400;
-    margin: 1rem 15vh 1rem;
+    margin: 1rem 15vw 1rem;
     font-family: "Outfit";
     color: #522222;
   }
@@ -563,7 +563,7 @@
     width: 100vw;
     height: auto;
     display: block;
-    margin-bottom: -3rem;
+    margin-bottom: -2rem;
   }
 
   .main .cloudWrapper {

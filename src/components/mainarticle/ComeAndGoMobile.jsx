@@ -3,6 +3,7 @@ import building from "../../assets/images/location-faura-building.svg";
 import cloud1 from "../../assets/images/cloud1.svg";
 import cloud2 from "../../assets/images/cloud2.svg";
 import cat1 from "../../assets/images/cats/17.png";
+import heart1 from "../../assets/images/heart1.svg";
 
 const ComeAndGo = ({ setPage }) => {
   return (
@@ -31,7 +32,10 @@ const ComeAndGo = ({ setPage }) => {
         <div className={styles.cloudWrapper}>
           <img className={styles.cloud1} src={cloud1} />
           <img className={styles.cloud2} src={cloud2} />
-          <img className={styles.cat1} src={cat1} />
+          <div className={styles.cat1}>
+            <img className={styles.cat1} src={cat1} />
+            <img className={styles.heart1} src={heart1} />
+          </div>
         </div>
 
         <div style={{ backgroundColor: "#FFFAE9", padding: "1rem 0 1rem" }}>

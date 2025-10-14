@@ -30,7 +30,7 @@
   height: fit-content;
 }
 
-.title {
+.fg .title {
   max-width: 90%;
   width: 22rem;
   height: min-content;
@@ -38,11 +38,11 @@
   text-align: center;
 }
 
-.title img {
+.fg .title img {
   width: 100%;
 }
 
-.title p {
+.fg .title p {
   margin-top: 0.15rem;
   margin-bottom: 1.5rem;
 }
@@ -62,12 +62,42 @@
     width: 15rem;
     inset: auto auto 4rem -3rem;
   }
+
+  .fg {
+    .title {
+      width: 35rem;
+    }
+
+    .title p {
+      margin-top: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    button {
+      width: 6rem;
+    }
+  }
 }
 
 @media (min-width: 768px) {
   .mg .catHouse {
     width: 20rem;
     inset: auto auto 5rem -4rem;
+  }
+
+  .fg {
+    .title {
+      width: 40rem;
+    }
+
+    .title p {
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      width: 6rem;
+    }
   }
 }
 
@@ -76,11 +106,43 @@
     width: 28rem;
     inset: auto auto 6rem -5rem;
   }
+
+  .fg {
+    .title {
+      width: 50rem;
+    }
+
+    .title p {
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+      font-size: 1.25rem;
+    }
+
+    button {
+      width: 8rem;
+    }
+  }
 }
 
 @media (min-width: 1280px) {
   .mg .catHouse {
     width: 35rem;
     inset: auto auto 6rem -7rem;
+  }
+
+  .fg {
+    .title {
+      width: 62rem;
+    }
+
+    .title p {
+      margin-top: 1.25rem;
+      margin-bottom: 4rem;
+      font-size: 1.5rem;
+    }
+
+    button {
+      width: 9rem;
+    }
   }
 }

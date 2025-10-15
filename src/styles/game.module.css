@@ -1,6 +1,6 @@
 section {
   background-color: #A0D8CF;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   padding: 5%;
@@ -16,7 +16,7 @@ section {
   position: relative;
 }
 
-.droppable{
+.droppable {
   border: 2px solid red;
   width: 120px;
   height: 120px;
@@ -64,4 +64,3 @@ section {
 aside {
   width: 50%;
 }
-

@@ -22,10 +22,13 @@ main {
 }
 
 .droppable {
-  border: 2px solid red;
-  width: 120px;
-  height: 120px;
+  border: 0px solid red;
+  width: 160px;
+  aspect-ratio: 1 / 1;
   position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .heading {
@@ -125,5 +128,19 @@ aside.buttons {
 }
 
 .draggables img {
+  max-width: 100%;
+}
+
+.droppable img:nth-child(1) {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  max-width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+.droppable img:nth-child(2) {
+  grid-row: 2 / -1;
+  grid-column: 2 / -1;
   max-width: 100%;
 }

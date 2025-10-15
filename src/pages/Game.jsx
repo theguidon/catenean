@@ -50,7 +50,7 @@ function Game() {
     "dragBldg5",
   ]);
 
-  const [menu, setMenu] = useState("cats");
+  const [menu, setMenu] = useState("cat");
 
   const [dropState, setDropState] = useState({
     "droppable1": { "cat": null, "building": null },
@@ -60,16 +60,17 @@ function Game() {
     "droppable5": { "cat": null, "building": null },
   });
 
-  function setDropCat(dropId, dragId) {
+  function dropItem(dropId, dragId, key) {
     const dropCopy = { ...dropState };
-    dropCopy[dropId].cat = dragCats[dragId];
+    dropCopy[dropId][key] = (menu == "cat" ? dragCats[dragId] : dragBldgs[dragId]);
     setDropState(dropCopy);
   }
 
   function handleDragEnd(event) {
     if (event.over && event.over.id.startsWith("droppable")) {
-      setDropCat(event.over.id, event.active.id);
+      dropItem(event.over.id, event.active.id, menu);
       setCats(cats.filter((cat) => cat != event.active.id));
+      setBldgs(bldgs.filter((bldg) => bldg != event.active.id));
     }
   }
 
@@ -82,24 +83,24 @@ function Game() {
             <h1>Find Meow<br /> way back home</h1>
           </div>
           <div className={styles.gamearea}>
-            <Droppable id="droppable1" className={styles.droppable} style={{ left: '270px', top: '240px' }}>
+            <Droppable id="droppable1" className={styles.droppable} style={{ left: '255px', top: '220px' }}>
               <img src={dropState["droppable1"].building} />
               <img src={dropState["droppable1"].cat} />
             </Droppable>
-            <Droppable id="droppable2" className={styles.droppable} style={{ left: '230px', top: '90px' }}>
-              <img src={dropState["droppable1"].building} />
+            <Droppable id="droppable2" className={styles.droppable} style={{ left: '230px', top: '60px' }}>
+              <img src={dropState["droppable2"].building} />
               <img src={dropState["droppable2"].cat} />
             </Droppable>
-            <Droppable id="droppable3" className={styles.droppable} style={{ right: '170px', top: '90px' }}>
-              <img src={dropState["droppable1"].building} />
+            <Droppable id="droppable3" className={styles.droppable} style={{ right: '160px', top: '60px' }}>
+              <img src={dropState["droppable3"].building} />
               <img src={dropState["droppable3"].cat} />
             </Droppable>
-            <Droppable id="droppable4" className={styles.droppable} style={{ right: '105px', bottom: '220px' }}>
-              <img src={dropState["droppable1"].building} />
+            <Droppable id="droppable4" className={styles.droppable} style={{ right: '80px', bottom: '210px' }}>
+              <img src={dropState["droppable4"].building} />
               <img src={dropState["droppable4"].cat} />
             </Droppable>
-            <Droppable id="droppable5" className={styles.droppable} style={{ left: '40px', bottom: '190px' }}>
-              <img src={dropState["droppable1"].building} />
+            <Droppable id="droppable5" className={styles.droppable} style={{ left: '24px', bottom: '180px' }}>
+              <img src={dropState["droppable5"].building} />
               <img src={dropState["droppable5"].cat} />
             </Droppable>
             <img src={Map}></img>
@@ -107,7 +108,7 @@ function Game() {
           </div>
         </main>
         <aside className={styles.draggables}>
-          {menu == "cats" ?
+          {menu == "cat" ?
             (cats.map((catId) => (
               <Draggable key={catId} id={catId}>
                 <img src={dragCats[catId]} />
@@ -121,10 +122,10 @@ function Game() {
         </aside>
         <aside className={styles.buttons}>
           <p>00:00</p>
-          <button onClick={() => setMenu("cats")} style={{ rotate: "15deg" }}>
+          <button onClick={() => setMenu("cat")} style={{ rotate: "15deg" }}>
             <img src={catButton} />
           </button>
-          <button onClick={() => setMenu("bldgs")} style={{ rotate: "-15deg" }}>
+          <button onClick={() => setMenu("building")} style={{ rotate: "-15deg" }}>
             <img src={bldgButton} />
           </button>
           <button style={{ rotate: "15deg" }}>

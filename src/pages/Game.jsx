@@ -2,12 +2,17 @@ import styles from "../styles/game.module.css";
 import Map from "../assets/images/game/map.svg";
 import VantLogo from "../assets/images/game/VantLogo.svg";
 import Droppable from "../components/game/Droppable";
+import Draggable from "../components/game/Draggable";
+import paopao from "../assets/images/game/cats/paopao.svg";
+import homecats from "../assets/images/game/cats/homecats.svg";
+import twocats from "../assets/images/game/cats/twocats.svg";
+import threecats from "../assets/images/game/cats/threecats.svg";
 import { DndContext, closestCenter } from '@dnd-kit/core';
 
 function Game() {
   return (
     <DndContext>
-      <section className={styles}>
+      <section>
         <main>
           <div className={styles.heading}>
             <img src={VantLogo}></img>
@@ -23,8 +28,19 @@ function Game() {
             <h1 className={styles.submit}>Submit</h1>
           </div>
         </main>
-        <aside>
-          {/* nav bar section */}
+        <aside className={styles.draggables}>
+          <Draggable id="draggable1">
+            <img src={twocats} />
+          </Draggable>
+          <Draggable id="draggable2">
+            <img src={threecats} />
+          </Draggable>
+          <Draggable id="draggable3">
+            <img src={paopao} />
+          </Draggable>
+          <Draggable id="draggable4">
+            <img src={homecats} />
+          </Draggable>
         </aside>
       </section>
     </DndContext>

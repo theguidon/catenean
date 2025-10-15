@@ -8,10 +8,46 @@ import homecats from "../assets/images/game/cats/homecats.svg";
 import twocats from "../assets/images/game/cats/twocats.svg";
 import threecats from "../assets/images/game/cats/threecats.svg";
 import { DndContext, closestCenter } from '@dnd-kit/core';
+import { useState } from "react";
 
 function Game() {
+  const dragCats = {
+    "draggable1": twocats,
+    "draggable2": threecats,
+    "draggable3": paopao,
+    "draggable4": homecats,
+  };
+
+  const [cats, setCats] = useState([
+    "draggable1",
+    "draggable2",
+    "draggable3",
+    "draggable4",
+  ]);
+
+  const [dropState, setDropState] = useState({
+    "droppable1": null,
+    "droppable2": null,
+    "droppable3": null,
+    "droppable4": null,
+    "droppable5": null
+  });
+
+  function setDropCat(dropId, dragId) {
+    const dropCopy = { ...dropState };
+    dropCopy[dropId] = dragCats[dragId];
+    setDropState(dropCopy);
+  }
+
+  function handleDragEnd(event) {
+    if (event.over && event.over.id.startsWith("droppable")) {
+      setDropCat(event.over.id, event.active.id);
+      setCats(cats.filter((cat) => cat != event.active.id));
+    }
+  }
+
   return (
-    <DndContext>
+    <DndContext onDragEnd={handleDragEnd}>
       <section>
         <main>
           <div className={styles.heading}>
@@ -19,28 +55,31 @@ function Game() {
             <h1>Find Meow<br /> way back home</h1>
           </div>
           <div className={styles.gamearea}>
-            <Droppable id="droppable1" className={styles.droppable} style={{ left: '270px', top: '240px' }} />
-            <Droppable id="droppable2" className={styles.droppable} style={{ left: '230px', top: '90px' }} />
-            <Droppable id="droppable3" className={styles.droppable} style={{ right: '170px', top: '90px' }} />
-            <Droppable id="droppable4" className={styles.droppable} style={{ right: '105px', bottom: '220px' }} />
-            <Droppable id="droppable5" className={styles.droppable} style={{ left: '40px', bottom: '190px' }} />
+            <Droppable id="droppable1" className={styles.droppable} style={{ left: '270px', top: '240px' }}>
+              <img src={dropState["droppable1"]} />
+            </Droppable>
+            <Droppable id="droppable2" className={styles.droppable} style={{ left: '230px', top: '90px' }}>
+              <img src={dropState["droppable2"]} />
+            </Droppable>
+            <Droppable id="droppable3" className={styles.droppable} style={{ right: '170px', top: '90px' }}>
+              <img src={dropState["droppable3"]} />
+            </Droppable>
+            <Droppable id="droppable4" className={styles.droppable} style={{ right: '105px', bottom: '220px' }}>
+              <img src={dropState["droppable4"]} />
+            </Droppable>
+            <Droppable id="droppable5" className={styles.droppable} style={{ left: '40px', bottom: '190px' }}>
+              <img src={dropState["droppable5"]} />
+            </Droppable>
             <img src={Map}></img>
             <h1 className={styles.submit}>Submit</h1>
           </div>
         </main>
         <aside className={styles.draggables}>
-          <Draggable id="draggable1">
-            <img src={twocats} />
-          </Draggable>
-          <Draggable id="draggable2">
-            <img src={threecats} />
-          </Draggable>
-          <Draggable id="draggable3">
-            <img src={paopao} />
-          </Draggable>
-          <Draggable id="draggable4">
-            <img src={homecats} />
-          </Draggable>
+          {cats.map((catId) => (
+            <Draggable key={catId} id={catId}>
+              <img src={dragCats[catId]} />
+            </Draggable>
+          ))}
         </aside>
       </section>
     </DndContext>

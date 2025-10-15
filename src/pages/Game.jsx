@@ -7,6 +7,10 @@ import paopao from "../assets/images/game/cats/paopao.svg";
 import homecats from "../assets/images/game/cats/homecats.svg";
 import twocats from "../assets/images/game/cats/twocats.svg";
 import threecats from "../assets/images/game/cats/threecats.svg";
+import catButton from "../assets/images/game/NavIcons/Cats.svg";
+import bldgButton from "../assets/images/game/NavIcons/Buildings.svg";
+import clueButton from "../assets/images/game/NavIcons/Clues.svg";
+import menuButton from "../assets/images/game/NavIcons/Instructions.svg";
 import { DndContext, closestCenter } from '@dnd-kit/core';
 import { useState } from "react";
 
@@ -80,6 +84,21 @@ function Game() {
               <img src={dragCats[catId]} />
             </Draggable>
           ))}
+        </aside>
+        <aside className={styles.buttons}>
+          <p>00:00</p>
+          <button style={{ rotate: "15deg" }}>
+            <img src={catButton} />
+          </button>
+          <button style={{ rotate: "-15deg" }}>
+            <img src={bldgButton} />
+          </button>
+          <button style={{ rotate: "15deg" }}>
+            <img src={clueButton} />
+          </button>
+          <button style={{ rotate: "-15deg" }}>
+            <img src={menuButton} />
+          </button>
         </aside>
       </section>
     </DndContext>

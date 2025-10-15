@@ -1,6 +1,8 @@
 section {
   background-color: #A0D8CF;
   min-height: 100vh;
+  min-width: 100vw;
+  overflow: scroll;
   display: flex;
   flex-flow: row no-wrap;
 }
@@ -70,10 +72,48 @@ aside {
   flex-flow: column nowrap;
 }
 
+aside.buttons {
+  align-items: center;
+  padding-top: 5vh;
+}
+
+.buttons p {
+  font-family: "Cherry Swash", serif;
+  font-weight: bold;
+  font-size: 32px;
+  padding-bottom: 8vh;
+}
+
+.buttons button {
+  border: none;
+  background: #3b756c;
+  height: 5vw;
+  width: 5vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px #24544d;
+  transition: 250ms ease-in-out all;
+  margin-bottom: 3vh;
+}
+
+.buttons button img {
+  width: 50%;
+  height: 50%;
+}
+
+.buttons button:hover,
+.buttons button:active {
+  transform: translateY(-5px);
+  box-shadow: 0px 7px #24544d;
+}
+
 .draggables {
   background-color: rgba(84, 147, 137, 0.58);
-  margin-left: 10%;
   min-width: 15vw;
+  margin: 0 10vw 0 5vw;
   padding: 5% 2%;
   justify-content: space-evenly;
   align-items: stretch;

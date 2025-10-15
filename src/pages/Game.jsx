@@ -50,6 +50,8 @@ function Game() {
     "dragBldg5",
   ]);
 
+  const [menu, setMenu] = useState("cats");
+
   const [dropState, setDropState] = useState({
     "droppable1": { "cat": null, "building": null },
     "droppable2": { "cat": null, "building": null },
@@ -105,18 +107,24 @@ function Game() {
           </div>
         </main>
         <aside className={styles.draggables}>
-          {cats.map((catId) => (
-            <Draggable key={catId} id={catId}>
-              <img src={dragCats[catId]} />
-            </Draggable>
-          ))}
+          {menu == "cats" ?
+            (cats.map((catId) => (
+              <Draggable key={catId} id={catId}>
+                <img src={dragCats[catId]} />
+              </Draggable>
+            ))) :
+            (bldgs.map((bldgId) => (
+              <Draggable key={bldgId} id={bldgId}>
+                <img src={dragBldgs[bldgId]} />
+              </Draggable>
+            )))}
         </aside>
         <aside className={styles.buttons}>
           <p>00:00</p>
-          <button style={{ rotate: "15deg" }}>
+          <button onClick={() => setMenu("cats")} style={{ rotate: "15deg" }}>
             <img src={catButton} />
           </button>
-          <button style={{ rotate: "-15deg" }}>
+          <button onClick={() => setMenu("bldgs")} style={{ rotate: "-15deg" }}>
             <img src={bldgButton} />
           </button>
           <button style={{ rotate: "15deg" }}>

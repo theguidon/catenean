@@ -123,3 +123,7 @@ aside.buttons {
   display: flex;
   justify-content: center;
 }
+
+.draggables img {
+  max-width: 100%;
+}

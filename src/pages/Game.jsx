@@ -7,6 +7,10 @@ import paopao from "../assets/images/game/cats/paopao.svg";
 import homecats from "../assets/images/game/cats/homecats.svg";
 import twocats from "../assets/images/game/cats/twocats.svg";
 import threecats from "../assets/images/game/cats/threecats.svg";
+import arete from "../assets/images/game/buildings/arete.svg";
+import mvp from "../assets/images/game/buildings/mvp.svg";
+import faura from "../assets/images/game/buildings/faura.svg";
+import schmitt from "../assets/images/game/buildings/schmitt.svg";
 import catButton from "../assets/images/game/NavIcons/Cats.svg";
 import bldgButton from "../assets/images/game/NavIcons/Buildings.svg";
 import clueButton from "../assets/images/game/NavIcons/Clues.svg";
@@ -16,30 +20,44 @@ import { useState } from "react";
 
 function Game() {
   const dragCats = {
-    "draggable1": twocats,
-    "draggable2": threecats,
-    "draggable3": paopao,
-    "draggable4": homecats,
+    "dragCat1": twocats,
+    "dragCat2": threecats,
+    "dragCat3": paopao,
+    "dragCat4": homecats,
+  };
+
+  const dragBldgs = {
+    "dragBldg1": faura,
+    "dragBldg2": schmitt,
+    "dragBldg3": arete,
+    "dragBldg4": mvp,
   };
 
   const [cats, setCats] = useState([
-    "draggable1",
-    "draggable2",
-    "draggable3",
-    "draggable4",
+    "dragCat1",
+    "dragCat2",
+    "dragCat3",
+    "dragCat4",
+  ]);
+
+  const [bldgs, setBldgs] = useState([
+    "dragBldg1",
+    "dragBldg2",
+    "dragBldg3",
+    "dragBldg4",
   ]);
 
   const [dropState, setDropState] = useState({
-    "droppable1": null,
-    "droppable2": null,
-    "droppable3": null,
-    "droppable4": null,
-    "droppable5": null
+    "droppable1": { "cat": null, "building": null },
+    "droppable2": { "cat": null, "building": null },
+    "droppable3": { "cat": null, "building": null },
+    "droppable4": { "cat": null, "building": null },
+    "droppable5": { "cat": null, "building": null },
   });
 
   function setDropCat(dropId, dragId) {
     const dropCopy = { ...dropState };
-    dropCopy[dropId] = dragCats[dragId];
+    dropCopy[dropId].cat = dragCats[dragId];
     setDropState(dropCopy);
   }
 
@@ -60,19 +78,24 @@ function Game() {
           </div>
           <div className={styles.gamearea}>
             <Droppable id="droppable1" className={styles.droppable} style={{ left: '270px', top: '240px' }}>
-              <img src={dropState["droppable1"]} />
+              <img src={dropState["droppable1"].building} />
+              <img src={dropState["droppable1"].cat} />
             </Droppable>
             <Droppable id="droppable2" className={styles.droppable} style={{ left: '230px', top: '90px' }}>
-              <img src={dropState["droppable2"]} />
+              <img src={dropState["droppable1"].building} />
+              <img src={dropState["droppable2"].cat} />
             </Droppable>
             <Droppable id="droppable3" className={styles.droppable} style={{ right: '170px', top: '90px' }}>
-              <img src={dropState["droppable3"]} />
+              <img src={dropState["droppable1"].building} />
+              <img src={dropState["droppable3"].cat} />
             </Droppable>
             <Droppable id="droppable4" className={styles.droppable} style={{ right: '105px', bottom: '220px' }}>
-              <img src={dropState["droppable4"]} />
+              <img src={dropState["droppable1"].building} />
+              <img src={dropState["droppable4"].cat} />
             </Droppable>
             <Droppable id="droppable5" className={styles.droppable} style={{ left: '40px', bottom: '190px' }}>
-              <img src={dropState["droppable5"]} />
+              <img src={dropState["droppable1"].building} />
+              <img src={dropState["droppable5"].cat} />
             </Droppable>
             <img src={Map}></img>
             <h1 className={styles.submit}>Submit</h1>

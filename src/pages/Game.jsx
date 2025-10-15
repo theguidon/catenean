@@ -11,6 +11,7 @@ import arete from "../assets/images/game/buildings/arete.svg";
 import mvp from "../assets/images/game/buildings/mvp.svg";
 import faura from "../assets/images/game/buildings/faura.svg";
 import schmitt from "../assets/images/game/buildings/schmitt.svg";
+import ctc from "../assets/images/game/buildings/ctc.svg";
 import catButton from "../assets/images/game/NavIcons/Cats.svg";
 import bldgButton from "../assets/images/game/NavIcons/Buildings.svg";
 import clueButton from "../assets/images/game/NavIcons/Clues.svg";
@@ -31,6 +32,7 @@ function Game() {
     "dragBldg2": schmitt,
     "dragBldg3": arete,
     "dragBldg4": mvp,
+    "dragBldg5": ctc,
   };
 
   const [cats, setCats] = useState([
@@ -45,6 +47,7 @@ function Game() {
     "dragBldg2",
     "dragBldg3",
     "dragBldg4",
+    "dragBldg5",
   ]);
 
   const [dropState, setDropState] = useState({

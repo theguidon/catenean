@@ -11,8 +11,26 @@ import schmittHallBuilding from '../../assets/images/location-schmitt-hall-build
 import darkBrownEllipses from '../../assets/images/dark-brown-ellipses.svg';
 import heartBackgroundShape from '../../assets/images/heart-background-shape.svg';
 import title from '../../assets/images/in-loneliness-furry-companions-title-mobile.svg';
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useRef } from 'react';
+
+const pullout = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      duration: 0.5,
+      staggerChildren: 1, // instead of `delayChildren: stagger(1)`
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+};
+
 
 const InLonelinessMobile = () => {
     const highFiveContainerRef = useRef(null);
@@ -120,58 +138,49 @@ const InLonelinessMobile = () => {
                 encyclical when talking about the importance of caring for animals, mentioning that the way we 
                 treat the vulnerable, including animals, reflects who we are as people.
             </p>
-            <div className={styles.smallQuoteContainer}>
+            <motion.div className={styles.smallQuoteContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ amount: 0.6, once: true }}
+                    transition={{ delayChildren: 0.25, staggerChildren: 0.5 }}
+                >
                 <motion.div className={styles.quote}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, ease: "easeOut"}}
-                viewport={{ amount: 1, once: true }} 
+                variants={{ hidden:{opacity:0}, show:{opacity:1, transition: { duration: 1.0, ease: "easeOut" }}}}
                 >
                     <motion.p
-                    initial={{opacity: 0, y: 30}}
-                    whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
-                    viewport={{ amount: 1, once: true }}
-                    style={{marginBottom: 0}}
+                    variants={{ hidden:{opacity:0}, show:{opacity:1, transition: { duration: 0.75, ease: "easeOut", delay: 1}}}} style={{marginBottom:0}}
                     >
                         Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
                     </motion.p>
                 </motion.div>
                 <motion.p
-                    initial={{opacity: 0, y: 30}}
-                    whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, ease: "easeOut", delay: 1.0}} 
-                    viewport={{ amount: 1, once: true }}
+                    variants={{ hidden:{opacity:0}, show:{opacity:1, transition: { duration: 0.75, ease: "easeOut", delay: 1.5}}}}
                 >
                     he remarks.
                 </motion.p>
-            </div>
-            <div className={styles.smallQuoteContainer}>
-                 <motion.div className={styles.quote}
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, ease: "easeOut"}}
-                viewport={{ amount: 1, once: true }} 
+            </motion.div>
+            <motion.div className={styles.smallQuoteContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ amount: 0.6, once: true }}
+                    transition={{ delayChildren: 0.25, staggerChildren: 0.5 }}
+                >
+                <motion.div className={styles.quote}
+                variants={{ hidden:{opacity:0}, show:{opacity:1, transition: { duration: 1.0, ease: "easeOut" }}}}
                 >
                     <motion.p
-                    initial={{opacity: 0, y: 30}}
-                    whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
-                    viewport={{ amount: 1, once: true }}
-                    style={{marginBottom: 0}}
+                    variants={{ hidden:{opacity:0}, show:{opacity:1, transition: { duration: 0.75, ease: "easeOut", delay: 1}}}} style={{marginBottom:0}}
                     >
                         They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
                     </motion.p>
                 </motion.div>
                 <motion.p
-                    initial={{opacity: 0, y: 30}}
-                    whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, ease: "easeOut", delay: 1.0}} 
-                    viewport={{ amount: 1, once: true }}
+                    variants={{ hidden:{opacity:0}, show:{opacity:1, transition: { duration: 0.75, ease: "easeOut", delay: 1.5 }}}}
                 >
                     Buenafe adds.
                 </motion.p>
-            </div>
+            </motion.div>
+            
             <p>
                 The couple embodies this mercy by providing their support to the student organization AGILA, 
                 such as helping them transport the cats to the veterinarian as needed. AGILA’s advocacy is to 

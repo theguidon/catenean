@@ -1,5 +1,5 @@
 import styles from "../styles/game.module.css";
-import Map from "../assets/images/game/map.svg";
+import Map from "../assets/images/game/Map.svg";
 import VantLogo from "../assets/images/game/VantLogo.svg";
 import Droppable from "../components/game/Droppable";
 import Draggable from "../components/game/Draggable";
@@ -67,18 +67,42 @@ function Game() {
     droppable5: { "cat": null, "building": null },
   });
 
+  function isDropped(dropId) {
+    return dropState[dropId]["building"];
+  }
+
+  function restoreDrag(picture, menu) {
+    if (picture) {
+      const dragId = Object.keys(dragPics[menu]).find((id) => dragPics[menu][id] == picture);
+      const dragsCopy = { ...drags };
+      dragsCopy[menu].push(dragId);
+      setDrags(dragsCopy);
+    }
+  }
+
+  function removeDrag(dragId, menu) {
+    const dragsCopy = { ...drags };
+    dragsCopy[menu] = dragsCopy[menu].filter((id) => id != dragId);
+    setDrags(dragsCopy);
+  }
+
   function dropItem(dropId, dragId, key) {
     const dropCopy = { ...dropState };
     dropCopy[dropId][key] = dragPics[menu][dragId];
+    // restore building & cat to drags
+    restoreDrag(dropCopy[dropId][key], key);
     setDropState(dropCopy);
   }
 
   function handleDragEnd(event) {
+    const dropCopy = { ...dropState };
     if (event.over && event.over.id.startsWith("droppable")) {
       dropItem(event.over.id, event.active.id, menu);
-      const dragsCopy = { ...drags };
-      dragsCopy[menu] = dragsCopy[menu].filter((id) => id != event.active.id);
-      setDrags(dragsCopy);
+      removeDrag(event.active.id, menu);
+      // restore building & cat to drags
+      // if (dropCopy[event.over.id][menu]) {
+      //   restoreDrag(dropCopy[event.over.id][menu], menu);
+      // }
     }
   }
 
@@ -91,23 +115,38 @@ function Game() {
             <h1>Find Meow<br /> way back home</h1>
           </div>
           <div className={styles.gamearea}>
-            <Droppable id="droppable1" className={styles.droppable} style={{ left: '255px', top: '220px' }}>
+            <Droppable
+              id="droppable1"
+              className={`${styles.droppable} ${isDropped("droppable1") ? styles.dropped : ''}`}
+              style={{ left: '255px', top: '220px' }}>
               <img src={dropState["droppable1"].building} />
               <img src={dropState["droppable1"].cat} />
             </Droppable>
-            <Droppable id="droppable2" className={styles.droppable} style={{ left: '230px', top: '60px' }}>
+            <Droppable
+              id="droppable2"
+              className={`${styles.droppable} ${isDropped("droppable2") ? styles.dropped : ''}`}
+              style={{ left: '230px', top: '60px' }}>
               <img src={dropState["droppable2"].building} />
               <img src={dropState["droppable2"].cat} />
             </Droppable>
-            <Droppable id="droppable3" className={styles.droppable} style={{ right: '160px', top: '60px' }}>
+            <Droppable
+              id="droppable3"
+              className={`${styles.droppable} ${isDropped("droppable3") ? styles.dropped : ''}`}
+              style={{ right: '160px', top: '60px' }}>
               <img src={dropState["droppable3"].building} />
               <img src={dropState["droppable3"].cat} />
             </Droppable>
-            <Droppable id="droppable4" className={styles.droppable} style={{ right: '80px', bottom: '210px' }}>
+            <Droppable
+              id="droppable4"
+              className={`${styles.droppable} ${isDropped("droppable4") ? styles.dropped : ''}`}
+              style={{ right: '80px', bottom: '210px' }}>
               <img src={dropState["droppable4"].building} />
               <img src={dropState["droppable4"].cat} />
             </Droppable>
-            <Droppable id="droppable5" className={styles.droppable} style={{ left: '24px', bottom: '180px' }}>
+            <Droppable
+              id="droppable5"
+              className={`${styles.droppable} ${isDropped("droppable5") ? styles.dropped : ''}`}
+              style={{ left: '24px', bottom: '180px' }}>
               <img src={dropState["droppable5"].building} />
               <img src={dropState["droppable5"].cat} />
             </Droppable>

@@ -132,6 +132,7 @@ const InLonelinessMobile = () => {
                     whileInView={{opacity: 1, y: 0}}
                     transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
                     viewport={{ amount: 1, once: true }}
+                    style={{marginBottom: 0}}
                     >
                         Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
                     </motion.p>
@@ -157,6 +158,7 @@ const InLonelinessMobile = () => {
                     whileInView={{opacity: 1, y: 0}}
                     transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
                     viewport={{ amount: 1, once: true }}
+                    style={{marginBottom: 0}}
                     >
                         They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
                     </motion.p>

@@ -35,42 +35,50 @@ function Game() {
     "dragBldg5": ctc,
   };
 
-  const [cats, setCats] = useState([
-    "dragCat1",
-    "dragCat2",
-    "dragCat3",
-    "dragCat4",
-  ]);
+  const dragPics = {
+    cat: dragCats,
+    building: dragBldgs
+  }
 
-  const [bldgs, setBldgs] = useState([
-    "dragBldg1",
-    "dragBldg2",
-    "dragBldg3",
-    "dragBldg4",
-    "dragBldg5",
-  ]);
+
+  const [drags, setDrags] = useState({
+    cat: [
+      "dragCat1",
+      "dragCat2",
+      "dragCat3",
+      "dragCat4",
+    ],
+    building: [
+      "dragBldg1",
+      "dragBldg2",
+      "dragBldg3",
+      "dragBldg4",
+      "dragBldg5",
+    ]
+  });
 
   const [menu, setMenu] = useState("cat");
 
   const [dropState, setDropState] = useState({
-    "droppable1": { "cat": null, "building": null },
-    "droppable2": { "cat": null, "building": null },
-    "droppable3": { "cat": null, "building": null },
-    "droppable4": { "cat": null, "building": null },
-    "droppable5": { "cat": null, "building": null },
+    droppable1: { "cat": null, "building": null },
+    droppable2: { "cat": null, "building": null },
+    droppable3: { "cat": null, "building": null },
+    droppable4: { "cat": null, "building": null },
+    droppable5: { "cat": null, "building": null },
   });
 
   function dropItem(dropId, dragId, key) {
     const dropCopy = { ...dropState };
-    dropCopy[dropId][key] = (menu == "cat" ? dragCats[dragId] : dragBldgs[dragId]);
+    dropCopy[dropId][key] = dragPics[menu][dragId];
     setDropState(dropCopy);
   }
 
   function handleDragEnd(event) {
     if (event.over && event.over.id.startsWith("droppable")) {
       dropItem(event.over.id, event.active.id, menu);
-      setCats(cats.filter((cat) => cat != event.active.id));
-      setBldgs(bldgs.filter((bldg) => bldg != event.active.id));
+      const dragsCopy = { ...drags };
+      dragsCopy[menu] = dragsCopy[menu].filter((id) => id != event.active.id);
+      setDrags(dragsCopy);
     }
   }
 
@@ -108,17 +116,13 @@ function Game() {
           </div>
         </main>
         <aside className={styles.draggables}>
-          {menu == "cat" ?
-            (cats.map((catId) => (
-              <Draggable key={catId} id={catId}>
-                <img src={dragCats[catId]} />
+          {
+            drags[menu].map((id) => (
+              <Draggable key={id} id={id}>
+                <img src={dragPics[menu][id]} />
               </Draggable>
-            ))) :
-            (bldgs.map((bldgId) => (
-              <Draggable key={bldgId} id={bldgId}>
-                <img src={dragBldgs[bldgId]} />
-              </Draggable>
-            )))}
+            ))
+          }
         </aside>
         <aside className={styles.buttons}>
           <p>00:00</p>

@@ -1,9 +1,69 @@
-import styles from "../../styles/InCaring.module.css";
+import { useState, useEffect, useRef } from 'react';
+import styles from "../../styles/InCaringMobile.module.css";
 import building from "../../assets/images/schmitt-hall-w-deco.svg";
 import mag1 from "../../assets/images/mag1.svg";
 import catImg from "../../assets/images/two_cats_plain.png";
 
-const InCaring = () => {
+const InCaringMobile = () => {
+  const [isMag1Visible, setIsMag1Visible] = useState(false);
+  const [isCatsVisible, setIsCatsVisible] = useState(false);
+  const [isQuoteVisible, setIsQuoteVisible] = useState(false);
+
+  const mag1Ref = useRef(null);
+  const catsRef = useRef(null);
+  const quoteRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsMag1Visible(true);
+          observer.unobserve(mag1Ref.current);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (mag1Ref.current) observer.observe(mag1Ref.current);
+    return () => {
+      if (mag1Ref.current) observer.unobserve(mag1Ref.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsQuoteVisible(true);
+          observer.unobserve(quoteRef.current);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (quoteRef.current) observer.observe(quoteRef.current);
+    return () => {
+      if (quoteRef.current) observer.unobserve(quoteRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsCatsVisible(true);
+          observer.unobserve(catsRef.current);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (catsRef.current) observer.observe(catsRef.current);
+    return () => {
+      if (catsRef.current) observer.unobserve(catsRef.current);
+    };
+  }, []);
+
   return (
     <main className={styles.main}>
       <div className={styles.mainArticle}>
@@ -38,12 +98,25 @@ const InCaring = () => {
           manages the cat population through various University-wide programs.
         </p>
 
-        <img className={styles.imgStyle} src={mag1} alt="image of cat"/>
+        <img 
+          ref={mag1Ref} 
+          className={`${styles.imgStyle} ${isMag1Visible ? styles.animateTilt : ''}`} 
+          src={mag1} 
+          alt="image of cat"
+        />
 
-        <p className={styles.quote}>
-          “The best thing [students] can do regarding animal welfare advocacy,
-          and in support of AGILA na rin, [is to] act with empathy,”
-        </p>
+        <div 
+          ref={quoteRef} 
+          className={`${styles.quoteContainer} ${isQuoteVisible ? styles.animateQuote : ''}`}
+        >
+          <p className={styles.quote}>
+            <span>
+              “The best thing [students] can do regarding animal welfare advocacy,
+              and in support of AGILA na rin, [is to] act with empathy,”
+            </span>
+          </p>
+        </div>
+        
         <p style={{ marginBottom: "3rem" }}>Guce suggests.</p>
 
         <p>
@@ -64,7 +137,12 @@ const InCaring = () => {
           pets at home,” Guce says.
         </p>
 
-        <img className={styles.twoCats} src={catImg} alt="image of 2 cats"/>
+        <img
+          ref={catsRef}
+          className={`${styles.twoCats} ${isCatsVisible ? styles.animateCats : ''}`}
+          src={catImg}
+          alt="image of 2 cats"
+        />
         
         <p>
           Those with pets at home may find it easy to approach the cats with
@@ -79,4 +157,4 @@ const InCaring = () => {
   );
 };
 
-export default InCaring;
+export default InCaringMobile;

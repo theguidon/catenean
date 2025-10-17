@@ -1,69 +1,24 @@
-import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import styles from "../../styles/InCaringMobile.module.css";
 import building from "../../assets/images/schmitt-hall-w-deco.svg";
 import mag1 from "../../assets/images/mag1.svg";
 import catImg from "../../assets/images/two_cats_plain.png";
 
+const quoteContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const quoteItemVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+};
+
 const InCaringMobile = () => {
-  const [isMag1Visible, setIsMag1Visible] = useState(false);
-  const [isCatsVisible, setIsCatsVisible] = useState(false);
-  const [isQuoteVisible, setIsQuoteVisible] = useState(false);
-
-  const mag1Ref = useRef(null);
-  const catsRef = useRef(null);
-  const quoteRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsMag1Visible(true);
-          observer.unobserve(mag1Ref.current);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (mag1Ref.current) observer.observe(mag1Ref.current);
-    return () => {
-      if (mag1Ref.current) observer.unobserve(mag1Ref.current);
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsQuoteVisible(true);
-          observer.unobserve(quoteRef.current);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (quoteRef.current) observer.observe(quoteRef.current);
-    return () => {
-      if (quoteRef.current) observer.unobserve(quoteRef.current);
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsCatsVisible(true);
-          observer.unobserve(catsRef.current);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (catsRef.current) observer.observe(catsRef.current);
-    return () => {
-      if (catsRef.current) observer.unobserve(catsRef.current);
-    };
-  }, []);
-
   return (
     <main className={styles.main}>
       <div className={styles.mainArticle}>
@@ -98,24 +53,30 @@ const InCaringMobile = () => {
           manages the cat population through various University-wide programs.
         </p>
 
-        <img 
-          ref={mag1Ref} 
-          className={`${styles.imgStyle} ${isMag1Visible ? styles.animateTilt : ''}`} 
+        <motion.img 
+          className={styles.imgStyle} 
           src={mag1} 
           alt="image of cat"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         />
 
-        <div 
-          ref={quoteRef} 
-          className={`${styles.quoteContainer} ${isQuoteVisible ? styles.animateQuote : ''}`}
+        <motion.div 
+          className={styles.quoteContainer}
+          variants={quoteContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
         >
-          <p className={styles.quote}>
-            <span>
+          <motion.p className={styles.quote} variants={quoteItemVariants}>
+            <motion.span variants={quoteItemVariants}>
               “The best thing [students] can do regarding animal welfare advocacy,
               and in support of AGILA na rin, [is to] act with empathy,”
-            </span>
-          </p>
-        </div>
+            </motion.span>
+          </motion.p>
+        </motion.div>
         
         <p style={{ marginBottom: "3rem" }}>Guce suggests.</p>
 
@@ -137,11 +98,14 @@ const InCaringMobile = () => {
           pets at home,” Guce says.
         </p>
 
-        <img
-          ref={catsRef}
-          className={`${styles.twoCats} ${isCatsVisible ? styles.animateCats : ''}`}
+        <motion.img
+          className={styles.twoCats}
           src={catImg}
           alt="image of 2 cats"
+          initial={{ opacity: 0, y: 50, rotate: 0 }}
+          whileInView={{ opacity: 1, y: 0, rotate: -3 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          viewport={{ once: true }}
         />
         
         <p>

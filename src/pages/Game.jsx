@@ -41,7 +41,7 @@ function Game() {
   }
 
 
-  const [drags, setDrags] = useState({
+  const drags = {
     cat: [
       "dragCat1",
       "dragCat2",
@@ -55,7 +55,15 @@ function Game() {
       "dragBldg4",
       "dragBldg5",
     ]
-  });
+  };
+
+  const droppablePositions = {
+    "droppable1": { left: '252px', top: '220px' },
+    "droppable2": { left: '230px', top: '60px' },
+    "droppable3": { right: '160px', top: '60px' },
+    "droppable4": { right: '80px', bottom: '210px' },
+    "droppable5": { left: '24px', bottom: '180px' }
+  };
 
   const [menu, setMenu] = useState("cat");
 
@@ -87,6 +95,13 @@ function Game() {
     setDropState(dropCopy);
   }
 
+  function removeFromMap(dropId, key) {
+    const dropCopy = structuredClone(dropState); // DEEP CLONE I HATE REACT SOMETIMES
+    dropCopy[dropId][key] = null;
+    setDropState(dropCopy);
+    setMenu(key);
+  }
+
   function handleDragEnd(event) {
     if (event.over && event.over.id.startsWith("droppable")) {
       dropItem(event.over.id, event.active.id, menu);
@@ -102,41 +117,18 @@ function Game() {
             <h1>Find Meow<br /> way back home</h1>
           </div>
           <div className={styles.gamearea}>
-            <Droppable
-              id="droppable1"
-              className={`${styles.droppable} ${isDropped("droppable1", "building") ? styles.dropped : ''}`}
-              style={{ left: '255px', top: '220px' }}>
-              <img src={dropState["droppable1"].building} />
-              <img src={dropState["droppable1"].cat} />
-            </Droppable>
-            <Droppable
-              id="droppable2"
-              className={`${styles.droppable} ${isDropped("droppable2", "building") ? styles.dropped : ''}`}
-              style={{ left: '230px', top: '60px' }}>
-              <img src={dropState["droppable2"].building} />
-              <img src={dropState["droppable2"].cat} />
-            </Droppable>
-            <Droppable
-              id="droppable3"
-              className={`${styles.droppable} ${isDropped("droppable3", "building") ? styles.dropped : ''}`}
-              style={{ right: '160px', top: '60px' }}>
-              <img src={dropState["droppable3"].building} />
-              <img src={dropState["droppable3"].cat} />
-            </Droppable>
-            <Droppable
-              id="droppable4"
-              className={`${styles.droppable} ${isDropped("droppable4", "building") ? styles.dropped : ''}`}
-              style={{ right: '80px', bottom: '210px' }}>
-              <img src={dropState["droppable4"].building} />
-              <img src={dropState["droppable4"].cat} />
-            </Droppable>
-            <Droppable
-              id="droppable5"
-              className={`${styles.droppable} ${isDropped("droppable5", "building") ? styles.dropped : ''}`}
-              style={{ left: '24px', bottom: '180px' }}>
-              <img src={dropState["droppable5"].building} />
-              <img src={dropState["droppable5"].cat} />
-            </Droppable>
+            {
+              Object.keys(droppablePositions).map((id) => (
+                <Droppable
+                  key={id}
+                  id={id}
+                  className={`${styles.droppable} ${isDropped(id, "building") ? styles.dropped : ''}`}
+                  style={droppablePositions[id]}>
+                  <img onClick={() => removeFromMap(id, "building")} src={dropState[id].building} />
+                  <img onClick={() => removeFromMap(id, "cat")} src={dropState[id].cat} />
+                </Droppable>
+              ))
+            }
             <img src={Map}></img>
             <h1 className={styles.submit}>Submit</h1>
           </div>

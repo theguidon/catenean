@@ -15,7 +15,7 @@ import ctc from "../assets/images/game/buildings/ctc.svg";
 import catButton from "../assets/images/game/NavIcons/Cats.svg";
 import bldgButton from "../assets/images/game/NavIcons/Buildings.svg";
 import clueButton from "../assets/images/game/NavIcons/Clues.svg";
-import menuButton from "../assets/images/game/NavIcons/Instructions.svg";
+import menuButton from "../assets/images/game/NavIcons/instructions.svg";
 import { DndContext, closestCenter } from '@dnd-kit/core';
 import { useState } from "react";
 

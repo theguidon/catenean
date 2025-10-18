@@ -33,10 +33,12 @@ export default function BuildingWriteup() {
         background: `center / cover no-repeat url(${bg}), ${data.bgColor}`
       }}
     >
-      <img
-        src={back}
-        className={styles.backButton}
-      />
+      <Link to="/map">
+        <img
+          src={back}
+          className={styles.backButton}
+        />
+      </Link>
       <section className={styles.writeup}>
         {isMobile && <NavArrows />}
         <section className={styles.heading}>

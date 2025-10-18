@@ -12,7 +12,7 @@ import heartCatSmall2 from "../assets/images/heart-cat-small-2.png";
 import heartCatSmall3 from "../assets/images/heart-cat-small-3.png";
 import heartCatBig from "../assets/images/heart-cat-big.png";
 import circleCat from "../assets/images/circle-cat.png";
-import mag1 from "../assets/images/mag1.png";
+import mag1 from "../assets/images/mag1.svg";
 import mag2 from "../assets/images/mag2.png";
 import heartHighFive from "../assets/images/heart-high-five.svg";
 import cloudCat from "../assets/images/cloud-cat.png";

@@ -1,30 +1,43 @@
-import { motion } from 'framer-motion';
+import { motion, stagger } from 'motion/react';
 import styles from "../../styles/InCaringMobile.module.css";
 import building from "../../assets/images/schmitt-hall-w-deco.svg";
 import mag1 from "../../assets/images/mag1.svg";
 import catImg from "../../assets/images/two_cats_plain.png";
 
-const quoteContainerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.4,
-    },
-  },
-};
-
-const quoteItemVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-};
-
 const InCaringMobile = () => {
+  const quoteVariants = {
+    hidden: {
+      opacity: 0,
+      transition: {
+        duration: 0.75,
+        when: "afterChildren",
+        delayChildren: stagger(3.5)
+      }
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.75,
+        when: "beforeChildren",
+        delayChildren: stagger(3.5)
+      }
+    },
+  };
+
+  const quoteChildVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1
+    }
+  }
   return (
     <main className={styles.main}>
       <div className={styles.mainArticle}>
         <h3>In caring, caution, and commitment</h3>
 
-        <img className={styles.building} src={building} alt="asset of schmitt hall"/>
+        <img className={styles.building} src={building} alt="asset of schmitt hall" />
 
         <p>
           To maintain students’ and the campus cats’ safety, one of AGILA’s
@@ -53,9 +66,9 @@ const InCaringMobile = () => {
           manages the cat population through various University-wide programs.
         </p>
 
-        <motion.img 
-          className={styles.imgStyle} 
-          src={mag1} 
+        <motion.img
+          className={styles.imgStyle}
+          src={mag1}
           alt="image of cat"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -63,22 +76,20 @@ const InCaringMobile = () => {
           viewport={{ once: true }}
         />
 
-        <motion.div 
+        <motion.div
           className={styles.quoteContainer}
-          variants={quoteContainerVariants}
+          variants={quoteVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          whileInView="show"
         >
-          <motion.p className={styles.quote} variants={quoteItemVariants}>
-            <motion.span variants={quoteItemVariants}>
-              “The best thing [students] can do regarding animal welfare advocacy,
+          <motion.p variants={quoteChildVariants} className={styles.quote}>
+            <motion.span variants={quoteChildVariants} transition={{ delay: 0.5 }}>“The best thing [students] can do regarding animal welfare advocacy,
               and in support of AGILA na rin, [is to] act with empathy,”
             </motion.span>
           </motion.p>
+          <motion.p variants={quoteChildVariants} style={{ marginBottom: "3rem" }}>Guce suggests.</motion.p>
         </motion.div>
-        
-        <p style={{ marginBottom: "3rem" }}>Guce suggests.</p>
+
 
         <p>
           For him, supporting animal welfare advocacy means being persons for
@@ -105,9 +116,8 @@ const InCaringMobile = () => {
           initial={{ opacity: 0, y: 50, rotate: 0 }}
           whileInView={{ opacity: 1, y: 0, rotate: -3 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: true }}
         />
-        
+
         <p>
           Those with pets at home may find it easy to approach the cats with
           their existing familiarity in handling pets, but this may pose a

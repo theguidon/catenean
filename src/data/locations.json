@@ -1,5 +1,5 @@
-[
-	{
+{
+	"mvp": {
 		"name": "MVP",
 		"caption": "A cat's playground",
 		"bldgImage": "location-mvp-building.svg",
@@ -17,7 +17,91 @@
 		"bgColor": "#FFEDC5",
 		"nameColor": "#DE6D20",
 		"captionColor": "#AA5115",
-		"back": "Faura",
-		"next": "CTC-SOM"
+		"back": "faura",
+		"next": "ctc-som"
+	},
+	"ctc-som": {
+		"name": "CTC-SOM",
+		"caption": "Even the cats are \"sosyal\"",
+		"bldgImage": "location-ctc-som-building.svg",
+		"article": "Wandering through the halls of CTC's fifth floor, one may encounter a drawing of a beloved cat on the windows of one of the building's offices.\n\nPrada was one of the more prominent Cateneans of the CTC-SOM area. Loved by many, she first madde rounds in many students' hearts by frequenting the ground floor of the SOM building, before she followed Resuello up to his lounge room at the CTC's fifth floor. She seemingly followed wherever caring hands would take her, as she would gladly stay in areas with people who offered food for her.\n\nResuello often feeds Parada as his main alaga (pet). His feeding other cats, however, seemingly sparked a hint of jealousy in Prada, prompting her to move to the opposite end of the CTC's fifth floor. As a result, Resuello would  have to bring her back to this lounge area to feed her. Before becoming known as CTC's resident queen cat, she was first a friendly cat who enjoyed finding comfort where it was available.\n\nRecalling his early daays working at the Ateneo, Johnson once encountered a young Prada who seemingly enojyed laying on his bag, \"She had a fondness for lying on my bag, and I figured, well, she lives at SOM, so she must by sosyal (fancy). Prada's a good name for her, and it stuck,\" Johnson shares.\n\nPrada, notable for her friendliness, frequently entered random offices and rooms within the CTC-SOM buildings. Unfortunately, shortly after her son Pao-Pao died in a roadkill incident, Prada began losing her appetite, which led to her own passing.\n\nResuello soon announced Prada's death on his Facebook profile, where many shared their condolences. Afterward, she was buried in the SOM Forest next to her son.",
+		"cats": [
+			{
+				"name": "Dongyan",
+				"pic": "2.jpeg"
+			},
+			{
+				"name": "Barbie",
+				"pic": "1.jpeg"
+			}
+		],
+		"bgColor": "#FFD7D9",
+		"nameColor": "#FF6C90",
+		"captionColor": "#E54169",
+		"back": "mvp",
+		"next": "schmitt"
+	},
+	"schmitt": {
+		"name": "SCHMITT",
+		"caption": "Dimsum kittens",
+		"bldgImage": "location-schmitt-hall-building.svg",
+		"article": "The Manuel V. Pangilinan Center for Student Leadership (MVP) is a hallmark of the Ateneo’s vibrant student life. Apart from being the birthplace and center of student-led organizations, it is also the abode of the two fan-favorite MVP cats, Dongyan and Barbie.\n\nThose who arrive on campus in the early mornings may chance upon Dongyan and Barbie playing chase by the MVP entrance. Other times, they would sit proudly on the front desk, nap on the press stands by the staircase, or pose for the students taking photographs of them.\n\n“Dongyan [has] been a resident there for quite a long time, and he actually got his name from the [security] guard stationed there,” Guce explains. The story being passed around goes that when someone asks about the cat, one would respond “Kay Dong ‘yan (That’s Dong’s),” referring to Fortunato “Dong” Butlig, a security guard formerly stationed at MVP.\n\nBarbie, on the other hand, started residing in the building because a student asked Kuya Dong to take care of her. Guce notes that requesting school staff to foster cats is prohibited. However, Barbie was already at MVP, and Dongyan decided to adopt her. As of writing, Kuya Dong is no longer stationed at MVP, and instead regularly makes his rounds around the college parking lots, the dorms, the Institute of Social Order area, and Areté.",
+		"cats": [
+			{
+				"name": "Dongyan",
+				"pic": "2.jpeg"
+			},
+			{
+				"name": "Barbie",
+				"pic": "1.jpeg"
+			}
+		],
+		"bgColor": "#A0D8CF",
+		"nameColor": "#00A68B",
+		"captionColor": "#0C6557",
+		"back": "ctc-som",
+		"next": "arete"
+	},
+	"arete": {
+		"name": "ARETÉ",
+		"caption": "Part-time art hub, full-time newsroom",
+		"bldgImage": "location-arete-building.svg",
+		"article": "The Manuel V. Pangilinan Center for Student Leadership (MVP) is a hallmark of the Ateneo’s vibrant student life. Apart from being the birthplace and center of student-led organizations, it is also the abode of the two fan-favorite MVP cats, Dongyan and Barbie.\n\nThose who arrive on campus in the early mornings may chance upon Dongyan and Barbie playing chase by the MVP entrance. Other times, they would sit proudly on the front desk, nap on the press stands by the staircase, or pose for the students taking photographs of them.\n\n“Dongyan [has] been a resident there for quite a long time, and he actually got his name from the [security] guard stationed there,” Guce explains. The story being passed around goes that when someone asks about the cat, one would respond “Kay Dong ‘yan (That’s Dong’s),” referring to Fortunato “Dong” Butlig, a security guard formerly stationed at MVP.\n\nBarbie, on the other hand, started residing in the building because a student asked Kuya Dong to take care of her. Guce notes that requesting school staff to foster cats is prohibited. However, Barbie was already at MVP, and Dongyan decided to adopt her. As of writing, Kuya Dong is no longer stationed at MVP, and instead regularly makes his rounds around the college parking lots, the dorms, the Institute of Social Order area, and Areté.",
+		"cats": [
+			{
+				"name": "Dongyan",
+				"pic": "2.jpeg"
+			},
+			{
+				"name": "Barbie",
+				"pic": "1.jpeg"
+			}
+		],
+		"bgColor": "#A0D8A7",
+		"nameColor": "#009A13",
+		"captionColor": "#015C0C",
+		"back": "schmitt",
+		"next": "faura"
+	},
+	"faura": {
+		"name": "FAURA",
+		"caption": "Home of the wild(ly) lovable",
+		"bldgImage": "location-faura-building.svg",
+		"article": "The Manuel V. Pangilinan Center for Student Leadership (MVP) is a hallmark of the Ateneo’s vibrant student life. Apart from being the birthplace and center of student-led organizations, it is also the abode of the two fan-favorite MVP cats, Dongyan and Barbie.\n\nThose who arrive on campus in the early mornings may chance upon Dongyan and Barbie playing chase by the MVP entrance. Other times, they would sit proudly on the front desk, nap on the press stands by the staircase, or pose for the students taking photographs of them.\n\n“Dongyan [has] been a resident there for quite a long time, and he actually got his name from the [security] guard stationed there,” Guce explains. The story being passed around goes that when someone asks about the cat, one would respond “Kay Dong ‘yan (That’s Dong’s),” referring to Fortunato “Dong” Butlig, a security guard formerly stationed at MVP.\n\nBarbie, on the other hand, started residing in the building because a student asked Kuya Dong to take care of her. Guce notes that requesting school staff to foster cats is prohibited. However, Barbie was already at MVP, and Dongyan decided to adopt her. As of writing, Kuya Dong is no longer stationed at MVP, and instead regularly makes his rounds around the college parking lots, the dorms, the Institute of Social Order area, and Areté.",
+		"cats": [
+			{
+				"name": "Dongyan",
+				"pic": "2.jpeg"
+			},
+			{
+				"name": "Barbie",
+				"pic": "1.jpeg"
+			}
+		],
+		"bgColor": "#83C3E7",
+		"nameColor": "#2074A4",
+		"captionColor": "#034C75",
+		"back": "arete",
+		"next": "mvp"
 	}
-]
+}

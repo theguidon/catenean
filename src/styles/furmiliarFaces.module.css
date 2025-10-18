@@ -52,24 +52,20 @@ img {
 
 .quoteSection > p {
   position: relative;
-
-  z-index: 2;
+  z-index: 1;
 }
 
 .helloCats{
   height: 50vh;
+  z-index: 6;
 }
 
 .helloCats h4{
   position: absolute;
   color: #2074A4;
   font-family: 'Outfit';
-  font-size: clamp(1.2rem, 4vw, 2rem);
-  /* Position relative to the speech bubble - adjust these values as needed */
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
+  font-size: 2em;
+  right: 100px;
 }
 
 .helloCats img {
@@ -81,4 +77,19 @@ img {
 .quote  {
   font-family: 'Outfit';
   color: black;
+}
+
+.quoteSection {
+  position: relative;
+  margin: 3em;
+}
+
+.quoteBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(243, 231, 204, 0.4);
+  border-radius: 50%;
+  z-index: 1;
 }

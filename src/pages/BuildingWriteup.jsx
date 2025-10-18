@@ -3,7 +3,7 @@ import bg from "../assets/images/Background.svg";
 import arrow from "../assets/images/Union.svg";
 import back from "../assets/images/Back.svg";
 import { useMediaQuery } from "react-responsive";
-import { useLoaderData } from "react-router";
+import { useLoaderData, Link } from "react-router";
 
 export default function BuildingWriteup() {
   const data = useLoaderData();
@@ -11,14 +11,18 @@ export default function BuildingWriteup() {
 
   const NavArrows = () => (
     <section className={styles.navArrows}>
-      <section className={`${styles.link} ${styles.back}`}>
-        <img src={arrow} />
-        <p>{data.back.toUpperCase()}</p>
-      </section>
-      <section className={`${styles.link} ${styles.next}`}>
-        <p>{data.next.toUpperCase()}</p>
-        <img src={arrow} />
-      </section>
+      <Link to={`/${data.back.toLowerCase()}`}>
+        <section className={`${styles.link} ${styles.back}`}>
+          <img src={arrow} />
+          <p>{data.back.toUpperCase()}</p>
+        </section>
+      </Link>
+      <Link to={`/${data.next.toLowerCase()}`}>
+        <section className={`${styles.link} ${styles.next}`}>
+          <p>{data.next.toUpperCase()}</p>
+          <img src={arrow} style={{ transform: "scaleX(-1)" }} />
+        </section>
+      </Link>
     </section>
   );
 

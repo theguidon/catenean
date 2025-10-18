@@ -1,0 +1,102 @@
+.envelope {
+  box-shadow: 0px 4px 18px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+  position: relative;
+  z-index: 0;
+  transition: 750ms all;
+}
+
+.envelopeDesktop {
+  width: 500px;
+  rotate: -5deg;
+  top: 20%;
+  left: 25%;
+  transform: translateY(0px);
+}
+
+.envelopeDesktop:hover {
+  rotate: -10deg;
+  top: 15%;
+}
+
+.letter {
+  z-index: 10;
+  position: relative;
+  width: 120%;
+  padding: 48px;
+  background: #f9f4eb;
+  border: 8px solid #faa685;
+  left: 7%;
+  font-family: "Outfit", sans-serif;
+  color: #522222;
+  box-shadow: 0px 4px 18px 0 rgba(0, 0, 0, 0.2);
+}
+
+.polaroid {
+  background: white;
+  padding: 5%;
+  padding-bottom: 20%;
+  position: relative;
+  box-shadow: 2.5px 2.5px 3px 0px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+}
+
+.polaroid>img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+section.buttons {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 10%;
+  align-items: stretch;
+}
+
+section.buttons>* {
+  margin-bottom: 20px;
+  border: none;
+}
+
+.button {
+  padding: 8%;
+  border-radius: 80px;
+  background: #ffffec;
+  text-align: center;
+  color: #a56953;
+  font-family: "Cherry Swash", serif;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+.back {
+  width: 100%;
+  background: none;
+}
+
+.bylines {
+  width: 100%;
+  color: #2074a4;
+}
+
+.bylines h1 {
+  font-weight: 800;
+  font-family: "Cherry Swash", serif;
+}
+
+.bylines p {
+  font-weight: 400;
+  font-family: "Outfit", sans-serif;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}

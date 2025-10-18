@@ -1,4 +1,4 @@
-import Navigation from "./Navigation.jsx"
+import Navigation from "./Navigation.jsx";
 
 function App() {
   return <Navigation />;

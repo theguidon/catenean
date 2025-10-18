@@ -24,7 +24,6 @@ import bigHeart from "../assets/images/big-heart.svg";
 import threeCats from "../assets/images/three-cats.png";
 import paw from "../assets/images/paw.svg";
 import heart from "../assets/images/heart.svg";
-import ArticleSectionLoneliness from "../components/ArticleSectionLoneliness";
 
 const ArticleMain = ({ setPage }) => {
   return (
@@ -119,7 +118,6 @@ const ArticleMain = ({ setPage }) => {
           (I liken them to humans and think, ‘how pitiful.’ That is why I
           thought of taking care and feeding them.)
         </p>
-        <ArticleSectionLoneliness />
         <h3>Cats come and go</h3>
         <p>
           Encountering a Catenean is practically unavoidable, with one or two

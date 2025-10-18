@@ -11,31 +11,30 @@ import schmittHallBuilding from '../../assets/images/location-schmitt-hall-build
 import darkBrownEllipses from '../../assets/images/dark-brown-ellipses.svg';
 import heartBackgroundShape from '../../assets/images/heart-background-shape.svg';
 import title from '../../assets/images/in-loneliness-furry-companions-title-mobile.svg';
-import { motion, stagger } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useRef } from 'react';
+
+const pullout = {
+    visible: {
+        opacity: 1,
+        transition: {
+            when: "beforeChildren",
+            duration: 0.5,
+            staggerChildren: 1, // instead of `delayChildren: stagger(1)`
+        },
+    },
+    hidden: {
+        opacity: 0,
+        transition: {
+            when: "afterChildren",
+        },
+    },
+};
+
 
 const InLonelinessMobile = () => {
     const highFiveContainerRef = useRef(null);
     const highFiveWrapperRef = useRef(null);
-
-    const quote = {
-        show: {
-            opacity: 1,
-            transition: {
-                duration: 0.75,
-                when: "beforeChildren",
-                delayChildren: stagger(1)
-            }
-        },
-        hidden: {
-            opacity: 0,
-            transition: {
-                duration: 0.75,
-                when: "beforeChildren",
-                delayChildren: stagger(1)
-            }
-        }
-    }
 
     //Activates highfive animation
     useEffect(() => {
@@ -142,19 +141,20 @@ const InLonelinessMobile = () => {
                 <motion.div className={styles.smallQuoteContainer}
                     initial="hidden"
                     whileInView="show"
-                    variants={quote}
+                    viewport={{ amount: 0.6, once: true }}
+                    transition={{ delayChildren: 0.25, staggerChildren: 0.5 }}
                 >
                     <motion.div className={styles.quote}
-                        variants={quote}
+                        variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 1.0, ease: "easeOut" } } }}
                     >
                         <motion.p
-                            variants={quote}
+                            variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.75, ease: "easeOut", delay: 1 } } }} style={{ marginBottom: 0 }}
                         >
                             Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
                         </motion.p>
                     </motion.div>
                     <motion.p
-                        variants={quote}
+                        variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.75, ease: "easeOut", delay: 1.5 } } }}
                     >
                         he remarks.
                     </motion.p>
@@ -162,23 +162,25 @@ const InLonelinessMobile = () => {
                 <motion.div className={styles.smallQuoteContainer}
                     initial="hidden"
                     whileInView="show"
-                    variants={{ show: { ...quote.show, transition: { ...quote.show.transition, delay: 1.5 } }, hidden: { ...quote.hidden } }}
+                    viewport={{ amount: 0.6, once: true }}
+                    transition={{ delayChildren: 0.25, staggerChildren: 0.5, delay: 1.5 }}
                 >
                     <motion.div className={styles.quote}
-                        variants={quote}
+                        variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 1.0, ease: "easeOut" } } }}
                     >
                         <motion.p
-                            variants={quote}
+                            variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.75, ease: "easeOut", delay: 1 } } }} style={{ marginBottom: 0 }}
                         >
                             They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
                         </motion.p>
                     </motion.div>
                     <motion.p
-                        variants={quote}
+                        variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.75, ease: "easeOut", delay: 1.5 } } }}
                     >
                         Buenafe adds.
                     </motion.p>
                 </motion.div>
+
                 <p>
                     The couple embodies this mercy by providing their support to the student organization AGILA,
                     such as helping them transport the cats to the veterinarian as needed. AGILA’s advocacy is to

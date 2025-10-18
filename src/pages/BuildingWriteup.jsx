@@ -1,12 +1,12 @@
-import buildings from "../data/locations.json";
 import styles from "../styles/BuildingWriteup.module.css";
 import bg from "../assets/images/Background.svg";
 import arrow from "../assets/images/Union.svg";
 import back from "../assets/images/Back.svg";
 import { useMediaQuery } from "react-responsive";
+import { useLoaderData } from "react-router";
 
 export default function BuildingWriteup() {
-  const data = buildings[0];
+  const data = useLoaderData();
   const isMobile = useMediaQuery({ query: '(max-width: 699px)' });
 
   const NavArrows = () => (

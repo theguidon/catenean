@@ -44,14 +44,23 @@
     width: 80%;
     display: block;
     margin: 3rem auto;
+    animation: tilt-animation 1s steps(1, end) infinite;
+}
+
+@keyframes tilt-animation {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
 }
 
 .twoCats {
     width: 99%;
     display: block;
     margin: 4rem auto;
-    transform: rotate(-3deg);
     outline: 7px solid white;
+}
+
+.quoteContainer {
+    margin-bottom: 1.5rem;
 }
 
 .quote {
@@ -61,25 +70,5 @@
     border: 1rem solid #d3dbbc;
     border-radius: 2.5rem;
     padding: 1.5rem;
-    margin-block: 1.5rem;
     position: relative;
-}
-
-.quote::before {
-    content: "“";
-    position: absolute;
-    inset: 0 auto auto 0;
-    translate: -50% -25%;
-    font-size: 7rem;
-    color: #FAA685;
-}
-
-.quote::after {
-    content: "“";
-    scale: -1 1;
-    position: absolute;
-    inset: auto 0 0 auto;
-    translate: 50% 55%;
-    font-size: 7rem;
-    color: #FAA685;
 }

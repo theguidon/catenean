@@ -13,6 +13,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.section2 {
+  padding-top: 25rem;
+  padding-bottom: 30rem;
 }
 
 .text {
@@ -21,8 +27,29 @@
   max-width: 15rem;
 }
 
-.graphics .ellipses {
+.ellipses {
   position: absolute;
   inset: 50% auto auto 50%;
   translate: -50% -50%;
+  z-index: -1;
+}
+
+.catPhotos {
+  max-width: 20rem;
+  position: absolute;
+  inset: 0 auto auto 50%;
+  translate: -50% 0;
+  z-index: 10;
+}
+
+.catPhoto {
+  max-width: 20rem;
+  position: absolute;
+  inset: auto auto 5rem 50%;
+  translate: calc(-50% + 10rem) 0;
+}
+
+.line {
+  position: absolute;
+  inset: 0 auto auto 0;
 }

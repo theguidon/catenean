@@ -4,6 +4,7 @@ import ellipses2 from "../../assets/images/intro/ellipses2.svg";
 import photos from "../../assets/images/intro/photos.png";
 import photo from "../../assets/images/intro/photo.png";
 import line from "../../assets/images/intro/line.svg";
+import hearts from "../../assets/images/intro/hearts.svg";
 
 export default function IntroDesktop() {
   return (
@@ -31,6 +32,7 @@ export default function IntroDesktop() {
         </div>
         <div className={styles.graphics}>
           <img src={photos} alt="" className={styles.catPhotos} />
+          <img src={hearts} alt="" className={styles.hearts} />
           <img src={photo} alt="" className={styles.catPhoto} />
           <img src={line} alt="" className={styles.line} />
           <img src={line} alt="" className={styles.line2} />

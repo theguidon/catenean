@@ -51,6 +51,12 @@
   z-index: 10;
 }
 
+.hearts {
+  position: absolute;
+  inset: 10rem auto auto -10rem;
+  z-index: 10;
+}
+
 .catPhoto {
   position: absolute;
   inset: 8rem 0 auto auto;

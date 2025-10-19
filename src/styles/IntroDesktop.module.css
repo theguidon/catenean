@@ -6,6 +6,7 @@
   font-family: "Outfit";
   color: #683535;
   display: flex;
+  overflow-y: hidden;
 }
 
 .section {
@@ -15,7 +16,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: hidden;
+}
+
+.section2 {
+  padding-left: 70rem;
+  padding-right: 60rem;
 }
 
 .text {
@@ -29,7 +34,7 @@
 }
 
 .text2 {
-  max-width: 40rem;
+  width: 40rem;
   font-size: 2rem;
 }
 
@@ -41,21 +46,24 @@
 }
 
 .catPhotos {
-  max-width: 20rem;
   position: absolute;
-  inset: 0 auto auto 50%;
-  translate: -50% 0;
+  inset: 0 auto auto -10rem;
   z-index: 10;
 }
 
 .catPhoto {
-  max-width: 20rem;
   position: absolute;
-  inset: auto auto 5rem 50%;
-  translate: calc(-50% + 10rem) 0;
+  inset: 8rem 0 auto auto;
 }
 
 .line {
   position: absolute;
-  inset: 0 auto auto 0;
+  inset: -7rem auto auto 0;
+  z-index: 11;
+}
+
+.line2 {
+  position: absolute;
+  inset: -7rem -20rem auto auto;
+  z-index: 11;
 }

@@ -33,9 +33,10 @@ export default function IntroDesktop() {
           <img src={photos} alt="" className={styles.catPhotos} />
           <img src={photo} alt="" className={styles.catPhoto} />
           <img src={line} alt="" className={styles.line} />
+          <img src={line} alt="" className={styles.line2} />
         </div>
       </div>
-      <div className={`${styles.section} ${styles.section2}`}>
+      <div className={`${styles.section} ${styles.section3}`}>
         <div className={`${styles.text} ${styles.text2}`}>
           <img src={ellipses2} alt="" className={styles.ellipses} />
           <p>

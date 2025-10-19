@@ -33,6 +33,7 @@ section {
 
 article {
   margin: 4em 0;
+  padding: 2em 0;
 }
 
 .hero {
@@ -56,32 +57,35 @@ img {
 }
 
 .helloCats{
+  position: relative;
   height: 50vh;
   z-index: 6;
+  display: flex;
+  justify-content: center;
 }
 
 .helloCats h4{
   position: absolute;
   color: #2074A4;
-  font-family: 'Outfit';
+  font-family: 'Cedarville Cursive Regular';
   font-size: 2em;
-  right: 100px;
+  top: 5%;
+  right: 30%;
 }
 
 .helloCats img {
-  bottom: 2%;
-  left: 2%;
-  width: 100%;
+  width: 393px;
+  height: auto;
 }
 
-.quote  {
+.quoteSection .quote {
   font-family: 'Outfit';
   color: black;
 }
 
 .quoteSection {
   position: relative;
-  margin: 3em;
+  padding: 2em;
 }
 
 .quoteBackground {
@@ -90,6 +94,17 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(243, 231, 204, 0.4);
+  width: 100%;
   border-radius: 50%;
   z-index: 1;
+}
+
+.quoteSection h5 {
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Outfit";
+  text-align: center;
+  color: #FAA685;
+  z-index: 7;
 }

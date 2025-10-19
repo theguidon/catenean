@@ -50,16 +50,18 @@ return (
         </section>
         <article className={sectionStyles.quoteSection}>
             {/* Background Circle */}
-            <div className={sectionStyles.quoteBackground} style={{ width: '110%', height: '125%' }}></div>
-            <div className={sectionStyles.quoteBackground} style={{ width: '120%', height: '135%' }}></div>
-            <div className={sectionStyles.quoteBackground} style={{ width: '130%', height: '145%' }}></div>
+            <div className={sectionStyles.quoteBackground} style={{ height: '95%' }}></div>
+            <div className={sectionStyles.quoteBackground} style={{  height: '105%' }}></div>
+            <div className={sectionStyles.quoteBackground} style={{ height: '115%' }}></div>
             {/* Quote Section */}
+            <h5 style={{ right: '40%', bottom: '5%' }}>"</h5>
             <p>
                 Medyo nasasaktan ako dahil medyo mabigat [sa bulsa] 'yung binibili kong pagkain, 'yung Oc [cat food brand] Php 175 isang kilo. Eh halos minsan isang kilo, [k]aunti natitira sa isang araw kasi umaga-hapon ang pakain ko.
             </p>
             <p className={sectionStyles.quote}>
                 (It hurts [my wallet] a bit since the price of the cat food I buy, Oc, is hefty, around Php 175 per kilo. Almost always, only a small amount of that kilo is left at the end of the day, since I feed them from morning until evening.)
             </p>
+            <h5 style={{ left: '40%', bottom: '5%' }}>"</h5>  
         </article>
     </main>
     </>

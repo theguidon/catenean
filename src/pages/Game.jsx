@@ -16,10 +16,12 @@ import catButton from "../assets/images/game/NavIcons/Cats.svg";
 import bldgButton from "../assets/images/game/NavIcons/Buildings.svg";
 import clueButton from "../assets/images/game/NavIcons/Clues.svg";
 import menuButton from "../assets/images/game/NavIcons/instructions.svg";
-import { DndContext, closestCenter } from '@dnd-kit/core';
+import { DndContext } from '@dnd-kit/core';
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 function Game() {
+  const isMobile = useMediaQuery({ query: "(max-width: 499px)" });
   const dragCats = {
     "dragCat1": twocats,
     "dragCat2": threecats,
@@ -58,11 +60,11 @@ function Game() {
   };
 
   const droppablePositions = {
-    "droppable1": { left: '252px', top: '220px' },
-    "droppable2": { left: '230px', top: '60px' },
-    "droppable3": { right: '160px', top: '60px' },
-    "droppable4": { right: '80px', bottom: '210px' },
-    "droppable5": { left: '24px', bottom: '180px' }
+    "droppable1": { left: '34%', top: '34%' },
+    "droppable2": { left: '31%', top: '9%' },
+    "droppable3": { right: '21%', top: '9%' },
+    "droppable4": { right: '11%', bottom: '32%' },
+    "droppable5": { left: '3%', bottom: '27%' }
   };
 
   const [menu, setMenu] = useState("cat");
@@ -116,6 +118,7 @@ function Game() {
             <img src={VantLogo}></img>
             <h1>Find Meow<br /> way back home</h1>
           </div>
+          {isMobile && (<p className={styles.timer}>00:00</p>)}
           <div className={styles.gamearea}>
             {
               Object.keys(droppablePositions).map((id) => (
@@ -129,8 +132,7 @@ function Game() {
                 </Droppable>
               ))
             }
-            <img src={Map}></img>
-            <h1 className={styles.submit}>Submit</h1>
+            {/**<h1 className={styles.submit}>Submit</h1>**/}
           </div>
         </main>
         <aside className={styles.draggables}>
@@ -143,7 +145,7 @@ function Game() {
           }
         </aside>
         <aside className={styles.buttons}>
-          <p>00:00</p>
+          {!isMobile && <p className={styles.timer}>00:00</p>}
           <button onClick={() => setMenu("cat")} style={{ rotate: "15deg" }}>
             <img src={catButton} />
           </button>

@@ -1,4 +1,4 @@
-import styles from "../../styles/Intro.module.css";
+import styles from "../../styles/IntroMobile.module.css";
 import ellipses1 from "../../assets/images/intro/ellipses1.svg";
 import ellipses2 from "../../assets/images/intro/ellipses2.svg";
 import photos from "../../assets/images/intro/photos.png";

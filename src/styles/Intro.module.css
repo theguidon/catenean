@@ -1,0 +1,28 @@
+.main {
+  background-color: #f2daad;
+  min-height: 100dvh;
+  min-width: 100dvw;
+  font-family: "Outfit";
+  color: #683535;
+}
+
+.section {
+  position: relative;
+  min-height: 100dvh;
+  min-width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  position: relative;
+  z-index: 10;
+  max-width: 15rem;
+}
+
+.graphics .ellipses {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50%;
+}

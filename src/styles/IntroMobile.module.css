@@ -50,6 +50,21 @@
   z-index: -1;
 }
 
+.polaroid {
+  animation: 3s ease-in-out 0s infinite alternate-reverse swing;
+  transform-origin: top center;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
 .catPhotos1 {
   max-width: 15rem;
   position: absolute;

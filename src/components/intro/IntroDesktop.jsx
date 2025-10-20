@@ -50,10 +50,22 @@ export default function IntroDesktop() {
           </p>
         </div>
         <div className={styles.graphics}>
-          <img src={photos1} alt="" className={styles.catPhotos1} />
-          <img src={photos2} alt="" className={styles.catPhotos2} />
+          <img
+            src={photos1}
+            alt=""
+            className={`${styles.polaroid} ${styles.catPhotos1}`}
+          />
+          <img
+            src={photos2}
+            alt=""
+            className={`${styles.polaroid} ${styles.catPhotos2}`}
+          />
           <img src={hearts} alt="" className={styles.hearts} />
-          <img src={photo} alt="" className={styles.catPhoto} />
+          <img
+            src={photo}
+            alt=""
+            className={`${styles.polaroid} ${styles.catPhoto}`}
+          />
           <img src={line} alt="" className={styles.line} />
           <img src={line} alt="" className={styles.line2} />
         </div>

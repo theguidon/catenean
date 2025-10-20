@@ -1,7 +1,8 @@
 import styles from "../../styles/IntroMobile.module.css";
 import ellipses1 from "../../assets/images/intro/ellipses1.svg";
 import ellipses2 from "../../assets/images/intro/ellipses2.svg";
-import photos from "../../assets/images/intro/photos.png";
+import photos1 from "../../assets/images/intro/photos1.png";
+import photos2 from "../../assets/images/intro/photos2.png";
 import photo from "../../assets/images/intro/photo.png";
 import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
@@ -56,10 +57,10 @@ export default function IntroMobile() {
           </p>
         </div>
         <div className={styles.graphics}>
-          <img src={photos} alt="" className={styles.catPhotos} />
+          <img src={photos1} alt="" className={styles.catPhotos1} />
+          <img src={photos2} alt="" className={styles.catPhotos2} />
           <img src={hearts} alt="" className={styles.hearts} />
           <img src={photo} alt="" className={styles.catPhoto} />
-          <img src={line} alt="" className={styles.line} />
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@
   min-width: 100dvw;
   font-family: "Outfit";
   color: #683535;
+  overflow-x: hidden;
 }
 
 .section {
@@ -13,7 +14,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .section2 {
@@ -50,18 +50,26 @@
   z-index: -1;
 }
 
-.catPhotos {
-  max-width: 20rem;
+.catPhotos1 {
+  max-width: 15rem;
   position: absolute;
-  inset: 0 auto auto 50%;
-  translate: -50% 0;
+  inset: -5rem auto auto 50%;
+  translate: calc(-50% - 3rem) 0;
+  z-index: 10;
+}
+
+.catPhotos2 {
+  max-width: 15rem;
+  position: absolute;
+  inset: 5rem auto auto 50%;
+  translate: calc(-50% + 3rem) 0;
   z-index: 10;
 }
 
 .hearts {
   max-width: 20rem;
   position: absolute;
-  inset: 3rem auto auto 50%;
+  inset: 1rem auto auto 50%;
   translate: -50% 0;
   z-index: 10;
 }

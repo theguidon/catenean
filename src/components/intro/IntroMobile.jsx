@@ -5,6 +5,7 @@ import photos from "../../assets/images/intro/photos.png";
 import photo from "../../assets/images/intro/photo.png";
 import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
+import cloud from "../../assets/images/cloud.svg";
 
 export default function IntroMobile() {
   return (
@@ -17,7 +18,18 @@ export default function IntroMobile() {
             Heights campus, one is certain to encounter&nbsp;them.
           </p>
         </div>
-        <div className={styles.graphics}></div>
+        <div className={styles.graphics}>
+          <img
+            src={cloud}
+            alt=""
+            className={`${styles.cloud} ${styles.cloud1}`}
+          />
+          <img
+            src={cloud}
+            alt=""
+            className={`${styles.cloud} ${styles.cloud2}`}
+          />
+        </div>
       </div>
       <div className={`${styles.section} ${styles.section2}`}>
         <div className={styles.text}>

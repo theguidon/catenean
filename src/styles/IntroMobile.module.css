@@ -27,6 +27,22 @@
   max-width: 15rem;
 }
 
+.cloud {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: 10;
+}
+
+.cloud1 {
+  width: 15rem;
+  translate: calc(-50% - 9rem) calc(-50% - 15rem);
+}
+
+.cloud2 {
+  width: 8rem;
+  translate: calc(-50% + 11rem) calc(-50% - 8rem);
+}
+
 .ellipses {
   position: absolute;
   inset: 50% auto auto 50%;
@@ -54,7 +70,7 @@
   max-width: 20rem;
   position: absolute;
   inset: auto auto 5rem 50%;
-  translate: calc(-50% + 10rem) 0;
+  translate: calc(-50% + 5rem) 0;
 }
 
 .line {

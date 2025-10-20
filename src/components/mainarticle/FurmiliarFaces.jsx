@@ -14,7 +14,7 @@ return (
     <main className={sectionStyles.main}>
         <section>
             {/* Hero Segment */}
-            <h3>Fur-miliar faces</h3>
+            <h3>Fur-miliar<br/>faces</h3>
             <div className={sectionStyles.hero}>
                 {/* Hero Image */}
                 <img src={Grass} style={{ left: '-10', bottom: '0', width: '101%', zIndex: 2 }}></img>
@@ -40,7 +40,6 @@ return (
         </article>
         <section className={sectionStyles.helloCats}>
             {/* Cats */}
-            <img src={HelloCats}></img>
              <motion.h4
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -54,14 +53,14 @@ return (
             <div className={sectionStyles.quoteBackground} style={{  height: '105%' }}></div>
             <div className={sectionStyles.quoteBackground} style={{ height: '115%' }}></div>
             {/* Quote Section */}
-            <h5 style={{ right: '40%', bottom: '5%' }}>"</h5>
+            <h5 style={{ right: '40%'}}>"</h5>
             <p>
                 Medyo nasasaktan ako dahil medyo mabigat [sa bulsa] 'yung binibili kong pagkain, 'yung Oc [cat food brand] Php 175 isang kilo. Eh halos minsan isang kilo, [k]aunti natitira sa isang araw kasi umaga-hapon ang pakain ko.
             </p>
+            <h5 style={{ left: '40%'}}>"</h5>  
             <p className={sectionStyles.quote}>
                 (It hurts [my wallet] a bit since the price of the cat food I buy, Oc, is hefty, around Php 175 per kilo. Almost always, only a small amount of that kilo is left at the end of the day, since I feed them from morning until evening.)
             </p>
-            <h5 style={{ left: '40%', bottom: '5%' }}>"</h5>  
         </article>
     </main>
     </>

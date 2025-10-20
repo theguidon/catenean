@@ -1,7 +1,6 @@
 .main {
   background: #F2DAAD;
 }
-
 .main h3 {
   font-size: 3.5rem;
   font-weight: 700;
@@ -20,7 +19,7 @@
 .main p {
   color: #522222;
   font-family: "AndesNeue Alt 2 Book";
-  padding: 0 3em 2em 3em;
+  padding: 2em 3em 2em 3em;
 }
 
 section {
@@ -29,11 +28,6 @@ section {
   padding: 0;
   width: 100%;
   height: auto;
-}
-
-article {
-  margin: 4em 0;
-  padding: 2em 0;
 }
 
 .hero {
@@ -58,29 +52,28 @@ img {
 
 .helloCats{
   position: relative;
-  height: 50vh;
+  width: 100%;
   z-index: 6;
   display: flex;
   justify-content: center;
+  aspect-ratio: 393/420;
+  background: center / contain no-repeat url("src/assets/images/cat-speech.svg");
 }
 
 .helloCats h4{
   position: absolute;
   color: #2074A4;
   font-family: 'Cedarville Cursive Regular';
-  font-size: 2em;
-  top: 5%;
+  font-size: 10vw;
+  top: 7%;
   right: 30%;
-}
-
-.helloCats img {
-  width: 393px;
-  height: auto;
 }
 
 .quoteSection .quote {
   font-family: 'Outfit';
   color: black;
+  font-size: 0.80em;
+  padding: 0 3em;
 }
 
 .quoteSection {
@@ -107,4 +100,5 @@ img {
   text-align: center;
   color: #FAA685;
   z-index: 7;
+  margin: 0;
 }

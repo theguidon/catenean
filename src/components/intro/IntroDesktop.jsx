@@ -1,10 +1,13 @@
 import styles from "../../styles/IntroDesktop.module.css";
 import ellipses1 from "../../assets/images/intro/ellipses1.svg";
 import ellipses2 from "../../assets/images/intro/ellipses2.svg";
-import photos from "../../assets/images/intro/photos.png";
+import photos1 from "../../assets/images/intro/photos1.png";
+import photos2 from "../../assets/images/intro/photos2.png";
 import photo from "../../assets/images/intro/photo.png";
 import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
+import cloud from "../../assets/images/cloud.svg";
+import RBR from "../../assets/images/intro/RBR.svg";
 
 export default function IntroDesktop() {
   return (
@@ -17,7 +20,23 @@ export default function IntroDesktop() {
             Heights campus, one is certain to encounter&nbsp;them.
           </p>
         </div>
-        <div className={styles.graphics}></div>
+        <div className={styles.graphics}>
+          <img
+            src={cloud}
+            alt=""
+            className={`${styles.cloud} ${styles.cloud1}`}
+          />
+          <img
+            src={cloud}
+            alt=""
+            className={`${styles.cloud} ${styles.cloud2}`}
+          />
+          <img
+            src={cloud}
+            alt=""
+            className={`${styles.cloud} ${styles.cloud3}`}
+          />
+        </div>
       </div>
       <div className={`${styles.section} ${styles.section2}`}>
         <div className={`${styles.text} ${styles.text2}`}>
@@ -31,7 +50,8 @@ export default function IntroDesktop() {
           </p>
         </div>
         <div className={styles.graphics}>
-          <img src={photos} alt="" className={styles.catPhotos} />
+          <img src={photos1} alt="" className={styles.catPhotos1} />
+          <img src={photos2} alt="" className={styles.catPhotos2} />
           <img src={hearts} alt="" className={styles.hearts} />
           <img src={photo} alt="" className={styles.catPhoto} />
           <img src={line} alt="" className={styles.line} />
@@ -48,6 +68,9 @@ export default function IntroDesktop() {
             of&nbsp;separation.
           </p>
         </div>
+      </div>
+      <div className={styles.graphics}>
+        <img src={RBR} alt="" className={styles.RBR} />
       </div>
     </div>
   );

@@ -1,5 +1,10 @@
 .main {
   background: #F2DAAD;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  height: 100%;
+  
 }
 .main h3 {
   font-size: 3.5rem;
@@ -26,13 +31,16 @@ section {
   position: relative;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: auto;
+  width: 2000vw;
+
+}
+
+article {
+  width: 2000vw;
 }
 
 .hero {
   width: 100%;
-  overflow: hidden;
   height: 25vh;
 }
 

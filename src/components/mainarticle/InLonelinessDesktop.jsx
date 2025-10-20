@@ -4,15 +4,18 @@ import heartCatSmall2 from '../../assets/images/heart-cat-small-2-v2.png';
 import highFiveHeartBackground from '../../assets/images/highfive-heart-background.svg'
 import highFiveRightHand from '../../assets/images/highfive-right-hand.svg';
 import highFiveLeftPaw from '../../assets/images/highfive-left-paw.svg';
-import bushRight from '../../assets/images/bush-right.svg';
 import bushLeft from '../../assets/images/bush-left.svg';
-import backgroundGrass from '../../assets/images/background-grass.svg';
 import schmittHallBuilding from '../../assets/images/location-schmitt-hall-building.svg';
 import heartBackgroundShape from '../../assets/images/heart-background-shape.svg';
 import darkBrownEllipses from '../../assets/images/dark-brown-ellipses-horizontal.svg';
 import title from '../../assets/images/in-loneliness-title-desktop.svg';
-import { easeIn, easeOut, motion, transform } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useRef } from 'react';
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }
+};
 
 const InLonelinessDesktop = () => {
     const highFiveContainerRef = useRef(null);
@@ -39,99 +42,102 @@ const InLonelinessDesktop = () => {
 
     return(
         <section
-        className={styles.container}
-        style={{
-        display: "flex",
-        flexFlow: "row nowrap",    
-        alignItems: "stretch",    
-        overflowY: "hidden",       
-        overflowX: "auto",         
-        height: "100vh",
-        width: "100vw",
-        background: "#f2daad",
-        position: "relative"
-        }}>
-
-            {/* SECTION TITLE */}
-
+            className={styles.container}
+            style={{
+                display: "flex",
+                flexFlow: "row nowrap",    
+                alignItems: "stretch",    
+                overflowY: "hidden",       
+                overflowX: "auto",         
+                height: "100vh",
+                width: "100vw",
+                background: "#f2daad",
+                position: "relative"
+            }}
+        >
+            <div className={styles.grass}> </div>
+            {/*#1 SECTION TITLE */}
             <section>
-                <motion.img
-                    src={bushLeft}
-                    style={{
-                        position: "absolute",
-                        scale: "180%",
-                        left: 0,
-                        bottom: "30%"
-                    }}
-                    initial={{
-                        opacity: 0
-                    }}
-                    whileInView={{
-                        opacity: 1
-                    }}
-                    transition={{
-                        duration: 1.5, 
-                        ease: easeIn
-                    }}
-                />
-                <motion.img
-                    src={bushRight}
-                        style={{
-                            position: "absolute",
-                            scale: "180%",
-                            right: 0,
-                            bottom: "30%"
-                        }}
-                        initial={{
-                            opacity: 0
-                        }}
-                        whileInView={{
-                            opacity: 1
-                        }}
-                        transition={{
-                            duration: 1.5, 
-                            ease: easeIn
-                        }}
-                />
+                <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ amount: 0.7, once: true }}>
+                    <motion.img
+                        src={bushLeft}
+                        style={{ position: "absolute", scale: "220%", left: 0, bottom: "25vh" }}
+                    />
+                    <motion.img
+                        src={bushLeft}
+                        style={{ position: "absolute", scale: "220%", right: 0, bottom: "25vh" }}
+                    />
+                </motion.div>
 
-                <motion.img 
-                    src={schmittHallBuilding}
-                    style={{ position: "absolute", scale: "160%", left: "40%", top: "15%" }}
-                    initial={{ x: 300 }}
-                    whileInView={{ x: 0 }}
-                    transition={{ duration: 1.5, ease: easeOut, fill: "forwards" }}
-                    viewport={{ amount: 1, once: false }}
-                />
-                
-                <motion.img 
-                    src={title}
-                    style={{ position: "absolute", scale: "60%", left: "40%"}}
-                    initial={{ x: 200 }}
-                    whileInView={{ x: 0 }}
-                    transition={{ duration: 1.5, ease: easeOut, fill: "forwards" }}
-                    viewport={{ amount: 1, once: false }}
-                />
+                <motion.div 
+                    style={{position: "relative", width: "100%", height: "100%"}}
+                    initial={{ x: 150, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 2, ease: [0.25, 1, 0.5, 1], fill: "forwards" }}
+                    viewport={{ amount: 0.7, once: true }}
+                >
+                    <img 
+                        src={schmittHallBuilding}
+                        style={{ position: "absolute", scale: "180%", height: "auto", left: "62%", bottom: "25%", transform: "translateX(-50%)"}}
+                    />
+                    <img 
+                        src={title}
+                        style={{ position: "absolute", scale: ".55", left: "31%",  bottom: "50%"}}
+                    />
+                </motion.div>
 
             </section>
 
             {/* #2 SECTION WITH 2 HEART CATS*/} 
             <section>
-                <img src={darkBrownEllipses}
-                    styles={{
-                   
-                    }} 
-                /> 
-                <p> hihihi</p>
+                <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ amount: 0.7, once: true }}>
+                    <img src={darkBrownEllipses}
+                        style={{
+                                position: "absolute",
+                                top: "40%",  
+                                left: "50%",  
+                                transform: "translateX(-50%) translateY(-50%)",
+                                width: "80%",  
+                                height: "auto",
+                            }} 
+                        >
+                        </img>
+
+                        <div className={`${styles.heartCatWrapper} ${styles.firstHeartCatWrapper}`} >
+                            <img src={heartBackgroundShape}/>
+                            <img src={heartBackgroundShape}/>
+                            <img src={heartCatSmall1}/>
+                        </div>
+
+                        <div className={`${styles.heartCatWrapper} ${styles.secondHeartCatWrapper}`}>
+                            <img src={heartBackgroundShape}/>
+                            <img src={heartBackgroundShape}/>
+                            <img src={heartCatSmall2}/>
+                        </div>
+                </motion.div>
+                <motion.p 
+                    variants={fadeIn}
+                    style={{position: "absolute", top: "40%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
+                    initial={{opacity: 0}}
+                    whileInView={{opacity: 1}}
+                    transition={{duration: 0.5, ease: "easeOut", delay: 0.5}}
+                    viewport={{ amount: 0.7, once: true }}
+                >
+                    Nearly each one of the Cateneans has become important in providing solace and comfort 
+                    to the members of the Ateneo community. This sense of solidarity between Ateneans and Cateneans 
+                    became especially prominent at the height of the pandemic.
+                </motion.p>
             </section>
 
             {/* #3 SECTION WITH 2 PARAGRAPHS */}
-            <section>
+            <section className={styles.paragraph}>
                 <p>
                     One of the people who observed this solidarity was Assistant Professor at the 
                     Department of Chemistry and Ateneans Guided and Inspired by their Love for Animals 
                     (AGILA) moderator Olivia Erin “Oui” Buenafe, PhD. “The cats served as companions to 
                     the security personnel,” she remarks.
                 </p>
+                <br></br>
                 <p>    
                     She shares that with the pandemic-driven campus restrictions, the Cateneans gave 
                     the few campus visitors and personnel some semblance of relief amid the lonely 
@@ -139,8 +145,9 @@ const InLonelinessDesktop = () => {
                     spouse, Department of Theology Instructor Joseph Johnson, JCL.
                 </p>
             </section>
+
             {/* #4 SECTION WITH 2 PARAGRAPHS */}
-            <section>
+            <section className={styles.paragraph}>
                 <p>
                     In instances when some cats require medical attention, the couple does their best to attend 
                     to these concerns. For instance, they took care of Schmitt Hall’s beloved Pao-Pao, who was often 
@@ -149,6 +156,7 @@ const InLonelinessDesktop = () => {
                     Often, the medical bills come from the couple’s own pockets, although they are grateful to those 
                     who have helped with the costs.
                 </p>
+                <br></br>
                 <p>
                     Johnson references the 
                     <a href="https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html">Laudato si'</a> 
@@ -156,28 +164,29 @@ const InLonelinessDesktop = () => {
                     treat the vulnerable, including animals, reflects who we are as people.
                 </p>
             </section>
-            {/* #5 SECTION WITH 2 QUOTES */}
-            <section>
 
-                <div className={styles.smallQuoteContainer}>
-                    <motion.div className={styles.quote}
-                    initial={{opacity: 0, y: 30}}
-                    whileInView={{opacity: 1, y: 0}}
-                    transition={{duration: 0.5, ease: "easeOut"}}
-                    viewport={{ amount: 0.5, once: true }} 
+            {/* #5 SECTION WITH 2 QUOTES */}
+            <section className={styles.paragraph}>
+                <div className={styles.smallQuoteContainer} style={{marginBottom: "3rem"}}>
+                    <motion.div 
+                        className={styles.quote}
+                        initial={{opacity: 0}}
+                        whileInView={{opacity: 1}}
+                        transition={{duration: 0.5, ease: "easeOut"}}
+                        viewport={{ amount: 0.5, once: true }} 
                     >
                         <motion.p
-                        initial={{opacity: 0, y: 30}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
-                        viewport={{ amount: 0.5, once: true }}
+                            initial={{opacity: 0}}
+                            whileInView={{opacity: 1}}
+                            transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
+                            viewport={{ amount: 0.5, once: true }}
                         >
                             Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
                         </motion.p>
                     </motion.div>
                     <motion.p
-                        initial={{opacity: 0, y: 30}}
-                        whileInView={{opacity: 1, y: 0}}
+                        initial={{opacity: 0}}
+                        whileInView={{opacity: 1}}
                         transition={{duration: 0.5, ease: "easeOut", delay: 1.0}} 
                         viewport={{ amount: 0.5, once: true }}
                     >
@@ -185,33 +194,35 @@ const InLonelinessDesktop = () => {
                     </motion.p>
                 </div>
                 <div className={styles.smallQuoteContainer}>
-                        <motion.div className={styles.quote}
-                        initial={{opacity: 0, y: 30}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.5, ease: "easeOut"}}
+                    <motion.div 
+                        className={styles.quote}
+                        initial={{opacity: 0}}
+                        whileInView={{opacity: 1}}
+                        transition={{duration: 0.5, ease: "easeOut", delay: 2.0}}
                         viewport={{ amount: 0.5, once: true }} 
-                        >
+                    >
                         <motion.p
-                        initial={{opacity: 0, y: 30}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
-                        viewport={{ amount: 0.5, once: true }}
+                            initial={{opacity: 0}}
+                            whileInView={{opacity: 1}}
+                            transition={{duration: 0.5, ease: "easeOut", delay: 2.5}} 
+                            viewport={{ amount: 0.5, once: true }}
                         >
                             They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
                         </motion.p>
                     </motion.div>
                     <motion.p
-                        initial={{opacity: 0, y: 30}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.5, ease: "easeOut", delay: 1.0}} 
+                        initial={{opacity: 0}}
+                        whileInView={{opacity: 1}}
+                        transition={{duration: 0.5, ease: "easeOut", delay: 3.0}} 
                         viewport={{ amount: 0.5, once: true }}
                     >
                         Buenafe adds.
                     </motion.p>
                 </div>
             </section>
+
             {/* #6 SECTION WITH HIGHFIVE */}
-            <section>
+            <section style={{minWidth: "unset", maxWidth: 850}}>
                 <p>
                     The couple embodies this mercy by providing their support to the student organization AGILA, 
                     such as helping them transport the cats to the veterinarian as needed. AGILA’s advocacy is to 
@@ -226,8 +237,6 @@ const InLonelinessDesktop = () => {
                     <p>give me a high five!</p>
                 </div>
             </section>
-
-
         </section>
     );
 }

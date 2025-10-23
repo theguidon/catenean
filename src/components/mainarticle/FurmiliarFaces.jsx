@@ -29,7 +29,7 @@ return (
                     </p>
                     <p>
                         Before he clocks in, Resuello feeds the five or six cats he encounters en route to his station on the fifth floor of the CTC building as part of his morning ritual. Two of these cats, named Everyday and Mai-Mai, are located in the Gonzaga parking space and Schmitt Hall, respectively. Many other cats also stay near the Philippine Institute of Pure and Applied Chemistry (PIPAC) and the ground floor of the CTC building.
-                    </p>        
+                    </p>
                 </article>
                 <section className={sectionStyles.helloCats}>
                     <motion.h4

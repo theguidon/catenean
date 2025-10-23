@@ -14,32 +14,46 @@ return (
         <main>
             <div className={sectionStyles.sectionContainer}>
                 <section className={sectionStyles.heading} style={{background: ''}}>
-                    <h3>Furmiliar<br/>Faces</h3>
-                    <img src={Grass} style={{ left: '-10', bottom: '0', width: '101%', zIndex: 2 }}></img>
+                    <h3>Furmiliar<br/>faces</h3>
+                    <img src={Grass} style={{ position: 'absolute', bottom: '0', width: '100%' }}></img>
                     <motion.img src={CTC}
                                 initial={{ y: 20 }}
                                 whileInView={{ y: 0 }}
                                 transition={{ duration: 0.500, ease: easeInOut }}
-                                style={{bottom: '12%', left: '15%', width: '70%', paddingTop: '20px'}}>
+                                style={{position: 'relative', bottom: '1vh', left: '30vw', paddingTop: '', zIndex: '1', width: '40%'}}>
                     </motion.img>
+                    <img src={Bush} style={{position: 'relative', zIndex: '2', right: '30vw', width: "20%"}}/>
+                    <img src={Bush} style={{position: 'relative', zIndex: '2', left: '10vw', width: "20%"}}/>
                 </section>
+                <div className={sectionStyles.article}>
+                    <article>
+                        <p>
+                            Jesus “Jhess” Resuello is a humble member of the maintenance staff at the PLDT-Convergent Technologies Center and School of Management (CTC-SOM) buildings. As he starts his day, the sound of his motorcycle is enough to stop the Gonzaga cats in their tracks, who scramble to greet him before he can even park.
+                        </p>
+                        <p>
+                            Before he clocks in, Resuello feeds the five or six cats he encounters en route to his station on the fifth floor of the CTC building as part of his morning ritual. Two of these cats, named Everyday and Mai-Mai, are located in the Gonzaga parking space and Schmitt Hall, respectively. Many other cats also stay near the Philippine Institute of Pure and Applied Chemistry (PIPAC) and the ground floor of the CTC building.
+                        </p>
+                    </article>
+                    <section>
+                    <p>
+                        Feeding so many cats on the regular is a costly undertaking, but it is one that Resuello has readily shouldered despite the difficulty. 
+                    </p>
+                    <div className={sectionStyles.helloCats}>
+                        <motion.h4
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.500, ease: easeInOut, delay: 0.250 }}>
+                        hello!
+                        </motion.h4>
+                    </div>
+                    </section>
+                </div>
                 <article>
-                    <p>
-                        Jesus “Jhess” Resuello is a humble member of the maintenance staff at the PLDT-Convergent Technologies Center and School of Management (CTC-SOM) buildings. As he starts his day, the sound of his motorcycle is enough to stop the Gonzaga cats in their tracks, who scramble to greet him before he can even park.
-                    </p>
-                    <p>
-                        Before he clocks in, Resuello feeds the five or six cats he encounters en route to his station on the fifth floor of the CTC building as part of his morning ritual. Two of these cats, named Everyday and Mai-Mai, are located in the Gonzaga parking space and Schmitt Hall, respectively. Many other cats also stay near the Philippine Institute of Pure and Applied Chemistry (PIPAC) and the ground floor of the CTC building.
-                    </p>
+                    <div className={sectionStyles.quoteBackground} style={{ height: '75%'}}></div>
+                    <div className={sectionStyles.quoteBackground} style={{  height: '85%', top: '-25%'}}></div>
+                    <div className={sectionStyles.quoteBackground} style={{ height: '95%', top: '-110%' }}></div>
+                    <p style={{top: '-200%', zIndex: '6', width: '50vw'}}> Medyo nasasaktan ako dahil medyo mabigat [sa bulsa] 'yung binibili kong pagkain, 'yung Oc [cat food brand] Php 175 isang kilo. Eh halos minsan isang kilo, [k]aunti natitira sa isang araw kasi umaga-hapon ang pakain ko.</p>
                 </article>
-                <section className={sectionStyles.helloCats}>
-                    <motion.h4
-                    initial={{ opacity: 0, y: -10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.500, ease: easeInOut, delay: 0.250 }}>
-                    hello!
-                    </motion.h4>
-                </section>
-                <article>3</article>
             </div>
         </main>
     </>

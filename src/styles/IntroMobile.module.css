@@ -31,11 +31,13 @@
   position: absolute;
   inset: 50% auto auto 50%;
   z-index: 10;
+  animation: 3s ease-in-out 0s infinite alternate-reverse bob;
 }
 
 .cloud1 {
   width: 15rem;
   translate: calc(-50% - 9rem) calc(-50% - 15rem);
+  animation-delay: -1s;
 }
 
 .cloud2 {
@@ -62,6 +64,16 @@
 
   100% {
     transform: rotate(5deg);
+  }
+}
+
+@keyframes bob {
+  0% {
+    transform: translateY(-3rem);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -99,4 +111,16 @@
 .line {
   position: absolute;
   inset: 0 auto auto 0;
+}
+
+.RBR {
+  position: absolute;
+  inset: auto auto 7rem -1rem;
+  height: 8rem;
+}
+
+.cat {
+  position: absolute;
+  inset: auto auto 12rem 1rem;
+  z-index: 10;
 }

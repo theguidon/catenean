@@ -4,9 +4,10 @@ import ellipses2 from "../../assets/images/intro/ellipses2.svg";
 import photos1 from "../../assets/images/intro/photos1.png";
 import photos2 from "../../assets/images/intro/photos2.png";
 import photo from "../../assets/images/intro/photo.png";
-import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
+import RBR from "../../assets/images/intro/RBR.svg";
+import cat from "../../assets/images/intro/cat.svg";
 
 export default function IntroMobile() {
   return (
@@ -30,6 +31,8 @@ export default function IntroMobile() {
             alt=""
             className={`${styles.cloud} ${styles.cloud2}`}
           />
+          <img src={RBR} alt="" className={styles.RBR} />
+          <img src={cat} alt="" className={styles.cat} />
         </div>
       </div>
       <div className={`${styles.section} ${styles.section2}`}>

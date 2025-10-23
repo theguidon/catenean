@@ -14,8 +14,40 @@ import { useEffect, useRef } from 'react';
 
 const fadeIn = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      staggerChildren: 1,
+      delayChildren: 0.3,
+    },
+  },
 };
+
+const fadeInContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const fadeInText = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+
+const heartPulse = {
+  initial: { scale: 1 },
+  pulse: { scale: 1.1, transition: { duration: 1, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" } }
+};
+
 
 const InLonelinessDesktop = () => {
     const highFiveContainerRef = useRef(null);
@@ -71,18 +103,23 @@ const InLonelinessDesktop = () => {
 
                 <motion.div 
                     style={{position: "relative", width: "100%", height: "100%"}}
-                    initial={{ x: 150, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 2, ease: [0.25, 1, 0.5, 1], fill: "forwards" }}
-                    viewport={{ amount: 0.7, once: true }}
+                    
                 >
-                    <img 
+                    <motion.img 
                         src={schmittHallBuilding}
-                        style={{ position: "absolute", scale: "180%", height: "auto", left: "62%", bottom: "25%", transform: "translateX(-50%)"}}
+                        style={{ position: "absolute", scale: "180%", height: "auto", left: "35%", bottom: "25%", transform: "translateX(-50%)"}}
+                        initial={{ x: 150 }}
+                        whileInView={{ x: 0 }}
+                        transition={{ duration: 2, ease: [0.25, 1, 0.5, 1], fill: "forwards" }}
+                        viewport={{ amount: 0.7, once: true }}
                     />
-                    <img 
+                    <motion.img 
                         src={title}
-                        style={{ position: "absolute", scale: ".55", left: "31%",  bottom: "50%"}}
+                        style={{ position: "absolute", scale: "55%", left: "31%",  bottom: "50%"}}
+                        initial={{ x: 150, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 2, ease: [0.25, 1, 0.5, 1], fill: "forwards" }}
+                        viewport={{ amount: 0.7, once: true }}
                     />
                 </motion.div>
 
@@ -104,15 +141,15 @@ const InLonelinessDesktop = () => {
                         </img>
 
                         <div className={`${styles.heartCatWrapper} ${styles.firstHeartCatWrapper}`} >
-                            <img src={heartBackgroundShape}/>
-                            <img src={heartBackgroundShape}/>
+                            <motion.img src={heartBackgroundShape} variants={heartPulse} animate="pulse" />
+                            <motion.img src={heartBackgroundShape} variants={heartPulse} animate="pulse"/>
                             <img src={heartCatSmall1}/>
                         </div>
 
                         <div className={`${styles.heartCatWrapper} ${styles.secondHeartCatWrapper}`}>
-                            <img src={heartBackgroundShape}/>
-                            <img src={heartBackgroundShape}/>
-                            <img src={heartCatSmall2}/>
+                            <motion.img src={heartBackgroundShape} variants={heartPulse} animate="pulse"/>
+                            <motion.img src={heartBackgroundShape} variants={heartPulse} animate="pulse"/>
+                            <img src={heartCatSmall2} />
                         </div>
                 </motion.div>
                 <motion.p 
@@ -166,60 +203,31 @@ const InLonelinessDesktop = () => {
             </section>
 
             {/* #5 SECTION WITH 2 QUOTES */}
-            <section className={styles.paragraph}>
-                <div className={styles.smallQuoteContainer} style={{marginBottom: "3rem"}}>
-                    <motion.div 
-                        className={styles.quote}
-                        initial={{opacity: 0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5, ease: "easeOut"}}
-                        viewport={{ amount: 0.5, once: true }} 
-                    >
-                        <motion.p
-                            initial={{opacity: 0}}
-                            whileInView={{opacity: 1}}
-                            transition={{duration: 0.5, ease: "easeOut", delay: 0.5}} 
-                            viewport={{ amount: 0.5, once: true }}
-                        >
-                            Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
-                        </motion.p>
-                    </motion.div>
-                    <motion.p
-                        initial={{opacity: 0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5, ease: "easeOut", delay: 1.0}} 
-                        viewport={{ amount: 0.5, once: true }}
-                    >
-                        he remarks.
+            <motion.section 
+                className={styles.paragraph}
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ amount: 0.5, once: true }} 
+            >
+                <motion.div  className={styles.quote} variants={fadeInContainer}>
+                    <motion.p variants={fadeInText} transition={{ delay: 0.6 }}>
+                        Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
                     </motion.p>
-                </div>
-                <div className={styles.smallQuoteContainer}>
-                    <motion.div 
-                        className={styles.quote}
-                        initial={{opacity: 0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5, ease: "easeOut", delay: 2.0}}
-                        viewport={{ amount: 0.5, once: true }} 
-                    >
-                        <motion.p
-                            initial={{opacity: 0}}
-                            whileInView={{opacity: 1}}
-                            transition={{duration: 0.5, ease: "easeOut", delay: 2.5}} 
-                            viewport={{ amount: 0.5, once: true }}
-                        >
-                            They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
-                        </motion.p>
-                    </motion.div>
-                    <motion.p
-                        initial={{opacity: 0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5, ease: "easeOut", delay: 3.0}} 
-                        viewport={{ amount: 0.5, once: true }}
-                    >
-                        Buenafe adds.
+                </motion.div>
+                <motion.p variants={fadeInContainer}>
+                    he remarks.
+                </motion.p>
+                
+                <motion.div className={styles.quote} variants={fadeInContainer} style={{marginTop: "3rem"}}>
+                    <motion.p variants={fadeInText} transition={{ delay: 0.6 }}>
+                        They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
                     </motion.p>
-                </div>
-            </section>
+                </motion.div>
+                <motion.p variants={fadeInContainer}>
+                    Buenafe adds.
+                </motion.p>
+            </motion.section>
 
             {/* #6 SECTION WITH HIGHFIVE */}
             <section style={{minWidth: "unset", maxWidth: 850}}>

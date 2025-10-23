@@ -1,13 +1,75 @@
-.main {
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+section, article {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: row;
+  width: 400vw;
+  height: 100vh;
   background: #F2DAAD;
 }
-.main h3 {
-  font-size: 3.5rem;
+
+.heading h3 {
+  font-size: clamp(3.5rem, calc(7vw + 1rem), 6rem);
   font-weight: 700;
   font-family: "Solway";
   text-align: center;
   color: #E07329; 
-  -webkit-text-stroke: 12px #F9F4EB;
+  -webkit-text-stroke: clamp(1rem, calc(1rem + 0.2vw), 3rem) #F9F4EB;
+  paint-order: stroke fill; 
+  filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
+  line-height: 110%; 
+  letter-spacing: -2.4px;
+  padding: 1em 0;
+}
+
+article p {
+  color: #522222;
+  font-family: "AndesNeue Alt 2 Book";
+  padding: 2em 3em 2em 3em;
+  position: relative;
+  font-size: 1.5vw;
+}
+
+.helloCats {
+  position: relative;
+  width: 80vw;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 393/420;
+  background: center / contain no-repeat url("src/assets/images/cat-speech.svg");
+}
+
+.helloCats h4 {
+  position: absolute;
+  color: #2074A4;
+  font-family: 'Cedarville Cursive Regular';
+  font-size: 6vw;
+  top: 6%;
+  right: 38%;
+}
+/* .main {
+  background: #F2DAAD;
+}
+.main h3 {
+  font-size: clamp(3.5rem, calc(7vw + 1rem), 10rem);
+  font-weight: 700;
+  font-family: "Solway";
+  text-align: center;
+  color: #E07329; 
+  -webkit-text-stroke: clamp(1rem, calc(1rem + 0.2vw), 3rem) #F9F4EB;
   paint-order: stroke fill; 
   filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
   line-height: 110%; 
@@ -20,9 +82,10 @@
   color: #522222;
   font-family: "AndesNeue Alt 2 Book";
   padding: 2em 3em 2em 3em;
+  position: relative;
 }
 
-section {
+.main section {
   position: relative;
   margin: 0;
   padding: 0;
@@ -47,6 +110,7 @@ img {
 
 .quoteSection > p {
   position: relative;
+  padding-top: 2em;
   z-index: 1;
 }
 
@@ -93,7 +157,7 @@ img {
 }
 
 .quoteSection h5 {
-  position: relative;
+  position: absolute;
   font-size: 3.5rem;
   font-weight: 700;
   font-family: "Outfit";
@@ -102,3 +166,16 @@ img {
   z-index: 7;
   margin: 0;
 }
+
+@media only screen and (min-width: 600px) {
+  .main section, .main article {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .main > div {
+    display: flex;
+    flex-direction: row;
+    width: 400vw;
+  }
+} */

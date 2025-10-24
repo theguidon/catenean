@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.section1 {
+  margin-bottom: 10rem;
+}
+
 .section2 {
   padding-top: 25rem;
   padding-bottom: 30rem;
@@ -69,7 +73,7 @@
 
 @keyframes bob {
   0% {
-    transform: translateY(-3rem);
+    transform: translateY(-0.5rem);
   }
 
   100% {
@@ -115,12 +119,13 @@
 
 .RBR {
   position: absolute;
-  inset: auto auto 7rem -1rem;
+  inset: auto auto 0 -1rem;
   height: 8rem;
+  z-index: 10;
 }
 
 .cat {
   position: absolute;
-  inset: auto auto 12rem 1rem;
+  inset: auto auto 0 1rem;
   z-index: 10;
 }

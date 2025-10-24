@@ -12,7 +12,7 @@ import cat from "../../assets/images/intro/cat.svg";
 export default function IntroMobile() {
   return (
     <div className={styles.main}>
-      <div className={styles.section}>
+      <div className={`${styles.section} ${styles.section1}`}>
         <div className={styles.text}>
           <img src={ellipses1} alt="" className={styles.ellipses} />
           <p>

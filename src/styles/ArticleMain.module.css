@@ -3,4 +3,7 @@
 .main {
 	background: #F2DDAF;
 	padding: 5rem 1.5rem 0rem;
+	width: 100vw;
+	max-width: 100vw;
+	overflow: clip;
 }

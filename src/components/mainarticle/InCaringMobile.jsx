@@ -33,7 +33,7 @@ const InCaringMobile = () => {
     }
   }
   return (
-    <main className={styles.main}>
+    <>
       <div className={styles.mainArticle}>
         <h3>In caring, caution, and commitment</h3>
 
@@ -127,7 +127,7 @@ const InCaringMobile = () => {
           campus.
         </p>
       </div>
-    </main>
+    </>
   );
 };
 

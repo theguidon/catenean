@@ -1,0 +1,203 @@
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vw;
+  padding: 6vh 5vw 5vh;
+}
+
+.backButton {
+  position: absolute;
+  top: 3vh;
+  right: 5vw;
+  width: 5vw;
+}
+
+.writeup {
+  width: 60%;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+.cats {
+  flex-grow: 1;
+  margin-top: 8vh;
+  width: 30%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2vw;
+}
+
+.cats article {
+  background-color: #FFFFEC;
+  box-shadow: 5px 5px 3px 0 rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  margin-top: 16px;
+  height: min-content;
+}
+
+.cats article:nth-child(1),
+.cats article:nth-child(1)>img {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.cats article:nth-child(2),
+.cats article:nth-child(2)>img {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.cats article>p {
+  width: 100%;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  margin-top: 4px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 600;
+}
+
+.cats img {
+  width: 100%;
+}
+
+.writeup>.heading {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: min-content;
+}
+
+.heading img {
+  width: 50%;
+}
+
+
+.titleCaption h1 {
+  font-family: "Solway", serif;
+  font-size: 10vw;
+  line-height: 8vw;
+  margin-top: 2.3rem;
+}
+
+.titleCaption h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 2.5vw;
+}
+
+.writeup>.content {
+  flex-grow: 3;
+  background: #ffffec;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 10px 10px 2px 0 rgba(94, 89, 82, 0.2);
+  white-space: pre-line;
+  font-family: "Outfit", sans-serif;
+}
+
+.navArrows {
+  --stroke-width: 6px;
+  --stroke-color: rgb(209, 170, 148);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.navArrows .link {
+  display: flex;
+  align-items: center;
+}
+
+.navArrows .link img {
+  width: 3vw;
+  opacity: 0.6;
+  margin: 0 8px;
+}
+
+.link .next {
+  justify-content: end;
+}
+
+.link+.next img {
+  transform: scaleX(-1);
+}
+
+.navArrows p {
+  color: var(--stroke-color);
+  font-size: 2vw;
+  font-family: "Solway", sans-serif;
+  font-weight: 600;
+  -webkit-text-fill-color: #ffffec;
+  -webkit-text-stroke: var(--stroke-width);
+  paint-order: stroke fill;
+}
+
+/* It's not mobile-first but bear with me */
+@media (width < 700px) {
+  .main {
+    padding: 6vh 0vw 5vh;
+  }
+
+  .writeup {
+    margin: 0 5vw;
+  }
+
+  .writeup p {
+    max-height: 40vh;
+    overflow-y: scroll;
+  }
+
+  .cats {
+    margin-top: 16px;
+    padding: 0 5vw;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: scroll
+  }
+
+  .cats img {
+    height: 200px;
+    width: auto;
+  }
+
+  .titleCaption h1 {
+    margin-top: 0;
+    font-size: 18vw;
+    line-height: 17vw;
+  }
+
+  .titleCaption h2 {
+    font-size: 4.5vw;
+  }
+
+  .cats article {
+    padding: 5vw;
+  }
+
+  .cats article>p {
+    font-size: 4vw;
+  }
+
+  .backButton {
+    width: 10vw;
+  }
+
+  .navArrows {
+    justify-content: start;
+    gap: 16px;
+  }
+
+  .navArrows .link p {
+    font-size: 4vw;
+  }
+
+  .navArrows .link img {
+    width: 6vw;
+  }
+}

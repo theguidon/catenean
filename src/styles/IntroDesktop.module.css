@@ -1,0 +1,142 @@
+.main {
+  position: relative;
+  background-color: #f2daad;
+  min-height: 100dvh;
+  min-width: 100dvw;
+  width: fit-content;
+  font-family: "Outfit";
+  color: #683535;
+  display: flex;
+  overflow-y: hidden;
+}
+
+.section {
+  position: relative;
+  height: 100dvh;
+  min-width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section2 {
+  padding-left: 70rem;
+  padding-right: 60rem;
+}
+
+.text {
+  position: relative;
+  z-index: 10;
+}
+
+.text1 {
+  max-width: 40rem;
+  font-size: 2rem;
+}
+
+.text2 {
+  width: 40rem;
+  font-size: 1.75rem;
+}
+
+.cloud {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: 10;
+  animation: 3s ease-in-out 0s infinite alternate-reverse bob;
+}
+
+.cloud1 {
+  width: 20rem;
+  inset: 50% auto auto -5%;
+  translate: 0 calc(-50% - 17rem);
+}
+
+.cloud2 {
+  width: 17rem;
+  translate: calc(-50% - 23rem) calc(-50% - 25rem);
+  animation-delay: -1s;
+}
+
+.cloud3 {
+  width: 16rem;
+  translate: calc(-50% + 25rem) calc(-50% - 20rem);
+  animation-delay: -2s;
+}
+
+.ellipses {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50%;
+  z-index: -1;
+}
+
+.polaroid {
+  animation: 3s ease-in-out 0s infinite alternate-reverse swing;
+  transform-origin: top center;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes bob {
+  0% {
+    transform: translateY(-3rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.catPhotos1 {
+  width: 30rem;
+  position: absolute;
+  inset: 0 auto auto 13rem;
+  z-index: 10;
+}
+
+.catPhotos2 {
+  width: 30rem;
+  position: absolute;
+  inset: 15rem auto auto 30rem;
+  z-index: 10;
+}
+
+.hearts {
+  position: absolute;
+  width: 40rem;
+  inset: 10rem auto auto 15rem;
+  z-index: 10;
+}
+
+.catPhoto {
+  width: 30rem;
+  position: absolute;
+  inset: 2rem 10rem auto auto;
+}
+
+.line {
+  position: absolute;
+  inset: -7rem auto auto 0;
+  z-index: 11;
+}
+
+.line2 {
+  position: absolute;
+  inset: -7rem -20rem auto auto;
+  z-index: 11;
+}
+
+.RBR {
+  position: absolute;
+  inset: auto auto -1rem -1rem;
+  z-index: 10;
+}

@@ -11,13 +11,13 @@ export default function BuildingWriteup() {
 
   const NavArrows = () => (
     <section className={styles.navArrows}>
-      <Link to={`/${data.back.toLowerCase()}`}>
+      <Link to={`/location/${data.back.toLowerCase()}`}>
         <section className={`${styles.link} ${styles.back}`}>
           <img src={arrow} />
           <p>{data.back.toUpperCase()}</p>
         </section>
       </Link>
-      <Link to={`/${data.next.toLowerCase()}`}>
+      <Link to={`/location/${data.next.toLowerCase()}`}>
         <section className={`${styles.link} ${styles.next}`}>
           <p>{data.next.toUpperCase()}</p>
           <img src={arrow} style={{ transform: "scaleX(-1)" }} />

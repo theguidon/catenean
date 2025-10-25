@@ -1,0 +1,55 @@
+.mainArticle {
+	width: 100%;
+	background: linear-gradient(to bottom, transparent 0, #fffae9 30%);
+}
+
+.mainArticle h3 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	font-family: "Cherry Swash";
+	text-align: center;
+	margin-bottom: 0.75rem;
+	color: #E07329;
+	-webkit-text-stroke: 12px white;
+	paint-order: stroke fill;
+	filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
+}
+
+.mainArticle p {
+	padding: 0 10vw;
+}
+
+img.building {
+	width: 100%;
+	object-fit: cover;
+}
+
+.cloudWrapper {
+	width: 100%;
+	height: 540px;
+	overflow: clip;
+	position: relative;
+	margin-top: 10vh;
+}
+
+.cloud1,
+.cloud2 {
+	min-width: 100%;
+	position: absolute;
+	left: 0;
+	object-fit: cover;
+}
+
+.cloud1 {
+	left: 0;
+	bottom: 50px;
+}
+
+.cloud2 {
+	bottom: 0;
+}
+
+.cat1 {
+	width: 100%;
+	margin-bottom: 10vh;
+}

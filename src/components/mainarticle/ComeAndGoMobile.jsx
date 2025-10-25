@@ -3,9 +3,22 @@ import building from "../../assets/images/location-faura-building.svg";
 import cloud1 from "../../assets/images/cloud1.svg";
 import cloud2 from "../../assets/images/cloud2.svg";
 import cat1 from "../../assets/images/cats/17.png";
+import { easeInOut, motion } from "motion/react";
 import heart1 from "../../assets/images/heart1.svg";
 
 const ComeAndGo = ({ setPage }) => {
+  const cloudVariants = {
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: easeInOut }
+    },
+    hidden: {
+      x: 20,
+      opacity: 0,
+      transition: { duration: 0.5, ease: easeInOut }
+    }
+  }
   return (
     <div className={styles.mainArticle}>
       <h3>Cats come and go</h3>
@@ -29,25 +42,19 @@ const ComeAndGo = ({ setPage }) => {
       </p>
 
       <div className={styles.cloudWrapper}>
-        <img className={styles.cloud1} src={cloud1} />
-        <img className={styles.cloud2} src={cloud2} />
-        <div className={styles.cat1}>
-          <img className={styles.cat1} src={cat1} />
-          <img className={styles.heart1} src={heart1} />
-        </div>
+        <motion.img variants={cloudVariants} initial="hidden" whileInView="visible" className={styles.cloud1} src={cloud1} />
+        <motion.img variants={cloudVariants} initial={{ ...cloudVariants.hidden, x: -cloudVariants.hidden.x }} whileInView="visible" className={styles.cloud2} src={cloud2} />
       </div>
+      <img className={styles.cat1} src={cat1} />
 
-      <div style={{ backgroundColor: "#FFFAE9", padding: "1rem 0 1rem" }}>
-        {" "}
-        <p>
-          Johnson recounts the day Pao-Pao was run over because of “the
-          reckless imprudence of drivers.” He first heard the news of
-          Pao-Pao’s passing before his 5:00 PM class. When he came back at
-          6:30 PM, he recalled a crowd of around 70 students gathering by the
-          Schmitt Hall before they headed to the SOM Forest, where Pao-Pao was
-          buried.
-        </p>
-      </div>
+      <p style={{ paddingBottom: "15vh" }}>
+        Johnson recounts the day Pao-Pao was run over because of “the
+        reckless imprudence of drivers.” He first heard the news of
+        Pao-Pao’s passing before his 5:00 PM class. When he came back at
+        6:30 PM, he recalled a crowd of around 70 students gathering by the
+        Schmitt Hall before they headed to the SOM Forest, where Pao-Pao was
+        buried.
+      </p>
     </div>
   );
 };

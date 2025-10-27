@@ -73,6 +73,7 @@
   .article .helloCats h4 {
 	position: absolute;
 	color: #2074A4;
+	font-weight: 400;
 	font-family: 'Cedarville Cursive Regular';
 	font-size: 4vw;
 	top: 4vh;

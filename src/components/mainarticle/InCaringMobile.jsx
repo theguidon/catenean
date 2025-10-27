@@ -33,9 +33,9 @@ const InCaringMobile = () => {
     }
   }
   return (
-    <main className={styles.main}>
+    <>
       <div className={styles.mainArticle}>
-        <h3>In caring, caution, and commitment</h3>
+        <h1>In caring, caution, and commitment</h1>
 
         <img className={styles.building} src={building} alt="asset of schmitt hall" />
 
@@ -82,11 +82,12 @@ const InCaringMobile = () => {
           initial="hidden"
           whileInView="show"
         >
-          <motion.p variants={quoteChildVariants} className={styles.quote}>
-            <motion.span variants={quoteChildVariants} transition={{ delay: 0.5 }}>“The best thing [students] can do regarding animal welfare advocacy,
+          <motion.div variants={quoteChildVariants} className={styles.quote}>
+            <motion.p variants={quoteChildVariants} transition={{ delay: 0.5 }}>
+              “The best thing [students] can do regarding animal welfare advocacy,
               and in support of AGILA na rin, [is to] act with empathy,”
-            </motion.span>
-          </motion.p>
+            </motion.p>
+          </motion.div>
           <motion.p variants={quoteChildVariants} style={{ marginBottom: "3rem" }}>Guce suggests.</motion.p>
         </motion.div>
 
@@ -127,7 +128,7 @@ const InCaringMobile = () => {
           campus.
         </p>
       </div>
-    </main>
+    </>
   );
 };
 

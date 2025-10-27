@@ -6,16 +6,13 @@
 	font-family: "AndesNeue Alt 2 Book";
 }
 
-p {
-	font-family: 'Outfit';
-}
 
 a {
-  margin: 0 0.25em;
-  text-decoration: underline; 
+	margin: 0 0.25em;
+	text-decoration: underline;
 }
 
-.sectionTitle > img{
+.sectionTitle>img {
 	margin: 5rem auto 0 auto;
 	display: block;
 	max-width: 100%;
@@ -33,38 +30,40 @@ a {
 	width: 100%;
 }
 
-.heartCatWrapper > img {
+.heartCatWrapper>img {
 	position: absolute;
 	display: block;
 	opacity: 0;
 }
 
-.heartCatWrapper > img:nth-of-type(1) {
+.heartCatWrapper>img:nth-of-type(1) {
 	filter: opacity(0.3);
 	bottom: 25px;
 }
 
-.heartCatWrapper > img:nth-of-type(2) {
+.heartCatWrapper>img:nth-of-type(2) {
 	filter: opacity(0.5);
 	bottom: 20px;
 }
 
 /* Images of first Heart Wrapper made bigger */
-.firstHeartCatWrapper > img:nth-of-type(1) {
+.firstHeartCatWrapper>img:nth-of-type(1) {
 	scale: 1.08;
 }
-.firstHeartCatWrapper > img:nth-of-type(2) {
+
+.firstHeartCatWrapper>img:nth-of-type(2) {
 	scale: 0.92;
 }
 
-.secondHeartCatWrapper > img:nth-of-type(1) {
+.secondHeartCatWrapper>img:nth-of-type(1) {
 	scale: 1;
 }
-.secondHeartCatWrapper> img:nth-of-type(2) {
+
+.secondHeartCatWrapper>img:nth-of-type(2) {
 	scale: 0.85;
 }
 
-.buildingContainer{
+.buildingContainer {
 	position: relative;
 	display: block;
 	padding: 0px;
@@ -73,7 +72,7 @@ a {
 	margin: 0rem auto 12rem auto;
 }
 
-.buildingContainer > img {
+.buildingContainer>img {
 	position: absolute;
 	bottom: 0px;
 	margin-bottom: 0;
@@ -81,7 +80,7 @@ a {
 }
 
 /* BACKGROUND GRASS */
-.buildingContainer > img:nth-of-type(1){
+.buildingContainer>img:nth-of-type(1) {
 	scale: 130%;
 	left: 60%;
 	bottom: 0.5rem;
@@ -89,7 +88,7 @@ a {
 }
 
 /* SCHMITT HALL BUILDING */
-.buildingContainer > img:nth-of-type(2){
+.buildingContainer>img:nth-of-type(2) {
 	left: 50%;
 	bottom: -4rem;
 	transform: translateX(-50%) scale(85%);
@@ -97,19 +96,19 @@ a {
 }
 
 /* LEFT BUSH */
-.buildingContainer > img:nth-of-type(3){
+.buildingContainer>img:nth-of-type(3) {
 	left: -15px;
 	transform: translateX(-50%);
 }
 
 /* RIGHT BUSH */
-.buildingContainer > img:nth-of-type(4){
+.buildingContainer>img:nth-of-type(4) {
 	right: -15px;
 	transform: translateX(50%);
 }
 
 /* RED BAR */
-.buildingContainer::after{
+.buildingContainer::after {
 	content: "";
 	bottom: -12px;
 	left: 50%;
@@ -121,7 +120,7 @@ a {
 	z-index: 1;
 }
 
-.smallQuoteContainer{
+.smallQuoteContainer {
 	margin: 3rem 0rem;
 }
 
@@ -132,56 +131,60 @@ a {
 	border: 1rem solid #d3dbbc;
 }
 
-.smallQuoteContainer > p {
+.quote p {
+	padding: 0;
+}
+
+.smallQuoteContainer>p {
 	margin-top: 1rem;
 }
 
-.highFiveContainer{
-	position: relative; 
+.highFiveContainer {
+	position: relative;
 	margin: auto;
 	max-width: 17rem;
 	height: 20rem;
-	
+
 }
 
-.highFiveContainer > img {
+.highFiveContainer>img {
 	position: absolute;
 	margin: 0;
 	bottom: 0;
 }
 
 /* HEART BACKGROUND */
-.highFiveContainer > img:nth-of-type(1) {
+.highFiveContainer>img:nth-of-type(1) {
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-.highFiveContainer.active > img:nth-of-type(1) {
+.highFiveContainer.active>img:nth-of-type(1) {
 	animation: highFiveHeart 2s 2;
 	animation-delay: 1.5s;
 }
 
 /* HAND */
-.highFiveContainer > img:nth-of-type(2) {
+.highFiveContainer>img:nth-of-type(2) {
 	left: 50%;
 	transform-origin: bottom right;
 }
 
-.highFiveContainer.active > img:nth-of-type(2){
+.highFiveContainer.active>img:nth-of-type(2) {
 	animation: highFiveHand 3s;
 }
 
 /* PAW */
-.highFiveContainer > img:nth-of-type(3) {
+.highFiveContainer>img:nth-of-type(3) {
 	right: 50%;
 	transform-origin: bottom left;
 }
 
-.highFiveContainer.active > img:nth-of-type(3) {
+.highFiveContainer.active>img:nth-of-type(3) {
 	animation: highFivePaw 3s;
 }
 
-.highFiveWrapper > p {
+.highFiveWrapper>p {
 	font-family: 'Cedarville Cursive Regular';
 	position: relative;
 	text-align: center;
@@ -189,85 +192,109 @@ a {
 	opacity: 0;
 }
 
-.highFiveWrapper.active > p {
+.highFiveWrapper.active>p {
 	animation: highFiveText .75s ease-out 1s forwards;
 }
 
 @keyframes highFiveHeart {
-	0% { 
+	0% {
 		transform: translateX(-50%) scale(100%);
 	}
-	50% { 
+
+	50% {
 		transform: translateX(-50%) scale(100%);
 	}
-	70% { 
+
+	70% {
 		transform: translateX(-50%) scale(110%);
 	}
-	100% { 
+
+	100% {
 		transform: translateX(-50%) scale(100%);
 	}
 }
 
 @keyframes highFivePaw {
 	0% {
-		transform: translate(0px, 0px) rotate(0deg); /* start down */
+		transform: translate(0px, 0px) rotate(0deg);
+		/* start down */
 	}
+
 	50% {
-		transform: translate(0px, -20px) rotate(0deg); /* move up to meet hand */
+		transform: translate(0px, -20px) rotate(0deg);
+		/* move up to meet hand */
 	}
+
 	60% {
-		transform: translate(-10px, -20px) rotate(-15deg); /* impact slap */
+		transform: translate(-10px, -20px) rotate(-15deg);
+		/* impact slap */
 	}
+
 	70% {
-		transform: translate(10px, -15px) rotate(10deg); /* small rebound */
+		transform: translate(10px, -15px) rotate(10deg);
+		/* small rebound */
 	}
+
 	80% {
-		transform: translate(-5px, 0px) rotate(0deg); /* return easing */
+		transform: translate(-5px, 0px) rotate(0deg);
+		/* return easing */
 	}
+
 	100% {
-		transform: translate(0px, 0px) rotate(0deg); /* fully back to start */
+		transform: translate(0px, 0px) rotate(0deg);
+		/* fully back to start */
 	}
 }
 
 @keyframes highFiveHand {
 	0% {
-		transform: translate(0px, 0px) rotate(0deg); /* start down */
+		transform: translate(0px, 0px) rotate(0deg);
+		/* start down */
 	}
+
 	50% {
-		transform: translate(0px, -20px) rotate(0deg); /* move up to meet paw */
+		transform: translate(0px, -20px) rotate(0deg);
+		/* move up to meet paw */
 	}
+
 	60% {
-		transform: translate(10px, -20px) rotate(15deg); /* impact slap */
+		transform: translate(10px, -20px) rotate(15deg);
+		/* impact slap */
 	}
+
 	70% {
-		transform: translate(-10px, -15px) rotate(-10deg); /* small rebound */
+		transform: translate(-10px, -15px) rotate(-10deg);
+		/* small rebound */
 	}
+
 	80% {
-		transform: translate(5px, 0px) rotate(0deg); /* return easing */
+		transform: translate(5px, 0px) rotate(0deg);
+		/* return easing */
 	}
+
 	100% {
-		transform: translate(0px, 0px) rotate(0deg); /* fully back to start */
+		transform: translate(0px, 0px) rotate(0deg);
+		/* fully back to start */
 	}
 }
 
 
-@keyframes highFiveText{
+@keyframes highFiveText {
 	0% {
 		opacity: 0;
 		transform: translateY(30px);
 	}
+
 	100% {
 		opacity: 1;
 		transform: translateY(0px);
 	}
 }
 
-.darkBrownEllipses{
+.darkBrownEllipses {
 	position: absolute;
 	top: 13rem;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: -1;
 }
-
-

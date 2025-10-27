@@ -8,10 +8,11 @@ import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
 import cat from "../../assets/images/intro/cat.svg";
+import { easeInOut, motion } from "motion/react";
 
 export default function IntroMobile() {
   return (
-    <div className={styles.main}>
+    <div id="start" className={styles.main}>
       <div className={`${styles.section} ${styles.section1}`}>
         <div className={styles.text}>
           <img src={ellipses1} alt="" className={styles.ellipses} />
@@ -32,7 +33,14 @@ export default function IntroMobile() {
             className={`${styles.cloud} ${styles.cloud2}`}
           />
           <img src={RBR} alt="" className={styles.RBR} />
-          <img src={cat} alt="" className={styles.cat} />
+          <motion.img
+            src={cat}
+            alt=""
+            className={styles.cat}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: easeInOut }}
+          />
         </div>
       </div>
       <div className={`${styles.section} ${styles.section2}`}>

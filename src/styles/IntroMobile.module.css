@@ -1,10 +1,13 @@
 .main {
-  background-color: #f2daad;
   min-height: 100dvh;
-  min-width: 100dvw;
+  width: 100%;
   font-family: "Outfit";
   color: #683535;
   overflow-x: hidden;
+}
+
+.main p {
+  padding: 0;
 }
 
 .section {

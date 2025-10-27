@@ -1,34 +1,24 @@
-import "../styles/title.css";
-import HeartImages from "../components/HeartImages";
-import GuidonLogo from "../assets/images/guidon.svg";
-import HeartBG from "../assets/images/heart-background.png";
-import PawBG from "../assets/images/paw-background.png";
+import styles from "../styles/Title.module.css";
+import paw from "../assets/images/paw-brown.svg";
+import title from "../assets/images/title.svg";
+import startButton from "../assets/images/start-button.svg";
+import catHouse from "../assets/images/cat-house.svg";
 
-import { useState, useEffect } from "react";
-
-function Title({ setPage }) {
-  const [isBgHeart, setIsBgHeart] = useState(true);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsBgHeart(!isBgHeart);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [isBgHeart]);
-
+function Title() {
   return (
-    <section className="title">
-      <div className="middle-container">
-        <img src={GuidonLogo} className="guidon-logo" />
-        <div className="interactive-title">
-          <h2 className="subtitle-text">What the</h2>
-          <h1 className="title-text">Cateneans</h1>
-          <h2 className="subtitle-text">teach us about love</h2>
-        </div>
-        <button className="start-btn" onClick={() => setPage("map")}>Start</button>
+    <section className={styles.main}>
+      <div className={styles.mg}>
+        <img className={styles.catHouse} src={catHouse} alt="" />
       </div>
-      <img src={isBgHeart ? HeartBG : PawBG} className="title-background" />
-      <HeartImages />
+      <div className={styles.fg}>
+        <div className={styles.title}>
+          <img src={title} alt="What the Cateneans Teach Us About Love" />
+          <p>Written by Isabel&nbsp;Victorino and Alyssa&nbsp;E.&nbsp;Duque</p>
+        </div>
+        <button>
+          <img src={startButton} alt="Start" />
+        </button>
+      </div>
     </section>
   );
 }

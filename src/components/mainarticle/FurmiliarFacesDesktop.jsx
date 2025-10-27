@@ -6,7 +6,7 @@ import QuoteBackground from "../../assets/images/quote-background.svg";
 import { color, easeInOut, motion, } from "motion/react";
 
 
-const FurmiliarFaces = () => {
+const FurmiliarFacesDesktop = () => {
 
 return (
     <>
@@ -65,5 +65,5 @@ return (
   );
 };
 
-export default FurmiliarFaces;
+export default FurmiliarFacesDesktop;
 

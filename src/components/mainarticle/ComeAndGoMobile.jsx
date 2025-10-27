@@ -21,7 +21,7 @@ const ComeAndGo = ({ setPage }) => {
   }
   return (
     <div className={styles.mainArticle}>
-      <h3>Cats come and go</h3>
+      <h1>Cats come and go</h1>
       <img className={styles.building} src={building} />
 
       <p>

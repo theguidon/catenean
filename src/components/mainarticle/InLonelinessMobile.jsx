@@ -58,7 +58,7 @@ const InLonelinessMobile = () => {
     return (
         <main className={styles.main}>
             <div className={styles.sectionTitle}>
-                <img src={title}></img>
+                <h1>In loneliness, furry companions</h1>
             </div>
             <div className={styles.content}>
                 <div className={styles.buildingContainer}>

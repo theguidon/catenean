@@ -15,7 +15,7 @@ return (
                                 initial={{ y: 20 }}
                                 whileInView={{ y: 0 }}
                                 transition={{ duration: 0.500, ease: easeInOut }}
-                                style={{position: 'absolute', bottom: '10vw', left: '30vw', zIndex: '1', width: '40%'}}>
+                                style={{position: 'absolute', bottom: '15vw', left: '30vw', zIndex: '1', width: '40%'}}>
                     </motion.img>
                     <img src={Bush} className={sectionStyles.bush} style={{left: '15vw'}}/>
                     <img src={Bush} className={sectionStyles.bush} style={{right: '15vw'}}/>

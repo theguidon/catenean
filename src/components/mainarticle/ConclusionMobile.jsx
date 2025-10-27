@@ -3,7 +3,7 @@ import envelope from "../../assets/images/letter.svg";
 import paopao from "../../assets/images/cats/2.jpeg";
 import backArrow from "../../assets/images/Union.svg";
 import back from "../../assets/images/back_to_start.svg";
-import { easeInOut, motion, MotionConfig } from "motion/react";
+import { easeInOut, motion, MotionConfig, stagger } from "motion/react";
 import bylines from "../../data/bylines.json"
 import { NavLink } from "react-router";
 
@@ -17,6 +17,18 @@ const Conclusion = () => {
       default: return bylines.slice(0, -1).join(", ") + " and " + bylines[bylines.length - 1];
     }
   }
+
+  const endVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20
+    },
+    show: {
+      opacity: 1,
+      y: 0
+    }
+  }
+
   return (
     <div
       style={{
@@ -25,16 +37,18 @@ const Conclusion = () => {
       }}
     >
       <MotionConfig
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.500, ease: easeInOut }}
+        initial="hidden"
+        whileInView="show"
+        transition={{ duration: 0.500, ease: easeInOut, delayChildren: stagger(0.5), delay: 0.5 }}
       >
         <motion.img
+          variants={endVariants}
           src={envelope}
           className={creditStyles.envelope}
           style={{ rotate: "-10deg" }}
         />
         <motion.section
+          variants={endVariants}
           className={creditStyles.letter}
           style={{ rotate: "5deg", width: "120%" }}
         >
@@ -49,6 +63,7 @@ const Conclusion = () => {
           <p>Beyond attention and affection, love has manifested in the Ateneo community through a commitment to caring for the Cateneans and an acknowledgement of their value as living beings.</p>
         </motion.section>
         <motion.article
+          variants={endVariants}
           className={creditStyles.polaroid}
           style={{
             rotate: "-10deg",
@@ -61,6 +76,7 @@ const Conclusion = () => {
           />
         </motion.article>
         <motion.article
+          variants={endVariants}
           className={creditStyles.polaroid}
           style={{
             rotate: "10deg",

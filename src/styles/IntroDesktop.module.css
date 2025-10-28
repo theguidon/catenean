@@ -1,6 +1,5 @@
 .main {
   position: relative;
-  background-color: #f2daad;
   min-height: 100dvh;
   min-width: 100dvw;
   width: fit-content;
@@ -30,12 +29,14 @@
 }
 
 .text1 {
+  min-width: 40rem;
   max-width: 40rem;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .text2 {
-  width: 40rem;
+  min-width: 40rem;
+  max-width: 40rem;
   font-size: 1.75rem;
 }
 

@@ -8,6 +8,7 @@ import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
 import cat from "../../assets/images/intro/cat.svg";
+import grass from "../../assets/images/background-grass.svg";
 
 export default function IntroMobile() {
   return (
@@ -31,6 +32,7 @@ export default function IntroMobile() {
             alt=""
             className={`${styles.cloud} ${styles.cloud2}`}
           />
+          <img src={grass} alt="" className={styles.grass} />
           <img src={RBR} alt="" className={styles.RBR} />
           <img src={cat} alt="" className={styles.cat} />
         </div>

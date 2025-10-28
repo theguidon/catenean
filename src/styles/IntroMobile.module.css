@@ -117,15 +117,22 @@
   inset: 0 auto auto 0;
 }
 
+.grass {
+  position: absolute;
+  inset: auto auto 0 -5rem;
+  height: 12rem;
+  z-index: 11;
+}
+
 .RBR {
   position: absolute;
   inset: auto auto 0 -1rem;
   height: 8rem;
-  z-index: 10;
+  z-index: 15;
 }
 
 .cat {
   position: absolute;
-  inset: auto auto 0 1rem;
-  z-index: 10;
+  inset: auto auto 5rem 1rem;
+  z-index: 15;
 }

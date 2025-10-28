@@ -16,9 +16,7 @@ const ConclusionDesktop = () => {
         flexFlow: "row",
         alignItems: "end",
         overflowY: "clip",
-        overflowX: "scroll",
         height: "100vh",
-        background: "#f2daad"
       }}
     >
       <section

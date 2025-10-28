@@ -132,3 +132,18 @@ section.buttons>* {
     transform: rotate(5deg);
   }
 }
+
+@media (min-width: 501px) {
+  .letter {
+    width: 400px;
+    padding: 48px;
+  }
+
+  .letter p {
+    padding: 0;
+  }
+
+  .bylines h1 {
+    font-size: 3rem;
+  }
+}

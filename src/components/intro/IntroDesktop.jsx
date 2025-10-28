@@ -8,6 +8,7 @@ import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
+import grassBg from "../../assets/images/background-grass.svg";
 
 export default function IntroDesktop() {
   return (

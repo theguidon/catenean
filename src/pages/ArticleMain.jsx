@@ -16,7 +16,6 @@ const ArticleMain = () => {
     return (
       <main className={styles.main}>
         <div className={styles.grassLayer}>
-          <img src={grassBg} />
         </div>
         <IntroDesktop />
         <ConclusionDesktop />

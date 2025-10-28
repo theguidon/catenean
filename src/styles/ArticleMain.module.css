@@ -9,6 +9,7 @@
 	width: 100vw;
 	max-width: 100vw;
 	overflow-y: clip;
+	overflow-x: auto;
 }
 
 .main h3 {
@@ -41,25 +42,25 @@
 		display: flex;
 		overflow-y: clip;
 		overflow-x: scroll;
+		max-width: none;
+		width: fit-content;
+		min-width: 100vw;
+		padding: 0;
+		margin: 0;
+		position: relative;
 	}
 
 	.main .grassLayer {
-		position: absolute;
-		height: 100vh;
-		left: 0;
-		top: 0;
-		min-width: 100vw;
-		display: grid;
-		grid-template-rows: 2fr 1fr;
-		grid-template-columns: 100vw;
-		grid-auto-columns: 100vw;
-	}
-
-	.grassLayer img {
-		grid-row: 2 / -1;
-		object-fit: cover;
-		width: 100%;
 		height: 100%;
-		object-position: bottom;
+		width: 100%;
+		background-image: url("src/assets/images/grasslong.svg");
+		background-position-y: bottom;
+		background-size: 100%;
+		background-repeat: repeat-x;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 15;
+		display: none;
 	}
 }

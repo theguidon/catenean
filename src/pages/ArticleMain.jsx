@@ -18,6 +18,7 @@ const ArticleMain = () => {
         <div className={styles.grassLayer}>
         </div>
         <IntroDesktop />
+        <InLonelinessDesktop />
         <ConclusionDesktop />
       </main>
     );

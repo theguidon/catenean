@@ -79,15 +79,11 @@ const InLonelinessDesktop = () => {
                 display: "flex",
                 flexFlow: "row nowrap",
                 alignItems: "stretch",
-                overflowY: "hidden",
-                overflowX: "auto",
                 height: "100vh",
-                width: "100vw",
-                background: "#f2daad",
+                minWidth: "100vw",
                 position: "relative"
             }}
         >
-            <div className={styles.grass}> </div>
             {/*#1 SECTION TITLE */}
             <section>
                 <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ amount: 0.7, once: true }}>

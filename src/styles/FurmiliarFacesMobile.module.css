@@ -4,15 +4,15 @@
 	min-width: 100dvw;
 	height: 100dvh;
 	width: fit-content;
-	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
 	background: #F2DAAD;
 	position: relative;
   }
   
   .section, .article {
-	min-width: 100dvw;
-	height: 100dvh;
+	min-height: clamp(20vw, 20vw ,100vw);
+	height: 50dvh;
 	flex-shrink: 0;
   }
   
@@ -29,18 +29,18 @@
   
   .sectionContainer {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	overflow-y: hidden;
   
   }
   
   .heading h3 {
-	font-size: clamp(3.5rem, calc(7vw + 1rem), 5rem);
+	font-size: clamp(2rem, calc(7vw + 1rem), 5rem);
 	font-weight: 700;
 	font-family: "Solway";
 	text-align: center;
 	color: #E07329; 
-	-webkit-text-stroke: clamp(1rem, calc(1rem + 0.2vw), 3rem) #F9F4EB;
+	-webkit-text-stroke: clamp(0.5rem, calc(0.8rem + 0.2vw), 3rem) #F9F4EB;
 	paint-order: stroke fill; 
 	filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
 	line-height: 110%; 
@@ -53,16 +53,19 @@
 	font-family: "Rethink Sans";
 	padding: 2em 3em 0em 3em;
 	position: relative;
-	font-size: 1.7vw;
+	font-size: 3vw;
 	font-weight: 400;
 	line-height: 130%;
   }
   
-  .article .helloCats {
-	position: absolute;
+  p+p+p {
+    padding-bottom: 2em;
+  }
+
+  .helloCats {
+    position: relative;
 	bottom: 0;
-	margin: 3.5em;
-	width: 35vw;
+    width: 70vw;
 	z-index: 6;
 	display: flex;
 	justify-content: center;
@@ -70,14 +73,14 @@
 	background: center / contain no-repeat url("src/assets/images/cat-speech.svg");
   }
   
-  .article .helloCats h4 {
-	position: absolute;
+  .helloCats h4 {
+    position: absolute;
 	color: #2074A4;
     font-weight: 400;
 	font-family: 'Cedarville Cursive Regular';
-	font-size: 4vw;
-	top: 4vh;
-	left: 17.5vw;
+	font-size: 7.5vw;
+	left: 36vw;
+    top: 6vw;
   }
   
   .article {
@@ -85,9 +88,6 @@
 	flex-direction: row;
   }
   
-  .article section, .article article {
-	width: 50vw;
-  }
   
   .quoteBackground {
 	position: absolute;
@@ -95,7 +95,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: rgba(243, 231, 204, 0.4);
-	width: 80%;
+	width: 90%;
 	border-radius: 50%;
 	z-index: 0;
 	bottom: 0;
@@ -129,7 +129,7 @@
   
   .quote br + p {
 	color: black;
-	font-size: 1.3vw;
+	font-size: 2vw;
   }
   
   /* .main {

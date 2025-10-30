@@ -34,6 +34,7 @@
 .main p {
 	font-family: "Rethink Sans", sans-serif;
 	padding: 0 10vw;
+	color: #522222;
 }
 
 @media (min-width: 501px) {

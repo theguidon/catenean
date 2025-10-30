@@ -1,0 +1,31 @@
+section.container {
+	display: flex;
+	height: 100vh;
+	gap: 0px;
+}
+
+.container .cloud {
+	height: 100vh;
+	object-fit: cover;
+}
+
+section.content {
+	height: 100vh;
+	aspect-ratio: 3473 / 1118;
+	background-image: url("src/assets/images/comeandgo_desktopbg.svg");
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.content>p {
+	background: #fffbeb;
+	width: 56ch;
+	padding: 2rem;
+	position: relative;
+}
+
+.paopao {
+	height: 80%;
+}

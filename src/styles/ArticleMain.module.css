@@ -2,7 +2,7 @@
 
 .main {
 	background-color: #F2DAAD;
-	background-image: url("src/assets/images/mobilebg.svg");
+	background-image: url("/assets/mobilebg.svg");
 	background-repeat: repeat-y;
 	padding: 0;
 	padding-bottom: 80px;

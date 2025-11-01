@@ -60,7 +60,7 @@ p+p+p {
 	display: flex;
 	justify-content: center;
 	aspect-ratio: 393/420;
-	background: center / contain no-repeat url("src/assets/images/cat-speech.svg");
+	background: center / contain no-repeat url("/assets/cat-speech.svg");
 }
 
 .helloCats h4 {

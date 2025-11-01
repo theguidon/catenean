@@ -12,12 +12,8 @@ return (
             <div className={sectionStyles.sectionContainer}>
                 <div className={`${sectionStyles.heading} ${sectionStyles.section}`}>
                     <h3>Fur-miliar<br/>faces</h3>
-                    <motion.img src={CTC}
-                                initial={{ y: 20 }}
-                                whileInView={{ y: 0 }}
-                                transition={{ duration: 0.500, ease: easeInOut }}
-                                style={{position: 'absolute', bottom: '15vw', left: '30vw', zIndex: '1', width: '40%'}}>
-                    </motion.img>
+                    <img src={CTC} style={{position: 'absolute', bottom: '11vw', left: '30vw', zIndex: '1', width: '40%'}}>
+                    </img>
                     <img src={Grass} style={{position: 'absolute', bottom: '0', width: '101dvw'}}/>
                 </div>
                     <article>
@@ -41,17 +37,55 @@ return (
                         </motion.h4>
                     </section>
                     </div>
+
+                    {/* 
+                                        <motion.img src={CTC}
+                                initial={{ y: 20 }}
+                                whileInView={{ y: 0 }}
+                                transition={{ duration: 0.500, ease: easeInOut }}
+                                style={{position: 'absolute', bottom: '15vw', left: '30vw', zIndex: '1', width: '40%'}}>
+                    </motion.img>
+ */}
                 <div className={sectionStyles.section}>
-                    <div className={sectionStyles.quoteBackground} style={{ height: '75vw'}}></div>
-                    <div className={sectionStyles.quoteBackground} style={{  height: '85vw'}}></div>
-                    <div className={sectionStyles.quoteBackground} style={{ height: '95vw'}}></div>
+                    <motion.div 
+                        className={sectionStyles.quoteBackground} 
+                        style={{ height: '75vw'}}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.5, ease: easeInOut, delay: 0.8 }}
+                    ></motion.div>
+                    <motion.div 
+                        className={sectionStyles.quoteBackground} 
+                        style={{ height: '85vw'}}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.5, ease: easeInOut, delay: 0.6 }}
+                    ></motion.div>
+                    <motion.div 
+                        className={sectionStyles.quoteBackground} 
+                        style={{ height: '95vw'}}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.5, ease: easeInOut, }}
+                    ></motion.div>
                     <div className={sectionStyles.quote}>
                         <h5>"</h5>
-                            <p> Medyo nasasaktan ako dahil medyo mabigat [sa bulsa] 'yung binibili kong pagkain, 'yung Oc [cat food brand] Php 175 isang kilo. Eh halos minsan isang kilo, [k]aunti natitira sa isang araw kasi umaga-hapon ang pakain ko. </p>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.3, ease: easeInOut, delay: 0.5 }}
+                        >
+                            Medyo nasasaktan ako dahil medyo mabigat [sa bulsa] 'yung binibili kong pagkain, 'yung Oc [cat food brand] Php 175 isang kilo. Eh halos minsan isang kilo, [k]aunti natitira sa isang araw kasi umaga-hapon ang pakain ko.
+                        </motion.p>
                         <h5>"</h5>
                         <br/>
-                            <p> (It hurts [my wallet] a bit since the price of the cat food I buy, Oc, is hefty, around Php 175 per kilo. Almost always, only a small amount of that kilo is left at the end of the day, since I feed them from morning until evening.) 
-                            </p>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.3, ease: easeInOut, delay: 0.8 }}
+                        >
+                            (It hurts [my wallet] a bit since the price of the cat food I buy, Oc, is hefty, around Php 175 per kilo. Almost always, only a small amount of that kilo is left at the end of the day, since I feed them from morning until evening.)
+                        </motion.p>
                     </div>
                 </div>
             </div>

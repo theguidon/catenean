@@ -22,12 +22,12 @@ const Conclusion = () => {
     hidden: {
       opacity: 0,
       y: 20,
-      transition: { duration: 0.5, ease: easeInOut, delay: 1 }
+      transition: { duration: 0.5, ease: easeInOut }
     },
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: easeInOut, delay: 1 }
+      transition: { duration: 0.5, ease: easeInOut }
     }
   }
 
@@ -38,60 +38,64 @@ const Conclusion = () => {
         paddingTop: '15vw'
       }}
     >
-      <MotionConfig
+      <motion.img
         initial="hidden"
         whileInView="show"
+        variants={endVariants}
+        src={envelope}
+        className={creditStyles.envelope}
+        style={{ rotate: "-10deg" }}
+      />
+      <motion.section
+        initial="hidden"
+        whileInView="show"
+        variants={endVariants}
+        className={creditStyles.letter}
+        transition={{ delay: 1 }}
+        style={{ rotate: "5deg", width: "120%" }}
       >
-        <motion.img
-          variants={endVariants}
-          src={envelope}
-          className={creditStyles.envelope}
-          style={{ rotate: "-10deg" }}
+        <p>The Cateneans stand as a testament to the human capacity
+          to go above and beyond for animals. Resuello, Beunafe, Johnson, and
+          the AGILA members are only among countless people who give the animals
+          the same value as fellow humans.</p>
+        <p>The Ateneo community&apos;s efforts of caring for the campus cats only concretize
+          the importance of empathy and respect for other living beings. Be it animals
+          or another human, the interconnectedness of the world&apos;s inhabitants reflect a need for respect, kindness, and empathy to build safe communities for all.
+        </p>
+        <p>Beyond attention and affection, love has manifested in the Ateneo community through a commitment to caring for the Cateneans and an acknowledgement of their value as living beings.</p>
+      </motion.section>
+      <motion.article
+        initial="hidden"
+        whileInView="show"
+        variants={endVariants}
+        className={creditStyles.polaroid}
+        style={{
+          rotate: "-10deg",
+          right: "10%"
+        }}
+      >
+        <img
+          src={paopao}
+          alt="A catenean."
         />
-        <motion.section
-          variants={endVariants}
-          className={creditStyles.letter}
-          style={{ rotate: "5deg", width: "120%" }}
-        >
-          <p>The Cateneans stand as a testament to the human capacity
-            to go above and beyond for animals. Resuello, Beunafe, Johnson, and
-            the AGILA members are only among countless people who give the animals
-            the same value as fellow humans.</p>
-          <p>The Ateneo community&apos;s efforts of caring for the campus cats only concretize
-            the importance of empathy and respect for other living beings. Be it animals
-            or another human, the interconnectedness of the world&apos;s inhabitants reflect a need for respect, kindness, and empathy to build safe communities for all.
-          </p>
-          <p>Beyond attention and affection, love has manifested in the Ateneo community through a commitment to caring for the Cateneans and an acknowledgement of their value as living beings.</p>
-        </motion.section>
-        <motion.article
-          variants={endVariants}
-          className={creditStyles.polaroid}
-          style={{
-            rotate: "-10deg",
-            right: "10%"
-          }}
-        >
-          <img
-            src={paopao}
-            alt="A catenean."
-          />
-        </motion.article>
-        <motion.article
-          variants={endVariants}
-          className={creditStyles.polaroid}
-          style={{
-            rotate: "10deg",
-            left: "10%",
-            bottom: 120
-          }}
-          transition={{ duration: 0.500, ease: easeInOut, delay: 0.5 }}
-        >
-          <img
-            src={paopao}
-            alt="A catenean."
-          />
-        </motion.article>
-      </MotionConfig>
+      </motion.article>
+      <motion.article
+        initial="hidden"
+        whileInView="show"
+        variants={endVariants}
+        className={creditStyles.polaroid}
+        style={{
+          rotate: "10deg",
+          left: "10%",
+          bottom: 120
+        }}
+        transition={{ duration: 0.500, ease: easeInOut, delay: 0.5 }}
+      >
+        <img
+          src={paopao}
+          alt="A catenean."
+        />
+      </motion.article>
       <section className={creditStyles.buttons}>
         <NavLink to="/game" className={creditStyles.button}>Play game</NavLink>
         <NavLink to="/map" className={creditStyles.button}>View map</NavLink>

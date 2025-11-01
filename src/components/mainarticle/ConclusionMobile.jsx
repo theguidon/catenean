@@ -21,11 +21,13 @@ const Conclusion = () => {
   const endVariants = {
     hidden: {
       opacity: 0,
-      y: 20
+      y: 20,
+      transition: { duration: 0.5, ease: easeInOut, delay: 1 }
     },
     show: {
       opacity: 1,
-      y: 0
+      y: 0,
+      transition: { duration: 0.5, ease: easeInOut, delay: 1 }
     }
   }
 
@@ -39,7 +41,6 @@ const Conclusion = () => {
       <MotionConfig
         initial="hidden"
         whileInView="show"
-        transition={{ duration: 0.500, ease: easeInOut, delayChildren: stagger(0.5), delay: 0.5 }}
       >
         <motion.img
           variants={endVariants}

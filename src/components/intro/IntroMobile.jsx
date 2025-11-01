@@ -9,19 +9,29 @@ import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
 import cat from "../../assets/images/intro/cat.svg";
 import grass from "../../assets/images/background-grass.svg";
-import { easeInOut, motion } from "motion/react";
+import { easeInOut, motion, stagger } from "motion/react";
 
 export default function IntroMobile() {
+  const fadeVariants = {
+    hidden: {
+      opacity: 0,
+      transition: { duration: 1, ease: easeInOut }
+    },
+    show: {
+      opacity: 1,
+      transition: { duration: 1, ease: easeInOut }
+    },
+  }
   return (
     <div id="start" className={styles.main}>
       <div className={`${styles.section} ${styles.section1}`}>
-        <div className={styles.text}>
-          <img src={ellipses1} alt="" className={styles.ellipses} />
-          <p>
+        <motion.div initial="hidden" animate="show" transition={{ delayChildren: stagger(0.8) }} className={styles.text}>
+          <motion.img variants={fadeVariants} src={ellipses1} alt="" className={styles.ellipses} />
+          <motion.p variants={fadeVariants} >
             NOT EVERY home has a furry feline companion, but within the Loyola
             Heights campus, one is certain to encounter&nbsp;them.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         <div className={styles.graphics}>
           <img
             src={cloud}
@@ -40,7 +50,7 @@ export default function IntroMobile() {
             alt=""
             className={styles.cat}
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: easeInOut }}
           />
         </div>
@@ -84,6 +94,9 @@ export default function IntroMobile() {
           <img
             src={photo}
             alt=""
+            style={{
+              zIndex: 30
+            }}
             className={`${styles.polaroid} ${styles.catPhoto}`}
           />
         </div>

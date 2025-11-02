@@ -42,8 +42,8 @@ const ComeAndGo = ({ setPage }) => {
       </p>
 
       <div className={styles.cloudWrapper}>
-        <motion.img variants={cloudVariants} initial="hidden" whileInView="visible" className={styles.cloud1} src={cloud1} />
-        <motion.img variants={cloudVariants} initial={{ ...cloudVariants.hidden, x: -cloudVariants.hidden.x }} whileInView="visible" className={styles.cloud2} src={cloud2} />
+        <motion.img variants={cloudVariants} initial="hidden" whileInView="visible" className={styles.cloud1} src={cloud1} viewport={{ once: true }} />
+        <motion.img variants={cloudVariants} initial={{ ...cloudVariants.hidden, x: -cloudVariants.hidden.x }} whileInView="visible" className={styles.cloud2} src={cloud2} viewport={{ once: true }} />
       </div>
       <img className={styles.cat1} src={cat1} />
 

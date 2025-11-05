@@ -9,6 +9,26 @@
 	position: relative;
 }
 
+.cloud {
+	position: absolute;
+	aspect-ratio: 711 / 378;
+	background: center / contain no-repeat url("src/assets/Map/Map_Images/Cloud.svg");
+	width: 38%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	padding-bottom: 3%;
+}
+
+.cloud p {
+	width: 80%;
+	font-family: "Outfit", sans-serif;
+	font-weight: 500;
+	line-height: 150%;
+	color: #2074A4;
+}
+
 .location {
 	position: absolute;
 	width: 20%;

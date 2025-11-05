@@ -62,6 +62,9 @@ const Map = () => {
   }
   return (
     <main className={styles.main}>
+      <div className={styles.cloud}>
+        <p>Visit each cat to learn about the fascinating tales they hold about campus life. Discover the hidden nooks, legendary landmarks, and cherished memories through the eyes of our beloved feline friends and their loving partners, the caretakers.</p>
+      </div>
       {Object.entries(buildingData).map(([key, data]) => (
         <div key={key} className={styles.location} style={data.position}>
           <div>

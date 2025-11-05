@@ -32,14 +32,15 @@
 }
 
 .location .cat {
-	width: 50%;
+	width: 60%;
 }
 
 .catButton>div {
 	background-color: #ffffec;
-	padding: 12px 24px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	width: 212px;
 	border-radius: 99999px;
-	width: 100%;
 }
 
 .catButton>div>p {

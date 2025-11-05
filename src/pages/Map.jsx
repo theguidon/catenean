@@ -10,6 +10,9 @@ import mvpCat from "../assets/images/cats/illustrations/mvp.svg";
 import schmitt from "../assets/images/buildings/schmitt.svg";
 import schmittCat from "../assets/images/cats/illustrations/schmitt.svg";
 import ears from "../assets/images/cats/illustrations/Ears.svg";
+import smallCloud1 from "../assets/Map/Map_Images/small cloud 1.svg";
+import smallCloud2 from "../assets/Map/Map_Images/small cloud 2.svg";
+import smallCloud3 from "../assets/Map/Map_Images/small cloud 3.svg";
 import { Link } from "react-router";
 
 const CatButton = ({ label, slug, style }) => {
@@ -56,7 +59,7 @@ const Map = () => {
     "schmitt": {
       position: { top: "12%", right: "5%" },
       building: schmitt,
-      cat: { src: schmittCat, style: { bottom: "-22vh", left: "-8vw" } },
+      cat: { src: schmittCat, style: { bottom: "-20vh", left: "-7vw" } },
       button: { label: "schmitt", style: { bottom: "-16vh", right: "-1vw" } }
     },
   }
@@ -65,6 +68,9 @@ const Map = () => {
       <div className={styles.cloud}>
         <p>Visit each cat to learn about the fascinating tales they hold about campus life. Discover the hidden nooks, legendary landmarks, and cherished memories through the eyes of our beloved feline friends and their loving partners, the caretakers.</p>
       </div>
+      <img className={styles.smallCloud} src={smallCloud3} style={{ left: "40%", top: "-5%" }} />
+      <img className={styles.smallCloud} src={smallCloud1} style={{ left: "60%", top: "4%" }} />
+      <img className={styles.smallCloud} src={smallCloud2} style={{ left: "75%", top: "-1%" }} />
       {Object.entries(buildingData).map(([key, data]) => (
         <div key={key} className={styles.location} style={data.position}>
           <div>

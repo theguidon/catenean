@@ -21,6 +21,10 @@
 	padding-bottom: 3%;
 }
 
+.smallCloud {
+	position: absolute;
+}
+
 .cloud p {
 	width: 80%;
 	font-family: "Outfit", sans-serif;
@@ -31,7 +35,7 @@
 
 .location {
 	position: absolute;
-	width: 20%;
+	width: 18%;
 	height: 15%;
 }
 
@@ -47,6 +51,7 @@
 
 .location .building {
 	width: 100%;
+	max-width: 300px;
 	left: 0;
 	top: 0;
 }

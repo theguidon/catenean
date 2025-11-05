@@ -1,137 +1,53 @@
-import "../styles/Map.css";
-import Map_Campus from "../assets/Map/Map_Images/Map_background.svg";
-import Credits_Logo from "../assets/Map/Map_Images/Credits_Logo.svg";
-import Mail_Logo from "../assets/Map/Map_Images/Mail_Logo.svg";
-import Mail_Logo_Hover from "../assets/Map/Map_Images/Mail_Logo_Hover.svg";
-import Button_Arete from "../assets/Map/Map_Images/Button_Arete.svg";
-import Button_Arete_Hover from "../assets/Map/Map_Images/Button_Arete_Hover.svg";
-import Button_CTC from "../assets/Map/Map_Images/Button_CTC.svg";
-import Button_CTC_Hover from "../assets/Map/Map_Images/Button_CTC_Hover.svg";
-import Button_Faura from "../assets/Map/Map_Images/Button_Faura.svg";
-import Button_Faura_Hover from "../assets/Map/Map_Images/Button_Faura_Hover.svg";
-import Button_MVP from "../assets/Map/Map_Images/Button_MVP.svg";
-import Button_MVP_Hover from "../assets/Map/Map_Images/Button_MVP_Hover.svg";
-import Button_Schmitt from "../assets/Map/Map_Images/Button_Schmitt.svg";
-import Button_Schmitt_Hover from "../assets/Map/Map_Images/Button_Schmitt_Hover.svg";
-import Cats_Arete from "../assets/Map/Map_Images/Cats_Arete.svg";
-import Cats_CTC from "../assets/Map/Map_Images/Cats_CTC.svg";
-import Cats_Faura from "../assets/Map/Map_Images/Cats_Faura.svg";
-import Cats_MVP from "../assets/Map/Map_Images/Cats_MVP.svg";
-import Cats_Schmitt from "../assets/Map/Map_Images/Cats_Schmitt.svg";
-import Catenean_Logo from "../assets/Map/Map_Images/Catenean_Logo.svg";
+import styles from "../styles/Map.module.css";
+import arete from "../assets/images/buildings/arete.svg";
+import areteCat from "../assets/images/cats/illustrations/arete.svg";
+import ctc from "../assets/images/buildings/ctc-som.svg";
+import ctcCat from "../assets/images/cats/illustrations/ctc-som.svg";
+import ears from "../assets/images/cats/illustrations/Ears.svg";
+import { Link } from "react-router";
 
-import Credits from "../components/Credits.jsx";
-import Letter from "../components/Letter.jsx";
-
-import { useState } from "react";
-
-function Map({ setPage }) {
-  const [isCreditsVisible, setIsCreditsVisible] = useState(false);
-  const [isLetterVisible, setIsLetterVisible] = useState(false);
-
+const CatButton = ({ label, slug, style }) => {
   return (
-    <>
-      <div className="backgroundWrapper">
-        <div className="upperLogosWrapper">
-          <div className="upperButtonsContainer">
-            <div className="Mail_Logo_Container">
-              <img
-                className="Mail_Logo_Hover"
-                src={Mail_Logo_Hover}
-                alt=""
-                onClick={() => {
-                  setIsLetterVisible(true);
-                }}
-              />
-              <img className="Mail_Logo" src={Mail_Logo} alt="" />
-            </div>
-            <div className="Credits_Logo_Container">
-              <img
-                className="Credits_Logo"
-                src={Credits_Logo}
-                alt=""
-                onClick={() => {
-                  setIsCreditsVisible(true);
-                }}
-              />
-            </div>
-          </div>
-          <div className="aboutCard">
-            <img src={Catenean_Logo} />
-            <p>
-              Visit each cat to learn about the fascinating tales they hold
-              about campus life. Discover the hidden nooks, legendary landmarks,
-              and cherished memories through the eyes of our beloved feline
-              friends and their loving partners, the caretakers.
-            </p>
-          </div>
-        </div>
-        <div
-          className="mapWrapper"
-          style={{ backgroundImage: `url(${Map_Campus})` }}
-        >
-          <div>
-            <img className="Button_Arete" src={Button_Arete} alt="" />
-            <img className="Cats_Arete" src={Cats_Arete} alt="" />
-            <img
-              className="Button_Arete_Hover"
-              src={Button_Arete_Hover}
-              alt=""
-              onClick={() => setPage("arete")}
-            />
-          </div>
-          <div>
-            <img className="Button_MVP" src={Button_MVP} alt="" />{" "}
-            <img className="Cats_MVP" src={Cats_MVP} alt="" />
-            <img
-              className="Button_MVP_Hover"
-              src={Button_MVP_Hover}
-              alt=""
-              onClick={() => setPage("mvp")}
-            />
-          </div>
-          <div>
-            <img className="Button_Faura" src={Button_Faura} alt="" />{" "}
-            <img className="Cats_Faura" src={Cats_Faura} alt="" />
-            <img
-              className="Button_Faura_Hover"
-              src={Button_Faura_Hover}
-              alt=""
-              onClick={() => setPage("faura")}
-            />
-          </div>
-          <div>
-            <img className="Button_Schmitt" src={Button_Schmitt} alt="" />{" "}
-            <img
-              className="Button_Schmitt_Hover"
-              src={Button_Schmitt_Hover}
-              alt=""
-              onClick={() => setPage("schmitt")}
-            />
-            <img className="Cats_Schmitt" src={Cats_Schmitt} alt="" />
-          </div>
-          <div>
-            <img className="Button_CTC" src={Button_CTC} alt="" />{" "}
-            <img
-              className="Button_CTC_Hover"
-              src={Button_CTC_Hover}
-              alt=""
-              onClick={() => setPage("ctc")}
-            />
-            <img className="Cats_CTC" src={Cats_CTC} alt="" />
-          </div>
+    <Link url={`/building/${slug}`} style={style}>
+      <div className={styles.catButton}>
+        <img src={ears} />
+        <div>
+          <p>
+            {label}
+          </p>
         </div>
       </div>
-      <Credits
-        isCreditsVisible={isCreditsVisible}
-        setIsCreditsVisible={setIsCreditsVisible}
-      />
-      <Letter
-        isLetterVisible={isLetterVisible}
-        setIsLetterVisible={setIsLetterVisible}
-        setPage={setPage}
-      />
-    </>
+    </Link>
+  );
+}
+
+const Map = () => {
+  const buildingData = {
+    "arete": {
+      position: { bottom: "22vh", left: "5vw" },
+      building: arete,
+      cat: { src: areteCat, style: { bottom: "-4vh", left: "-5vw" } },
+      button: { label: "ARETÉ", style: { bottom: 0, right: "1vw" } }
+    },
+    "ctc-som": {
+      position: { bottom: "22vh", right: "7vw" },
+      building: ctc,
+      cat: { src: ctcCat, style: { bottom: "-8vh", left: "-6vw" } },
+      button: { label: "ctc-som", style: { bottom: "-2vh", right: "-1vw" } }
+    },
+  }
+  return (
+    <main className={styles.main}>
+      {Object.entries(buildingData).map(([key, data]) => (
+        <div key={key} className={styles.location} style={data.position}>
+          <div>
+            <img className={styles.building} src={data.building} />
+            <img className={styles.cat} src={data.cat.src} style={data.cat.style} />
+            <CatButton slug={data.button.slug} label={data.button.label} style={data.button.style} />
+          </div>
+        </div>
+      ))}
+    </main>
   );
 }
 

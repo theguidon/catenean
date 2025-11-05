@@ -20,20 +20,15 @@
 
 .page {
   width: 1920px;
-  height: 100vh;
+  height: 1080px;
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 2rem;
+  margin-top: 70px;
   box-sizing: border-box;
   position: relative;
 }
 
 .mainArticle {
-  max-width: 1000px;
-  margin: 0 auto;
-  z-index: 10;
+  max-width: 1150px;
   position: relative;
 }
 
@@ -58,8 +53,8 @@
   z-index: 20;
   width: 150px;
   height: auto;
-  top: 640px;
-  left: 1075px;
+  top: 500px;
+  left: 1200px;
 }
 
 .mainArticle h3,
@@ -81,9 +76,9 @@
 
 .mvp {
   width: 100%;
-  max-width: 840px;
+  max-width: 800px;
   display: block;
-  margin: -8rem auto;
+  margin: -6rem auto;
 }
 
 .quoteContainer {
@@ -112,4 +107,19 @@
   margin-right: 150px;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.bushes {
+  position: absolute;
+  bottom: 300px; 
+  left: 100px;
+  width: 90%; 
+  height: auto; 
+}
+
+.grass {
+  position: absolute;
+  bottom: 100px;
+  left: -80px;
+  height: auto; 
 }

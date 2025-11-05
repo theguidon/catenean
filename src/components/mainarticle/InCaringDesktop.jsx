@@ -2,21 +2,23 @@ import styles from "../../styles/InCaringDesktop.module.css";
 import mvp from "../../assets/images/mvp-1.svg";
 import mag1 from "../../assets/images/mag1.svg";
 import mag2 from "../../assets/images/mag2.svg";
+import bushes from "../../assets/images/bushes.svg";
+import grass from "../../assets/images/grass.svg";
 
 const InCaringDesktop = () => {
   return (
     <main className={styles.scrollContainer}>
-      {/* PAGE 1 (Now uses .titlepage) */}
       <div className={styles.page}>
         <div className={styles.titlepage}>
           <h3>In caring, caution, and commitment</h3>
-          <img className={styles.mvp} src={mvp} alt="Mvp Building" />
+          <img className={styles.mvp} src={mvp} alt="MVP Building" />
         </div>
+        <img className={styles.grass} src={grass} alt="Grass" />
+        <img className={styles.bushes} src={bushes} alt="Bushes" />
       </div>
 
-      {/* PAGE 2 (Unchanged) */}
       <div className={styles.mainArticle}>
-        <img className={styles.mag1} src={mag1} alt="Cat Magnifying Glass 1"/>
+        <img className={styles.mag1} src={mag1} alt="Cat Magnifying Glass 1" />
         <p>
           To maintain students’ and the campus cats’ safety, one of AGILA’s
           projects is tracking the campus cats and their needs by conducting{" "}
@@ -36,7 +38,6 @@ const InCaringDesktop = () => {
         </p>
       </div>
 
-      {/* PAGES 3 & 4 COMBINED */}
       <div className={styles.mainArticle}>
         <p style={{ marginBottom: "5rem" }}>
           Furthermore, AIS is concerned with promoting campus biodiversity while{" "}
@@ -58,7 +59,6 @@ const InCaringDesktop = () => {
         </div>
       </div>
 
-      {/* PAGE 5 (Reverted to original <p> tag) */}
       <div className={styles.mainArticle}>
         <p>
           For him, supporting animal welfare advocacy means being persons for
@@ -76,16 +76,9 @@ const InCaringDesktop = () => {
           their pets at home,” Guce says.
         </p>
 
-        {/* --- ADD THE IMAGE HERE, *AFTER* THE <p> TAG --- */}
-        <img
-          className={styles.mag2}
-          src={mag2}
-          alt="Magnifying glass 2"
-        />
-        {/* ------------------------------------------------ */}
+        <img className={styles.mag2} src={mag2} alt="Cat Magnifying Glass 2" />
       </div>
 
-      {/* PAGE 6 (Unchanged) */}
       <div className={styles.mainArticle}>
         <p>
           Those with pets at home may find it easy to approach the cats with their existing

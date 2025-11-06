@@ -31,7 +31,6 @@ export default function BuildingWriteup() {
       className={styles.main}
       style={{
         background: `center / cover no-repeat url(${bg}), ${data.bgColor}`,
-        backgroundBlendMode: "darken"
       }}
     >
       <Link to="/map">
@@ -43,7 +42,7 @@ export default function BuildingWriteup() {
       <section className={styles.writeup}>
         {isMobile && <NavArrows />}
         <section className={styles.heading}>
-          <img src={`../src/assets/images/buildings/no-shadow/${data.bldgImage}`} />
+          <img src={`/assets/buildings/no-shadow/${data.bldgImage}`} />
           <section className={styles.titleCaption}>
             <h1 style={{ color: data.nameColor, fontSize: (isMobile ? data.mobileTitleSize : data.titleSize) }}>{data.name}</h1>
             <h2 style={{ color: data.captionColor }}>{data.caption}</h2>
@@ -55,11 +54,11 @@ export default function BuildingWriteup() {
       </section>
       <section className={styles.cats}>
         <article>
-          <img src={`../src/assets/images/cats/${data.cats[0].pic}`} />
+          <img src={`/assets/cats/${data.cats[0].pic}`} />
           <p style={{ color: data.nameColor }} >{data.cats[0].name}</p>
         </article>
         <article>
-          <img src={`../src/assets/images/cats/${data.cats[1].pic}`} />
+          <img src={`/assets/cats/${data.cats[1].pic}`} />
           <p style={{ color: data.nameColor }} >{data.cats[1].name}</p>
         </article>
         {!isMobile && <NavArrows />}

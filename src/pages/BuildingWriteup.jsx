@@ -30,7 +30,8 @@ export default function BuildingWriteup() {
     <main
       className={styles.main}
       style={{
-        background: `center / cover no-repeat url(${bg}), ${data.bgColor}`
+        background: `center / cover no-repeat url(${bg}), ${data.bgColor}`,
+        backgroundBlendMode: "darken"
       }}
     >
       <Link to="/map">

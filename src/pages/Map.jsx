@@ -14,6 +14,7 @@ import smallCloud1 from "../assets/Map/Map_Images/small cloud 1.svg";
 import smallCloud2 from "../assets/Map/Map_Images/small cloud 2.svg";
 import smallCloud3 from "../assets/Map/Map_Images/small cloud 3.svg";
 import { Link } from "react-router";
+import { easeInOut, motion } from "motion/react";
 
 const CatButton = ({ label, slug, style }) => {
   return (
@@ -68,9 +69,16 @@ const Map = () => {
       <div className={styles.cloud}>
         <p>Visit each cat to learn about the fascinating tales they hold about campus life. Discover the hidden nooks, legendary landmarks, and cherished memories through the eyes of our beloved feline friends and their loving partners, the caretakers.</p>
       </div>
-      <img className={styles.smallCloud} src={smallCloud3} style={{ left: "40%", top: "-5%" }} />
-      <img className={styles.smallCloud} src={smallCloud1} style={{ left: "60%", top: "4%" }} />
-      <img className={styles.smallCloud} src={smallCloud2} style={{ left: "75%", top: "-1%" }} />
+      <img
+        className={styles.smallCloud}
+        src={smallCloud3}
+        style={{ left: "40%", top: "-5%", animationDelay: "-1s" }} />
+      <img
+        className={styles.smallCloud}
+        src={smallCloud1} style={{ left: "60%", top: "4%" }} />
+      <img
+        className={styles.smallCloud}
+        src={smallCloud2} style={{ left: "75%", top: "-1%", animationDelay: "-2s" }} />
       {Object.entries(buildingData).map(([key, data]) => (
         <div key={key} className={styles.location} style={data.position}>
           <div>

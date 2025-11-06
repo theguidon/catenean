@@ -19,10 +19,12 @@
 	justify-content: flex-end;
 	align-items: center;
 	padding-bottom: 3%;
+	animation: 3s ease-in-out 0s infinite alternate-reverse bob;
 }
 
 .smallCloud {
 	position: absolute;
+	animation: 3s ease-in-out 0s infinite alternate-reverse bob;
 }
 
 .cloud p {
@@ -89,4 +91,14 @@
 	flex-flow: column nowrap;
 	align-items: center;
 	filter: drop-shadow(0 0 10px rgb(0, 0, 0, 0.5));
+}
+
+@keyframes bob {
+	0% {
+		transform: translateY(-0.5rem);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
 }

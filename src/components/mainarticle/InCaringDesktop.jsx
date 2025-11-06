@@ -3,7 +3,7 @@ import mvp from "../../assets/images/mvp-1.svg";
 import mag1 from "../../assets/images/mag1.svg";
 import mag2 from "../../assets/images/mag2.svg";
 import bushes from "../../assets/images/bushes.svg";
-import grass from "../../assets/images/grass.svg";
+import grass from "../../assets/images/grass-design.svg";
 
 const InCaringDesktop = () => {
   return (

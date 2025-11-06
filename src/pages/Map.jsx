@@ -14,19 +14,23 @@ import smallCloud1 from "../assets/Map/Map_Images/small cloud 1.svg";
 import smallCloud2 from "../assets/Map/Map_Images/small cloud 2.svg";
 import smallCloud3 from "../assets/Map/Map_Images/small cloud 3.svg";
 import { Link } from "react-router";
-import { easeInOut, motion } from "motion/react";
+import { motion, spring } from "motion/react";
 
 const CatButton = ({ label, slug, style }) => {
   return (
     <Link to={`/location/${slug}`} style={style}>
-      <div className={styles.catButton}>
+      <motion.div
+        animate={{ scale: [1.1, 1] }}
+        whileHover={{ scale: [1, 1.1] }}
+        transition={{ type: spring, stiffness: 160, animationDuration: 0.1, bounce: 0.3 }}
+        className={styles.catButton}>
         <img src={ears} />
         <div>
           <p>
             {label}
           </p>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }
@@ -37,7 +41,7 @@ const Map = () => {
       position: { bottom: "15%", left: "8%" },
       building: arete,
       cat: { src: areteCat, style: { bottom: "-4vh", left: "-5vw" } },
-      button: { label: "ARETÉ", style: { bottom: 0, right: "1vw" } }
+      button: { label: "ARETÉ", style: { bottom: 0, right: "-2vw" } }
     },
     "ctc-som": {
       position: { bottom: "15%", right: "6%" },
@@ -82,8 +86,17 @@ const Map = () => {
       {Object.entries(buildingData).map(([key, data]) => (
         <div key={key} className={styles.location} style={data.position}>
           <div>
-            <img className={styles.building} src={data.building} />
-            <img className={styles.cat} src={data.cat.src} style={data.cat.style} />
+            <motion.img
+              animate={{ scaleY: [1.5, 1] }}
+              transition={{ type: spring, stiffness: 100, animationDuration: 0.2, bounce: 0.2 }}
+              className={styles.building}
+              src={data.building} />
+            <motion.img
+              animate={{ scaleY: [1.2, 1] }}
+              transition={{ type: spring, stiffness: 120, animationDuration: 0.2, bounce: 0.1 }}
+              className={styles.cat}
+              src={data.cat.src}
+              style={data.cat.style} />
             <CatButton slug={key} label={data.button.label} style={data.button.style} />
           </div>
         </div>

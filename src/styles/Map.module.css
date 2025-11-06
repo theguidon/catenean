@@ -56,6 +56,7 @@
 	max-width: 300px;
 	left: 0;
 	top: 0;
+	transform-origin: bottom center;
 }
 
 .location .cat {
@@ -93,6 +94,7 @@
 	filter: drop-shadow(0 0 10px rgb(0, 0, 0, 0.5));
 }
 
+
 @keyframes bob {
 	0% {
 		transform: translateY(-0.5rem);
@@ -100,5 +102,15 @@
 
 	100% {
 		transform: translateY(0);
+	}
+}
+
+@keyframes buildingSkew {
+	0% {
+		transform: scaleY(1) skewX(-4deg);
+	}
+
+	100% {
+		transform: scaleY(1.1) skewX(2deg);
 	}
 }

@@ -40,32 +40,32 @@ const Map = () => {
     "arete": {
       position: { bottom: "15%", left: "8%" },
       building: arete,
-      cat: { src: areteCat, style: { bottom: "-4vh", left: "-5vw" } },
-      button: { label: "ARETÉ", style: { bottom: 0, right: "-2vw" } }
+      cat: { src: areteCat, style: { bottom: "-18%", left: "-25%" } },
+      button: { label: "ARETÉ", style: { bottom: 0, right: "-5%" } }
     },
     "ctc-som": {
       position: { bottom: "15%", right: "6%" },
       building: ctc,
-      cat: { src: ctcCat, style: { bottom: "-8vh", left: "-6vw" } },
-      button: { label: "ctc-som", style: { bottom: "-2vh", right: "-1vw" } }
+      cat: { src: ctcCat, style: { bottom: "-38%", left: "-25%" } },
+      button: { label: "ctc-som", style: { bottom: "-5%", right: "-8%" } }
     },
     "faura": {
       position: { top: "45%", right: "31%" },
       building: faura,
-      cat: { src: fauraCat, style: { bottom: "-8vh", left: "-5vw" } },
-      button: { label: "faura", style: { bottom: "-5vh", right: "-1vw" } }
+      cat: { src: fauraCat, style: { bottom: "-38%", left: "-25%" } },
+      button: { label: "faura", style: { bottom: "-25%", right: "-5%" } }
     },
     "mvp": {
-      position: { top: "15%", right: "32%" },
+      position: { top: "17%", right: "32%" },
       building: mvp,
-      cat: { src: mvpCat, style: { bottom: "-13vh", left: "-8vw" } },
-      button: { label: "MVP", style: { bottom: "-11vh", right: "-1vw" } }
+      cat: { src: mvpCat, style: { bottom: "-70%", left: "-28%" } },
+      button: { label: "MVP", style: { bottom: "-41%", right: "-5%" } }
     },
     "schmitt": {
-      position: { top: "12%", right: "5%" },
+      position: { top: "14%", right: "8%" },
       building: schmitt,
-      cat: { src: schmittCat, style: { bottom: "-20vh", left: "-7vw" } },
-      button: { label: "schmitt", style: { bottom: "-16vh", right: "-1vw" } }
+      cat: { src: schmittCat, style: { bottom: "-80%", left: "-20%" } },
+      button: { label: "schmitt", style: { bottom: "-60%", right: "-5%" } }
     },
   }
   return (

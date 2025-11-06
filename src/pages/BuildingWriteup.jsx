@@ -42,9 +42,9 @@ export default function BuildingWriteup() {
       <section className={styles.writeup}>
         {isMobile && <NavArrows />}
         <section className={styles.heading}>
-          <img src={`../src/assets/images/buildings/${data.bldgImage}`} />
+          <img src={`../src/assets/images/buildings/no-shadow/${data.bldgImage}`} />
           <section className={styles.titleCaption}>
-            <h1 style={{ color: data.nameColor, fontSize: data.titleSize }}>{data.name}</h1>
+            <h1 style={{ color: data.nameColor, fontSize: (isMobile ? data.mobileTitleSize : data.titleSize) }}>{data.name}</h1>
             <h2 style={{ color: data.captionColor }}>{data.caption}</h2>
           </section>
         </section>

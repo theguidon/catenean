@@ -12,7 +12,7 @@ return (
                 <div className={`${sectionStyles.heading} ${sectionStyles.section}`} style={{background: ''}}>
                     <h3>Fur-miliar<br/>faces</h3>
                     <img src={CTC}
-                        style={{position: 'absolute', bottom: '15vw', left: '30vw', zIndex: '1', width: '40%'}}>
+                        style={{position: 'absolute', bottom: '15vw', left: '30vw', zIndex: '1', width: '40%', maxWidth: '500px'}}>
                     </img>
                     <img src={Bush} className={sectionStyles.bush} style={{left: '15vw'}}/>
                     <img src={Bush} className={sectionStyles.bush} style={{right: '15vw'}}/>

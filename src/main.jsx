@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import ArticleMain from './pages/ArticleMain.jsx';
 import BuildingWriteup from "./pages/BuildingWriteup.jsx";
 import buildings from "./data/locations.json";
+import Map from './pages/Map.jsx';
 import App from './App.jsx'
 import './index.css'
 
@@ -11,6 +12,10 @@ let router = createBrowserRouter([
   {
     path: "/",
     Component: ArticleMain,
+  },
+  {
+    path: "/map",
+    Component: Map
   },
   {
     path: "location/:bldg",

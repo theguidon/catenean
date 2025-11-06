@@ -1,137 +1,107 @@
-import "../styles/Map.css";
-import Map_Campus from "../assets/Map/Map_Images/Map_background.svg";
-import Credits_Logo from "../assets/Map/Map_Images/Credits_Logo.svg";
-import Mail_Logo from "../assets/Map/Map_Images/Mail_Logo.svg";
-import Mail_Logo_Hover from "../assets/Map/Map_Images/Mail_Logo_Hover.svg";
-import Button_Arete from "../assets/Map/Map_Images/Button_Arete.svg";
-import Button_Arete_Hover from "../assets/Map/Map_Images/Button_Arete_Hover.svg";
-import Button_CTC from "../assets/Map/Map_Images/Button_CTC.svg";
-import Button_CTC_Hover from "../assets/Map/Map_Images/Button_CTC_Hover.svg";
-import Button_Faura from "../assets/Map/Map_Images/Button_Faura.svg";
-import Button_Faura_Hover from "../assets/Map/Map_Images/Button_Faura_Hover.svg";
-import Button_MVP from "../assets/Map/Map_Images/Button_MVP.svg";
-import Button_MVP_Hover from "../assets/Map/Map_Images/Button_MVP_Hover.svg";
-import Button_Schmitt from "../assets/Map/Map_Images/Button_Schmitt.svg";
-import Button_Schmitt_Hover from "../assets/Map/Map_Images/Button_Schmitt_Hover.svg";
-import Cats_Arete from "../assets/Map/Map_Images/Cats_Arete.svg";
-import Cats_CTC from "../assets/Map/Map_Images/Cats_CTC.svg";
-import Cats_Faura from "../assets/Map/Map_Images/Cats_Faura.svg";
-import Cats_MVP from "../assets/Map/Map_Images/Cats_MVP.svg";
-import Cats_Schmitt from "../assets/Map/Map_Images/Cats_Schmitt.svg";
-import Catenean_Logo from "../assets/Map/Map_Images/Catenean_Logo.svg";
+import styles from "../styles/Map.module.css";
+import arete from "../assets/images/buildings/arete.svg";
+import areteCat from "../assets/images/cats/illustrations/arete.svg";
+import ctc from "../assets/images/buildings/ctc-som.svg";
+import ctcCat from "../assets/images/cats/illustrations/ctc-som.svg";
+import faura from "../assets/images/buildings/faura.svg";
+import fauraCat from "../assets/images/cats/illustrations/faura.svg";
+import mvp from "../assets/images/buildings/mvp.svg";
+import mvpCat from "../assets/images/cats/illustrations/mvp.svg";
+import schmitt from "../assets/images/buildings/schmitt.svg";
+import schmittCat from "../assets/images/cats/illustrations/schmitt.svg";
+import ears from "../assets/images/cats/illustrations/Ears.svg";
+import smallCloud1 from "../assets/Map/Map_Images/small cloud 1.svg";
+import smallCloud2 from "../assets/Map/Map_Images/small cloud 2.svg";
+import smallCloud3 from "../assets/Map/Map_Images/small cloud 3.svg";
+import { Link } from "react-router";
+import { motion, spring } from "motion/react";
 
-import Credits from "../components/Credits.jsx";
-import Letter from "../components/Letter.jsx";
-
-import { useState } from "react";
-
-function Map({ setPage }) {
-  const [isCreditsVisible, setIsCreditsVisible] = useState(false);
-  const [isLetterVisible, setIsLetterVisible] = useState(false);
-
+const CatButton = ({ label, slug, style }) => {
   return (
-    <>
-      <div className="backgroundWrapper">
-        <div className="upperLogosWrapper">
-          <div className="upperButtonsContainer">
-            <div className="Mail_Logo_Container">
-              <img
-                className="Mail_Logo_Hover"
-                src={Mail_Logo_Hover}
-                alt=""
-                onClick={() => {
-                  setIsLetterVisible(true);
-                }}
-              />
-              <img className="Mail_Logo" src={Mail_Logo} alt="" />
-            </div>
-            <div className="Credits_Logo_Container">
-              <img
-                className="Credits_Logo"
-                src={Credits_Logo}
-                alt=""
-                onClick={() => {
-                  setIsCreditsVisible(true);
-                }}
-              />
-            </div>
-          </div>
-          <div className="aboutCard">
-            <img src={Catenean_Logo} />
-            <p>
-              Visit each cat to learn about the fascinating tales they hold
-              about campus life. Discover the hidden nooks, legendary landmarks,
-              and cherished memories through the eyes of our beloved feline
-              friends and their loving partners, the caretakers.
-            </p>
-          </div>
+    <Link to={`/location/${slug}`} style={style}>
+      <motion.div
+        animate={{ scale: [1.1, 1] }}
+        whileHover={{ scale: [1, 1.1] }}
+        transition={{ type: spring, stiffness: 160, animationDuration: 0.1, bounce: 0.3 }}
+        className={styles.catButton}>
+        <img src={ears} />
+        <div>
+          <p>
+            {label}
+          </p>
         </div>
-        <div
-          className="mapWrapper"
-          style={{ backgroundImage: `url(${Map_Campus})` }}
-        >
-          <div>
-            <img className="Button_Arete" src={Button_Arete} alt="" />
-            <img className="Cats_Arete" src={Cats_Arete} alt="" />
-            <img
-              className="Button_Arete_Hover"
-              src={Button_Arete_Hover}
-              alt=""
-              onClick={() => setPage("arete")}
-            />
-          </div>
-          <div>
-            <img className="Button_MVP" src={Button_MVP} alt="" />{" "}
-            <img className="Cats_MVP" src={Cats_MVP} alt="" />
-            <img
-              className="Button_MVP_Hover"
-              src={Button_MVP_Hover}
-              alt=""
-              onClick={() => setPage("mvp")}
-            />
-          </div>
-          <div>
-            <img className="Button_Faura" src={Button_Faura} alt="" />{" "}
-            <img className="Cats_Faura" src={Cats_Faura} alt="" />
-            <img
-              className="Button_Faura_Hover"
-              src={Button_Faura_Hover}
-              alt=""
-              onClick={() => setPage("faura")}
-            />
-          </div>
-          <div>
-            <img className="Button_Schmitt" src={Button_Schmitt} alt="" />{" "}
-            <img
-              className="Button_Schmitt_Hover"
-              src={Button_Schmitt_Hover}
-              alt=""
-              onClick={() => setPage("schmitt")}
-            />
-            <img className="Cats_Schmitt" src={Cats_Schmitt} alt="" />
-          </div>
-          <div>
-            <img className="Button_CTC" src={Button_CTC} alt="" />{" "}
-            <img
-              className="Button_CTC_Hover"
-              src={Button_CTC_Hover}
-              alt=""
-              onClick={() => setPage("ctc")}
-            />
-            <img className="Cats_CTC" src={Cats_CTC} alt="" />
-          </div>
-        </div>
+      </motion.div>
+    </Link>
+  );
+}
+
+const Map = () => {
+  const buildingData = {
+    "arete": {
+      position: { bottom: "15%", left: "8%" },
+      building: arete,
+      cat: { src: areteCat, style: { bottom: "-4vh", left: "-5vw" } },
+      button: { label: "ARETÉ", style: { bottom: 0, right: "-2vw" } }
+    },
+    "ctc-som": {
+      position: { bottom: "15%", right: "6%" },
+      building: ctc,
+      cat: { src: ctcCat, style: { bottom: "-8vh", left: "-6vw" } },
+      button: { label: "ctc-som", style: { bottom: "-2vh", right: "-1vw" } }
+    },
+    "faura": {
+      position: { top: "45%", right: "31%" },
+      building: faura,
+      cat: { src: fauraCat, style: { bottom: "-8vh", left: "-5vw" } },
+      button: { label: "faura", style: { bottom: "-5vh", right: "-1vw" } }
+    },
+    "mvp": {
+      position: { top: "15%", right: "32%" },
+      building: mvp,
+      cat: { src: mvpCat, style: { bottom: "-13vh", left: "-8vw" } },
+      button: { label: "MVP", style: { bottom: "-11vh", right: "-1vw" } }
+    },
+    "schmitt": {
+      position: { top: "12%", right: "5%" },
+      building: schmitt,
+      cat: { src: schmittCat, style: { bottom: "-20vh", left: "-7vw" } },
+      button: { label: "schmitt", style: { bottom: "-16vh", right: "-1vw" } }
+    },
+  }
+  return (
+    <main className={styles.main}>
+      <div className={styles.cloud}>
+        <p>Visit each cat to learn about the fascinating tales they hold about campus life. Discover the hidden nooks, legendary landmarks, and cherished memories through the eyes of our beloved feline friends and their loving partners, the caretakers.</p>
       </div>
-      <Credits
-        isCreditsVisible={isCreditsVisible}
-        setIsCreditsVisible={setIsCreditsVisible}
-      />
-      <Letter
-        isLetterVisible={isLetterVisible}
-        setIsLetterVisible={setIsLetterVisible}
-        setPage={setPage}
-      />
-    </>
+      <img
+        className={styles.smallCloud}
+        src={smallCloud3}
+        style={{ left: "40%", top: "-5%", animationDelay: "-1s" }} />
+      <img
+        className={styles.smallCloud}
+        src={smallCloud1} style={{ left: "60%", top: "4%" }} />
+      <img
+        className={styles.smallCloud}
+        src={smallCloud2} style={{ left: "75%", top: "-1%", animationDelay: "-2s" }} />
+      {Object.entries(buildingData).map(([key, data]) => (
+        <div key={key} className={styles.location} style={data.position}>
+          <div>
+            <motion.img
+              animate={{ scaleY: [1.5, 1] }}
+              transition={{ type: spring, stiffness: 100, animationDuration: 0.2, bounce: 0.2 }}
+              className={styles.building}
+              src={data.building} />
+            <motion.img
+              animate={{ scaleY: [1.2, 1] }}
+              transition={{ type: spring, stiffness: 120, animationDuration: 0.2, bounce: 0.1 }}
+              className={styles.cat}
+              src={data.cat.src}
+              style={data.cat.style} />
+            <CatButton slug={key} label={data.button.label} style={data.button.style} />
+          </div>
+        </div>
+      ))}
+    </main>
   );
 }
 

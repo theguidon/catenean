@@ -1,10 +1,12 @@
 .main {
   width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   gap: 3vw;
   padding: 6vh 5vw 5vh;
+  overflow: clip;
 }
 
 .backButton {
@@ -80,8 +82,8 @@
 
 .titleCaption h1 {
   font-family: "Solway", serif;
-  font-size: 10vw;
-  line-height: 8vw;
+  font-size: 7vw;
+  line-height: 100%;
   margin-top: 2.3rem;
 }
 

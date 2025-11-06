@@ -37,7 +37,8 @@
 		],
 		"bgColor": "#FFD7D9",
 		"nameColor": "#FF6C90",
-		"titleSize": "5.5vw",
+		"titleSize": "5.0vw",
+		"mobileTitleSize": "7vw",
 		"captionColor": "#E54169",
 		"back": "mvp",
 		"next": "schmitt"

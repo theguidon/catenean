@@ -4,15 +4,17 @@
 	aspect-ratio: 1728 / 1117;
 	width: 1728px;
 	height: 1117px;
-	background-image: url("src/assets/Map/Map_Images/mapdesktop_bg.svg");
-	overflow: scroll;
+	background-image: url("/assets/mapdesktop_bg.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: auto;
 	position: relative;
 }
 
 .cloud {
 	position: absolute;
 	aspect-ratio: 711 / 378;
-	background: center / contain no-repeat url("src/assets/Map/Map_Images/Cloud.svg");
+	background: center / contain no-repeat url("/assets/Cloud.svg");
 	width: 38%;
 	display: flex;
 	flex-flow: column nowrap;

@@ -24,7 +24,8 @@
   z-index: 10;
   position: relative;
   width: 120%;
-  padding: 48px 25vw 48px 15vw;
+  min-height: 70vh;
+  padding: 48px 25vw 15vh 15vw;
   background: #f9f4eb;
   border: 8px solid #faa685;
   left: 1vw;
@@ -72,7 +73,7 @@ section.buttons>* {
   text-align: center;
   color: #a56953 !important;
   text-decoration: none;
-  font-family: "Cherry Swash", serif;
+  font-family: "Solway", serif;
   font-size: 1.2em;
   font-weight: 800;
 }
@@ -108,6 +109,7 @@ section.buttons>* {
 .bylines h1 {
   font-weight: 800;
   font-family: "Cherry Swash", serif;
+  padding: 0;
   font-size: 8vw;
   margin: 0;
   -webkit-text-stroke: 0;
@@ -118,7 +120,9 @@ section.buttons>* {
 
 .bylines p {
   font-weight: 400;
-  font-family: "Outfit", sans-serif;
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 5vw;
+  color: #2074A4;
   padding: 0;
   margin-bottom: 16px;
 }

@@ -1,6 +1,9 @@
 import { motion, stagger } from 'motion/react';
 import styles from "../../styles/InCaringMobile.module.css";
-import building from "../../assets/images/schmitt-hall-w-deco.svg";
+import bushRight from '../../assets/images/bush-right.svg';
+import bushLeft from '../../assets/images/bush-left.svg';
+import backgroundGrass from '../../assets/images/background-grass.svg';
+import schmittHallBuilding from '../../assets/images/location-schmitt-hall-building.svg';
 import mag1 from "../../assets/images/mag1.svg";
 import catImg from "../../assets/images/two_cats_plain.png";
 
@@ -36,9 +39,12 @@ const InCaringMobile = () => {
     <>
       <div className={styles.mainArticle}>
         <h1>In caring, caution, and commitment</h1>
-
-        <img className={styles.building} src={building} alt="asset of schmitt hall" />
-
+        <div className={styles.buildingContainer}>
+          <img src={backgroundGrass} />
+          <img src={schmittHallBuilding} />
+          <img src={bushLeft} />
+          <img src={bushRight} />
+        </div>
         <p>
           To maintain students’ and the campus cats’ safety, one of AGILA’s
           projects is tracking the campus cats and their needs by conducting{" "}

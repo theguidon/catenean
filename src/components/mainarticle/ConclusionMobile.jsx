@@ -21,11 +21,13 @@ const Conclusion = () => {
   const endVariants = {
     hidden: {
       opacity: 0,
-      y: 20
+      y: 20,
+      transition: { duration: 0.5, ease: easeInOut }
     },
     show: {
       opacity: 1,
-      y: 0
+      y: 0,
+      transition: { duration: 0.5, ease: easeInOut }
     }
   }
 
@@ -37,18 +39,17 @@ const Conclusion = () => {
       }}
     >
       <MotionConfig
-        initial="hidden"
-        whileInView="show"
-        transition={{ duration: 0.500, ease: easeInOut, delayChildren: stagger(0.5), delay: 0.5 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: easeInOut, delay: 0.5 }}
+        viewport={{ once: true }}
       >
         <motion.img
-          variants={endVariants}
           src={envelope}
           className={creditStyles.envelope}
           style={{ rotate: "-10deg" }}
         />
         <motion.section
-          variants={endVariants}
           className={creditStyles.letter}
           style={{ rotate: "5deg", width: "120%" }}
         >
@@ -63,7 +64,6 @@ const Conclusion = () => {
           <p>Beyond attention and affection, love has manifested in the Ateneo community through a commitment to caring for the Cateneans and an acknowledgement of their value as living beings.</p>
         </motion.section>
         <motion.article
-          variants={endVariants}
           className={creditStyles.polaroid}
           style={{
             rotate: "-10deg",
@@ -76,14 +76,12 @@ const Conclusion = () => {
           />
         </motion.article>
         <motion.article
-          variants={endVariants}
           className={creditStyles.polaroid}
           style={{
             rotate: "10deg",
             left: "10%",
             bottom: 120
           }}
-          transition={{ duration: 0.500, ease: easeInOut, delay: 0.5 }}
         >
           <img
             src={paopao}

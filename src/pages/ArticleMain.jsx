@@ -5,13 +5,14 @@ import InLonelinessDesktop from "../components/mainarticle/InLonelinessDesktop";
 import ConclusionDesktop from "../components/mainarticle/ConclusionDesktop";
 import InLonelinessMobile from "../components/mainarticle/InLonelinessMobile";
 import FurmiliarFacesMobile from "../components/mainarticle/FurmiliarFacesMobile.jsx";
+import FurmiliarFacesDesktop from "../components/mainarticle/FurmiliarFacesDesktop.jsx";
 import InCaringMobile from "../components/mainarticle/InCaringMobile";
+import InCaringDesktop from "../components/mainarticle/InCaringDesktop.jsx";
 import ComeAndGoMobile from "../components/mainarticle/ComeAndGoMobile";
 import ConclusionMobile from "../components/mainarticle/ConclusionMobile";
 import grassBg from "../assets/images/background-grass.svg";
 import { useMediaQuery } from "react-responsive";
 import ComeAndGoDesktop from "../components/mainarticle/ComeAndGoDesktop";
-import FurmiliarFacesDesktop from "../components/mainarticle/FurmiliarFacesDesktop.jsx";
 
 const ArticleMain = () => {
   const isDesktop = useMediaQuery({ query: "(min-width: 501px)" });
@@ -24,9 +25,12 @@ const ArticleMain = () => {
         **/}
         <IntroDesktop />
         <FurmiliarFacesDesktop />
+        {/**
         <InLonelinessDesktop />
+        <InCaringDesktop />
         <ComeAndGoDesktop />
         <ConclusionDesktop />
+        **/}
       </main>
     );
   }

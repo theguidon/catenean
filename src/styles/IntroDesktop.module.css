@@ -1,12 +1,7 @@
 .main {
-  min-height: 100dvh;
-  min-width: 100dvw;
-  width: fit-content;
   font-family: "Outfit";
   color: #683535;
   display: flex;
-  overflow-y: hidden;
-  overflow-x: visible;
 }
 
 .main .grasslayer {

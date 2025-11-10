@@ -8,8 +8,8 @@
 	padding-bottom: 80px;
 	width: 100vw;
 	max-width: 100vw;
-	overflow-y: clip;
-	overflow-x: auto;
+	overflow-y: auto;
+	overflow-x: clip;
 }
 
 .main h3 {
@@ -34,7 +34,6 @@
 
 .main p {
 	font-family: "Rethink Sans", sans-serif;
-	padding: 0 10vw;
 	color: #522222;
 }
 
@@ -42,15 +41,17 @@
 	.main {
 		background: url("src/assets/images/desktopbg.svg") repeat;
 		display: flex;
-		height: 100vh;
-		overflow-x: auto;
+		overflow-x: scroll;
 		overflow-y: clip;
 		max-width: none;
-		width: fit-content;
 		min-width: 100vw;
 		padding: 0;
 		margin: 0;
 		position: relative;
+	}
+
+	.main p {
+		font-size: 1.15rem;
 	}
 
 	.main .grassLayer {

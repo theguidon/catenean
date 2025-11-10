@@ -11,20 +11,22 @@ import ConclusionMobile from "../components/mainarticle/ConclusionMobile";
 import grassBg from "../assets/images/background-grass.svg";
 import { useMediaQuery } from "react-responsive";
 import ComeAndGoDesktop from "../components/mainarticle/ComeAndGoDesktop";
+import FurmiliarFacesDesktop from "../components/mainarticle/FurmiliarFacesDesktop.jsx";
 
 const ArticleMain = () => {
   const isDesktop = useMediaQuery({ query: "(min-width: 501px)" });
   if (isDesktop) {
     return (
       <main className={styles.main}>
-        <ComeAndGoDesktop />
         {/**
         <div className={styles.grassLayer}>
         </div>
-        <IntroDesktop />
-        <InLonelinessDesktop />
-        <ConclusionDesktop />
         **/}
+        <IntroDesktop />
+        <FurmiliarFacesDesktop />
+        <InLonelinessDesktop />
+        <ComeAndGoDesktop />
+        <ConclusionDesktop />
       </main>
     );
   }

@@ -42,8 +42,9 @@
 	.main {
 		background: url("src/assets/images/desktopbg.svg") repeat;
 		display: flex;
+		height: 100vh;
+		overflow-x: auto;
 		overflow-y: clip;
-		overflow-x: scroll;
 		max-width: none;
 		width: fit-content;
 		min-width: 100vw;

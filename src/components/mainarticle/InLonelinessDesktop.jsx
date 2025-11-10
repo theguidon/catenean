@@ -81,7 +81,6 @@ const InLonelinessDesktop = () => {
                 alignItems: "stretch",
                 height: "100vh",
                 minWidth: "100vw",
-                position: "relative"
             }}
         >
             {/*#1 SECTION TITLE */}

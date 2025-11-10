@@ -13,7 +13,6 @@ const InCaringDesktop = () => {
           <h3>In caring, caution, and commitment</h3>
           <img className={styles.mvp} src={mvp} alt="MVP Building" />
         </div>
-        <img className={styles.grass} src={grass} alt="Grass" />
         <img className={styles.bushes} src={bushes} alt="Bushes" />
       </div>
 

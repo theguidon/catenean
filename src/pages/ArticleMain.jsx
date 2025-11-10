@@ -19,18 +19,13 @@ const ArticleMain = () => {
   if (isDesktop) {
     return (
       <main className={styles.main}>
-        {/**
         <div className={styles.grassLayer}>
         </div>
-        **/}
         <IntroDesktop />
         <FurmiliarFacesDesktop />
-        <InLonelinessDesktop />
-        {/**
         <InCaringDesktop />
         <ComeAndGoDesktop />
         <ConclusionDesktop />
-        **/}
       </main>
     );
   }

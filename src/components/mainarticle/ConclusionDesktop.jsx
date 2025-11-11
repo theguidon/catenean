@@ -5,6 +5,8 @@ import bylines from "../../data/bylines.json";
 import joinBylines from "../../utils/joinBylines";
 import cat1 from "../../assets/images/cats/1.jpeg";
 import cat2 from "../../assets/images/cats/2.jpeg";
+import string1 from "../../assets/images/conclusion_string1.svg";
+import string2 from "../../assets/images/conclusion_string2.svg";
 import { easeInOut, easeOut, motion } from "motion/react";
 
 const ConclusionDesktop = () => {
@@ -17,8 +19,25 @@ const ConclusionDesktop = () => {
         alignItems: "end",
         overflowY: "clip",
         height: "100vh",
+        position: "relative"
       }}
     >
+      <img
+        src={string1}
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 300
+        }}
+      />
+      <img
+        src={string2}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: -1200
+        }}
+      />
       <section
         className={creditStyles.polaroidContainer}
       >

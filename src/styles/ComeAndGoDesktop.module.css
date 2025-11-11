@@ -24,6 +24,7 @@ section.content {
 	width: 56ch;
 	padding: 2rem;
 	position: relative;
+	z-index: 20;
 }
 
 .paopao {

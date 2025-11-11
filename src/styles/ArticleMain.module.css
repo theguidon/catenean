@@ -41,12 +41,12 @@
 	.main {
 		background: url("src/assets/images/desktopbg.svg") repeat;
 		display: flex;
-		overflow-x: scroll;
-		overflow-y: clip;
-		max-width: none;
-		min-width: 100vw;
 		padding: 0;
 		margin: 0;
+		height: 100%;
+		max-width: none;
+		min-width: fit-content;
+		overflow-y: clip;
 		position: relative;
 	}
 
@@ -54,17 +54,7 @@
 		font-size: 1.15rem;
 	}
 
-	.main .grassLayer {
-		height: 100%;
-		width: 100%;
-		background-image: url("src/assets/images/grasslong.svg");
-		background-position-y: bottom;
-		background-size: 100%;
-		background-repeat: repeat-x;
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		z-index: 15;
-		display: none;
+	.main * {
+		z-index: 10;
 	}
 }

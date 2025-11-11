@@ -10,7 +10,7 @@ import InCaringMobile from "../components/mainarticle/InCaringMobile";
 import InCaringDesktop from "../components/mainarticle/InCaringDesktop.jsx";
 import ComeAndGoMobile from "../components/mainarticle/ComeAndGoMobile";
 import ConclusionMobile from "../components/mainarticle/ConclusionMobile";
-import grassBg from "../assets/images/background-grass.svg";
+import grassBg from "../assets/images/grasslong.svg";
 import { useMediaQuery } from "react-responsive";
 import ComeAndGoDesktop from "../components/mainarticle/ComeAndGoDesktop";
 
@@ -18,15 +18,25 @@ const ArticleMain = () => {
   const isDesktop = useMediaQuery({ query: "(min-width: 501px)" });
   if (isDesktop) {
     return (
-      <main className={styles.main}>
-        <div className={styles.grassLayer}>
-        </div>
-        <IntroDesktop />
-        <FurmiliarFacesDesktop />
-        <InCaringDesktop />
-        <ComeAndGoDesktop />
-        <ConclusionDesktop />
-      </main>
+      <div style={{
+        overflowX: "auto",
+        overflowY: "clip"
+      }}>
+        <main className={styles.main}>
+          <img
+            src={grassBg}
+            style={{
+              position: "absolute",
+              width: "90%",
+              bottom: 0,
+            }} />
+          <IntroDesktop />
+          <FurmiliarFacesDesktop />
+          <InCaringDesktop />
+          <ComeAndGoDesktop />
+          <ConclusionDesktop />
+        </main>
+      </div>
     );
   }
   return (

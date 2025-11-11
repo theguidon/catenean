@@ -16,7 +16,7 @@ const InCaringDesktop = () => {
         <img className={styles.bushes} src={bushes} alt="Bushes" />
       </div>
 
-      <div className={styles.mainArticle}>
+      <div className={`${styles.magArticle}`}>
         <img className={styles.mag1} src={mag1} alt="Cat Magnifying Glass 1" />
         <p>
           To maintain students’ and the campus cats’ safety, one of AGILA’s
@@ -58,7 +58,8 @@ const InCaringDesktop = () => {
         </div>
       </div>
 
-      <div className={styles.mainArticle}>
+      <div className={styles.magArticle}>
+        <img className={styles.mag2} src={mag2} alt="Cat Magnifying Glass 2" />
         <p>
           For him, supporting animal welfare advocacy means being persons for
           others, which is inclusive of other forms of life. This practice can
@@ -75,7 +76,6 @@ const InCaringDesktop = () => {
           their pets at home,” Guce says.
         </p>
 
-        <img className={styles.mag2} src={mag2} alt="Cat Magnifying Glass 2" />
       </div>
 
       <div className={styles.mainArticle}>
@@ -92,7 +92,7 @@ const InCaringDesktop = () => {
           feral, as it helps maintain their independence and role as pest control on campus.
         </p>
       </div>
-    </main>
+    </main >
   );
 };
 

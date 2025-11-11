@@ -8,10 +8,10 @@
 }
 
 .envelopeDesktop {
-  width: 500px;
+  width: 600px;
   rotate: -5deg;
   top: 20%;
-  left: 25%;
+  left: 80px;
   transform: translateY(0px);
 }
 
@@ -25,6 +25,7 @@
   position: relative;
   width: 120%;
   min-height: 70vh;
+  min-width: 528px;
   padding: 48px 25vw 15vh 15vw;
   background: #f9f4eb;
   border: 8px solid #faa685;
@@ -40,9 +41,10 @@
 
 .polaroid {
   background: white;
-  padding: 5%;
-  padding-bottom: 20%;
-  position: relative;
+  width: 220px;
+  padding: 12px;
+  padding-bottom: 54px;
+  position: absolute;
   box-shadow: 2.5px 2.5px 3px 0px rgba(0, 0, 0, 0.15);
   z-index: 20;
 }
@@ -87,6 +89,13 @@ section.buttons>* {
   align-items: center;
   text-decoration: none;
   gap: 12px;
+}
+
+section.polaroidContainer {
+  align-self: center;
+  position: relative;
+  height: 50%;
+  min-width: 600px;
 }
 
 .back p {
@@ -139,12 +148,21 @@ section.buttons>* {
 
 @media (min-width: 501px) {
   .letter {
-    width: 400px;
-    padding: 48px;
+    min-width: 600px;
+    padding: 60px 80px;
   }
 
   .letter p {
     padding: 0;
+  }
+
+  .polaroid {
+    width: 420px;
+    right: 520px;
+  }
+
+  .polaroidContainer {
+    bottom: 10vh;
   }
 
   .bylines h1 {

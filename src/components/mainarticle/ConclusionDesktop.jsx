@@ -20,20 +20,11 @@ const ConclusionDesktop = () => {
       }}
     >
       <section
-        style={{
-          alignSelf: "center",
-          position: "relative",
-          height: "50%",
-          minWidth: "600px"
-        }}
+        className={creditStyles.polaroidContainer}
       >
         <article
           className={creditStyles.polaroid}
           style={{
-            width: 220,
-            padding: 12,
-            paddingBottom: 54,
-            position: "absolute",
             rotate: "10deg",
             animation: `3s ease-in-out 0s infinite alternate-reverse ${creditStyles.swing}`,
             transformOrigin: "top center",
@@ -44,12 +35,8 @@ const ConclusionDesktop = () => {
         <article
           className={creditStyles.polaroid}
           style={{
-            width: 220,
-            padding: 12,
-            paddingBottom: 54,
-            position: "absolute",
-            left: "25%",
-            top: "-20%",
+            top: "-15%",
+            right: 380,
             rotate: "-10deg",
             animation: `3s ease-in-out 0s infinite alternate-reverse ${creditStyles.swing}`,
             transformOrigin: "top right"
@@ -78,7 +65,6 @@ const ConclusionDesktop = () => {
         style={{
           height: "100vh",
           position: "relative",
-          minWidth: 528,
         }}
       >
         <motion.p

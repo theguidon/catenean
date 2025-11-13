@@ -1,19 +1,49 @@
 import sectionStyles from "../../styles/FurmiliarFacesDesktop.module.css";
 import CTC from "../../assets/images/location-ctc-som-building.svg";
 import Bush from "../../assets/images/bush.svg";
+import Blush from "../../assets/images/Blur-Desktop.svg";
+import Title from "../../assets/images/furmiliar-title-desktop.svg";
 import { color, easeInOut, motion, } from "motion/react";
 
 const FurmiliarFacesDesktop = () => {
 
     return (
         <div className={sectionStyles.sectionContainer}>
-            <div className={`${sectionStyles.heading} ${sectionStyles.section}`} style={{ background: '' }}>
-                <h3>Fur-miliar<br />faces</h3>
-                <img src={CTC}
-                    style={{ position: 'absolute', bottom: '15vw', left: '30vw', zIndex: '1', width: '40%', maxWidth: '500px' }}>
-                </img>
-                <img src={Bush} className={sectionStyles.bush} style={{ left: '15vw' }} />
-                <img src={Bush} className={sectionStyles.bush} style={{ right: '15vw' }} />
+            <div className={`${sectionStyles.heading} ${sectionStyles.section}`}>
+                <img
+                    src={Blush}
+                    style={{
+                        position: "absolute",
+                        left: "5%",
+                        top: "8vh",
+                        zIndex: 0
+                    }}
+                />
+                <img
+                    src={Title}
+                />
+                <div className={`${sectionStyles.building}`}>
+                    <img
+                        src={Bush}
+                        className={sectionStyles.bush}
+                        style={{
+                            left: 20
+                        }}
+                    />
+                    <img src={CTC}
+                        style={{
+                            position: "relative",
+                            width: 900,
+                            zIndex: 0
+                        }}
+                    />
+                    <img
+                        src={Bush}
+                        className={sectionStyles.bush}
+                        style={{
+                        }}
+                    />
+                </div>
             </div>
             <div className={`${sectionStyles.article} ${sectionStyles.section}`}>
                 <article>

@@ -62,7 +62,7 @@ const ComeAndGoDesktop = () => {
             top: "5%",
             left: "12%"
           }}
-          viewport={{ amount: 0.5 }}
+          viewport={{ amount: 0.8 }}
         >
           Johnson recounts the day Pao-Pao was run over because of the &quot;reckless imprudence of drivers.&quot; He first heard the news of Pao-Pao&apos;s passing before his 5:00PM class. When he came back at 6:30PM, he recalled a crowd of around 70 students gathering by Schmitt Hall before they headed to the SOM Forest, where Pao-Pao was buried.
         </motion.p>

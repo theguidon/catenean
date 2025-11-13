@@ -11,8 +11,8 @@ import blush from "../../assets/images/Blur-Desktop.svg";
 const ComeAndGoDesktop = () => {
   const transition = { duration: 0.5, ease: easeInOut }
   const parVariants = {
-    show: { color: "rgb(82,34,34,1)", transition },
-    hidden: { color: "rgb(82,34,34,0)", transition }
+    show: { color: "rgb(82,34,34,1)", transition, viewport: { amount: 0.2 } },
+    hidden: { color: "rgb(82,34,34,0)", transition, viewport: { amount: 0.8 } }
   }
 
   return (
@@ -24,7 +24,7 @@ const ComeAndGoDesktop = () => {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-          viewport={{ amount: 0.5 }}
+          viewport={{ amount: 0.5, once: true }}
         />
         <section className={styles.building}>
           <img src={blush} className={styles.blush} />
@@ -41,7 +41,7 @@ const ComeAndGoDesktop = () => {
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
-            viewport={{ amount: 0.6 }}
+            viewport={{ amount: 0.6, once: true }}
           />
         </section>
         <motion.img
@@ -50,7 +50,7 @@ const ComeAndGoDesktop = () => {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
-          viewport={{ amount: 0.5 }}
+          viewport={{ amount: 0.5, once: true }}
         />
       </section>
       <img src={cloud} className={styles.cloud} />
@@ -62,7 +62,6 @@ const ComeAndGoDesktop = () => {
             top: "5%",
             left: "12%"
           }}
-          viewport={{ amount: 0.8 }}
         >
           Johnson recounts the day Pao-Pao was run over because of the &quot;reckless imprudence of drivers.&quot; He first heard the news of Pao-Pao&apos;s passing before his 5:00PM class. When he came back at 6:30PM, he recalled a crowd of around 70 students gathering by Schmitt Hall before they headed to the SOM Forest, where Pao-Pao was buried.
         </motion.p>
@@ -74,7 +73,6 @@ const ComeAndGoDesktop = () => {
             right: "5%",
             bottom: "5%"
           }}
-          viewport={{ amount: 0.8 }}
         >
           &quot;These small things which are part of our experience, [...] they&apos;re more important than we think. Sometimes, we only notice them when they&apos;re absent, [...] we realize how much we&apos;ve missed them&mdash;how much of the experience they are&quot;<br />Johnson says.
         </motion.p>

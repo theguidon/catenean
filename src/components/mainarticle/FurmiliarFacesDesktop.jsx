@@ -43,13 +43,13 @@ const FurmiliarFacesDesktop = () => {
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-                        viewport={{ amount: 0.8 }}
+                        viewport={{ amount: 0.8, once: true }}
                     />
                     <motion.img src={CTC}
                         initial={{ scaleY: 0 }}
                         whileInView={{ scaleY: 1 }}
                         transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
-                        viewport={{ amount: 0.6 }}
+                        viewport={{ amount: 0.6, once: true }}
                         style={{
                             position: "relative",
                             width: 800,
@@ -64,7 +64,7 @@ const FurmiliarFacesDesktop = () => {
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
-                        viewport={{ amount: 0.5 }}
+                        viewport={{ amount: 0.5, once: true }}
                     />
                 </div>
             </div>

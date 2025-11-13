@@ -54,7 +54,7 @@ const InCaringDesktop = () => {
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
-            viewport={{ amount: 0.6 }}
+            viewport={{ amount: 0.6, once: true }}
             alt="MVP Building" />
         </div>
         <motion.img
@@ -63,7 +63,7 @@ const InCaringDesktop = () => {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-          viewport={{ amount: 0.8 }}
+          viewport={{ amount: 0.8, once: true }}
           style={{ left: 0 }} />
         <motion.img
           className={styles.bushes}
@@ -71,7 +71,7 @@ const InCaringDesktop = () => {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
-          viewport={{ amount: 0.5 }}
+          viewport={{ amount: 0.5, once: true }}
           style={{ right: 0 }} />
       </div>
 

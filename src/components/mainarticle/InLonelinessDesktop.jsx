@@ -91,7 +91,7 @@ const InLonelinessDesktop = () => {
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 2.2 }}
                         transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-                        viewport={{ amount: 0.8 }}
+                        viewport={{ amount: 0.8, once: true }}
                         style={{ position: "absolute", scale: "220%", left: 0, bottom: "10vh" }}
                     />
                     <motion.img
@@ -99,7 +99,7 @@ const InLonelinessDesktop = () => {
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 2.2 }}
                         transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
-                        viewport={{ amount: 0.5 }}
+                        viewport={{ amount: 0.5, once: true }}
                         style={{ position: "absolute", scale: "220%", right: 0, bottom: "10vh" }}
                     />
                 </motion.div>
@@ -114,7 +114,7 @@ const InLonelinessDesktop = () => {
                         initial={{ scaleY: 0 }}
                         whileInView={{ scaleY: 1 }}
                         transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
-                        viewport={{ amount: 0.6 }}
+                        viewport={{ amount: 0.6, once: true }}
                         style={{
                             position: "absolute", width: 800, left: 180, bottom: "-4vh",
                             transformOrigin: "bottom center"

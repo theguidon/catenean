@@ -10,15 +10,23 @@ const FurmiliarFacesDesktop = () => {
     return (
         <div className={sectionStyles.sectionContainer}>
             <div className={`${sectionStyles.heading} ${sectionStyles.section}`}>
-                <img
-                    src={Blush}
+                <div
                     style={{
                         position: "absolute",
-                        left: "5%",
-                        top: "8vh",
-                        zIndex: 0
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        zIndex: 0,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
                     }}
-                />
+                >
+                    <img
+                        src={Blush}
+                    />
+                </div>
                 <img
                     src={Title}
                 />
@@ -71,21 +79,21 @@ const FurmiliarFacesDesktop = () => {
             <div className={sectionStyles.section}>
                 <motion.div
                     className={sectionStyles.quoteBackground}
-                    style={{ height: '60vw' }}
+                    style={{ height: '40vw' }}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, ease: easeInOut, delay: 0.8 }}
                 ></motion.div>
                 <motion.div
                     className={sectionStyles.quoteBackground}
-                    style={{ height: '65vw' }}
+                    style={{ height: '45vw' }}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, ease: easeInOut, delay: 0.6 }}
                 ></motion.div>
                 <motion.div
                     className={sectionStyles.quoteBackground}
-                    style={{ height: '70vw' }}
+                    style={{ height: '50vw' }}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, ease: easeInOut, }}

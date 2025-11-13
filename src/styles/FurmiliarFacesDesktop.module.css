@@ -52,8 +52,6 @@ div.heading {
   display: flex;
 }
 
-.heading {}
-
 p {
   color: #522222;
   font-family: "Rethink Sans";
@@ -69,7 +67,7 @@ p {
   position: absolute;
   bottom: 0;
   margin: 3.5em;
-  width: 35vw;
+  width: 560px;
   z-index: 6;
   display: flex;
   justify-content: center;
@@ -85,10 +83,10 @@ p {
   position: absolute;
   color: #2074A4;
   font-family: 'Cedarville Cursive Regular';
-  font-size: 4vw;
+  font-size: 3.5rem;
   font-weight: 400;
-  top: 4vh;
-  left: 17.5vw;
+  top: 6%;
+  left: 51%;
 }
 
 .article {
@@ -107,7 +105,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(243, 231, 204, 0.4);
-  width: 80%;
+  width: 1200px;
   border-radius: 50%;
   z-index: 0;
   bottom: 0;

@@ -9,10 +9,10 @@ import title from "../../assets/images/comeandgo-title-desktop.svg";
 import blush from "../../assets/images/Blur-Desktop.svg";
 
 const ComeAndGoDesktop = () => {
-  const transition = { duration: 0.5, ease: easeInOut }
+  const transition = { duration: 1, ease: easeInOut }
   const parVariants = {
-    show: { color: "rgb(82,34,34,1)", transition, viewport: { amount: 0.8 } },
-    hidden: { color: "rgb(82,34,34,0)", transition, viewport: { amount: 0.8 } }
+    show: { color: "rgb(82,34,34,1)", transition },
+    hidden: { color: "rgb(82,34,34,0)", transition }
   }
 
   return (
@@ -54,8 +54,9 @@ const ComeAndGoDesktop = () => {
         />
       </section>
       <img src={cloud} className={styles.cloud} />
-      <motion.section initial="hidden" whileInView="show" transition={{ delayChildren: stagger(0.5) }} className={styles.content}>
+      <motion.section initial="hidden" whileInView="show" transition={{ delayChildren: stagger(2, { startDelay: 1 }) }} className={styles.content}>
         <motion.p
+          viewport={{ amount: "all" }}
           variants={parVariants}
           style={{
             alignSelf: "flex-start",
@@ -68,6 +69,7 @@ const ComeAndGoDesktop = () => {
         <img src={paopao} className={styles.paopao} />
         <motion.p
           variants={parVariants}
+          viewport={{ amount: 1 }}
           style={{
             alignSelf: "flex-end",
             right: "5%",

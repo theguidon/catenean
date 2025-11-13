@@ -35,10 +35,9 @@ section.container {
 
 .blush {
 	position: absolute;
-	width: 180%;
-	z-index: -1;
-	top: -18%;
-	left: -40%;
+	height: 125%;
+	top: -27%;
+	left: -35%;
 }
 
 .buildingPic {

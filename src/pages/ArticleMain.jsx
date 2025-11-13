@@ -23,18 +23,24 @@ const ArticleMain = () => {
         overflowY: "clip"
       }}>
         <main className={styles.main}>
-          <img
-            src={grassBg}
-            style={{
-              position: "absolute",
-              width: "90%",
-              bottom: 0,
-            }} />
           <IntroDesktop />
           <FurmiliarFacesDesktop />
           <InLonelinessDesktop />
           <InCaringDesktop />
           <ComeAndGoDesktop />
+          <div style={{
+            position: "absolute",
+            width: "90%",
+            bottom: 0,
+            left: 0,
+            zIndex: 0
+          }}>
+            <img
+              src={grassBg}
+              style={{
+                width: "100%",
+              }} />
+          </div>
           <ConclusionDesktop />
         </main>
       </div>

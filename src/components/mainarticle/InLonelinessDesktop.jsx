@@ -102,10 +102,6 @@ const InLonelinessDesktop = () => {
                     <motion.img
                         src={schmittHallBuilding}
                         style={{ position: "absolute", width: 800, left: 180, bottom: "-4vh" }}
-                        initial={{ x: 150 }}
-                        whileInView={{ x: 0 }}
-                        transition={{ duration: 2, ease: [0.25, 1, 0.5, 1], fill: "forwards" }}
-                        viewport={{ amount: 0.7, once: true }}
                     />
                     <motion.img
                         src={title}

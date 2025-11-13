@@ -11,7 +11,7 @@ import blush from "../../assets/images/Blur-Desktop.svg";
 const ComeAndGoDesktop = () => {
   const transition = { duration: 0.5, ease: easeInOut }
   const parVariants = {
-    show: { color: "rgb(82,34,34,1)", transition, viewport: { amount: 0.2 } },
+    show: { color: "rgb(82,34,34,1)", transition, viewport: { amount: 0.8 } },
     hidden: { color: "rgb(82,34,34,0)", transition, viewport: { amount: 0.8 } }
   }
 

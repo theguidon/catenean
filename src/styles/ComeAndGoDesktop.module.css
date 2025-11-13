@@ -15,29 +15,28 @@ section.container {
 	gap: 18px;
 }
 
-.titleArea>.bush {
-	width: 25%
+.titleArea .bush {
+	min-width: 348px;
+	max-width: 348px;
 }
 
 .building {
-	width: 50%;
+	width: 70%;
 	position: relative;
-	top: 8vh;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
+	transform-origin: bottom center;
 }
 
 .title {
 	position: relative;
-	top: 12vh;
 }
 
 .blush {
 	position: absolute;
-	height: 125%;
-	top: -27%;
-	left: -35%;
+	width: 140%;
+	top: -35vh;
 }
 
 .buildingPic {

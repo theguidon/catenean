@@ -18,13 +18,40 @@ const ComeAndGoDesktop = () => {
   return (
     <section className={styles.container}>
       <section className={styles.titleArea}>
-        <img src={bush1} className={styles.bush} />
+        <motion.img
+          src={bush1}
+          className={styles.bush}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+          viewport={{ amount: 0.8, once: true }}
+        />
         <section className={styles.building}>
           <img src={blush} className={styles.blush} />
-          <img src={title} className={styles.title} />
-          <img src={faura} className={styles.buildingPic} />
+          <motion.img
+            src={title}
+            className={styles.title}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.75, ease: easeInOut }}
+          />
+          <motion.img
+            src={faura}
+            className={styles.buildingPic}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
+            viewport={{ amount: 0.6, once: true }}
+          />
         </section>
-        <img src={bush2} className={styles.bush} />
+        <motion.img
+          src={bush2}
+          className={styles.bush}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
+          viewport={{ amount: 0.5, once: true }}
+        />
       </section>
       <img src={cloud} className={styles.cloud} />
       <motion.section initial="hidden" whileInView="show" transition={{ delayChildren: stagger(0.5) }} className={styles.content}>
@@ -34,7 +61,9 @@ const ComeAndGoDesktop = () => {
             alignSelf: "flex-start",
             top: "5%",
             left: "12%"
-          }}>
+          }}
+          viewport={{ amount: 0.5 }}
+        >
           Johnson recounts the day Pao-Pao was run over because of the &quot;reckless imprudence of drivers.&quot; He first heard the news of Pao-Pao&apos;s passing before his 5:00PM class. When he came back at 6:30PM, he recalled a crowd of around 70 students gathering by Schmitt Hall before they headed to the SOM Forest, where Pao-Pao was buried.
         </motion.p>
         <img src={paopao} className={styles.paopao} />
@@ -44,7 +73,9 @@ const ComeAndGoDesktop = () => {
             alignSelf: "flex-end",
             right: "5%",
             bottom: "5%"
-          }}>
+          }}
+          viewport={{ amount: 0.5 }}
+        >
           &quot;These small things which are part of our experience, [...] they&apos;re more important than we think. Sometimes, we only notice them when they&apos;re absent, [...] we realize how much we&apos;ve missed them&mdash;how much of the experience they are&quot;<br />Johnson says.
         </motion.p>
       </motion.section>

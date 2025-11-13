@@ -3,14 +3,26 @@ import mvp from "../../assets/images/mvp-1.svg";
 import mag1 from "../../assets/images/mag1.svg";
 import mag2 from "../../assets/images/mag2.svg";
 import bushes from "../../assets/images/bushes.svg";
+import blush from "../../assets/images/Blur-Desktop.svg";
+import title from "../../assets/images/incaring-title-desktop.svg";
 import grass from "../../assets/images/grass-design.svg";
+import { radialGradient } from "motion/react-client";
 
 const InCaringDesktop = () => {
   return (
     <main className={styles.scrollContainer}>
       <div className={styles.page}>
+        <img
+          src={blush}
+          style={{
+            width: "60%",
+            position: "absolute",
+            left: "20%",
+            top: "8%",
+          }}
+        />
         <div className={styles.titlepage}>
-          <h3>In caring, caution, and commitment</h3>
+          <img src={title} />
           <img className={styles.mvp} src={mvp} alt="MVP Building" />
         </div>
         <img className={styles.bushes} src={bushes} alt="Bushes" />

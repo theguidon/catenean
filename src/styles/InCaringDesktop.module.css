@@ -9,9 +9,9 @@
 
 .page {
   width: 1920px;
-  height: 1080px;
+  height: 100%;
   flex-shrink: 0;
-  margin-top: 70px;
+  padding-top: 20vh;
   box-sizing: border-box;
   position: relative;
 }
@@ -22,9 +22,13 @@
 
 .titlepage {
   max-width: 62rem;
-  margin: 0 auto;
+  margin: 6vh auto;
+  gap: 8%;
   z-index: 10;
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .magArticle,
@@ -104,7 +108,7 @@
 
 .bushes {
   position: absolute;
-  bottom: 300px;
+  bottom: 0px;
   left: 100px;
   width: 90%;
   height: auto;

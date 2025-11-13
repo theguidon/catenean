@@ -80,11 +80,10 @@ const InLonelinessDesktop = () => {
                 flexFlow: "row nowrap",
                 alignItems: "stretch",
                 height: "100vh",
-                minWidth: "100vw",
             }}
         >
             {/*#1 SECTION TITLE */}
-            <section>
+            <section style={{ display: "none" }}>
                 <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ amount: 0.7, once: true }}>
                     <motion.img
                         src={bushLeft}
@@ -149,7 +148,7 @@ const InLonelinessDesktop = () => {
                 </motion.div>
                 <motion.p
                     variants={fadeIn}
-                    style={{ position: "absolute", top: "40%", left: "50%", transform: "translateX(-50%) translateY(-50%)" }}
+                    style={{ position: "absolute", top: "32%", left: "27%", width: "50%" }}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
@@ -161,84 +160,92 @@ const InLonelinessDesktop = () => {
                 </motion.p>
             </section>
 
-            {/* #3 SECTION WITH 2 PARAGRAPHS */}
-            <section className={styles.paragraph}>
-                <p>
-                    One of the people who observed this solidarity was Assistant Professor at the
-                    Department of Chemistry and Ateneans Guided and Inspired by their Love for Animals
-                    (AGILA) moderator Olivia Erin “Oui” Buenafe, PhD. “The cats served as companions to
-                    the security personnel,” she remarks.
-                </p>
-                <br></br>
-                <p>
-                    She shares that with the pandemic-driven campus restrictions, the Cateneans gave
-                    the few campus visitors and personnel some semblance of relief amid the lonely
-                    atmosphere of the deserted campus. Together with Buenafe in this endeavor is her
-                    spouse, Department of Theology Instructor Joseph Johnson, JCL.
-                </p>
-            </section>
-
-            {/* #4 SECTION WITH 2 PARAGRAPHS */}
-            <section className={styles.paragraph}>
-                <p>
-                    In instances when some cats require medical attention, the couple does their best to attend
-                    to these concerns. For instance, they took care of Schmitt Hall’s beloved Pao-Pao, who was often
-                    taken to the veterinarian, and his mother Prada, who at one point was diagnosed with
-                    <a href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-immunodeficiency-virus-fiv">feline immunodeficiency virus.</a>
-                    Often, the medical bills come from the couple’s own pockets, although they are grateful to those
-                    who have helped with the costs.
-                </p>
-                <br></br>
-                <p>
-                    Johnson references the
-                    <a href="https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html">Laudato si'</a>
-                    encyclical when talking about the importance of caring for animals, mentioning that the way we
-                    treat the vulnerable, including animals, reflects who we are as people.
-                </p>
-            </section>
-
-            {/* #5 SECTION WITH 2 QUOTES */}
-            <motion.section
-                className={styles.paragraph}
-                variants={fadeIn}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ amount: 0.5, once: true }}
+            <section
+                style={{
+                    display: "flex",
+                    gap: 200,
+                    marginRight: 800
+                }}
             >
-                <motion.div className={styles.quote} variants={fadeInContainer}>
-                    <motion.p variants={fadeInText} transition={{ delay: 0.6 }}>
-                        Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
-                    </motion.p>
-                </motion.div>
-                <motion.p variants={fadeInContainer}>
-                    he remarks.
-                </motion.p>
+                {/* #3 SECTION WITH 2 PARAGRAPHS */}
+                <section className={styles.paragraph}>
+                    <p>
+                        One of the people who observed this solidarity was Assistant Professor at the
+                        Department of Chemistry and Ateneans Guided and Inspired by their Love for Animals
+                        (AGILA) moderator Olivia Erin “Oui” Buenafe, PhD. “The cats served as companions to
+                        the security personnel,” she remarks.
+                    </p>
+                    <br></br>
+                    <p>
+                        She shares that with the pandemic-driven campus restrictions, the Cateneans gave
+                        the few campus visitors and personnel some semblance of relief amid the lonely
+                        atmosphere of the deserted campus. Together with Buenafe in this endeavor is her
+                        spouse, Department of Theology Instructor Joseph Johnson, JCL.
+                    </p>
+                </section>
 
-                <motion.div className={styles.quote} variants={fadeInContainer} style={{ marginTop: "3rem" }}>
-                    <motion.p variants={fadeInText} transition={{ delay: 0.6 }}>
-                        They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
-                    </motion.p>
-                </motion.div>
-                <motion.p variants={fadeInContainer}>
-                    Buenafe adds.
-                </motion.p>
-            </motion.section>
+                {/* #4 SECTION WITH 2 PARAGRAPHS */}
+                <section className={styles.paragraph}>
+                    <p>
+                        In instances when some cats require medical attention, the couple does their best to attend
+                        to these concerns. For instance, they took care of Schmitt Hall’s beloved Pao-Pao, who was often
+                        taken to the veterinarian, and his mother Prada, who at one point was diagnosed with
+                        <a href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-immunodeficiency-virus-fiv">feline immunodeficiency virus.</a>
+                        Often, the medical bills come from the couple’s own pockets, although they are grateful to those
+                        who have helped with the costs.
+                    </p>
+                    <br></br>
+                    <p>
+                        Johnson references the
+                        <a href="https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html">Laudato si'</a>
+                        encyclical when talking about the importance of caring for animals, mentioning that the way we
+                        treat the vulnerable, including animals, reflects who we are as people.
+                    </p>
+                </section>
 
-            {/* #6 SECTION WITH HIGHFIVE */}
-            <section style={{ minWidth: "unset", maxWidth: 850 }}>
-                <p>
-                    The couple embodies this mercy by providing their support to the student organization AGILA,
-                    such as helping them transport the cats to the veterinarian as needed. AGILA’s advocacy is to
-                    safeguard the welfare of stray animals and wildlife, including the Cateneans.
-                </p>
-                <div className={styles.highFiveWrapper} ref={highFiveWrapperRef}>
-                    <div className={styles.highFiveContainer} ref={highFiveContainerRef}>
-                        <img src={highFiveHeartBackground} />
-                        <img src={highFiveRightHand} />
-                        <img src={highFiveLeftPaw} />
+                {/* #5 SECTION WITH 2 QUOTES */}
+                <motion.section
+                    className={styles.paragraph}
+                    variants={fadeIn}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ amount: 0.5, once: true }}
+                >
+                    <motion.div className={styles.quote} variants={fadeInContainer}>
+                        <motion.p variants={fadeInText} transition={{ delay: 0.6 }}>
+                            Here’s a vulnerable life that needs to be cared for, needs to be helped. That’s just it
+                        </motion.p>
+                    </motion.div>
+                    <motion.p variants={fadeInContainer}>
+                        he remarks.
+                    </motion.p>
+
+                    <motion.div className={styles.quote} variants={fadeInContainer} style={{ marginTop: "3rem" }}>
+                        <motion.p variants={fadeInText} transition={{ delay: 0.6 }}>
+                            They can’t speak, they can’t act like humans. They are at our mercy, so we should show our mercy towards them
+                        </motion.p>
+                    </motion.div>
+                    <motion.p variants={fadeInContainer}>
+                        Buenafe adds.
+                    </motion.p>
+                </motion.section>
+
+                {/* #6 SECTION WITH HIGHFIVE */}
+                <section style={{ width: 850 }}>
+                    <p>
+                        The couple embodies this mercy by providing their support to the student organization AGILA,
+                        such as helping them transport the cats to the veterinarian as needed. AGILA’s advocacy is to
+                        safeguard the welfare of stray animals and wildlife, including the Cateneans.
+                    </p>
+                    <div className={styles.highFiveWrapper} ref={highFiveWrapperRef}>
+                        <div className={styles.highFiveContainer} ref={highFiveContainerRef}>
+                            <img src={highFiveHeartBackground} />
+                            <img src={highFiveRightHand} />
+                            <img src={highFiveLeftPaw} />
+                        </div>
+                        <p>give me a high five!</p>
                     </div>
-                    <p>give me a high five!</p>
-                </div>
+                </section>
             </section>
         </section>
     );

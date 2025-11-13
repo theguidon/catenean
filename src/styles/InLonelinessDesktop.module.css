@@ -9,28 +9,17 @@ a {
 	text-decoration: underline;
 }
 
-.grass {
-	position: absolute;
-	bottom: 0px;
-	width: 360vw;
-	height: 26vh;
-	background: #5fb572;
-}
-
 .container>section {
-	min-width: 1200px;
 	padding: 5rem;
 	height: 100vh;
 	position: relative;
 	top: 0;
-	margin: 0 0 0 0;
-	position: "relative";
+	margin: 0;
 	flex: 0 0 80vw;
 }
 
-.container>section.paragraph {
-	min-width: unset;
-	max-width: 740px;
+section.paragraph {
+	width: 500px;
 	padding-top: 8vh;
 }
 
@@ -66,7 +55,7 @@ a {
 .highFiveContainer {
 	position: relative;
 	margin: auto;
-	max-width: 17rem;
+	width: 17rem;
 	height: 18rem;
 
 }

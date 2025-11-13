@@ -44,6 +44,7 @@
 
 .mainArticle p {
   width: 650px;
+  padding: auto;
 }
 
 .mainArticle>p {

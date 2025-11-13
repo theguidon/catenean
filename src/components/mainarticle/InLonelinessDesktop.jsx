@@ -5,7 +5,7 @@ import highFiveHeartBackground from '../../assets/images/highfive-heart-backgrou
 import highFiveRightHand from '../../assets/images/highfive-right-hand.svg';
 import highFiveLeftPaw from '../../assets/images/highfive-left-paw.svg';
 import bushLeft from '../../assets/images/bush-left.svg';
-import schmittHallBuilding from '../../assets/images/location-schmitt-hall-building.svg';
+import schmittHallBuilding from '../../assets/images/buildings/no-shadow/schmitt.svg';
 import heartBackgroundShape from '../../assets/images/heart-background-shape.svg';
 import darkBrownEllipses from '../../assets/images/dark-brown-ellipses-horizontal.svg';
 import title from '../../assets/images/in-loneliness-title-desktop.svg';
@@ -83,25 +83,25 @@ const InLonelinessDesktop = () => {
             }}
         >
             {/*#1 SECTION TITLE */}
-            <section style={{ display: "none" }}>
+            <section>
                 <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ amount: 0.7, once: true }}>
                     <motion.img
                         src={bushLeft}
-                        style={{ position: "absolute", scale: "220%", left: 0, bottom: "25vh" }}
+                        style={{ position: "absolute", scale: "220%", left: 0, bottom: "10vh" }}
                     />
                     <motion.img
                         src={bushLeft}
-                        style={{ position: "absolute", scale: "220%", right: 0, bottom: "25vh" }}
+                        style={{ position: "absolute", scale: "220%", right: 0, bottom: "10vh" }}
                     />
                 </motion.div>
 
                 <motion.div
-                    style={{ position: "relative", width: "100%", height: "100%" }}
+                    style={{ position: "relative", width: 1000, height: "100%" }}
 
                 >
                     <motion.img
                         src={schmittHallBuilding}
-                        style={{ position: "absolute", scale: "180%", height: "auto", left: "35%", bottom: "25%", transform: "translateX(-50%)" }}
+                        style={{ position: "absolute", width: 800, left: 180, bottom: "-4vh" }}
                         initial={{ x: 150 }}
                         whileInView={{ x: 0 }}
                         transition={{ duration: 2, ease: [0.25, 1, 0.5, 1], fill: "forwards" }}
@@ -109,7 +109,7 @@ const InLonelinessDesktop = () => {
                     />
                     <motion.img
                         src={title}
-                        style={{ position: "absolute", scale: "55%", left: "31%", bottom: "50%" }}
+                        style={{ position: "absolute", width: 500, left: 600, bottom: "50%" }}
                         initial={{ x: 150, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 2, ease: [0.25, 1, 0.5, 1], fill: "forwards" }}

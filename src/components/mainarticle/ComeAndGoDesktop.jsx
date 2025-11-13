@@ -2,6 +2,11 @@ import { easeInOut, motion, stagger } from "motion/react";
 import cloud from "../../assets/images/cloud_desktop.svg";
 import paopao from "../../assets/images/cats/17.png";
 import styles from "../../styles/ComeAndGoDesktop.module.css";
+import faura from "../../assets/images/buildings/no-shadow/faura.svg";
+import bush1 from "../../assets/images/bush-left.svg";
+import bush2 from "../../assets/images/bush-right.svg";
+import title from "../../assets/images/comeandgo-title-desktop.svg";
+import blush from "../../assets/images/Blur-Desktop.svg";
 
 const ComeAndGoDesktop = () => {
   const transition = { duration: 0.5, ease: easeInOut }
@@ -12,6 +17,15 @@ const ComeAndGoDesktop = () => {
 
   return (
     <section className={styles.container}>
+      <section className={styles.titleArea}>
+        <img src={bush1} className={styles.bush} />
+        <section className={styles.building}>
+          <img src={blush} className={styles.blush} />
+          <img src={title} className={styles.title} />
+          <img src={faura} className={styles.buildingPic} />
+        </section>
+        <img src={bush2} className={styles.bush} />
+      </section>
       <img src={cloud} className={styles.cloud} />
       <motion.section initial="hidden" whileInView="show" transition={{ delayChildren: stagger(0.5) }} className={styles.content}>
         <motion.p

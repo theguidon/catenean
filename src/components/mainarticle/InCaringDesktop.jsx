@@ -7,8 +7,31 @@ import blush from "../../assets/images/Blur-Desktop.svg";
 import title from "../../assets/images/incaring-title-desktop.svg";
 import grass from "../../assets/images/grass-design.svg";
 import { radialGradient } from "motion/react-client";
+import { easeInOut } from "motion";
+import { motion } from "motion/react";
 
 const InCaringDesktop = () => {
+  const quoteVariants = {
+    show: {
+      opacity: 1,
+      transition: { duration: 1, delayChildren: 1, ease: easeInOut }
+    },
+    hidden: {
+      opacity: 0,
+      transition: { duration: 1, delayChildren: 1, ease: easeInOut }
+    }
+  }
+
+  const quoteChildVariants = {
+    show: {
+      opacity: 1,
+      transition: { duration: 1, ease: easeInOut }
+    },
+    hidden: {
+      opacity: 0,
+      transition: { duration: 1, ease: easeInOut }
+    }
+  }
   return (
     <main className={styles.scrollContainer}>
       <div className={styles.page}>
@@ -60,12 +83,12 @@ const InCaringDesktop = () => {
         </p>
 
         <div className={styles.quoteContainer}>
-          <p className={styles.quote}>
-            <span>
+          <motion.p variants={quoteVariants} initial="hidden" whileInView="show" className={styles.quote}>
+            <motion.span variants={quoteChildVariants}>
               “The best thing [students] can do regarding animal welfare advocacy,
               and in support of AGILA na rin, [is to] act with empathy,”
-            </span>
-          </p>
+            </motion.span>
+          </motion.p>
           <p style={{ marginBottom: "3rem" }}>Guce suggests.</p>
         </div>
       </div>

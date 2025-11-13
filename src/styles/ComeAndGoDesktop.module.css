@@ -4,6 +4,47 @@ section.container {
 	gap: 0px;
 }
 
+.titleArea {
+	display: flex;
+	align-items: flex-end;
+	height: 80vh;
+	width: 1500px;
+	margin-right: 700px;
+	position: relative;
+	top: 10vh;
+	gap: 18px;
+}
+
+.titleArea>.bush {
+	width: 25%
+}
+
+.building {
+	width: 50%;
+	position: relative;
+	top: 8vh;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.title {
+	position: relative;
+	top: 12vh;
+}
+
+.blush {
+	position: absolute;
+	width: 180%;
+	z-index: -1;
+	top: -18%;
+	left: -40%;
+}
+
+.buildingPic {
+	width: 100%;
+}
+
 .container .cloud {
 	height: 100vh;
 	object-fit: cover;

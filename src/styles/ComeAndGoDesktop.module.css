@@ -51,7 +51,7 @@ section.container {
 section.content {
 	height: 100vh;
 	aspect-ratio: 3473 / 1118;
-	background-image: url("assets/comeandgo_desktopbg.svg");
+	background-image: url("/assets/comeandgo_desktopbg.svg");
 	background-size: cover;
 	display: flex;
 	align-items: center;

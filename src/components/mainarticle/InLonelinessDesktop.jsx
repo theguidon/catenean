@@ -114,7 +114,7 @@ const InLonelinessDesktop = () => {
                         initial={{ scaleY: 0 }}
                         whileInView={{ scaleY: 1 }}
                         transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
-                        viewport={{ amount: 0.8 }}
+                        viewport={{ amount: 0.6 }}
                         style={{
                             position: "absolute", width: 800, left: 180, bottom: "-4vh",
                             transformOrigin: "bottom center"

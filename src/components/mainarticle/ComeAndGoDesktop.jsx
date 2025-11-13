@@ -24,7 +24,7 @@ const ComeAndGoDesktop = () => {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-          viewport={{ amount: 0.8 }}
+          viewport={{ amount: 0.5 }}
         />
         <section className={styles.building}>
           <img src={blush} className={styles.blush} />

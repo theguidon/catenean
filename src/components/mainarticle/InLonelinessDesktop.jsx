@@ -108,7 +108,7 @@ const InLonelinessDesktop = () => {
                     style={{ position: "relative", width: 1000, height: "100%" }}
 
                 >
-                    <img src={blush} style={{ position: "absolute", width: 1400, bottom: -10, left: -40, zIndex: -1 }} />
+                    <img src={blush} style={{ position: "absolute", bottom: "-3vh", left: -60, zIndex: -1 }} />
                     <motion.img
                         src={schmittHallBuilding}
                         initial={{ scaleY: 0 }}

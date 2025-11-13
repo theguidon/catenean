@@ -74,7 +74,7 @@ const ComeAndGoDesktop = () => {
             right: "5%",
             bottom: "5%"
           }}
-          viewport={{ amount: 0.5 }}
+          viewport={{ amount: 0.8 }}
         >
           &quot;These small things which are part of our experience, [...] they&apos;re more important than we think. Sometimes, we only notice them when they&apos;re absent, [...] we realize how much we&apos;ve missed them&mdash;how much of the experience they are&quot;<br />Johnson says.
         </motion.p>

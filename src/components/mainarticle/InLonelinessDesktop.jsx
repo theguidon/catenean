@@ -9,7 +9,8 @@ import schmittHallBuilding from '../../assets/images/buildings/no-shadow/schmitt
 import heartBackgroundShape from '../../assets/images/heart-background-shape.svg';
 import darkBrownEllipses from '../../assets/images/dark-brown-ellipses-horizontal.svg';
 import title from '../../assets/images/in-loneliness-title-desktop.svg';
-import { motion } from "motion/react";
+import blush from '../../assets/images/Blur-Desktop.svg';
+import { easeInOut, motion } from "motion/react";
 import { useEffect, useRef } from 'react';
 
 const fadeIn = {
@@ -87,10 +88,18 @@ const InLonelinessDesktop = () => {
                 <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ amount: 0.7, once: true }}>
                     <motion.img
                         src={bushLeft}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 2.2 }}
+                        transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+                        viewport={{ amount: 0.8, once: true }}
                         style={{ position: "absolute", scale: "220%", left: 0, bottom: "10vh" }}
                     />
                     <motion.img
                         src={bushLeft}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 2.2 }}
+                        transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
+                        viewport={{ amount: 0.5, once: true }}
                         style={{ position: "absolute", scale: "220%", right: 0, bottom: "10vh" }}
                     />
                 </motion.div>
@@ -99,17 +108,22 @@ const InLonelinessDesktop = () => {
                     style={{ position: "relative", width: 1000, height: "100%" }}
 
                 >
+                    <img src={blush} style={{ position: "absolute", width: 1400, bottom: -10, left: -40, zIndex: -1 }} />
                     <motion.img
                         src={schmittHallBuilding}
-                        style={{ position: "absolute", width: 800, left: 180, bottom: "-4vh" }}
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
+                        viewport={{ amount: 0.6, once: true }}
+                        style={{ position: "absolute", width: 800, left: 180, bottom: "-4vh", tranformOrigin: "bottom center" }}
                     />
                     <motion.img
                         src={title}
                         style={{ position: "absolute", width: 500, left: 600, bottom: "50%" }}
-                        initial={{ x: 150, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 2, ease: [0.25, 1, 0.5, 1], fill: "forwards" }}
-                        viewport={{ amount: 0.7, once: true }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.75, ease: easeInOut }}
+                        viewport={{ amount: 0.7 }}
                     />
                 </motion.div>
 

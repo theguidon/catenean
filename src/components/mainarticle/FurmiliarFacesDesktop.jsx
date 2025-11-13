@@ -3,7 +3,7 @@ import CTC from "../../assets/images/location-ctc-som-building.svg";
 import Bush from "../../assets/images/bush.svg";
 import Blush from "../../assets/images/Blur-Desktop.svg";
 import Title from "../../assets/images/furmiliar-title-desktop.svg";
-import { color, easeInOut, motion, spring, } from "motion/react";
+import { easeInOut, motion } from "motion/react";
 
 const FurmiliarFacesDesktop = () => {
 

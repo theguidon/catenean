@@ -26,7 +26,6 @@ section.container {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
-	transform-origin: bottom center;
 }
 
 .title {
@@ -41,6 +40,7 @@ section.container {
 
 .buildingPic {
 	width: 100%;
+	transform-origin: bottom center;
 }
 
 .container .cloud {

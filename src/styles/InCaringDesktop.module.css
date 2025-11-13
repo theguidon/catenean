@@ -5,10 +5,12 @@
 .scrollContainer {
   display: flex;
   height: 100vh;
+  margin-left: 300px;
 }
 
 .page {
-  width: 1920px;
+  width: 1200px;
+  margin-left: 200px;
   height: 100%;
   flex-shrink: 0;
   padding-top: 20vh;
@@ -23,8 +25,9 @@
 .titlepage {
   width: 42rem;
   margin: 6vh auto;
-  gap: 8%;
+  gap: 48px;
   z-index: 10;
+  bottom: 5vh;
   position: relative;
   display: flex;
   flex-flow: column nowrap;
@@ -105,8 +108,7 @@
 .mvp {
   width: 100%;
   max-width: 800px;
-  display: block;
-  margin: -6rem auto;
+  transform-origin: bottom center;
 }
 
 .quoteContainer {
@@ -126,10 +128,8 @@
 
 .bushes {
   position: absolute;
-  bottom: 0px;
-  left: 100px;
-  width: 90%;
-  height: auto;
+  bottom: 2vh;
+  width: 28%;
 }
 
 .grass {

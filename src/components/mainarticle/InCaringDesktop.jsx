@@ -1,12 +1,10 @@
 import styles from "../../styles/InCaringDesktop.module.css";
-import mvp from "../../assets/images/mvp-1.svg";
+import mvp from "../../assets/images/buildings/no-shadow/mvp.svg";
 import mag1 from "../../assets/images/mag1.svg";
 import mag2 from "../../assets/images/mag2.svg";
-import bushes from "../../assets/images/bushes.svg";
+import bush from "../../assets/images/bush-left.svg"
 import blush from "../../assets/images/Blur-Desktop.svg";
 import title from "../../assets/images/incaring-title-desktop.svg";
-import grass from "../../assets/images/grass-design.svg";
-import { radialGradient } from "motion/react-client";
 import { easeInOut } from "motion";
 import { motion } from "motion/react";
 
@@ -38,17 +36,43 @@ const InCaringDesktop = () => {
         <img
           src={blush}
           style={{
-            width: "60%",
+            width: "100%",
             position: "absolute",
-            left: "20%",
-            top: "8%",
+            left: 0,
+            top: "2vh",
           }}
         />
         <div className={styles.titlepage}>
-          <img src={title} />
-          <img className={styles.mvp} src={mvp} alt="MVP Building" />
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.75, ease: easeInOut }}
+            src={title} />
+          <motion.img
+            className={styles.mvp}
+            src={mvp}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
+            viewport={{ amount: 0.6, once: true }}
+            alt="MVP Building" />
         </div>
-        <img className={styles.bushes} src={bushes} alt="Bushes" />
+        <motion.img
+          className={styles.bushes}
+          src={bush}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+          viewport={{ amount: 0.8, once: true }}
+          style={{ left: 0 }} />
+        <motion.img
+          className={styles.bushes}
+          src={bush}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
+          viewport={{ amount: 0.5, once: true }}
+          style={{ right: 0 }} />
       </div>
 
       <div className={`${styles.magArticle}`}>

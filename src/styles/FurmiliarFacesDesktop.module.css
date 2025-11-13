@@ -1,35 +1,40 @@
 .main {
   min-width: 100dvw;
-  height: 100dvh;
-  width: fit-content;
-  overflow-x: auto;
-  overflow-y: hidden;
-  background: #F2DAAD;
+  height: 100%;
   position: relative;
 }
 
-.section, .article {
+.section,
+.article {
   min-width: 100dvw;
-  height: 100dvh;
-  flex-shrink: 0;
+  height: 100%;
+  padding-top: 20vh;
 }
 
 .section {
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  bottom: 10vh;
+}
+
+div.heading {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 128px;
 }
 
 .bush {
-  position: absolute;
-  z-index: 2;
-  width: 20%; 
-  bottom: 13vw;
+  position: relative;
+  z-index: 15;
+  width: 300px;
+  top: 12vh;
 }
 
 .sectionContainer {
   display: flex;
-  flex-direction: row;
-  overflow-y: hidden;
-
 }
 
 .heading h3 {
@@ -37,13 +42,14 @@
   font-weight: 700;
   font-family: "Solway";
   text-align: center;
-  color: #E07329; 
-  -webkit-text-stroke: clamp(0.8rem, calc(0.5rem + 0.2vw), 1rem) #F9F4EB;
-  paint-order: stroke fill; 
-  filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
-  line-height: 110%; 
+  color: #E07329;
+  line-height: 110%;
   letter-spacing: -2.4px;
   padding: 1.7em 0 1.5em 0;
+}
+
+.heading .building {
+  display: flex;
 }
 
 p {
@@ -59,24 +65,28 @@ p {
 
 .article .helloCats {
   position: absolute;
-  bottom: 0;
+  bottom: -8vh;
   margin: 3.5em;
-  width: 35vw;
+  width: 560px;
   z-index: 6;
   display: flex;
   justify-content: center;
   aspect-ratio: 393/420;
-  background: center / contain no-repeat url("src/assets/images/cat-speech.svg");
+  background: center / contain no-repeat url("/assets/cat-speech.svg");
+}
+
+.article article {
+  margin-top: 5vh;
 }
 
 .article .helloCats h4 {
   position: absolute;
   color: #2074A4;
   font-family: 'Cedarville Cursive Regular';
-  font-size: 4vw;
+  font-size: 3.5rem;
   font-weight: 400;
-  top: 4vh;
-  left: 17.5vw;
+  top: 6%;
+  left: 51%;
 }
 
 .article {
@@ -84,7 +94,8 @@ p {
   flex-direction: row;
 }
 
-.article section, .article article {
+.article section,
+.article article {
   width: 50vw;
 }
 
@@ -94,7 +105,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(243, 231, 204, 0.4);
-  width: 80%;
+  width: 1200px;
   border-radius: 50%;
   z-index: 0;
   bottom: 0;
@@ -111,7 +122,7 @@ p {
 }
 
 .quote h5 {
-  color: #E07329; 
+  color: #E07329;
   font-size: 3em;
   font-family: "Outfit";
   z-index: 2;
@@ -126,127 +137,7 @@ p {
   inset: auto -2rem 2.5rem auto;
 }
 
-.quote br + p {
+.quote br+p {
   color: black;
   font-size: 1.3vw;
 }
-
-/* .main {
-  background: #F2DAAD;
-}
-.main h3 {
-  font-size: clamp(3.5rem, calc(7vw + 1rem), 10rem);
-  font-weight: 700;
-  font-family: "Solway";
-  text-align: center;
-  color: #E07329; 
-  -webkit-text-stroke: clamp(1rem, calc(1rem + 0.2vw), 3rem) #F9F4EB;
-  paint-order: stroke fill; 
-  filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
-  line-height: 110%; 
-  letter-spacing: -2.4px;
-  padding: 1em 0;
-  
-}
-
-.main p {
-  color: #522222;
-  font-family: "AndesNeue Alt 2 Book";
-  padding: 2em 3em 2em 3em;
-  position: relative;
-}
-
-.main section {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-}
-
-.hero {
-  width: 100%;
-  overflow: hidden;
-  height: 25vh;
-}
-
-img {
-  position: absolute;
-  transform-origin: 50% 50%;  
-}
-.quoteSection {
-  position: relative;
-  height: auto;
-}
-
-.quoteSection > p {
-  position: relative;
-  padding-top: 2em;
-  z-index: 1;
-}
-
-.helloCats{
-  position: relative;
-  width: 100%;
-  z-index: 6;
-  display: flex;
-  justify-content: center;
-  aspect-ratio: 393/420;
-  background: center / contain no-repeat url("src/assets/images/cat-speech.svg");
-}
-
-.helloCats h4{
-  position: absolute;
-  color: #2074A4;
-  font-family: 'Cedarville Cursive Regular';
-  font-size: 10vw;
-  top: 7%;
-  right: 30%;
-}
-
-.quoteSection .quote {
-  font-family: 'Outfit';
-  color: black;
-  font-size: 0.80em;
-  padding: 0 3em;
-}
-
-.quoteSection {
-  position: relative;
-  padding: 2em;
-}
-
-.quoteBackground {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(243, 231, 204, 0.4);
-  width: 100%;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.quoteSection h5 {
-  position: absolute;
-  font-size: 3.5rem;
-  font-weight: 700;
-  font-family: "Outfit";
-  text-align: center;
-  color: #FAA685;
-  z-index: 7;
-  margin: 0;
-}
-
-@media only screen and (min-width: 600px) {
-  .main section, .main article {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .main > div {
-    display: flex;
-    flex-direction: row;
-    width: 400vw;
-  }
-} */

@@ -5,6 +5,8 @@ import bylines from "../../data/bylines.json";
 import joinBylines from "../../utils/joinBylines";
 import cat1 from "../../assets/images/cats/1.jpeg";
 import cat2 from "../../assets/images/cats/2.jpeg";
+import string1 from "../../assets/images/conclusion_string1.svg";
+import string2 from "../../assets/images/conclusion_string2.svg";
 import { easeInOut, easeOut, motion } from "motion/react";
 
 const ConclusionDesktop = () => {
@@ -16,26 +18,32 @@ const ConclusionDesktop = () => {
         flexFlow: "row",
         alignItems: "end",
         overflowY: "clip",
-        overflowX: "scroll",
         height: "100vh",
-        background: "#f2daad"
+        position: "relative"
       }}
     >
-      <section
+      <img
+        src={string1}
         style={{
-          alignSelf: "center",
-          position: "relative",
-          height: "50%",
-          minWidth: "600px"
+          position: "absolute",
+          top: 0,
+          right: 300
         }}
+      />
+      <img
+        src={string2}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: -1200
+        }}
+      />
+      <section
+        className={creditStyles.polaroidContainer}
       >
         <article
           className={creditStyles.polaroid}
           style={{
-            width: 220,
-            padding: 12,
-            paddingBottom: 54,
-            position: "absolute",
             rotate: "10deg",
             animation: `3s ease-in-out 0s infinite alternate-reverse ${creditStyles.swing}`,
             transformOrigin: "top center",
@@ -46,12 +54,8 @@ const ConclusionDesktop = () => {
         <article
           className={creditStyles.polaroid}
           style={{
-            width: 220,
-            padding: 12,
-            paddingBottom: 54,
-            position: "absolute",
-            left: "25%",
-            top: "-20%",
+            top: "-15%",
+            right: 380,
             rotate: "-10deg",
             animation: `3s ease-in-out 0s infinite alternate-reverse ${creditStyles.swing}`,
             transformOrigin: "top right"
@@ -80,7 +84,6 @@ const ConclusionDesktop = () => {
         style={{
           height: "100vh",
           position: "relative",
-          minWidth: 528,
         }}
       >
         <motion.p
@@ -134,10 +137,11 @@ const ConclusionDesktop = () => {
       <section
         className={creditStyles.bylines}
         style={{
-          minWidth: 448,
           marginTop: "10vh",
+          marginRight: 100,
+          width: "70ch",
           alignSelf: "start",
-          marginLeft: -80
+          padding: 0
         }}
       >
         {bylines.map(({ header, bylines }) => (

@@ -1,23 +1,81 @@
 import styles from "../../styles/InCaringDesktop.module.css";
-import mvp from "../../assets/images/mvp-1.svg";
+import mvp from "../../assets/images/buildings/no-shadow/mvp.svg";
 import mag1 from "../../assets/images/mag1.svg";
 import mag2 from "../../assets/images/mag2.svg";
-import bushes from "../../assets/images/bushes.svg";
-import grass from "../../assets/images/grass-design.svg";
+import bush from "../../assets/images/bush-left.svg"
+import blush from "../../assets/images/Blur-Desktop.svg";
+import title from "../../assets/images/incaring-title-desktop.svg";
+import { easeInOut } from "motion";
+import { motion } from "motion/react";
 
 const InCaringDesktop = () => {
+  const quoteVariants = {
+    show: {
+      opacity: 1,
+      transition: { duration: 1, delayChildren: 1, ease: easeInOut }
+    },
+    hidden: {
+      opacity: 0,
+      transition: { duration: 1, delayChildren: 1, ease: easeInOut }
+    }
+  }
+
+  const quoteChildVariants = {
+    show: {
+      opacity: 1,
+      transition: { duration: 1, ease: easeInOut }
+    },
+    hidden: {
+      opacity: 0,
+      transition: { duration: 1, ease: easeInOut }
+    }
+  }
   return (
     <main className={styles.scrollContainer}>
       <div className={styles.page}>
+        <img
+          src={blush}
+          style={{
+            width: "100%",
+            position: "absolute",
+            left: 0,
+            top: "2vh",
+          }}
+        />
         <div className={styles.titlepage}>
-          <h3>In caring, caution, and commitment</h3>
-          <img className={styles.mvp} src={mvp} alt="MVP Building" />
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.75, ease: easeInOut }}
+            src={title} />
+          <motion.img
+            className={styles.mvp}
+            src={mvp}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
+            viewport={{ amount: 0.6, once: true }}
+            alt="MVP Building" />
         </div>
-        <img className={styles.grass} src={grass} alt="Grass" />
-        <img className={styles.bushes} src={bushes} alt="Bushes" />
+        <motion.img
+          className={styles.bushes}
+          src={bush}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+          viewport={{ amount: 0.8, once: true }}
+          style={{ left: 0 }} />
+        <motion.img
+          className={styles.bushes}
+          src={bush}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
+          viewport={{ amount: 0.5, once: true }}
+          style={{ right: 0 }} />
       </div>
 
-      <div className={styles.mainArticle}>
+      <div className={`${styles.magArticle}`}>
         <img className={styles.mag1} src={mag1} alt="Cat Magnifying Glass 1" />
         <p>
           To maintain students’ and the campus cats’ safety, one of AGILA’s
@@ -49,17 +107,18 @@ const InCaringDesktop = () => {
         </p>
 
         <div className={styles.quoteContainer}>
-          <p className={styles.quote}>
-            <span>
+          <motion.p variants={quoteVariants} initial="hidden" whileInView="show" className={styles.quote}>
+            <motion.span variants={quoteChildVariants}>
               “The best thing [students] can do regarding animal welfare advocacy,
               and in support of AGILA na rin, [is to] act with empathy,”
-            </span>
-          </p>
+            </motion.span>
+          </motion.p>
           <p style={{ marginBottom: "3rem" }}>Guce suggests.</p>
         </div>
       </div>
 
-      <div className={styles.mainArticle}>
+      <div className={styles.magArticle}>
+        <img className={styles.mag2} src={mag2} alt="Cat Magnifying Glass 2" />
         <p>
           For him, supporting animal welfare advocacy means being persons for
           others, which is inclusive of other forms of life. This practice can
@@ -76,7 +135,6 @@ const InCaringDesktop = () => {
           their pets at home,” Guce says.
         </p>
 
-        <img className={styles.mag2} src={mag2} alt="Cat Magnifying Glass 2" />
       </div>
 
       <div className={styles.mainArticle}>
@@ -93,7 +151,7 @@ const InCaringDesktop = () => {
           feral, as it helps maintain their independence and role as pest control on campus.
         </p>
       </div>
-    </main>
+    </main >
   );
 };
 

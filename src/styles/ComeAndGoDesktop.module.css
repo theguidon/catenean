@@ -1,0 +1,71 @@
+section.container {
+	display: flex;
+	height: 100vh;
+	gap: 0px;
+}
+
+.titleArea {
+	display: flex;
+	align-items: flex-end;
+	height: 80vh;
+	width: 1500px;
+	margin-right: 700px;
+	position: relative;
+	top: 10vh;
+	gap: 18px;
+}
+
+.titleArea .bush {
+	min-width: 348px;
+	max-width: 348px;
+}
+
+.building {
+	width: 70%;
+	position: relative;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.title {
+	position: relative;
+}
+
+.blush {
+	position: absolute;
+	width: 140%;
+	top: -35vh;
+}
+
+.buildingPic {
+	width: 100%;
+	transform-origin: bottom center;
+}
+
+.container .cloud {
+	height: 100vh;
+	object-fit: cover;
+}
+
+section.content {
+	height: 100vh;
+	aspect-ratio: 3473 / 1118;
+	background-image: url("/assets/comeandgo_desktopbg.svg");
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.content>p {
+	background: #fffbeb;
+	width: 56ch;
+	padding: 2rem;
+	position: relative;
+	z-index: 20;
+}
+
+.paopao {
+	height: 80%;
+}

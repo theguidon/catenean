@@ -65,7 +65,7 @@ p {
 
 .article .helloCats {
   position: absolute;
-  bottom: 0;
+  bottom: -8vh;
   margin: 3.5em;
   width: 560px;
   z-index: 6;

@@ -8,19 +8,30 @@ import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
-import grassBg from "../../assets/images/background-grass.svg";
+import { easeInOut, motion, stagger } from "motion/react";
 
 export default function IntroDesktop() {
+
+  const childVars = {
+    show: { opacity: 1, transition: { duration: 1, ease: easeInOut } },
+    hidden: { opacity: 0, transition: { duration: 1, ease: easeInOut } }
+
+  }
   return (
     <div className={styles.main}>
       <div className={styles.section}>
-        <div className={`${styles.text} ${styles.text1}`}>
-          <img src={ellipses2} alt="" className={styles.ellipses} />
-          <p>
+        <motion.div
+          className={`${styles.text} ${styles.text1}`}
+          initial="hidden"
+          whileInView="show"
+          transition={{ delayChildren: stagger(1, { startDelay: 0.5 }) }}
+        >
+          <motion.img varints={childVars} src={ellipses2} alt="" className={styles.ellipses} />
+          <motion.p variants={childVars}>
             NOT EVERY home has a furry feline companion, but within the Loyola
             Heights campus, one is certain to encounter&nbsp;them.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         <div className={styles.graphics}>
           <img
             src={cloud}
@@ -40,16 +51,28 @@ export default function IntroDesktop() {
         </div>
       </div>
       <div className={`${styles.section} ${styles.section2}`}>
-        <div className={`${styles.text} ${styles.text2}`}>
-          <img src={ellipses2} alt="" className={styles.ellipses} />
-          <p>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          transition={{ delayChildren: stagger(1, { startDelay: 0.5 }) }}
+          className={`${styles.text} ${styles.text2}`}
+        >
+          <motion.img
+            variants={childVars}
+            src={ellipses2}
+            alt=""
+            className={styles.ellipses}
+          />
+          <motion.p
+            variants={childVars}
+          >
             The Ateneo’s cast of cats are endearingly monikered as the
             “Cateneans”. They quietly comfort stressed students and employees
             with a single glance, stretch leisurely across guard’s desks,
             scamper casually along the walkways, or nap on the cafeteria chairs
             next to their human companions without a care in the&nbsp;world.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         <div className={styles.graphics}>
           <img
             src={photos1}
@@ -72,15 +95,20 @@ export default function IntroDesktop() {
         </div>
       </div>
       <div className={`${styles.section} ${styles.section3}`}>
-        <div className={`${styles.text} ${styles.text2}`}>
-          <img src={ellipses2} alt="" className={styles.ellipses} />
-          <p>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          transition={{ delayChildren: stagger(1, { startDelay: 0.5 }) }}
+          className={`${styles.text} ${styles.text2}`}
+        >
+          <motion.img variants={childVars} src={ellipses2} alt="" className={styles.ellipses} />
+          <motion.p variants={childVars}>
             Those who have pets know what it is like to show their animal
             friends off, to go above and beyond for them, to maintain their
             well-being, and to miss them sorely after long stretches
             of&nbsp;separation.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </div>
       <div className={styles.graphics}>
         <img src={RBR} alt="" className={styles.RBR} />

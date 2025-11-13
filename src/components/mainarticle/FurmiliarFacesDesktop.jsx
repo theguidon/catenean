@@ -3,7 +3,7 @@ import CTC from "../../assets/images/location-ctc-som-building.svg";
 import Bush from "../../assets/images/bush.svg";
 import Blush from "../../assets/images/Blur-Desktop.svg";
 import Title from "../../assets/images/furmiliar-title-desktop.svg";
-import { color, easeInOut, motion, } from "motion/react";
+import { color, easeInOut, motion, spring, } from "motion/react";
 
 const FurmiliarFacesDesktop = () => {
 
@@ -27,29 +27,44 @@ const FurmiliarFacesDesktop = () => {
                         src={Blush}
                     />
                 </div>
-                <img
+                <motion.img
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.75, ease: easeInOut }}
                     src={Title}
                 />
                 <div className={`${sectionStyles.building}`}>
-                    <img
+                    <motion.img
                         src={Bush}
                         className={sectionStyles.bush}
                         style={{
                             left: 20
                         }}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+                        viewport={{ amount: 0.8, once: true }}
                     />
-                    <img src={CTC}
+                    <motion.img src={CTC}
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
+                        viewport={{ amount: 0.6, once: true }}
                         style={{
                             position: "relative",
-                            width: 900,
-                            zIndex: 0
+                            width: 800,
+                            bottom: "6vh",
+                            zIndex: 0,
+                            transformOrigin: "bottom center"
                         }}
                     />
-                    <img
+                    <motion.img
                         src={Bush}
                         className={sectionStyles.bush}
-                        style={{
-                        }}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
+                        viewport={{ amount: 0.5, once: true }}
                     />
                 </div>
             </div>

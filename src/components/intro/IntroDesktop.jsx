@@ -1,5 +1,5 @@
 import styles from "../../styles/IntroDesktop.module.css";
-import ellipses1 from "../../assets/images/intro/ellipses1.svg";
+import cat from "../../assets/images/Cat.svg";
 import ellipses2 from "../../assets/images/intro/ellipses2.svg";
 import photos1 from "../../assets/images/intro/photos1.png";
 import photos2 from "../../assets/images/intro/photos2.png";
@@ -8,7 +8,7 @@ import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
-import { easeInOut, motion, stagger } from "motion/react";
+import { easeIn, easeInOut, easeOut, motion, stagger } from "motion/react";
 
 export default function IntroDesktop() {
 
@@ -111,6 +111,13 @@ export default function IntroDesktop() {
         </motion.div>
       </div>
       <div className={styles.graphics}>
+        <motion.img
+          src={cat}
+          initial={{ opacity: 0, x: -15 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ ease: easeOut, duration: 0.5 }}
+          style={{ position: "absolute", bottom: "4vh", left: 40, zIndex: 20 }}
+        />
         <img src={RBR} alt="" className={styles.RBR} />
       </div>
     </div>

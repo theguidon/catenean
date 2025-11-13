@@ -24,7 +24,7 @@ const ComeAndGoDesktop = () => {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-          viewport={{ amount: 0.8, once: true }}
+          viewport={{ amount: 0.8 }}
         />
         <section className={styles.building}>
           <img src={blush} className={styles.blush} />
@@ -41,7 +41,7 @@ const ComeAndGoDesktop = () => {
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             transition={{ duration: 0.75, type: "spring", bounce: 0.5, delay: 0.8 }}
-            viewport={{ amount: 0.6, once: true }}
+            viewport={{ amount: 0.6 }}
           />
         </section>
         <motion.img
@@ -50,7 +50,7 @@ const ComeAndGoDesktop = () => {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5, delay: 0.2 }}
-          viewport={{ amount: 0.5, once: true }}
+          viewport={{ amount: 0.5 }}
         />
       </section>
       <img src={cloud} className={styles.cloud} />

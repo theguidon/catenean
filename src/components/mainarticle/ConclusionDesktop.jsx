@@ -137,10 +137,11 @@ const ConclusionDesktop = () => {
       <section
         className={creditStyles.bylines}
         style={{
-          minWidth: 448,
           marginTop: "10vh",
+          marginRight: 100,
+          width: "70ch",
           alignSelf: "start",
-          marginLeft: -80
+          padding: 0
         }}
       >
         {bylines.map(({ header, bylines }) => (

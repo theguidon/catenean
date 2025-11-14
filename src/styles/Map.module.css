@@ -13,9 +13,9 @@
 
 .cloud {
 	position: absolute;
-	aspect-ratio: 711 / 378;
+	aspect-ratio: 711 / 379;
 	background: center / contain no-repeat url("/assets/Cloud.svg");
-	width: 38%;
+	width: 45%;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: flex-end;
@@ -33,6 +33,7 @@
 	width: 80%;
 	font-family: "Outfit", sans-serif;
 	font-weight: 500;
+	font-size: 1.2rem;
 	line-height: 150%;
 	color: #2074A4;
 }

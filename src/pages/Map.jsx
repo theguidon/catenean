@@ -22,7 +22,7 @@ const CatButton = ({ label, slug, style }) => {
       <motion.div
         animate={{ scale: [1.1, 1] }}
         whileHover={{ scale: [1, 1.1] }}
-        transition={{ type: spring, stiffness: 160, animationDuration: 0.1, bounce: 0.3 }}
+        transition={{ type: spring, stiffness: 360, duration: 0.1, bounce: 0.3 }}
         className={styles.catButton}>
         <img src={ears} />
         <div>
@@ -68,6 +68,7 @@ const Map = () => {
       button: { label: "schmitt", style: { bottom: "-60%", right: "-5%" } }
     },
   }
+
   return (
     <main className={styles.main}>
       <div className={styles.cloud}>
@@ -92,11 +93,13 @@ const Map = () => {
               className={styles.building}
               src={data.building} />
             <motion.img
+              initial={{ scaleY: 1 }}
+              whileHover={{ scaleY: 1.1 }}
               animate={{ scaleY: [1.2, 1] }}
-              transition={{ type: spring, stiffness: 120, animationDuration: 0.2, bounce: 0.1 }}
+              transition={{ type: spring, stiffness: 520, duration: 0.1, bounce: 0.1 }}
               className={styles.cat}
               src={data.cat.src}
-              style={data.cat.style} />
+              style={{ ...data.cat.style, transformOrigin: "bottom center" }} />
             <CatButton slug={key} label={data.button.label} style={data.button.style} />
           </div>
         </div>

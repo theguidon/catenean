@@ -112,14 +112,18 @@ const Map = () => {
                     transition={{ type: spring, stiffness: 100, animationDuration: 0.2, bounce: 0.2 }}
                     className={styles.building}
                     src={data.building} />
-                  <motion.img
+                  <motion.div
                     initial={{ scaleY: 1 }}
-                    whileHover={{ scaleY: 1.1 }}
-                    animate={{ scaleY: [1.2, 1] }}
+                    whileHover={{ scaleY: [1, 1.1] }}
+                    animate={{ scaleY: [1.1, 1] }}
                     transition={{ type: spring, stiffness: 520, duration: 0.1, bounce: 0.1 }}
                     className={styles.cat}
-                    src={data.cat.src}
-                    style={{ ...data.cat.style, transformOrigin: "bottom center" }} />
+                    style={data.cat.style}
+                  >
+                    <motion.img
+                      src={data.cat.src}
+                    />
+                  </motion.div>
                   <CatButton slug={key} label={data.button.label} style={data.button.style} />
                 </div>
               </div>

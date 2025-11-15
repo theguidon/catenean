@@ -13,15 +13,39 @@
 
 .cloud {
 	position: absolute;
-	aspect-ratio: 711 / 378;
+	aspect-ratio: 711 / 379;
 	background: center / contain no-repeat url("/assets/Cloud.svg");
-	width: 38%;
+	width: 45%;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: flex-end;
 	align-items: center;
 	padding-bottom: 3%;
+	/** for stacking context **/
+	opacity: 0.99;
 	animation: 3s ease-in-out 0s infinite alternate-reverse bob;
+}
+
+.popup {
+	width: 17%;
+	aspect-ratio: 1 / 1;
+	background: #F8D880;
+	border-radius: 50%;
+	border: 5px solid #3a86b2;
+	position: absolute;
+	bottom: -8%;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	padding: 1%;
+	align-items: center;
+}
+
+.cloud>.popup p {
+	padding: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
 }
 
 .smallCloud {
@@ -33,6 +57,7 @@
 	width: 80%;
 	font-family: "Outfit", sans-serif;
 	font-weight: 500;
+	font-size: 1.2rem;
 	line-height: 150%;
 	color: #2074A4;
 }
@@ -63,6 +88,7 @@
 
 .location .cat {
 	width: 60%;
+	transform-origin: bottom center;
 }
 
 .catButton>div {
@@ -93,6 +119,7 @@
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
+	cursor: pointer;
 	filter: drop-shadow(0 0 10px rgb(0, 0, 0, 0.5));
 }
 

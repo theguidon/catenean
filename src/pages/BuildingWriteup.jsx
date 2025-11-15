@@ -4,6 +4,7 @@ import arrow from "../assets/images/Union.svg";
 import back from "../assets/images/Back.svg";
 import { useMediaQuery } from "react-responsive";
 import { useLoaderData, Link } from "react-router";
+import { motion } from "motion/react";
 
 export default function BuildingWriteup() {
   const data = useLoaderData();
@@ -12,16 +13,28 @@ export default function BuildingWriteup() {
   const NavArrows = () => (
     <section className={styles.navArrows}>
       <Link to={`/location/${data.back.toLowerCase()}`}>
-        <section className={`${styles.link} ${styles.back}`}>
-          <img src={arrow} />
+        <motion.section
+          initial={{ scale: 1 }}
+          whileHover={{ scale: [1, 1.1] }}
+          transition={{ type: "spring", duration: 0.25, bounce: 0.1, bounceDamping: 50, stiffness: 500 }}
+          className={`${styles.link} ${styles.back}`}
+        >
+          <img
+            src={arrow}
+          />
           <p>{data.back.toUpperCase()}</p>
-        </section>
+        </motion.section>
       </Link>
       <Link to={`/location/${data.next.toLowerCase()}`}>
-        <section className={`${styles.link} ${styles.next}`}>
+        <motion.section
+          initial={{ scale: 1 }}
+          whileHover={{ scale: [1, 1.1] }}
+          transition={{ type: "spring", duration: 0.25, bounce: 0.1, bounceDamping: 50, stiffness: 500 }}
+          className={`${styles.link} ${styles.next}`}
+        >
           <p>{data.next.toUpperCase()}</p>
           <img src={arrow} style={{ transform: "scaleX(-1)" }} />
-        </section>
+        </motion.section>
       </Link>
     </section>
   );

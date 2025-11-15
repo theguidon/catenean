@@ -85,6 +85,13 @@ const Map = () => {
         }}>
           <div className={styles.cloud}>
             <p>Visit each cat to learn about the fascinating tales they hold about campus life. Discover the hidden nooks, legendary landmarks, and cherished memories through the eyes of our beloved feline friends and their loving partners, the caretakers.</p>
+            <motion.div
+              initial={{ scale: 0.5 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", bounce: 0.1, stiffness: 250, visualDuration: 0.5 }}
+              className={styles.popup}>
+              <p>Drag to pan around the map!</p>
+            </motion.div>
           </div>
           <img
             className={styles.smallCloud}

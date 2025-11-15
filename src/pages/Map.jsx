@@ -15,6 +15,8 @@ import smallCloud2 from "../assets/Map/Map_Images/small cloud 2.svg";
 import smallCloud3 from "../assets/Map/Map_Images/small cloud 3.svg";
 import { Link } from "react-router";
 import { motion, spring } from "motion/react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { useRef } from "react";
 
 const CatButton = ({ label, slug, style }) => {
   return (
@@ -69,42 +71,56 @@ const Map = () => {
     },
   }
 
+  const mainEl = useRef();
+
   return (
-    <main className={styles.main}>
-      <div className={styles.cloud}>
-        <p>Visit each cat to learn about the fascinating tales they hold about campus life. Discover the hidden nooks, legendary landmarks, and cherished memories through the eyes of our beloved feline friends and their loving partners, the caretakers.</p>
-      </div>
-      <img
-        className={styles.smallCloud}
-        src={smallCloud3}
-        style={{ left: "40%", top: "-5%", animationDelay: "-1s" }} />
-      <img
-        className={styles.smallCloud}
-        src={smallCloud1} style={{ left: "60%", top: "4%" }} />
-      <img
-        className={styles.smallCloud}
-        src={smallCloud2} style={{ left: "75%", top: "-1%", animationDelay: "-2s" }} />
-      {Object.entries(buildingData).map(([key, data]) => (
-        <div key={key} className={styles.location} style={data.position}>
-          <div>
-            <motion.img
-              animate={{ scaleY: [1.5, 1] }}
-              transition={{ type: spring, stiffness: 100, animationDuration: 0.2, bounce: 0.2 }}
-              className={styles.building}
-              src={data.building} />
-            <motion.img
-              initial={{ scaleY: 1 }}
-              whileHover={{ scaleY: 1.1 }}
-              animate={{ scaleY: [1.2, 1] }}
-              transition={{ type: spring, stiffness: 520, duration: 0.1, bounce: 0.1 }}
-              className={styles.cat}
-              src={data.cat.src}
-              style={{ ...data.cat.style, transformOrigin: "bottom center" }} />
-            <CatButton slug={key} label={data.button.label} style={data.button.style} />
+    <TransformWrapper
+      initialScale={1}
+      minPositionX={0}
+      minPositionY={0}
+    >
+      <TransformComponent wrapperStyle={{ width: "100vw", maxWidth: "100vw", height: "100vh", maxHeight: "100vh" }}>
+        <main ref={mainEl} className={styles.main} id="map-main" style={{
+          right: "0vw", top: "0vh"
+        }}>
+          <div className={styles.cloud}>
+            <p>Visit each cat to learn about the fascinating tales they hold about campus life. Discover the hidden nooks, legendary landmarks, and cherished memories through the eyes of our beloved feline friends and their loving partners, the caretakers.</p>
           </div>
-        </div>
-      ))}
-    </main>
+          <img
+            className={styles.smallCloud}
+            src={smallCloud3}
+            style={{ left: "40%", top: "-5%", animationDelay: "-1s" }} />
+          <img
+            className={styles.smallCloud}
+            src={smallCloud1} style={{ left: "60%", top: "4%" }} />
+          <img
+            className={styles.smallCloud}
+            src={smallCloud2} style={{ left: "75%", top: "-1%", animationDelay: "-2s" }} />
+          {
+            Object.entries(buildingData).map(([key, data]) => (
+              <div key={key} className={styles.location} style={data.position}>
+                <div>
+                  <motion.img
+                    animate={{ scaleY: [1.5, 1] }}
+                    transition={{ type: spring, stiffness: 100, animationDuration: 0.2, bounce: 0.2 }}
+                    className={styles.building}
+                    src={data.building} />
+                  <motion.img
+                    initial={{ scaleY: 1 }}
+                    whileHover={{ scaleY: 1.1 }}
+                    animate={{ scaleY: [1.2, 1] }}
+                    transition={{ type: spring, stiffness: 520, duration: 0.1, bounce: 0.1 }}
+                    className={styles.cat}
+                    src={data.cat.src}
+                    style={{ ...data.cat.style, transformOrigin: "bottom center" }} />
+                  <CatButton slug={key} label={data.button.label} style={data.button.style} />
+                </div>
+              </div>
+            ))
+          }
+        </main>
+      </TransformComponent>
+    </TransformWrapper>
   );
 }
 

@@ -60,6 +60,7 @@
 		],
 		"bgColor": "#A0D8CF",
 		"nameColor": "#00A68B",
+		"mobileTitleSize": "7vw",
 		"captionColor": "#0C6557",
 		"back": "ctc-som",
 		"next": "arete"

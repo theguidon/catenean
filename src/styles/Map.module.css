@@ -1,145 +1,268 @@
 .main {
-	min-width: 100vw;
-	min-height: 100vh;
-	aspect-ratio: 1728 / 1117;
-	width: 1728px;
-	height: 1117px;
-	background-image: url("/assets/mapdesktop_bg.svg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	overflow: auto;
-	position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+    aspect-ratio: 1728 / 1117;
+    width: 1728px;
+    height: 1117px;
+    background-image: url("/assets/mapdesktop_bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: auto;
+    position: relative;
 }
 
 .cloud {
-	position: absolute;
-	aspect-ratio: 711 / 379;
-	background: center / contain no-repeat url("/assets/Cloud.svg");
-	width: 45%;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: flex-end;
-	align-items: center;
-	padding-bottom: 3%;
-	/** for stacking context **/
-	opacity: 0.99;
-	animation: 3s ease-in-out 0s infinite alternate-reverse bob;
+    position: absolute;
+    aspect-ratio: 711 / 379;
+    background: center / contain no-repeat url("/assets/Cloud.svg");
+    width: 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 3%;
+    opacity: 0.99;
+    animation: 3s ease-in-out 0s infinite alternate-reverse bob;
 }
 
 .popup {
-	width: 17%;
-	aspect-ratio: 1 / 1;
-	background: #F8D880;
-	border-radius: 50%;
-	border: 5px solid #3a86b2;
-	position: absolute;
-	bottom: -8%;
-	right: 0;
-	display: flex;
-	justify-content: center;
-	padding: 1%;
-	align-items: center;
+    width: 17%;
+    aspect-ratio: 1 / 1;
+    background: #F8D880;
+    border-radius: 50%;
+    border: 5px solid #3a86b2;
+    position: absolute;
+    bottom: -8%;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    align-items: center;
 }
 
 .cloud>.popup p {
-	padding: 0;
-	width: 100%;
-	text-align: center;
-	font-size: 1.2em;
-}
-
-.smallCloud {
-	position: absolute;
-	animation: 3s ease-in-out 0s infinite alternate-reverse bob;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
 }
 
 .cloud p {
-	width: 80%;
-	font-family: "Outfit", sans-serif;
-	font-weight: 500;
-	font-size: 1.2rem;
-	line-height: 150%;
-	color: #2074A4;
+    width: 80%;
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 150%;
+    color: #2074A4;
 }
 
 .location {
-	position: absolute;
-	width: 18%;
-	height: 15%;
+    position: absolute;
+    width: 18%;
+    height: 15%;
 }
 
 .location>div {
-	position: relative;
-	width: 100%;
-	height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .location>div>* {
-	position: absolute;
+    position: absolute;
 }
 
 .location .building {
-	width: 100%;
-	max-width: 300px;
-	left: 0;
-	top: 0;
-	transform-origin: bottom center;
+    width: 100%;
+    max-width: 300px;
+    left: 0;
+    top: 0;
+    transform-origin: bottom center;
 }
 
 .location .cat {
-	width: 60%;
-	transform-origin: bottom center;
+    width: 60%;
+    transform-origin: bottom center;
 }
 
 .catButton>div {
-	background-color: #ffffec;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	width: 212px;
-	border-radius: 99999px;
+    background-color: #ffffec;
+    padding-block: 12px;
+    width: 212px;
+    border-radius: 99999px;
 }
 
 .catButton>div>p {
-	text-align: center;
-	font-family: "Solway", serif;
-	padding: 0;
-	font-size: 1.8rem;
-	color: #a56953;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-decoration: none;
+    text-align: center;
+    font-family: "Solway", serif;
+    padding: 0;
+    font-size: 1.8rem;
+    color: #a56953;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .catButton>img {
-	position: relative;
-	top: 8px;
+    position: relative;
+    top: 8px;
 }
 
 .catButton {
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
-	cursor: pointer;
-	filter: drop-shadow(0 0 10px rgb(0, 0, 0, 0.5));
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0, 0.5));
 }
 
-
 @keyframes bob {
-	0% {
-		transform: translateY(-0.5rem);
-	}
+    0% {
+        transform: translateY(-0.5rem);
+    }
 
-	100% {
-		transform: translateY(0);
-	}
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes buildingSkew {
-	0% {
-		transform: scaleY(1) skewX(-4deg);
-	}
+    0% {
+        transform: scaleY(1) skewX(-4deg);
+    }
 
-	100% {
-		transform: scaleY(1.1) skewX(2deg);
-	}
+    100% {
+        transform: scaleY(1.1) skewX(2deg);
+    }
+}
+
+/* --- Mobile View (≤ 500px) --- */
+@media (max-width: 500px) {
+    .mobileMain {
+        width: 100vw;
+        height: 100vh;
+        background-color: #90dbc3;
+        background-image: url("/assets/mapmobile_bg.svg");
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobileCloud {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        aspect-ratio: 711 / 379;
+        background: center / contain no-repeat url("/assets/Cloud.svg");
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 8%;
+        animation: 3s ease-in-out 0s infinite alternate-reverse bob;
+        z-index: 50;
+        pointer-events: none;
+    }
+
+    .mobileCloud p {
+        pointer-events: auto;
+        width: 100%;
+        font-family: "Outfit", sans-serif;
+        font-weight: 500;
+        font-size: clamp(0.5rem, 0.05rem + 2.40vw, 0.8rem);
+        color: #2074A4;
+        text-align: center;
+        margin-right: 30px;
+        margin-top: 17.5%;
+    }
+
+    .mobileCarousel {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .mobileSlide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: grab;
+    }
+
+    .mobileSlide:active {
+        cursor: grabbing;
+    }
+
+    .mobileLocationInner {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0;
+        margin-top: 80%;
+    }
+
+    .mobileLocationInner .cat {
+        position: relative;
+        width: 35vw;
+        z-index: 20;
+        margin-right: -11%;
+        margin-bottom: 3%;
+    }
+
+    .mobileLocationInner .cat img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .mobileBuildingGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        width: 55vw;
+        max-width: 260px;
+        min-width: 160px;
+        height: auto;
+    }
+
+    .mobileLocationInner .building {
+        width: 100%;
+        height: auto;
+        z-index: 1;
+        display: block;
+    }
+
+    .catButton>div {
+        width: clamp(8.5rem, 4rem + 24vw, 11.5rem);
+    }
+
+    .catButton>div>p {
+        font-size: clamp(1rem, -0.2rem + 6.4vw, 1.8rem);
+    }
+
+    .mobileBuildingGroup .catButton {
+        margin-top: -25%;
+        position: relative;
+        z-index: 10;
+    }
 }

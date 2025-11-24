@@ -56,6 +56,11 @@
     color: #2074A4;
 }
 
+.smallCloud {
+	position: absolute;
+	animation: 3s ease-in-out 0s infinite alternate-reverse bob;
+}
+
 .location {
     position: absolute;
     width: 18%;

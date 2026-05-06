@@ -1,9 +1,9 @@
 {
 	"mvp": {
 		"name": "MVP",
-		"caption": "A cat's playground",
+		"caption": "",
 		"bldgImage": "mvp.svg",
-		"article": "The Manuel V. Pangilinan Center for Student Leadership (MVP) is a hallmark of the Ateneo’s vibrant student life. Apart from being the birthplace and center of student-led organizations, it is also the abode of the two fan-favorite MVP cats, Dongyan and Barbie.\n\nThose who arrive on campus in the early mornings may chance upon Dongyan and Barbie playing chase by the MVP entrance. Other times, they would sit proudly on the front desk, nap on the press stands by the staircase, or pose for the students taking photographs of them.\n\n“Dongyan [has] been a resident there for quite a long time, and he actually got his name from the [security] guard stationed there,” Guce explains. The story being passed around goes that when someone asks about the cat, one would respond “Kay Dong ‘yan (That’s Dong’s),” referring to Fortunato “Dong” Butlig, a security guard formerly stationed at MVP.\n\nBarbie, on the other hand, started residing in the building because a student asked Kuya Dong to take care of her. Guce notes that requesting school staff to foster cats is prohibited. However, Barbie was already at MVP, and Dongyan decided to adopt her. As of writing, Kuya Dong is no longer stationed at MVP, and instead regularly makes his rounds around the college parking lots, the dorms, the Institute of Social Order area, and Areté.",
+		"article": "Walking through the college campus will eventually lead you to its heart, the Manuel V. Pangilinan Center for Student Leadership, or “MVP.” Org rooms line the hallways of this popular student hub, which serve as ideal third spaces to relax in and get some work done. While students roam the halls of MVP, they may bump into one or two of the resident critters in MVP: Barbie and Dongyan. You can typically find Dongyan sleeping on top of the guard’s desk in the foyer, while Barbie is a bit sneakier, roaming the corridors and grounds of the bustling community center.",
 		"cats": [
 			{
 				"name": "Dongyan",
@@ -22,7 +22,7 @@
 	},
 	"ctc-som": {
 		"name": "CTC-SOM",
-		"caption": "Even the cats\nare \"sosyal\"",
+		"caption": "",
 		"bldgImage": "ctc-som.svg",
 		"article": "A few steps from the SEC walk, you will be taken to two seemingly twin buildings called CTC-SOM. Connected by overhead bridges, the expansive complex is filled with classrooms, multiple halls, and numerous departmental offices. The hallways of the buildings are often lined by lounging Cateneans like Princess, whom you would usually find ion the building’s hallways of the buildings or lying on the open lawn. Princess, a renowned Catenean, is even known to ride the elevator up and down SOM, humoring students with her presence as they share a ride with her.",
 		"cats": [
@@ -45,9 +45,9 @@
 	},
 	"schmitt": {
 		"name": "SCHMITT",
-		"caption": "Dimsum kittens",
+		"caption": "",
 		"bldgImage": "schmitt.svg",
-		"article": "The Manuel V. Pangilinan Center for Student Leadership (MVP) is a hallmark of the Ateneo’s vibrant student life. Apart from being the birthplace and center of student-led organizations, it is also the abode of the two fan-favorite MVP cats, Dongyan and Barbie.\n\nThose who arrive on campus in the early mornings may chance upon Dongyan and Barbie playing chase by the MVP entrance. Other times, they would sit proudly on the front desk, nap on the press stands by the staircase, or pose for the students taking photographs of them.\n\n“Dongyan [has] been a resident there for quite a long time, and he actually got his name from the [security] guard stationed there,” Guce explains. The story being passed around goes that when someone asks about the cat, one would respond “Kay Dong ‘yan (That’s Dong’s),” referring to Fortunato “Dong” Butlig, a security guard formerly stationed at MVP.\n\nBarbie, on the other hand, started residing in the building because a student asked Kuya Dong to take care of her. Guce notes that requesting school staff to foster cats is prohibited. However, Barbie was already at MVP, and Dongyan decided to adopt her. As of writing, Kuya Dong is no longer stationed at MVP, and instead regularly makes his rounds around the college parking lots, the dorms, the Institute of Social Order area, and Areté.",
+		"article": "Once you reach the edge of Red Brick Road, the familiar Schmitt Hall stands to greet you. It houses numerous laboratories and classrooms, all maintained by the dedicated Chemistry Department. Inside the building, Hakaw, an outgoing Catenean, patrols the halls and lounges, while skittish Catenean Maimai prefers to linger along the building's outskirts. The two cats brighten up what would be a hectic, sterile environment by providing comfort to the students and faculty who populate the rooms of this science building.",
 		"cats": [
 			{
 				"name": "Dongyan",
@@ -67,7 +67,7 @@
 	},
 	"arete": {
 		"name": "ARETÉ",
-		"caption": "Part-time art hub,\nfull-time newsroom",
+		"caption": "",
 		"bldgImage": "arete.svg",
 		"article": "If you take a few strides away from Gate 3, you will soon be greeted by the imposing, modern structure that is Areté, where an array of classrooms, recreational spaces, and the Ateneo Art Gallery are found. Serving as the creative center of Ateneo, it serves as the hub for creativity and innovation where knowledge, skills, and expression flow.\n\nHowever, art students are not the only ones who populate Areté’s halls. Around the complex, you will find a particularly curious Catenean named Ponpon who often gets into trouble for coming too close to cars while watching people.",
 		"cats": [
@@ -88,7 +88,7 @@
 	},
 	"faura": {
 		"name": "FAURA",
-		"caption": "Home of the\nwild(ly) lovable",
+		"caption": "",
 		"bldgImage": "faura.svg",
 		"article": "When strolling along Lover’s Lane, you surely won’t miss Faura Hall, renowned for being an earthquake-proof building. Its maroon color and central courtyard guarantee that it is a hard miss. Faura is home to a lively set of Cateneans, most of whom are quite feral, roaming in the forested areas near Lover’s Lane, where they hunt for small prey, typically coming and going as they please. Although some formerly feral cats, like Dodong and Tatang, have become sociable residents and are well cared for by Kuya June, a maintenance staff member who has devoted much time and effort to the Cateneans.",
 		"cats": [

@@ -59,10 +59,10 @@ export default function BuildingWriteup() {
     >
       {isSmallMobile ? (
         <header className={styles.mobileHeader}>
-            <NavArrows isHeader={true} />
-            <Link to="/map" className={styles.mobileBackButtonWrapper}>
-              <img src={back} className={styles.mobileBackButton} alt="Back to Map" />
-            </Link>
+          <NavArrows isHeader={true} />
+          <Link to="/map" className={styles.mobileBackButtonWrapper}>
+            <img src={back} className={styles.mobileBackButton} alt="Back to Map" />
+          </Link>
         </header>
       ) : (
         <Link to="/map">
@@ -72,7 +72,6 @@ export default function BuildingWriteup() {
 
       <section className={styles.writeup}>
         {isMobile && !isSmallMobile && <NavArrows />}
-        
         <section className={styles.heading}>
           <img src={`/assets/buildings/no-shadow/${data.bldgImage}`} alt={data.name} />
           <section className={styles.titleCaption}>
@@ -93,10 +92,10 @@ export default function BuildingWriteup() {
 
       <section className={styles.cats}>
         {data.cats.map((cat, index) => (
-            <article key={index}>
-              <img src={`/assets/cats/${cat.pic}`} alt={cat.name} />
-              <p style={{ color: data.nameColor }}>{cat.name}</p>
-            </article>
+          <article key={index}>
+            <img src={`/assets/cats/${cat.pic}`} alt={cat.name} />
+            <p style={{ color: data.nameColor }}>{cat.name}</p>
+          </article>
         ))}
         {!isMobile && <NavArrows />}
       </section>

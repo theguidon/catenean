@@ -9,6 +9,7 @@ import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
 import { easeIn, easeInOut, easeOut, motion, stagger } from "motion/react";
+import Ellipses from "../ellipses";
 
 export default function IntroDesktop() {
 
@@ -20,18 +21,10 @@ export default function IntroDesktop() {
   return (
     <div className={styles.main}>
       <div className={styles.section}>
-        <motion.div
-          className={`${styles.text} ${styles.text1}`}
-          initial="hidden"
-          whileInView="show"
-          transition={{ delayChildren: stagger(1, { startDelay: 0.5 }) }}
-        >
-          <motion.img varints={childVars} src={ellipses2} alt="" className={styles.ellipses} />
-          <motion.p variants={childVars}>
-            NOT EVERY home has a furry feline companion, but within the Loyola
-            Heights campus, one is certain to encounter&nbsp;them.
-          </motion.p>
-        </motion.div>
+        <Ellipses style={{ height: "90vh", width: "50vw" }}>
+          <p style={{ margin: 0, padding: 0 }}><strong>TINY PAWS</strong> and swaying tails are a common sight in nearly every hallway and coordor of the Ateneo.</p>
+          <p style={{ margin: 0, padding: 0 }}>The Cateneans&mdash;as the community has affectionately called the campus cats&mdash;blend seamlessly among chattering students.</p>
+        </Ellipses>
         <div className={styles.graphics}>
           <img
             src={cloud}
@@ -51,28 +44,10 @@ export default function IntroDesktop() {
         </div>
       </div>
       <div className={`${styles.section} ${styles.section2}`}>
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          transition={{ delayChildren: stagger(1, { startDelay: 0.5 }) }}
-          className={`${styles.text} ${styles.text2}`}
-        >
-          <motion.img
-            variants={childVars}
-            src={ellipses2}
-            alt=""
-            className={styles.ellipses}
-          />
-          <motion.p
-            variants={childVars}
-          >
-            The Ateneo’s cast of cats are endearingly monikered as the
-            “Cateneans”. They quietly comfort stressed students and employees
-            with a single glance, stretch leisurely across guard’s desks,
-            scamper casually along the walkways, or nap on the cafeteria chairs
-            next to their human companions without a care in the&nbsp;world.
-          </motion.p>
-        </motion.div>
+        <Ellipses style={{ height: "90vh", width: "50vw" }}>
+          <p style={{ margin: 0, padding: 0 }}>Amid the daily bustle of the Loyola Heights campus, the Cateneans take solace in the tiniest nooks and crannies of buildings.<br />
+            These feline friends serve as an embodiment of comfort for Ateneans, earning a special place in the hearts of students, faculty, and staff alike.</p>
+        </Ellipses>
         <div className={styles.graphics}>
           <img
             src={photos1}
@@ -94,29 +69,13 @@ export default function IntroDesktop() {
           <img src={line} alt="" className={styles.line2} />
         </div>
       </div>
-      <div className={`${styles.section} ${styles.section3}`}>
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          transition={{ delayChildren: stagger(1, { startDelay: 0.5 }) }}
-          className={`${styles.text} ${styles.text2}`}
-        >
-          <motion.img variants={childVars} src={ellipses2} alt="" className={styles.ellipses} />
-          <motion.p variants={childVars}>
-            Those who have pets know what it is like to show their animal
-            friends off, to go above and beyond for them, to maintain their
-            well-being, and to miss them sorely after long stretches
-            of&nbsp;separation.
-          </motion.p>
-        </motion.div>
-      </div>
       <div className={styles.graphics}>
         <motion.img
           src={cat}
           initial={{ opacity: 0, x: -15 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ ease: easeOut, duration: 0.5 }}
-          style={{ position: "absolute", bottom: "4vh", left: 40, zIndex: 20 }}
+          style={{ position: "absolute", height: "40vh", bottom: "3.5vh", left: 40, zIndex: 20 }}
         />
         <img src={RBR} alt="" className={styles.RBR} />
       </div>

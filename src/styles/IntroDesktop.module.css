@@ -112,14 +112,14 @@
 }
 
 .catPhotos1 {
-  width: 30rem;
+  width: 25rem;
   position: absolute;
   inset: 0 auto auto 13rem;
   z-index: 10;
 }
 
 .catPhotos2 {
-  width: 30rem;
+  width: 25rem;
   position: absolute;
   inset: 15rem auto auto 30rem;
   z-index: 10;
@@ -152,6 +152,7 @@
 
 .RBR {
   position: absolute;
-  inset: auto auto -4vh -1rem;
+  left: -2vw;
+  bottom: -20vh;
   z-index: 15;
 }

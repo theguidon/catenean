@@ -57,8 +57,10 @@ section.graphics {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: flex-end;
   position: absolute;
   bottom: 10vh;
+  width: 80%;
 }
 
 .bldg {
@@ -166,6 +168,32 @@ section.graphics {
   100% {
     transform: translate(0px, 0px) rotate(0deg);
   }
+}
+
+.polaroid {
+  width: 20vw;
+  background: white;
+  padding: 2% 2%;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.polaroid>* {
+  width: 100%;
+}
+
+.polaroid>p {
+  text-align: center;
+  margin: 0;
+  font-family: "Cedarville Cursive Regular";
+  font-size: 2em;
+  line-height: 1.5em;
+  color: #106ea2;
+}
+
+.flower {
+  height: 10vh;
+  position: absolute;
 }
 
 @keyframes highFiveHand {

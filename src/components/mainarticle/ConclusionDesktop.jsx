@@ -93,17 +93,12 @@ const ConclusionDesktop = () => {
           style={{
             marginBottom: "36px"
           }}
-        >The Cateneans stand as a testament to the human capacity
-          to go above and beyond for animals. Resuello, Beunafe, Johnson, and
-          the AGILA members are only among countless people who give the animals
-          the same value as fellow humans.</motion.p>
+        >Still, the Cateneans persist, with many still wandering around campus, bringing comfort and joy to those they encounter. Their mere presence in the hallways, paths, on top of tables, or peeking from corners deeply resonates with many Ateneans.</motion.p>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 2, ease: easeInOut, delay: 0.75 }}
-        >The Ateneo community&apos;s efforts of caring for the campus cats only concretize
-          the importance of empathy and respect for other living beings. Be it animals
-          or another human, the interconnectedness of the world&apos;s inhabitants reflect a need for respect, kindness, and empathy to build safe communities for all.
+        >“Seeing and interacting with [the cats] distracts [the faculty] from [the] stress … [it] makes the work worthwhile,” says Buenafe. Truly, the impact of this four-legged community is felt, and they have become intertwined with the daily happenings of the regular Atenean.
         </motion.p>
       </motion.section>
       <motion.section
@@ -122,7 +117,7 @@ const ConclusionDesktop = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 2, ease: easeInOut }}
-        >Beyond attention and affection, love has manifested in the Ateneo community through a commitment to caring for the Cateneans and an acknowledgement of their value as living beings.
+        >The Cateneans hold a cherished place in the hearts of many Ateneans, completing the tapestry of Loyola’s vibrant campus culture. These furry, feline friends have the unique ability to brighten days and give meaning to the service of the devoted individuals, like Doc Buenafe, Miss Rampola, Miss Haberia, and Sir June* who nurture them with unwavering compassion and care.
         </motion.p>
       </motion.section>
       <img

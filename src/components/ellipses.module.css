@@ -1,0 +1,22 @@
+.outerEllipse,
+.innerEllipse {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	min-height: fit-content;
+}
+
+.outerEllipse {
+	padding: 2% 0%;
+	background: rgba(243, 231, 204, .5);
+}
+
+.innerEllipse {
+	width: 100%;
+	height: 100%;
+	background: rgba(243, 231, 204);
+	padding: 15%;
+	gap: 1em;
+}

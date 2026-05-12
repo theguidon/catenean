@@ -5,14 +5,23 @@ section.container {
 }
 
 .titleArea {
-	display: flex;
-	align-items: flex-end;
-	height: 80vh;
-	width: 1500px;
-	margin-right: 700px;
-	position: relative;
-	top: 10vh;
-	gap: 18px;
+	height: 100%;
+	width: 100vh;
+	padding-top: 20vh;
+	text-align: center;
+	margin-right: 20vw;
+}
+
+.titleArea h1 {
+	font-size: 5em;
+	width: 100vw;
+	font-weight: 700;
+	font-family: "Solway", serif;
+	text-align: center;
+	color: #E07329;
+	-webkit-text-stroke: 18px white;
+	paint-order: stroke fill;
+	filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
 }
 
 .titleArea .bush {

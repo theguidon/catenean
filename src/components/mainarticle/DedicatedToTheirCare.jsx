@@ -1,15 +1,13 @@
 import Ellipses from "../ellipses.jsx";
-import Bush from "../../assets/images/bush.svg";
-import CTCSOM from "../../assets/images/buildings/no-shadow/ctc-som.svg";
-import MVP from "../../assets/images/buildings/no-shadow/mvp.svg";
-import Faura from "../../assets/images/buildings/no-shadow/faura.svg";
-import Arete from "../../assets/images/buildings/no-shadow/arete.svg";
+import ThreeCats from "../../assets/images/three-cats.png";
 import Schmitt from "../../assets/images/buildings/no-shadow/schmitt.svg";
-import highFiveHeartBackground from '../../assets/images/highfive-heart-background.svg'
-import highFiveRightHand from '../../assets/images/highfive-right-hand.svg';
-import highFiveLeftPaw from '../../assets/images/highfive-left-paw.svg';
+import Paopao from "../../assets/images/paopao.png"
+import FlowerGroup from "../../assets/images/flower-group.svg";
+import Mag1 from "../../assets/images/mag1.png";
+import Mag2 from "../../assets/images/mag2.png";
 import styles from "../../styles/FurmiliarFacesDesktop.module.css";
-import { useEffect, useRef } from "react";
+import colStyles from "../../styles/DedicatedToTheirCare.module.css";
+import { useRef } from "react";
 
 const QuoteCard = ({ style, children }) => {
   return (
@@ -56,9 +54,6 @@ const QuoteCard = ({ style, children }) => {
 }
 
 const DedicatedToTheirCareDesktop = () => {
-  const highFiveContainerRef = useRef(null);
-  const highFiveWrapperRef = useRef(null);
-  //Activates highfive animation
   return (
     <section className={styles.container}>
       <section className={styles.title}>
@@ -73,18 +68,27 @@ const DedicatedToTheirCareDesktop = () => {
         <section className={`${styles.textSection}`}>
           <p>One such organization at the forefront of safeguarding our catmmunity is <a href="">Ateneans Guided and Inspired by Love for Animals</a> (AGILA). As the primary animal welfare organization in the Ateneo, their work encompasses a wide range of activities, including managing the University’s cat population through the <a href="">Trap-Neuter-Vaccinate-Return initiative</a>, spay and neuter programs, fostering and adoption, veterinary intervention, and updating of the cat census known as the “CATalog.”</p>
         </section>
-        <section className={`${styles.graphics}`}>
-          <img src={MVP} className={styles.bldg} />
-          <section></section>
+        <section className={`${styles.graphics}`} style={{ justifyContent: "center" }}>
+          <img src={Paopao} className={styles.bldg} style={{ height: "45vh" }} />
+          <img src={FlowerGroup} style={{ position: "absolute", bottom: "10%", width: "60%" }} />
         </section>
       </section>
       <section>
-        <section>
-          <section className={`${styles.textSection}`}>
+        <section style={{
+          display: "flex",
+          gap: "2%"
+        }}>
+          <div className={`${colStyles.magnifyingGlass}`} style={{ paddingTop: "20%" }}>
+            <img src={Mag1} />
+          </div>
+          <section className={`${styles.textSection}`} style={{ flexGrow: "1" }}>
             <p>Beyond these, they also advocate for other animals through educational seminars and partnerships with like-minded organizations such as the <a href="">The Philippine Animal Welfare Society</a> (PAWS).</p>
             <p>An animal lover herself, AGILA President Svetlana Haberia leads the organization, managing all of their animal welfare initiatives within the Ateneo community. Driven by the fact that not everyone shares her level of concern for the cats, Haberia gives her all, especially to the Cateneans under their organization’s care.</p>
             <p>While Cateneans can often be irresistibly cute and tempting to pet, Haberia encourages the wider Ateneo community to respect their space and to refrain from touching them for the cats’ health.</p>
           </section>
+          <div className={`${colStyles.magnifyingGlass}`}>
+            <img src={Mag2} />
+          </div>
         </section>
         <section className={`${styles.graphics}`}>
         </section>
@@ -96,14 +100,6 @@ const DedicatedToTheirCareDesktop = () => {
           <p>Sharing this level of concern for the cats’ safety and care is PUNLA formation Pauline Rampola, who dedicates part of her day to caring for resident MVP cats Dongyan and Barbie. Though a dog person at heart, she still extends the same love and affection to the Cateneans who have since become the mascots of the sprawling student center.</p>
         </section>
         <section className={`${styles.graphics}`}>
-        </section>
-      </section>
-      <section>
-        <section className={`${styles.textSection}`}>
-          <p>Over in Schmitt Hall, Hakaw and Maimai share the space in spite of their contrasting personalities. According to AGILA moderator and Chemistry Department Chair Olivia Erin Buenafe, the extroverted Hakaw is considered the “spiritual successor” to late Paopao, after inheriting some of his endearing habits like opening windows. On the other hand, introverted Maimai plays by her own terms, only interacting with people whenever she deems fit and retreats inside buildings to relish in her own company.</p>
-        </section>
-        <section className={`${styles.graphics}`}>
-          <img className={styles.bldg} src={Schmitt} />
         </section>
       </section>
       <section>
@@ -121,7 +117,14 @@ const DedicatedToTheirCareDesktop = () => {
         <section className={`${styles.textSection}`}>
           <p>Through consistent nurture, the Cateneans have become an endearing feature of our community, providing brief solace to many of its members , especially those who share a collective concern and love for the furry friends.</p>
         </section>
-        <section className={`${styles.graphics}`}>
+        <section className={`${styles.graphics}`} style={{
+          justifyContent: "center"
+        }}>
+          <img src={ThreeCats} style={{
+            height: "70vh",
+            position: "relative",
+            top: "10vh"
+          }} />
         </section>
       </section>
     </section>

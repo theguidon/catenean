@@ -1,0 +1,8 @@
+.magnifyingGlass {
+	width: 10%;
+	height: 100%;
+}
+
+.magnifyingGlass>img {
+	width: 100%;
+}

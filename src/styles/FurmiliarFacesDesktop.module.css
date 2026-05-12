@@ -36,6 +36,10 @@ section.container {
   width: 60vw;
 }
 
+.textSection>p {
+  margin-bottom: 1.5em;
+}
+
 .container>.title {
   justify-content: space-between;
   padding: 20vh 0 10vh;

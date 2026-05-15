@@ -17,10 +17,10 @@ const ComeAndGoDesktop = () => {
         <h1>Cats come<br />and go</h1>
       </section>
       <img src={cloud} className={styles.cloud} />
-      <section style={{ padding: "10vh 20vw", height: "100vh", width: "100vw", background: "#fffae9", display: "flex", flexFlow: "column nowrap", alignItems: "space-between", gap: "15vh" }}>
+      <section style={{ padding: "10vh 20vw", height: "100vh", width: "100vw", background: "#fffae9", display: "flex", flexFlow: "column nowrap", alignItems: "center", gap: "15vh" }}>
         <p>Despite the feline companions being a comforting presence on campus, they <a href="">live far shorter</a> than humans. Nonetheless, concerned individuals such as the AGILA team, certain faculty, and custodial staff still strive to ensure that the Cateneans experience a good quality of life while they are around.
         </p>
-        <img src={catHearts} style={{ height: "45vh" }} />
+        <img src={catHearts} style={{ width: "70%" }} />
       </section>
       <motion.section initial="hidden" whileInView="show" transition={{ delayChildren: stagger(2, { startDelay: 1 }) }} className={styles.content}>
         <motion.p

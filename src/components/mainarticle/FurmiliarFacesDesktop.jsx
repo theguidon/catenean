@@ -171,8 +171,8 @@ const FurmiliarFacesDesktop = () => {
         </section>
         <section className={`${styles.graphics}`} style={{
           justifyContent: "center",
-          position: "relative",
-          top: "10vh"
+          position: "absolute",
+          bottom: "30vh"
         }}>
           <div className={styles.highFiveWrapper} ref={highFiveWrapperRef}>
             <div className={styles.highFiveContainer} ref={highFiveContainerRef}>

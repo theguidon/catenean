@@ -153,6 +153,6 @@
 .RBR {
   position: absolute;
   left: -2vw;
-  bottom: -20vh;
+  bottom: -5%;
   z-index: 15;
 }

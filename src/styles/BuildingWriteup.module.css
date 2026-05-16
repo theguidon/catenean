@@ -105,6 +105,7 @@
   max-height: 60vh;
   overflow-y: scroll;
   font-family: "Outfit", sans-serif;
+  font-size: 1.5rem;
 }
 
 .navArrows {
@@ -146,9 +147,19 @@
 }
 
 @media (max-width: 699px) {
-  .main { padding: 6vh 0vw 5vh; }
-  .writeup { margin: 0 5vw; }
-  .writeup p { max-height: 40vh; overflow-y: scroll; }
+  .main {
+    padding: 6vh 0vw 5vh;
+  }
+
+  .writeup {
+    margin: 0 5vw;
+  }
+
+  .writeup p {
+    max-height: 40vh;
+    overflow-y: scroll;
+  }
+
   .cats {
     margin-top: 16px;
     padding: 0 5vw;
@@ -156,23 +167,55 @@
     flex-flow: row nowrap;
     overflow-x: scroll;
   }
-  .cats img { height: 200px; width: auto; }
-  .titleCaption h1 { margin-top: 0; font-size: 9vw; line-height: 100%; }
-  .titleCaption h2 { font-size: 4.5vw; white-space: pre; }
-  .cats article { padding: 5vw; }
-  .cats article>p { font-size: 4vw; }
-  .backButton { width: 10vw; }
-  .navArrows { justify-content: start; gap: 16px; }
-  .navArrows .link p { font-size: 4vw; }
-  .navArrows .link img { width: 6vw; }
+
+  .cats img {
+    height: 200px;
+    width: auto;
+  }
+
+  .titleCaption h1 {
+    margin-top: 0;
+    font-size: 9vw;
+    line-height: 100%;
+  }
+
+  .titleCaption h2 {
+    font-size: 4.5vw;
+    white-space: pre;
+  }
+
+  .cats article {
+    padding: 5vw;
+  }
+
+  .cats article>p {
+    font-size: 4vw;
+  }
+
+  .backButton {
+    width: 10vw;
+  }
+
+  .navArrows {
+    justify-content: start;
+    gap: 16px;
+  }
+
+  .navArrows .link p {
+    font-size: 4vw;
+  }
+
+  .navArrows .link img {
+    width: 6vw;
+  }
 }
 
 /* --- Mobile View (≤ 500px) --- */
 @media (max-width: 500px) {
   .main {
     flex-direction: column;
-    padding: 5vh 5vw 5vh 5vw; 
-    gap: 0; 
+    padding: 5vh 5vw 5vh 5vw;
+    gap: 0;
     height: auto;
     min-height: 100vh;
     overflow: scroll;
@@ -181,10 +224,10 @@
   .mobileHeader {
     display: flex;
     flex-flow: row nowrap;
-    align-items: flex-end; 
+    align-items: flex-end;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 0; 
+    margin-bottom: 0;
     gap: 10px;
   }
 
@@ -199,13 +242,13 @@
     flex-flow: row nowrap;
     margin-top: 0;
     gap: 10px;
-    justify-content: flex-start; 
-    align-items: center; 
+    justify-content: flex-start;
+    align-items: center;
     --stroke-width: 3.5px;
     flex-grow: 1;
     min-width: 0;
   }
-  
+
   .navArrows.headerNav .link {
     display: flex;
     flex-flow: row nowrap;
@@ -221,9 +264,9 @@
 
   .mobileNavText {
     font-size: 3.5vw !important;
-    margin: 0 5px; 
+    margin: 0 5px;
     white-space: nowrap;
-    padding-bottom: 2px; 
+    padding-bottom: 2px;
   }
 
   .writeup {
@@ -232,7 +275,7 @@
   }
 
   .heading {
-    flex-direction: row; 
+    flex-direction: row;
     margin-bottom: 2vh;
   }
 
@@ -271,7 +314,7 @@
     border-radius: 12px;
   }
 
-  .cats article > p {
+  .cats article>p {
     font-size: 5vw;
     margin-top: 10px;
   }

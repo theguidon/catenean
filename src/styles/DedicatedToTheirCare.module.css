@@ -1,8 +1,19 @@
 .magnifyingGlass {
-	width: 10%;
-	height: 100%;
+  width: 10%;
+  height: 100%;
 }
 
-.magnifyingGlass>img {
-	width: 100%;
+.magnifyingGlass img {
+  width: 100%;
+  animation: 750ms steps(2, end) 0s infinite alternate magRotateLeft;
+}
+
+@keyframes magRotateLeft {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
 }

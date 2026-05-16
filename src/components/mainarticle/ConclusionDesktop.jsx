@@ -7,10 +7,20 @@ import cat1 from "../../assets/images/cats/1.jpeg";
 import cat2 from "../../assets/images/cats/2.jpeg";
 import string1 from "../../assets/images/conclusion_string1.svg";
 import string2 from "../../assets/images/conclusion_string2.svg";
-import { easeInOut, easeOut, motion } from "motion/react";
+import { easeInOut, easeOut, motion, spring } from "motion/react";
 
 const ConclusionDesktop = () => {
-  // will remove overflow properties and background later on
+  const bounceAnimation = {
+    whileInView: {
+      scaleY: [0, 1.5, 1],
+    },
+    transition: {
+      type: spring,
+      stiffness: 100,
+      animationDuration: 0.2,
+      bounce: 0.2,
+    },
+  };
   return (
     <section
       style={{
@@ -19,7 +29,7 @@ const ConclusionDesktop = () => {
         alignItems: "end",
         overflowY: "clip",
         height: "100vh",
-        position: "relative"
+        position: "relative",
       }}
     >
       <img
@@ -27,7 +37,7 @@ const ConclusionDesktop = () => {
         style={{
           position: "absolute",
           top: 0,
-          right: 300
+          right: 300,
         }}
       />
       <img
@@ -35,12 +45,10 @@ const ConclusionDesktop = () => {
         style={{
           position: "absolute",
           top: 0,
-          left: -1200
+          left: -1200,
         }}
       />
-      <section
-        className={creditStyles.polaroidContainer}
-      >
+      <section className={creditStyles.polaroidContainer}>
         <article
           className={creditStyles.polaroid}
           style={{
@@ -58,7 +66,7 @@ const ConclusionDesktop = () => {
             right: 380,
             rotate: "-10deg",
             animation: `3s ease-in-out 0s infinite alternate-reverse ${creditStyles.swing}`,
-            transformOrigin: "top right"
+            transformOrigin: "top right",
           }}
         >
           <img src={cat1} />
@@ -91,14 +99,23 @@ const ConclusionDesktop = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 2, ease: easeInOut }}
           style={{
-            marginBottom: "36px"
+            marginBottom: "36px",
           }}
-        >Still, the Cateneans persist, with many still wandering around campus, bringing comfort and joy to those they encounter. Their mere presence in the hallways, paths, on top of tables, or peeking from corners deeply resonates with many Ateneans.</motion.p>
+        >
+          Still, the Cateneans persist, with many still wandering around campus,
+          bringing comfort and joy to those they encounter. Their mere presence
+          in the hallways, paths, on top of tables, or peeking from corners
+          deeply resonates with many Ateneans.
+        </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 2, ease: easeInOut, delay: 0.75 }}
-        >“Seeing and interacting with [the cats] distracts [the faculty] from [the] stress … [it] makes the work worthwhile,” says Buenafe. Truly, the impact of this four-legged community is felt, and they have become intertwined with the daily happenings of the regular Atenean.
+        >
+          “Seeing and interacting with [the cats] distracts [the faculty] from
+          [the] stress … [it] makes the work worthwhile,” says Buenafe. Truly,
+          the impact of this four-legged community is felt, and they have become
+          intertwined with the daily happenings of the regular Atenean.
         </motion.p>
       </motion.section>
       <motion.section
@@ -117,26 +134,34 @@ const ConclusionDesktop = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 2, ease: easeInOut }}
-        >The Cateneans hold a cherished place in the hearts of many Ateneans, completing the tapestry of Loyola’s vibrant campus culture. These furry, feline friends have the unique ability to brighten days and give meaning to the service of the devoted individuals, like Doc Buenafe, Miss Rampola, Miss Haberia, and Sir June* who nurture them with unwavering compassion and care.
+        >
+          The Cateneans hold a cherished place in the hearts of many Ateneans,
+          completing the tapestry of Loyola’s vibrant campus culture. These
+          furry, feline friends have the unique ability to brighten days and
+          give meaning to the service of the devoted individuals, like Doc
+          Buenafe, Miss Rampola, Miss Haberia, and Sir June* who nurture them
+          with unwavering compassion and care.
         </motion.p>
       </motion.section>
-      <img
+      <motion.img
         src={paopao}
+        whileInView={bounceAnimation.whileInView}
+        transition={bounceAnimation.transition}
         style={{
           position: "relative",
           width: 400,
           zIndex: 50,
-          right: 130
+          right: 130,
         }}
       />
       <section
         className={creditStyles.bylines}
         style={{
-          marginTop: "10vh",
+          marginTop: "15vh",
           marginRight: 100,
           width: "70ch",
           alignSelf: "start",
-          padding: 0
+          padding: 0,
         }}
       >
         {bylines.map(({ header, bylines }) => (
@@ -146,8 +171,8 @@ const ConclusionDesktop = () => {
           </>
         ))}
       </section>
-    </section >
+    </section>
   );
-}
+};
 
 export default ConclusionDesktop;

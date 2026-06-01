@@ -19,12 +19,12 @@ function useHorizontalScroll() {
   useEffect(() => {
     const el = elRef.current;
     if (el) {
-      const onWheel = e => {
+      const onWheel = (e) => {
         if (e.deltaY == 0) return;
         e.preventDefault();
         el.scrollTo({
           left: el.scrollLeft + e.deltaY * 2,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       };
       el.addEventListener("wheel", onWheel);
@@ -39,10 +39,13 @@ const ArticleMain = () => {
   const isDesktop = useMediaQuery({ query: "(min-width: 501px)" });
   if (isDesktop) {
     return (
-      <div ref={scrollRef} style={{
-        overflowX: "auto",
-        overflowY: "clip"
-      }}>
+      <div
+        ref={scrollRef}
+        style={{
+          overflowX: "auto",
+          overflowY: "clip",
+        }}
+      >
         <main className={styles.main}>
           <IntroDesktop />
           <FurmiliarFacesDesktop />
@@ -56,11 +59,6 @@ const ArticleMain = () => {
   return (
     <main className={styles.main}>
       <IntroMobile />
-      <FurmiliarFacesMobile />
-      <InLonelinessMobile />
-      <InCaringMobile />
-      <ComeAndGoMobile />
-      <ConclusionMobile />
     </main>
   );
 };

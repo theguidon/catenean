@@ -8,7 +8,9 @@ import FurmiliarFacesDesktop from "../components/mainarticle/FurmiliarFacesDeskt
 import DedicatedToTheirCareDesktop from "../components/mainarticle/DedicatedToTheirCare.jsx";
 import DedicatedToTheirCareMobile from "../components/mainarticle/DedicatedToTheirCareMobile.jsx";
 import ComeAndGoDesktop from "../components/mainarticle/ComeAndGoDesktop.jsx";
+import ComeAndGoMobile from "../components/mainarticle/ComeAndGoMobile.jsx";
 import ConclusionDesktop from "../components/mainarticle/ConclusionDesktop.jsx";
+import ConclusionMobile from "../components/mainarticle/ConclusionMobile.jsx";
 
 // https://stackoverflow.com/questions/56153797/horizontal-scrolling-on-react-component-using-vertical-mouse-wheel
 function useHorizontalScroll() {
@@ -50,6 +52,7 @@ const ArticleMain = () => {
           <ComeAndGoDesktop />
           <ConclusionDesktop />
         </main>
+        s
       </div>
     );
   }
@@ -58,6 +61,8 @@ const ArticleMain = () => {
       <IntroMobile />
       <FurmiliarFacesMobile />
       <DedicatedToTheirCareMobile />
+      <ComeAndGoMobile />
+      <ConclusionMobile />
     </main>
   );
 };

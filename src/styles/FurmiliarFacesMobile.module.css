@@ -1,123 +1,144 @@
 @import url("../fonts.css");
 
 .main {
-	width: 100%;
-	min-height: 100dvh;
-	position: relative;
-	overflow-x: clip;
+  width: 100%;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: clip;
 }
 
 .section,
 .article {
-	min-height: 50dvh;
-	flex-shrink: 0;
+  min-height: 50dvh;
+  flex-shrink: 0;
 }
 
 .section {
-	position: relative;
+  position: relative;
 }
 
 .bush {
-	position: absolute;
-	z-index: 2;
-	width: 20%;
-	bottom: 13vw;
+  position: absolute;
+  z-index: 2;
+  width: 20%;
+  bottom: 13vw;
 }
 
-
 .heading h3 {
-	font-size: clamp(2rem, calc(7vw + 1rem), 5rem);
-	font-weight: 700;
-	font-family: "Solway";
-	text-align: center;
-	color: #E07329;
-	-webkit-text-stroke: clamp(0.5rem, calc(0.8rem + 0.2vw), 3rem) #F9F4EB;
-	paint-order: stroke fill;
-	filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
-	line-height: 110%;
-	letter-spacing: -2.4px;
-	padding: 1.7em 0 1.5em 0;
+  font-size: clamp(2rem, calc(7vw + 1rem), 5rem);
+  font-weight: 700;
+  font-family: "Solway";
+  text-align: center;
+  color: #e07329;
+  -webkit-text-stroke: clamp(0.5rem, calc(0.8rem + 0.2vw), 3rem) #f9f4eb;
+  paint-order: stroke fill;
+  filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
+  line-height: 110%;
+  letter-spacing: -2.4px;
+  padding: 1.7em 0 1.5em 0;
 }
 
 .main p {
-	color: #522222;
-	font-family: "Rethink Sans";
-	padding: 2em 3em 0em 3em;
-	position: relative;
-	font-size: 4vw;
-	font-weight: 400;
+  color: #522222;
+  font-family: "Rethink Sans";
+  padding: 2em 3em 0em 3em;
+  position: relative;
+  font-size: 4vw;
+  font-weight: 400;
 }
 
-.main p+p+p {
-	padding-bottom: 2em;
+.main p + p + p {
+  padding-bottom: 2em;
 }
 
 .helloCats {
-	position: relative;
-	bottom: 0;
-	width: 70vw;
-	z-index: 6;
-	display: flex;
-	justify-content: center;
-	aspect-ratio: 393/420;
-	background: center / contain no-repeat url("/assets/cat-speech.svg");
+  position: relative;
+  bottom: 0;
+  width: 70vw;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 393/420;
+  background: center / contain no-repeat url("/assets/cat-speech.svg");
 }
 
 .helloCats h4 {
-	position: absolute;
-	color: #2074A4;
-	font-weight: 400;
-	font-family: 'Cedarville Cursive Regular';
-	font-size: 7.5vw;
-	left: 36vw;
-	top: 6vw;
+  position: absolute;
+  color: #2074a4;
+  font-weight: 400;
+  font-family: "Cedarville Cursive Regular";
+  font-size: 7.5vw;
+  left: 36vw;
+  top: 6vw;
 }
 
 .article {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-
 .quoteBackground {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: rgba(243, 231, 204, 0.4);
-	width: 90%;
-	border-radius: 50%;
-	z-index: 0;
-	bottom: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(243, 231, 204, 0.4);
+  width: 90%;
+  border-radius: 50%;
+  z-index: 0;
+  bottom: 0;
 }
 
 .quote {
-	position: absolute;
-	inset: 50% auto auto 50%;
-	translate: -50% -50%;
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50%;
 }
 
 .quote p {
-	padding: 0;
+  padding: 0;
 }
 
 .quote h5 {
-	color: #E07329;
-	font-size: 3em;
-	font-family: "Outfit";
-	z-index: 2;
-	position: absolute;
+  color: #e07329;
+  font-size: 3em;
+  font-family: "Outfit";
+  z-index: 2;
+  position: absolute;
 }
 
 .quote h5:first-child {
-	inset: -2rem auto auto -2rem;
+  inset: -2rem auto auto -2rem;
 }
 
 .quote h5:nth-child(3) {
-	inset: auto -2rem 2.5rem auto;
+  inset: auto -2rem 2.5rem auto;
 }
 
-.quote br+p {
-	color: black;
-	font-size: 2vw;
+.quote br + p {
+  color: black;
+  font-size: 2vw;
+}
+
+.polaroid {
+  background: #ffffff;
+  width: 70vw;
+  padding: 3% 3%;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transform-origin: top center;
+}
+
+.polaroid > * {
+  width: 100%;
+}
+
+.polaroid > p {
+  text-align: center;
+  margin: 0;
+  font-family: "Cedarville Cursive Regular";
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: #106ea2;
+  padding: 0;
 }

@@ -15,21 +15,35 @@ export default function IntroMobile() {
   const fadeVariants = {
     hidden: {
       opacity: 0,
-      transition: { duration: 1, ease: easeInOut }
+      transition: { duration: 1, ease: easeInOut },
     },
     show: {
       opacity: 1,
-      transition: { duration: 1, ease: easeInOut }
+      transition: { duration: 1, ease: easeInOut },
     },
-  }
+  };
   return (
     <div id="start" className={styles.main}>
       <div className={`${styles.section} ${styles.section1}`}>
-        <motion.div initial="hidden" animate="show" transition={{ delayChildren: stagger(0.8) }} className={styles.text}>
-          <motion.img variants={fadeVariants} src={ellipses1} alt="" className={styles.ellipses} />
-          <motion.p variants={fadeVariants} >
-            NOT EVERY home has a furry feline companion, but within the Loyola
-            Heights campus, one is certain to encounter&nbsp;them.
+        <motion.div
+          initial="hidden"
+          animate="show"
+          transition={{ delayChildren: stagger(0.8) }}
+          className={styles.text}
+        >
+          <motion.img
+            variants={fadeVariants}
+            src={ellipses1}
+            alt=""
+            className={styles.ellipses}
+          />
+          <motion.p variants={fadeVariants} style={{ marginBottom: "1em" }}>
+            TINY PAWS and swaying tails are a common sight in nearly every
+            hallway and corridor of the Ateneo.
+          </motion.p>
+          <motion.p variants={fadeVariants}>
+            The Cateneans—as the community has affectionately called the campus
+            cats—blend seamlessly among chattering students.
           </motion.p>
         </motion.div>
         <div className={styles.graphics}>
@@ -59,24 +73,11 @@ export default function IntroMobile() {
         <div className={styles.text}>
           <img src={ellipses2} alt="" className={styles.ellipses} />
           <p>
-            The Ateneo’s cast of cats are endearingly monikered as the
-            “Cateneans”. They quietly comfort stressed students and employees
-            with a single glance, stretch leisurely across guard’s desks,
-            scamper casually along the walkways, or nap on the cafeteria chairs
-            next to their human companions without a care in the&nbsp;world.
-          </p>
-          <br />
-          <p>
-            Those who have pets know what it is like to show their animal
-            friends off, to go above and beyond for them, to maintain their
-            well-being, and to miss them sorely after long stretches
-            of&nbsp;separation.
-          </p>
-          <br />
-          <p>
-            In an enduring display of love, students, faculty, and staff alike
-            show that love for animals is just as important as love for
-            anyone&nbsp;else.
+            Amid the daily bustle of the Loyola Heights campus, the Cateneans
+            take solace in the tiniest nooks and crannies of buildings. These
+            feline friends serve as an embodiment of comfort for Ateneans,
+            earning a special place in the hearts of students, faculty, and
+            staff alike.
           </p>
         </div>
         <div className={styles.graphics}>
@@ -95,7 +96,7 @@ export default function IntroMobile() {
             src={photo}
             alt=""
             style={{
-              zIndex: 30
+              zIndex: 30,
             }}
             className={`${styles.polaroid} ${styles.catPhoto}`}
           />

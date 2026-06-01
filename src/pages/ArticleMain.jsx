@@ -59,6 +59,7 @@ const ArticleMain = () => {
   return (
     <main className={styles.main}>
       <IntroMobile />
+      <FurmiliarFacesMobile />
     </main>
   );
 };

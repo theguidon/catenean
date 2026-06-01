@@ -1,6 +1,9 @@
 import sectionStyles from "../../styles/FurmiliarFacesMobile.module.css";
 import styles from "../../styles/FurmiliarFacesDesktop.module.css";
 import CTC from "../../assets/images/location-ctc-som-building.svg";
+import highFiveHeartBackground from "../../assets/images/highfive-heart-background.svg";
+import highFiveRightHand from "../../assets/images/highfive-right-hand.svg";
+import highFiveLeftPaw from "../../assets/images/highfive-left-paw.svg";
 import Faura from "../../assets/images/buildings/no-shadow/faura.svg";
 import Arete from "../../assets/images/buildings/no-shadow/arete.svg";
 import Schmitt from "../../assets/images/buildings/no-shadow/schmitt.svg";
@@ -8,8 +11,32 @@ import MVP from "../../assets/images/buildings/no-shadow/mvp.svg";
 import Grass from "../../assets/images/grass.svg";
 import Dongyan from "../../assets/images/cats/dongyan.png";
 import Barbie from "../../assets/images/cats/barbie.png";
+import Ellipses from "../../components/ellipses";
+import { useEffect, useRef } from "react";
 
 const FurmiliarFacesMobile = () => {
+  const highFiveContainerRef = useRef(null);
+  const highFiveWrapperRef = useRef(null);
+
+  useEffect(() => {
+    let played = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !played) {
+            highFiveContainerRef.current.classList.add(styles.active);
+            highFiveWrapperRef.current.classList.add(styles.active);
+            played = true;
+          }
+        });
+      },
+      { threshold: 1 },
+    );
+    if (highFiveContainerRef.current)
+      observer.observe(highFiveContainerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <main className={sectionStyles.main}>
@@ -184,6 +211,41 @@ const FurmiliarFacesMobile = () => {
             style={{ position: "absolute", bottom: "0", width: "101dvw" }}
           />
         </div>
+        <Ellipses
+          style={{
+            marginTop: "32px",
+            padding: "10vh 2%",
+            width: "150%",
+            position: "relative",
+            right: "25%",
+          }}
+        >
+          <section>
+            <p>
+              However, as broody and aloof as some Cateneans can be, they
+              certainly do not thrive alone without human interference. In
+              reality, some members of the community have taken a personal
+              dedication to devote special love and care for these campus cats.
+            </p>
+            <div
+              className={styles.highFiveWrapper}
+              ref={highFiveWrapperRef}
+              style={{ marginTop: "32px" }}
+            >
+              <div
+                style={{ height: "30vh" }}
+                className={styles.highFiveContainer}
+                ref={highFiveContainerRef}
+                e
+              >
+                <img src={highFiveHeartBackground} />
+                <img src={highFiveRightHand} />
+                <img src={highFiveLeftPaw} />
+              </div>
+              <p>give me a high five!</p>
+            </div>
+          </section>
+        </Ellipses>
       </main>
     </>
   );

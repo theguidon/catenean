@@ -13,10 +13,22 @@ import Dongyan from "../../assets/images/cats/dongyan.png";
 import Barbie from "../../assets/images/cats/barbie.png";
 import Ellipses from "../../components/ellipses";
 import { useEffect, useRef } from "react";
+import { motion, spring } from "motion/react";
 
 const FurmiliarFacesMobile = () => {
   const highFiveContainerRef = useRef(null);
   const highFiveWrapperRef = useRef(null);
+  const bounceAnimation = {
+    whileInView: {
+      scaleY: [0, 1.5, 1],
+    },
+    transition: {
+      type: spring,
+      stiffness: 100,
+      animationDuration: 0.2,
+      bounce: 0.2,
+    },
+  };
 
   useEffect(() => {
     let played = false;
@@ -43,16 +55,19 @@ const FurmiliarFacesMobile = () => {
         <div className={sectionStyles.sectionContainer}>
           <div className={`${sectionStyles.heading} ${sectionStyles.section}`}>
             <h3>Fur-miliar faces</h3>
-            <img
+            <motion.img
               src={CTC}
+              whileInView={bounceAnimation.whileInView}
+              transition={bounceAnimation.transition}
               style={{
                 position: "absolute",
                 bottom: "13vw",
                 left: "20vw",
                 zIndex: "0",
                 width: "60%",
+                transformOrigin: "bottom",
               }}
-            ></img>
+            />
             <img
               src={Grass}
               style={{ position: "absolute", bottom: "0", width: "101dvw" }}
@@ -73,8 +88,8 @@ const FurmiliarFacesMobile = () => {
             <p>
               In the lively MVP Center, the friendly Dongyan is often seen
               keeping watch by the guard’s table. Not far away, the sassy
-              Barbie, born around the time the movie
-              <a href="https://www.imdb.com/title/tt1517268/">Barbie</a>(2023)
+              Barbie, born around the time the movie{" "}
+              <a href="https://www.imdb.com/title/tt1517268/">Barbie</a> (2023)
               was released, once had a brother named Oppenheimer who sadly
               passed away as a kitten. Yet, despite being alone, Barbie is never
               lonely, spending most of her days exploring the
@@ -131,16 +146,19 @@ const FurmiliarFacesMobile = () => {
             minHeight: "30vh",
           }}
         >
-          <img
+          <motion.img
             src={MVP}
+            whileInView={bounceAnimation.whileInView}
+            transition={bounceAnimation.transition}
             style={{
               position: "absolute",
               bottom: "13vw",
               left: "20vw",
               zIndex: "0",
               width: "60%",
+              transformOrigin: "bottom",
             }}
-          ></img>
+          />
           <img
             src={Grass}
             style={{ position: "absolute", bottom: "0", width: "101dvw" }}
@@ -164,16 +182,19 @@ const FurmiliarFacesMobile = () => {
             minHeight: "30vh",
           }}
         >
-          <img
+          <motion.img
             src={Arete}
+            whileInView={bounceAnimation.whileInView}
+            transition={bounceAnimation.transition}
             style={{
               position: "absolute",
               bottom: "13vw",
               left: "10vw",
               zIndex: "0",
               width: "80%",
+              transformOrigin: "bottom",
             }}
-          ></img>
+          />
           <img
             src={Grass}
             style={{ position: "absolute", bottom: "0", width: "101dvw" }}
@@ -196,16 +217,19 @@ const FurmiliarFacesMobile = () => {
             minHeight: "35vh",
           }}
         >
-          <img
+          <motion.img
             src={Schmitt}
+            whileInView={bounceAnimation.whileInView}
+            transition={bounceAnimation.transition}
             style={{
               position: "absolute",
               bottom: "13vw",
               left: "20vw",
               zIndex: "0",
               width: "60%",
+              transformOrigin: "bottom",
             }}
-          ></img>
+          />
           <img
             src={Grass}
             style={{ position: "absolute", bottom: "0", width: "101dvw" }}

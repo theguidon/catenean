@@ -55,7 +55,7 @@ const ComeAndGo = () => {
           committed to ensuring that the Cateneans experience a good quality of
           life while they are around.
         </p>
-        <p>
+        <p style={{ marginBottom: "2em" }}>
           Because of this care, the loss of any Catenean is deeply felt by the
           whole Ateneo community. When beloved Schmitt Hall resident Paopao lost
           his life in a vehicular accident, an outpouring of support was seen on

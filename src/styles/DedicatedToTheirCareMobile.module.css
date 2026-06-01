@@ -1,0 +1,38 @@
+.container,
+.heartSection {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+}
+
+.container h1 {
+  font-size: 3em;
+  width: 100vw;
+  font-weight: 700;
+  font-family: "Solway", serif;
+  text-align: center;
+  color: #e07329;
+  -webkit-text-stroke: 18px white;
+  paint-order: stroke fill;
+  filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
+}
+
+.container * {
+  z-index: 2;
+}
+
+.container p {
+  padding: 2em 3em 0 3em;
+}
+
+.circleBG {
+  height: 80%;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 10%;
+  background: rgba(242, 171, 149, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+}

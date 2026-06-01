@@ -236,7 +236,6 @@ const FurmiliarFacesMobile = () => {
                 style={{ height: "30vh" }}
                 className={styles.highFiveContainer}
                 ref={highFiveContainerRef}
-                e
               >
                 <img src={highFiveHeartBackground} />
                 <img src={highFiveRightHand} />

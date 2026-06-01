@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import { useRef, useEffect } from "react";
 import FurmiliarFacesDesktop from "../components/mainarticle/FurmiliarFacesDesktop.jsx";
 import DedicatedToTheirCareDesktop from "../components/mainarticle/DedicatedToTheirCare.jsx";
+import DedicatedToTheirCareMobile from "../components/mainarticle/DedicatedToTheirCareMobile.jsx";
 import ComeAndGoDesktop from "../components/mainarticle/ComeAndGoDesktop.jsx";
 import ConclusionDesktop from "../components/mainarticle/ConclusionDesktop.jsx";
 
@@ -56,6 +57,7 @@ const ArticleMain = () => {
     <main className={styles.main}>
       <IntroMobile />
       <FurmiliarFacesMobile />
+      <DedicatedToTheirCareMobile />
     </main>
   );
 };

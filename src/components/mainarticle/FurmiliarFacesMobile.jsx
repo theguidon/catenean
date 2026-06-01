@@ -1,8 +1,9 @@
 import sectionStyles from "../../styles/FurmiliarFacesMobile.module.css";
+import styles from "../../styles/FurmiliarFacesDesktop.module.css";
 import CTC from "../../assets/images/location-ctc-som-building.svg";
-import Bush from "../../assets/images/bush.svg";
 import Grass from "../../assets/images/grass.svg";
-import { color, easeInOut, motion } from "motion/react";
+import Dongyan from "../../assets/images/cats/dongyan.png";
+import Barbie from "../../assets/images/cats/barbie.png";
 
 const FurmiliarFacesMobile = () => {
   return (
@@ -50,6 +51,49 @@ const FurmiliarFacesMobile = () => {
             </p>
           </article>
         </div>
+        <section
+          style={{
+            width: "100%",
+            padding: "0%",
+            display: "flex",
+            flexFlow: "row nowrap",
+            justifyContent: "center",
+          }}
+        >
+          <article
+            className={sectionStyles.polaroid}
+            style={{
+              transform: "rotate(10deg)",
+              left: "5vw",
+            }}
+          >
+            <img src={Barbie} alt="" />
+            <p>Barbie</p>
+          </article>
+          <article
+            className={sectionStyles.polaroid}
+            style={{
+              transform: "rotate(-10deg)",
+              right: "5vw",
+              bottom: "12px",
+            }}
+          >
+            <img src={Dongyan} alt="" />
+            <p>Dongyan</p>
+          </article>
+        </section>
+        <p style={{ marginTop: "2.5em" }}>
+          Meanwhile, Faura Hall—and, by extension, the SOM Forest—is home to a
+          lively cast of adventurous Cateneans.
+        </p>
+        <p>
+          Some of Faura’s residents include Blue Eyes, the only recorded cat on
+          campus with heterochromia. Blue Eyes patrols the area alongside
+          Bardagul, whose name comes from his tendency to get into catfights.
+          Then there’s Tarzan, a feral cat who likes to jump on trees to avoid
+          people. All of these residents are lovingly cared for by June,* a
+          maintenance staff member of the Ateneo.
+        </p>
       </main>
     </>
   );

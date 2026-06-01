@@ -86,7 +86,7 @@ const FurmiliarFacesDesktop = () => {
           style={{
             position: "absolute",
             bottom: "10vh",
-            height: "35vh",
+            height: "35vh:",
             transformOrigin: "bottom center",
           }}
         />

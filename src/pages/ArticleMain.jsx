@@ -1,11 +1,7 @@
 import styles from "../styles/ArticleMain.module.css";
 import IntroDesktop from "../components/intro/IntroDesktop";
 import IntroMobile from "../components/intro/IntroMobile";
-import InLonelinessMobile from "../components/mainarticle/InLonelinessMobile";
 import FurmiliarFacesMobile from "../components/mainarticle/FurmiliarFacesMobile.jsx";
-import InCaringMobile from "../components/mainarticle/InCaringMobile";
-import ComeAndGoMobile from "../components/mainarticle/ComeAndGoMobile";
-import ConclusionMobile from "../components/mainarticle/ConclusionMobile";
 import { useMediaQuery } from "react-responsive";
 import { useRef, useEffect } from "react";
 import FurmiliarFacesDesktop from "../components/mainarticle/FurmiliarFacesDesktop.jsx";

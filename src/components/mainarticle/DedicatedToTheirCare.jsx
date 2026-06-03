@@ -1,13 +1,12 @@
 import Ellipses from "../ellipses.jsx";
 import ThreeCats from "../../assets/images/three-cats.png";
-import Schmitt from "../../assets/images/buildings/no-shadow/schmitt.svg";
 import Paopao from "../../assets/images/paopao.png";
 import FlowerGroup from "../../assets/images/flower-group.svg";
 import Mag1 from "../../assets/images/mag1.png";
 import Mag2 from "../../assets/images/mag2.png";
 import styles from "../../styles/FurmiliarFacesDesktop.module.css";
 import colStyles from "../../styles/DedicatedToTheirCare.module.css";
-import { motion, MotionConfig, spring, stagger } from "motion/react";
+import { motion, spring, stagger } from "motion/react";
 
 const QuoteCard = ({ style, children }) => {
   const quoteVariants = {
@@ -136,15 +135,16 @@ const DedicatedToTheirCareDesktop = () => {
       <section>
         <section className={`${styles.textSection}`}>
           <p>
-            One such organization at the forefront of safeguarding our
-            catmmunity is{" "}
-            <a href="">Ateneans Guided and Inspired by Love for Animals</a>{" "}
-            (AGILA). As the primary animal welfare organization in the Ateneo,
-            their work encompasses a wide range of activities, including
-            managing the University’s cat population through the{" "}
-            <a href="">Trap-Neuter-Vaccinate-Return initiative</a>, spay and
-            neuter programs, fostering and adoption, veterinary intervention,
-            and updating of the cat census known as the “CATalog.”
+            One such organization at the forefront of safeguarding our{" "}
+            <em>catmmunity</em> is AGILA. As the primary animal welfare
+            organization in the Ateneo, their work encompasses a wide range of
+            activities, including managing the University’s cat population
+            through the{" "}
+            <a href="https://bestfriends.org/pet-care-resources/trap-neuter-vaccinate-return-tnvr-cats-faqs">
+              Trap-Neuter-Vaccinate-Return initiative
+            </a>
+            , spay and neuter programs, fostering and adoption, veterinary
+            intervention, and updating of the cat census known as the “CATalog.”
           </p>
         </section>
         <section
@@ -185,7 +185,10 @@ const DedicatedToTheirCareDesktop = () => {
               Beyond these, they also advocate for other animals through
               educational seminars and partnerships with like-minded
               organizations such as the{" "}
-              <a href="">The Philippine Animal Welfare Society</a> (PAWS).
+              <a href="https://paws.org.ph/">
+                The Philippine Animal Welfare Society
+              </a>{" "}
+              (PAWS).
             </p>
             <p>
               An animal lover herself, AGILA President Svetlana Haberia leads
@@ -224,7 +227,7 @@ const DedicatedToTheirCareDesktop = () => {
             states Buenafe.
           </p>
           <p>
-            Sharing this level of concern for the cats’ safety and care is PUNLA
+            Sharing this level of concern for the cats’ safety and care is Punla
             formation Pauline Rampola, who dedicates part of her day to caring
             for resident MVP cats Dongyan and Barbie. Though a dog person at
             heart, she still extends the same love and affection to the

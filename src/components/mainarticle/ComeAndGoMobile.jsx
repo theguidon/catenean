@@ -1,11 +1,9 @@
 import styles from "../../styles/ComeAndGoMobile.module.css";
-import building from "../../assets/images/location-faura-building.svg";
 import cloud1 from "../../assets/images/cloud1.svg";
 import cloud2 from "../../assets/images/cloud2.svg";
 import cat1 from "../../assets/images/cats/17.png";
 import FauraCats from "../../assets/images/fauracats.png";
 import { easeInOut, motion } from "motion/react";
-import heart1 from "../../assets/images/heart1.svg";
 
 const ComeAndGo = () => {
   const cloudVariants = {

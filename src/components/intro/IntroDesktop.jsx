@@ -25,8 +25,9 @@ export default function IntroDesktop() {
             nearly every hallway and corridor of the Ateneo.
           </p>
           <p style={{ margin: 0, padding: 0 }}>
-            The Cateneans&mdash;as the community has affectionately called the
-            campus cats&mdash;blend seamlessly among chattering students.
+            The <em>Cateneans</em>&mdash;as the community has affectionately
+            called the campus cats&mdash;blend seamlessly among chattering
+            students.
           </p>
         </Ellipses>
         <div className={styles.graphics}>

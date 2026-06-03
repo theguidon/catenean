@@ -142,8 +142,11 @@ const DedicatedToTheirCareMobile = () => {
         to refrain from touching them for the cats’ health.
       </p>
       <section className={styles.heartSection}>
-        <img
+        <motion.img
           src={HeartCatBig1}
+          initial={{ scale: 1 }}
+          animate={{ scale: 0.92 }}
+          transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
           alt=""
           style={{ width: "80%", padding: "32px 0" }}
         />
@@ -166,8 +169,11 @@ const DedicatedToTheirCareMobile = () => {
           she still extends the same love and affection to the Cateneans, who
           have since become the mascots of the sprawling student center.
         </p>
-        <img
+        <motion.img
           src={HeartCatBig2}
+          initial={{ scale: 1 }}
+          animate={{ scale: 0.92 }}
+          transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
           alt=""
           style={{ width: "80%", padding: "32px 0" }}
         />

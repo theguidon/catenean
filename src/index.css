@@ -7,15 +7,20 @@
   scroll-behavior: smooth;
 }
 
-a {
+a,
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
+  color: #2074a4;
 }
 
 html {
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
 }
 
 .snapContainer {
-  scroll-snap-align: center;
-  width: 80vw;
+  scroll-snap-align: center center;
+  scroll-snap-stop: always;
+  width: 100vw;
 }

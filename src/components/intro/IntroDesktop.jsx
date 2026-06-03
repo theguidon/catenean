@@ -61,16 +61,6 @@ export default function IntroDesktop() {
           </p>
         </Ellipses>
         <div className={styles.graphics}>
-          <img
-            src={photos1}
-            alt=""
-            className={`${styles.polaroid} ${styles.catPhotos1}`}
-          />
-          <img
-            src={photos2}
-            alt=""
-            className={`${styles.polaroid} ${styles.catPhotos2}`}
-          />
           <img src={hearts} alt="" className={styles.hearts} />
           <img
             src={photo}
@@ -96,6 +86,18 @@ export default function IntroDesktop() {
           }}
         />
         <img src={RBR} alt="" className={styles.RBR} />
+        <div className={styles.photos}>
+          <img
+            src={photos1}
+            alt=""
+            className={`${styles.polaroid} ${styles.catPhotos1}`}
+          />
+          <img
+            src={photos2}
+            alt=""
+            className={`${styles.polaroid} ${styles.catPhotos2}`}
+          />
+        </div>
       </div>
     </div>
   );

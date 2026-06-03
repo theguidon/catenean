@@ -1,5 +1,6 @@
 section.container {
-  min-width: 100vw;
+  min-width: min-content;
+  width: min-content;
   height: 100vh;
   min-height: 100vh;
   max-height: 100vh;
@@ -9,8 +10,8 @@ section.container {
 }
 
 .container h1 {
-  font-size: 5em;
-  width: 100vw;
+  font-size: 7em;
+  width: 80vw;
   font-weight: 700;
   font-family: "Solway", serif;
   text-align: center;

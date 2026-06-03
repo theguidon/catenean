@@ -10,7 +10,6 @@ import Barbie from "../../assets/images/cats/barbie.png";
 import RedFlower from "../../assets/images/red-flower.svg";
 import YellowFlower from "../../assets/images/yellow-flower.svg";
 import YellowFlower2 from "../../assets/images/yellow-flower-2.svg";
-import FlowerGroup from "../../assets/images/flower-group.svg";
 import FauraCats from "../../assets/images/fauracats.png";
 import highFiveHeartBackground from "../../assets/images/highfive-heart-background.svg";
 import highFiveRightHand from "../../assets/images/highfive-right-hand.svg";
@@ -103,9 +102,10 @@ const FurmiliarFacesDesktop = () => {
           <p>
             In the lively MVP Center, the friendly Dongyan is often seen keeping
             watch by the guard&apos;s table. Not far away, the sassy Barbie,
-            born around the time the movie <a href="">Barbie</a> (2023) was
-            released, once had a brother named Oppenheimer who sadly passed away
-            as a kitten. Yet, despite being alone, Barbie is never lonely,
+            born around the time the movie{" "}
+            <a href="https://www.imdb.com/title/tt1517268/">Barbie</a> (2023)
+            was released, once had a brother named Oppenheimer who sadly passed
+            away as a kitten. Yet, despite being alone, Barbie is never lonely,
             spending most of her days exploring the organization&apos;s rooms.
           </p>
         </section>
@@ -188,11 +188,15 @@ const FurmiliarFacesDesktop = () => {
           </p>
           <p>
             Some of Faura&apos;s residents include Blue Eyes, the only recorded
-            cat on campus with <a href="">heterochromia</a>. Blue Eyes patrols
-            the area alongside Bardagul, whose name comes from his tendency to
-            get into catfights. Then there’s Tarzan, a feral cat who likes to
-            jump on trees to avoid people. All of these residents are lovingly
-            cared for by June,* a maintenance staff member of the Ateneo.
+            cat on campus with{" "}
+            <a href="https://lawndalevets.com/the-eyes-have-it-a-discussion-about-heterochromia/">
+              heterochromia
+            </a>
+            . Blue Eyes patrols the area alongside Bardagul, whose name comes
+            from his tendency to get into catfights. Then there’s Tarzan, a
+            feral cat who likes to jump on trees to avoid people. All of these
+            residents are lovingly cared for by June,* a maintenance staff
+            member of the Ateneo.
           </p>
         </section>
         <section

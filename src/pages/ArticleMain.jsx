@@ -22,7 +22,7 @@ function useHorizontalScroll() {
         if (e.deltaY == 0) return;
         e.preventDefault();
         el.scrollTo({
-          left: el.scrollLeft + e.deltaY * 5,
+          left: el.scrollLeft + e.deltaY * 4,
           behavior: "smooth",
         });
       };
@@ -52,7 +52,6 @@ const ArticleMain = () => {
           <ComeAndGoDesktop />
           <ConclusionDesktop />
         </main>
-        s
       </div>
     );
   }

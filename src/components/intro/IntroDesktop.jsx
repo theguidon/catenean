@@ -1,6 +1,5 @@
 import styles from "../../styles/IntroDesktop.module.css";
 import cat from "../../assets/images/Cat.svg";
-import ellipses2 from "../../assets/images/intro/ellipses2.svg";
 import photos1 from "../../assets/images/intro/photos1.png";
 import photos2 from "../../assets/images/intro/photos2.png";
 import photo from "../../assets/images/intro/photo.png";
@@ -8,7 +7,7 @@ import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
-import { easeIn, easeInOut, easeOut, motion, stagger } from "motion/react";
+import { easeInOut, easeOut, motion } from "motion/react";
 import Ellipses from "../ellipses";
 
 export default function IntroDesktop() {

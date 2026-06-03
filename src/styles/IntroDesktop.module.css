@@ -149,7 +149,7 @@
 
 .RBR {
   position: absolute;
-  left: -2vw;
+  left: -10vw;
   bottom: -5%;
   z-index: 10;
 }
@@ -160,6 +160,6 @@
 
 .photos {
   position: absolute;
-  left: 100vw;
+  left: 90vw;
   top: 12vh;
 }

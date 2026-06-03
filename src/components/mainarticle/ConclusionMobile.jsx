@@ -2,9 +2,8 @@ import creditStyles from "../../styles/mainCredits.module.css";
 import envelope from "../../assets/images/letter.svg";
 import cat1 from "../../assets/images/cats/10.jpeg";
 import cat2 from "../../assets/images/cats/8.jpeg";
-import backArrow from "../../assets/images/Union.svg";
 import back from "../../assets/images/back_to_start.svg";
-import { easeInOut, motion, MotionConfig, stagger } from "motion/react";
+import { easeInOut, motion, MotionConfig } from "motion/react";
 import bylines from "../../data/bylines.json";
 import { NavLink } from "react-router";
 
@@ -46,54 +45,58 @@ const Conclusion = () => {
         paddingTop: "15vw",
       }}
     >
-      <MotionConfig
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+      <motion.img
+        src={envelope}
+        initial={{ opacity: 0, y: 20, rotate: -8 }}
+        whileInView={{ opacity: 1, y: 0, rotate: -10 }}
         transition={{ duration: 1, ease: easeInOut, delay: 0.5 }}
-        viewport={{ once: true }}
+        className={creditStyles.envelope}
+      />
+      <motion.section
+        initial={{ opacity: 0, y: 20, rotate: 3 }}
+        whileInView={{ opacity: 1, y: 0, rotate: 5 }}
+        transition={{ duration: 1, ease: easeInOut, delay: 1 }}
+        className={creditStyles.letter}
+        style={{ width: "120%" }}
       >
-        <motion.img
-          src={envelope}
-          className={creditStyles.envelope}
-          style={{ rotate: "-10deg" }}
-        />
-        <motion.section
-          className={creditStyles.letter}
-          style={{ rotate: "5deg", width: "120%" }}
-        >
-          <p>
-            In spite of the challenges to their welfare, the Cateneans persist,
-            with many still wandering around campus, bringing comfort and joy to
-            those they encounter. Their mere presence in the hallways, paths, on
-            top of tables, or peeking from corners deeply resonates with many
-            Ateneans.
-          </p>
-          <p>
-            “Seeing and interacting with [the cats] distracts [the faculty] from
-            [the] stress … [it] makes the work worthwhile,” says Buenafe. Truly,
-            the impact of this four-legged community is felt, and they have
-            become intertwined with the daily happenings of the regular Atenean.
-          </p>
-          <p>
-            The Cateneans hold a cherished place in the hearts of many Ateneans,
-            completing the tapestry of Loyola’s vibrant campus culture. These
-            furry, feline friends have the unique ability to brighten days and
-            give meaning to the service of the devoted individuals, like
-            Buenafe, Rampola, Haberia, and June*, who nurture them with
-            unwavering compassion and care.
-          </p>
-        </motion.section>
-      </MotionConfig>
-      <article
+        <p>
+          In spite of the challenges to their welfare, the Cateneans persist,
+          with many still wandering around campus, bringing comfort and joy to
+          those they encounter. Their mere presence in the hallways, paths, on
+          top of tables, or peeking from corners deeply resonates with many
+          Ateneans.
+        </p>
+        <p>
+          “Seeing and interacting with [the cats] distracts [the faculty] from
+          [the] stress … [it] makes the work worthwhile,” says Buenafe. Truly,
+          the impact of this four-legged community is felt, and they have become
+          intertwined with the daily happenings of the regular Atenean.
+        </p>
+        <p>
+          The Cateneans hold a cherished place in the hearts of many Ateneans,
+          completing the tapestry of Loyola’s vibrant campus culture. These
+          furry, feline friends have the unique ability to brighten days and
+          give meaning to the service of the devoted individuals, like Buenafe,
+          Rampola, Haberia, and June*, who nurture them with unwavering
+          compassion and care.
+        </p>
+      </motion.section>
+      <motion.article
+        initial={{ opacity: 0, y: 20, rotate: -8 }}
+        whileInView={{ opacity: 1, y: 0, rotate: -10 }}
+        transition={{ duration: 1, ease: easeInOut, delay: 0.5 }}
         className={creditStyles.polaroid}
         style={{
           transform: "rotate(-10deg)",
         }}
       >
         <img src={cat1} />
-      </article>
-      <article
+      </motion.article>
+      <motion.article
         className={creditStyles.polaroid}
+        initial={{ opacity: 0, y: 20, rotate: 8 }}
+        whileInView={{ opacity: 1, y: 0, rotate: 10 }}
+        transition={{ duration: 1, ease: easeInOut, delay: 0.5 }}
         style={{
           transform: "rotate(10deg)",
           bottom: "8vh",
@@ -101,7 +104,7 @@ const Conclusion = () => {
         }}
       >
         <img src={cat2} />
-      </article>
+      </motion.article>
       <section className={creditStyles.buttons}>
         <NavLink to="/game" className={creditStyles.button}>
           Play game

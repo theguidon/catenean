@@ -61,7 +61,13 @@ const ComeAndGo = () => {
           Wall. Students, staff, and professors expressed their grief online,
           with many sharing their heartfelt experiences with Paopao.
         </p>
-        <img className={styles.cat1} src={cat1} />
+        <motion.img
+          initial={{ opacity: 0, rotate: -3, y: 5 }}
+          whileInView={{ opacity: 1, rotate: -5, y: 0 }}
+          transition={{ ease: "ease", duration: 1 }}
+          className={styles.cat1}
+          src={cat1}
+        />
 
         <p>
           Moreover, calls for accountability and greater support for AGILA’s

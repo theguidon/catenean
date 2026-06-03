@@ -38,6 +38,7 @@ const QuoteCard = ({ style, children }) => {
       style={{
         background: "rgba(180,218,201,.5)",
         padding: "2%",
+        width: "100%",
         position: "relative",
         borderRadius: "24px",
         ...style,
@@ -50,11 +51,11 @@ const QuoteCard = ({ style, children }) => {
         variants={childVariants}
         style={{
           fontFamily: "Outfit",
-          fontSize: "9em",
+          fontSize: "6em",
           color: "#FAA685",
           position: "absolute",
-          top: "-25%",
-          left: "-2%",
+          bottom: "58%",
+          right: "-2%",
         }}
       >
         “
@@ -63,12 +64,12 @@ const QuoteCard = ({ style, children }) => {
         variants={childVariants}
         style={{
           fontFamily: "Outfit",
-          fontSize: "9em",
+          fontSize: "6em",
           lineHeight: "0%",
           color: "#FAA685",
           position: "absolute",
-          bottom: "-12%",
-          right: 0,
+          bottom: "-10%",
+          left: 0,
           transform: "scaleX(-1)",
         }}
       >

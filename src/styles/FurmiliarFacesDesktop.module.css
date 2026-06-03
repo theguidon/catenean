@@ -187,6 +187,7 @@ section.graphics {
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.15);
   position: relative;
   transform-origin: top center;
+  animation: 3s ease-in-out 0s infinite alternate-reverse swing;
 }
 
 .polaroid > * {
@@ -232,26 +233,6 @@ section.graphics {
 
   100% {
     transform: translate(0px, 0px) rotate(0deg);
-  }
-}
-
-@keyframes swingLeftPolaroid {
-  0% {
-    transform: rotate(5deg);
-  }
-
-  100% {
-    transform: rotate(-5deg);
-  }
-}
-
-@keyframes swingRightPolaroid {
-  0% {
-    transform: rotate(-10deg);
-  }
-
-  100% {
-    transform: rotate(-5deg);
   }
 }
 

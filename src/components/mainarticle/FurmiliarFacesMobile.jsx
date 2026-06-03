@@ -111,6 +111,7 @@ const FurmiliarFacesMobile = () => {
             style={{
               transform: "rotate(10deg)",
               left: "5vw",
+              animation: `3s ease-in-out 0s infinite alternate-reverse ${sectionStyles.swingRightPolaroid}`,
             }}
           >
             <img src={Barbie} alt="" />
@@ -121,7 +122,8 @@ const FurmiliarFacesMobile = () => {
             style={{
               transform: "rotate(-10deg)",
               right: "5vw",
-              bottom: "12px",
+              bottom: "28px",
+              animation: `3s ease-in-out 0s infinite alternate-reverse ${sectionStyles.swingLeftPolaroid}`,
             }}
           >
             <img src={Dongyan} alt="" />

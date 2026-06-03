@@ -11,6 +11,11 @@ const ComeAndGoDesktop = () => {
     hidden: { color: "rgb(82,34,34,0)", transition },
   };
 
+  const linkVariants = {
+    show: { color: "rgb(32,116,164,1)", transition },
+    hidden: { color: "rgb(32,116,164,0)", transition },
+  };
+
   return (
     <section className={styles.container}>
       <section className={styles.titleArea}>
@@ -79,14 +84,20 @@ const ComeAndGoDesktop = () => {
         >
           Because of this care, the loss of any Catenean is deeply felt by the
           whole Ateneo community. When beloved Schmitt Hall resident Paopao{" "}
-          <a href="https://www.facebook.com/photo/?fbid=699889072175925&set=a.463936722437829">
+          <motion.a
+            variants={linkVariants}
+            href="https://www.facebook.com/photo/?fbid=699889072175925&set=a.463936722437829"
+          >
             lost his life
-          </a>{" "}
+          </motion.a>{" "}
           in a vehicular accident, an outpouring of support was seen on social
           media, with{" "}
-          <a href="https://www.facebook.com/profile/100069163320793/search/?q=paopao">
+          <motion.a
+            variants={linkVariants}
+            href="https://www.facebook.com/profile/100069163320793/search/?q=paopao"
+          >
             submissions flooding the student-forum ADMU Freedom Wall
-          </a>
+          </motion.a>
           . Students, staff, and professors expressed their grief online, with
           many sharing their heartfelt experiences with Paopao.
         </motion.p>

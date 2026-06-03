@@ -114,7 +114,7 @@ const DedicatedToTheirCareDesktop = () => {
     },
   };
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} snapContainer`}>
       <section className={styles.title}>
         <h1>
           Dedicated to
@@ -122,7 +122,10 @@ const DedicatedToTheirCareDesktop = () => {
           their care
         </h1>
       </section>
-      <section className={`ellipse1`} style={{ paddingTop: "7vh" }}>
+      <section
+        className={`ellipse1 snapContainer`}
+        style={{ paddingTop: "7vh" }}
+      >
         <Ellipses style={{ width: "70vw" }}>
           <p>
             With such a teeming community of cats roaming the campus, their care
@@ -148,7 +151,7 @@ const DedicatedToTheirCareDesktop = () => {
           </p>
         </section>
         <section
-          className={`${styles.graphics}`}
+          className={`${styles.graphics} snapContainer`}
           style={{ justifyContent: "center" }}
         >
           <motion.img
@@ -164,7 +167,7 @@ const DedicatedToTheirCareDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section
           style={{
             display: "flex",
@@ -210,7 +213,7 @@ const DedicatedToTheirCareDesktop = () => {
         </section>
         <section className={`${styles.graphics}`}></section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Although Buenafe usually focuses on the administrative side of
@@ -237,7 +240,7 @@ const DedicatedToTheirCareDesktop = () => {
         </section>
         <section className={`${styles.graphics}`}></section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Rampola and the staff members at MVP try their best to provide the
@@ -254,7 +257,7 @@ const DedicatedToTheirCareDesktop = () => {
         </section>
         <section className={`${styles.graphics}`}></section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Through consistent nurture, the Cateneans have become an endearing

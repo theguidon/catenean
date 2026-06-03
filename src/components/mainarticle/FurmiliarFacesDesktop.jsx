@@ -54,7 +54,7 @@ const FurmiliarFacesDesktop = () => {
   }, []);
   return (
     <section className={styles.container}>
-      <section className={styles.title}>
+      <section className={`${styles.title} snapContainer`}>
         <h1>Fur-miliar faces</h1>
         <section className={styles.bushes}>
           <MotionConfig transition={bounceAnimation.transition}>
@@ -67,7 +67,10 @@ const FurmiliarFacesDesktop = () => {
           </MotionConfig>
         </section>
       </section>
-      <section className={`ellipse1`} style={{ paddingTop: "7vh" }}>
+      <section
+        className={`ellipse1 snapContainer`}
+        style={{ paddingTop: "7vh" }}
+      >
         <Ellipses style={{ width: "70vw" }}>
           <p>
             Whether one is sitting on a bench in CTC-SOM or taking a walk on the
@@ -91,7 +94,7 @@ const FurmiliarFacesDesktop = () => {
           }}
         />
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Due to their constant presence in the community, some Cateneans have
@@ -106,7 +109,7 @@ const FurmiliarFacesDesktop = () => {
             spending most of her days exploring the organization&apos;s rooms.
           </p>
         </section>
-        <section className={`${styles.graphics}`}>
+        <section className={`${styles.graphics} snapContainer`}>
           <motion.img
             src={MVP}
             className={styles.bldg}
@@ -177,7 +180,7 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Meanwhile, Faura Hall&mdash;and, by extension, the SOM
@@ -192,7 +195,10 @@ const FurmiliarFacesDesktop = () => {
             cared for by June,* a maintenance staff member of the Ateneo.
           </p>
         </section>
-        <section className={`${styles.graphics}`} style={{ width: "60%" }}>
+        <section
+          className={`${styles.graphics} snapContainer`}
+          style={{ width: "60%" }}
+        >
           <motion.img
             className={styles.bldg}
             src={Faura}
@@ -225,7 +231,7 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             In Areté, the cats do not shy away from showing off their unique
@@ -284,7 +290,7 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Over in Schmitt Hall, Hakaw and Maimai share the space in spite of
@@ -302,7 +308,7 @@ const FurmiliarFacesDesktop = () => {
           </p>
         </section>
         <section
-          className={`${styles.graphics}`}
+          className={`${styles.graphics} snapContainer`}
           style={{ justifyContent: "center" }}
         >
           <MotionConfig transition={bounceAnimation.transition}>
@@ -356,7 +362,7 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             However, as broody and aloof as some Cateneans can be, they

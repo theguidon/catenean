@@ -7,7 +7,6 @@
   padding: 0;
   padding-bottom: 80px;
   overflow-y: auto;
-  overflow-x: clip;
 }
 
 .main h3 {
@@ -43,6 +42,7 @@
     max-width: none;
     width: min-content;
     min-width: 200vw;
+    overflow-x: scroll;
     overflow-y: clip;
     position: relative;
     height: 100vh;

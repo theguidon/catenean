@@ -22,7 +22,7 @@ function useHorizontalScroll() {
         if (e.deltaY == 0) return;
         e.preventDefault();
         el.scrollTo({
-          left: el.scrollLeft + e.deltaY * 3,
+          left: el.scrollLeft + e.deltaY * 5,
           behavior: "smooth",
         });
       };

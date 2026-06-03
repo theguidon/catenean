@@ -1,5 +1,6 @@
 section.container {
-  min-width: 100vw;
+  min-width: min-content;
+  width: min-content;
   height: 100vh;
   min-height: 100vh;
   max-height: 100vh;
@@ -9,8 +10,8 @@ section.container {
 }
 
 .container h1 {
-  font-size: 5em;
-  width: 100vw;
+  font-size: 7em;
+  width: 80vw;
   font-weight: 700;
   font-family: "Solway", serif;
   text-align: center;
@@ -186,6 +187,7 @@ section.graphics {
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.15);
   position: relative;
   transform-origin: top center;
+  animation: 3s ease-in-out 0s infinite alternate-reverse swing;
 }
 
 .polaroid > * {
@@ -231,26 +233,6 @@ section.graphics {
 
   100% {
     transform: translate(0px, 0px) rotate(0deg);
-  }
-}
-
-@keyframes swingLeftPolaroid {
-  0% {
-    transform: rotate(5deg);
-  }
-
-  100% {
-    transform: rotate(-5deg);
-  }
-}
-
-@keyframes swingRightPolaroid {
-  0% {
-    transform: rotate(-10deg);
-  }
-
-  100% {
-    transform: rotate(-5deg);
   }
 }
 

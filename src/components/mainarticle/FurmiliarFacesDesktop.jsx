@@ -54,7 +54,7 @@ const FurmiliarFacesDesktop = () => {
   }, []);
   return (
     <section className={styles.container}>
-      <section className={styles.title}>
+      <section className={`${styles.title} snapContainer`}>
         <h1>Fur-miliar faces</h1>
         <section className={styles.bushes}>
           <MotionConfig transition={bounceAnimation.transition}>
@@ -67,7 +67,10 @@ const FurmiliarFacesDesktop = () => {
           </MotionConfig>
         </section>
       </section>
-      <section className={`ellipse1`} style={{ paddingTop: "7vh" }}>
+      <section
+        className={`ellipse1 snapContainer`}
+        style={{ paddingTop: "7vh" }}
+      >
         <Ellipses style={{ width: "70vw" }}>
           <p>
             Whether one is sitting on a bench in CTC-SOM or taking a walk on the
@@ -91,7 +94,7 @@ const FurmiliarFacesDesktop = () => {
           }}
         />
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Due to their constant presence in the community, some Cateneans have
@@ -100,13 +103,13 @@ const FurmiliarFacesDesktop = () => {
           <p>
             In the lively MVP Center, the friendly Dongyan is often seen keeping
             watch by the guard&apos;s table. Not far away, the sassy Barbie,
-            born around the time the movie <a href="">Barbie</a>(2023) was
-            released, once had a brother nammed Oppenheimer who sadly passed
-            away as a kitten. Yet, despite being alone, Barbie is never lonely,
+            born around the time the movie <a href="">Barbie</a> (2023) was
+            released, once had a brother named Oppenheimer who sadly passed away
+            as a kitten. Yet, despite being alone, Barbie is never lonely,
             spending most of her days exploring the organization&apos;s rooms.
           </p>
         </section>
-        <section className={`${styles.graphics}`}>
+        <section className={`${styles.graphics} snapContainer`}>
           <motion.img
             src={MVP}
             className={styles.bldg}
@@ -177,7 +180,7 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Meanwhile, Faura Hall&mdash;and, by extension, the SOM
@@ -185,15 +188,17 @@ const FurmiliarFacesDesktop = () => {
           </p>
           <p>
             Some of Faura&apos;s residents include Blue Eyes, the only recorded
-            cat on campus with <a href="">heterochromia</a>, who patrols the
-            area alongside Bardagul, whose name comes from his tendency to get
-            into catfights. Then there&apos;s Tarzan, a feral cat who likes to
+            cat on campus with <a href="">heterochromia</a>. Blue Eyes patrols
+            the area alongside Bardagul, whose name comes from his tendency to
+            get into catfights. Then there’s Tarzan, a feral cat who likes to
             jump on trees to avoid people. All of these residents are lovingly
-            cared for by June,* a maintenance staff member of the Ateneo
-            stationed at Faura Hall.
+            cared for by June,* a maintenance staff member of the Ateneo.
           </p>
         </section>
-        <section className={`${styles.graphics}`} style={{ width: "60%" }}>
+        <section
+          className={`${styles.graphics} snapContainer`}
+          style={{ width: "60%" }}
+        >
           <motion.img
             className={styles.bldg}
             src={Faura}
@@ -226,16 +231,19 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             In Areté, the cats do not shy away from showing off their unique
-            quirks. For instance, Ponpon, the newest addition to the area, was
-            often kept inside a cage due to his habit of staying near cars. He
-            and George have figured themselves in a playful rivalry, with Ponpo
-            having snatched the bunso title from Geroge. In another corner,
-            cateneans Tital Mel and Jes remain elusive and difficult to spot,
-            often found curled up together in a perfect ball during their naps.
+            quirks. For instance, the late Ponpon was often kept inside a cage
+            due to his habit of staying near cars. He and George shared a
+            playful rivalry, with George’s bunso title once stolen by Ponpon
+            before his untimely passing.
+          </p>
+          <p>
+            A few steps away, in another corner of Areté, cateneans Tita Mel and
+            Jes remain elusive and difficult to spot, often found curled up
+            together in a perfect ball during their naps.
           </p>
         </section>
         <section className={`${styles.graphics}`}>
@@ -282,21 +290,25 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             Over in Schmitt Hall, Hakaw and Maimai share the space in spite of
-            their contrasting personalities. According to AGILA moderator and
-            Chemistry Department Chair Olivia Erin Buenafe, the extroverted
-            Hakaw is considered the “spiritual successor” to late Paopao, after
-            inheriting some of his endearing habits like opening windows. On the
-            other hand, introverted Maimai plays by her own terms, only
-            interacting with people whenever she deems fit and retreats inside
-            buildings to relish in her own company.
+            their contrasting personalities. According to Ateneans Guided and
+            Inspired by Love for Animals (AGILA) moderator and Chemistry
+            Department Chair Olivia Erin Buenafe, the extroverted Hakaw is
+            considered the “spiritual successor” to{" "}
+            <a href="https://www.facebook.com/photo/?fbid=699889072175925&set=a.463936722437829">
+              late Paopao
+            </a>
+            , after inheriting some of his endearing habits like opening
+            windows. On the other hand, introverted Maimai plays by her own
+            terms, only interacting with people whenever she deems fit and
+            retreats inside buildings to relish in her own company.
           </p>
         </section>
         <section
-          className={`${styles.graphics}`}
+          className={`${styles.graphics} snapContainer`}
           style={{ justifyContent: "center" }}
         >
           <MotionConfig transition={bounceAnimation.transition}>
@@ -350,7 +362,7 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
-      <section>
+      <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             However, as broody and aloof as some Cateneans can be, they

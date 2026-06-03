@@ -1,12 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&family=Outfit:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Solway:wght@300;400;500;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&family=Outfit:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Solway:wght@300;400;500;700;800&display=swap");
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-snap-type: x mandatory;
+}
+
+.snapContainer {
+  scroll-snap-align: center;
+  width: 80vw;
 }

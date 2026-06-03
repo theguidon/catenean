@@ -1,6 +1,5 @@
 import styles from "../../styles/IntroDesktop.module.css";
 import cat from "../../assets/images/Cat.svg";
-import ellipses2 from "../../assets/images/intro/ellipses2.svg";
 import photos1 from "../../assets/images/intro/photos1.png";
 import photos2 from "../../assets/images/intro/photos2.png";
 import photo from "../../assets/images/intro/photo.png";
@@ -8,22 +7,27 @@ import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
-import { easeIn, easeInOut, easeOut, motion, stagger } from "motion/react";
+import { easeInOut, easeOut, motion } from "motion/react";
 import Ellipses from "../ellipses";
 
 export default function IntroDesktop() {
-
   const childVars = {
     show: { opacity: 1, transition: { duration: 1, ease: easeInOut } },
-    hidden: { opacity: 0, transition: { duration: 1, ease: easeInOut } }
-
-  }
+    hidden: { opacity: 0, transition: { duration: 1, ease: easeInOut } },
+  };
   return (
     <div className={styles.main}>
       <div className={styles.section}>
         <Ellipses style={{ height: "90vh", width: "50vw" }}>
-          <p style={{ margin: 0, padding: 0 }}><strong>TINY PAWS</strong> and swaying tails are a common sight in nearly every hallway and coordor of the Ateneo.</p>
-          <p style={{ margin: 0, padding: 0 }}>The Cateneans&mdash;as the community has affectionately called the campus cats&mdash;blend seamlessly among chattering students.</p>
+          <p style={{ margin: 0, padding: 0 }}>
+            <strong>TINY PAWS</strong> and swaying tails are a common sight in
+            nearly every hallway and corridor of the Ateneo.
+          </p>
+          <p style={{ margin: 0, padding: 0 }}>
+            The <em>Cateneans</em>&mdash;as the community has affectionately
+            called the campus cats&mdash;blend seamlessly among chattering
+            students.
+          </p>
         </Ellipses>
         <div className={styles.graphics}>
           <img
@@ -45,20 +49,17 @@ export default function IntroDesktop() {
       </div>
       <div className={`${styles.section} ${styles.section2}`}>
         <Ellipses style={{ height: "90vh", width: "50vw" }}>
-          <p style={{ margin: 0, padding: 0 }}>Amid the daily bustle of the Loyola Heights campus, the Cateneans take solace in the tiniest nooks and crannies of buildings.<br />
-            These feline friends serve as an embodiment of comfort for Ateneans, earning a special place in the hearts of students, faculty, and staff alike.</p>
+          <p style={{ margin: 0, padding: 0 }}>
+            Amid the daily bustle of the Loyola Heights campus, the Cateneans
+            take solace in the tiniest nooks and crannies of buildings.
+          </p>
+          <p style={{ margin: 0, marginTop: "2em", padding: 0 }}>
+            These feline friends serve as an embodiment of comfort for Ateneans,
+            earning a special place in the hearts of students, faculty, and
+            staff alike.
+          </p>
         </Ellipses>
         <div className={styles.graphics}>
-          <img
-            src={photos1}
-            alt=""
-            className={`${styles.polaroid} ${styles.catPhotos1}`}
-          />
-          <img
-            src={photos2}
-            alt=""
-            className={`${styles.polaroid} ${styles.catPhotos2}`}
-          />
           <img src={hearts} alt="" className={styles.hearts} />
           <img
             src={photo}
@@ -75,9 +76,27 @@ export default function IntroDesktop() {
           initial={{ opacity: 0, x: -15 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ ease: easeOut, duration: 0.5 }}
-          style={{ position: "absolute", height: "40vh", bottom: "3.5vh", left: 40, zIndex: 20 }}
+          style={{
+            position: "absolute",
+            height: "40vh",
+            bottom: "3.5vh",
+            left: 40,
+            zIndex: 20,
+          }}
         />
         <img src={RBR} alt="" className={styles.RBR} />
+        <div className={styles.photos}>
+          <img
+            src={photos1}
+            alt=""
+            className={`${styles.polaroid} ${styles.catPhotos1}`}
+          />
+          <img
+            src={photos2}
+            alt=""
+            className={`${styles.polaroid} ${styles.catPhotos2}`}
+          />
+        </div>
       </div>
     </div>
   );

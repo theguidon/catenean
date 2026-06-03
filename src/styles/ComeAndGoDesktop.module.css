@@ -1,80 +1,81 @@
 section.container {
-	display: flex;
-	height: 100vh;
-	gap: 0px;
+  display: flex;
+  height: 100vh;
+  gap: 0px;
+  width: min-content;
 }
 
 .titleArea {
-	height: 100%;
-	width: 100vh;
-	padding-top: 20vh;
-	text-align: center;
-	margin-right: 20vw;
+  height: 100%;
+  width: 100vh;
+  padding-top: 20vh;
+  text-align: center;
+  margin-right: 20vw;
 }
 
 .titleArea h1 {
-	font-size: 5em;
-	width: 100vw;
-	font-weight: 700;
-	font-family: "Solway", serif;
-	text-align: center;
-	color: #E07329;
-	-webkit-text-stroke: 18px white;
-	paint-order: stroke fill;
-	filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
+  font-size: 7em;
+  width: 100vw;
+  font-weight: 700;
+  font-family: "Solway", serif;
+  text-align: center;
+  color: #e07329;
+  -webkit-text-stroke: 18px white;
+  paint-order: stroke fill;
+  filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
 }
 
 .titleArea .bush {
-	min-width: 348px;
-	max-width: 348px;
+  min-width: 348px;
+  max-width: 348px;
 }
 
 .building {
-	width: 70%;
-	position: relative;
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
+  width: 70%;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .title {
-	position: relative;
+  position: relative;
 }
 
 .blush {
-	position: absolute;
-	width: 140%;
-	top: -35vh;
+  position: absolute;
+  width: 140%;
+  top: -35vh;
 }
 
 .buildingPic {
-	width: 100%;
-	transform-origin: bottom center;
+  width: 100%;
+  transform-origin: bottom center;
 }
 
 .container .cloud {
-	height: 100vh;
-	object-fit: cover;
+  height: 100vh;
+  object-fit: cover;
 }
 
 section.content {
-	height: 100vh;
-	aspect-ratio: 3473 / 1118;
-	background-image: url("/assets/comeandgo_desktopbg.svg");
-	background-size: cover;
-	display: flex;
-	align-items: center;
-	justify-content: start;
+  height: 100vh;
+  aspect-ratio: 3473 / 1118;
+  background-image: url("/assets/comeandgo_desktopbg.svg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
-.content>p {
-	background: #fffbeb;
-	width: 56ch;
-	padding: 2rem;
-	position: relative;
-	z-index: 20;
+.content > p {
+  background: #fffbeb;
+  width: 56ch;
+  padding: 2rem;
+  position: relative;
+  z-index: 20;
 }
 
 .paopao {
-	height: 80%;
+  height: 80%;
 }

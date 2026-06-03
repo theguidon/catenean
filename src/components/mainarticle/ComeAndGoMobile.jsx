@@ -1,11 +1,9 @@
 import styles from "../../styles/ComeAndGoMobile.module.css";
-import building from "../../assets/images/location-faura-building.svg";
 import cloud1 from "../../assets/images/cloud1.svg";
 import cloud2 from "../../assets/images/cloud2.svg";
 import cat1 from "../../assets/images/cats/17.png";
 import FauraCats from "../../assets/images/fauracats.png";
 import { easeInOut, motion } from "motion/react";
-import heart1 from "../../assets/images/heart1.svg";
 
 const ComeAndGo = () => {
   const cloudVariants = {
@@ -55,7 +53,7 @@ const ComeAndGo = () => {
           committed to ensuring that the Cateneans experience a good quality of
           life while they are around.
         </p>
-        <p>
+        <p style={{ marginBottom: "2em" }}>
           Because of this care, the loss of any Catenean is deeply felt by the
           whole Ateneo community. When beloved Schmitt Hall resident Paopao lost
           his life in a vehicular accident, an outpouring of support was seen on
@@ -63,7 +61,13 @@ const ComeAndGo = () => {
           Wall. Students, staff, and professors expressed their grief online,
           with many sharing their heartfelt experiences with Paopao.
         </p>
-        <img className={styles.cat1} src={cat1} />
+        <motion.img
+          initial={{ opacity: 0, rotate: -3, y: 5 }}
+          whileInView={{ opacity: 1, rotate: -5, y: 0 }}
+          transition={{ ease: "ease", duration: 1 }}
+          className={styles.cat1}
+          src={cat1}
+        />
 
         <p>
           Moreover, calls for accountability and greater support for AGILA’s

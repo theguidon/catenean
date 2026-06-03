@@ -33,13 +33,27 @@ const ComeAndGoDesktop = () => {
           gap: "15vh",
         }}
       >
-        <p>
-          Despite the feline companions being a comforting presence on campus,
-          they <a href="">live far shorter</a> than humans. Nonetheless,
-          concerned individuals such as the AGILA team, certain faculty, and
-          custodial staff still strive to ensure that the Cateneans experience a
-          good quality of life while they are around.
-        </p>
+        <section>
+          <p style={{ marginBottom: "2em" }}>
+            The work in caring for the Cateneans is not an easy feat, with many
+            factors such as{" "}
+            <a href="https://www.petmd.com/cat/general-health/outdoor-dangers-cats">
+              disease outbreaks, accidents, and overpopulation
+            </a>{" "}
+            complicating the efforts of the caretakers.
+          </p>
+          <p>
+            Despite the feline companions being a comforting presence on campus,
+            they{" "}
+            <a href="https://www.petmd.com/cat/care/how-long-do-cats-live">
+              live far shorter
+            </a>{" "}
+            than humans. Nonetheless, concerned individuals such as the AGILA
+            team, certain faculty, and custodial staff still strive to ensure
+            that the Cateneans experience a good quality of life while they are
+            around.
+          </p>
+        </section>
         <motion.img
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -63,13 +77,18 @@ const ComeAndGoDesktop = () => {
             left: "12%",
           }}
         >
-          In the heartbreaking event that a beloved Cateneans passes, members of
-          the community always show up. When beloved Schmitt Hall resident
-          Paopao lost his life in a vehicular accident, an outpouring of support
-          was seen on social media, with submissions flooding the student-forum
-          ADMU Freedom Wall. Students, staff, and professors expressed their
-          grief online, with many sharing their heartfelt experiences with
-          Paopao.
+          Because of this care, the loss of any Catenean is deeply felt by the
+          whole Ateneo community. When beloved Schmitt Hall resident Paopao{" "}
+          <a href="https://www.facebook.com/photo/?fbid=699889072175925&set=a.463936722437829">
+            lost his life
+          </a>{" "}
+          in a vehicular accident, an outpouring of support was seen on social
+          media, with{" "}
+          <a href="https://www.facebook.com/profile/100069163320793/search/?q=paopao">
+            submissions flooding the student-forum ADMU Freedom Wall
+          </a>
+          . Students, staff, and professors expressed their grief online, with
+          many sharing their heartfelt experiences with Paopao.
         </motion.p>
         <img src={paopao} className={styles.paopao} />
         <motion.p

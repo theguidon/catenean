@@ -38,6 +38,7 @@ const QuoteCard = ({ style, children }) => {
       style={{
         background: "rgba(180,218,201,.5)",
         padding: "2%",
+        width: "100%",
         position: "relative",
         borderRadius: "24px",
         ...style,
@@ -50,11 +51,11 @@ const QuoteCard = ({ style, children }) => {
         variants={childVariants}
         style={{
           fontFamily: "Outfit",
-          fontSize: "9em",
+          fontSize: "6em",
           color: "#FAA685",
           position: "absolute",
-          top: "-25%",
-          left: "-2%",
+          bottom: "58%",
+          right: "-2%",
         }}
       >
         “
@@ -63,12 +64,12 @@ const QuoteCard = ({ style, children }) => {
         variants={childVariants}
         style={{
           fontFamily: "Outfit",
-          fontSize: "9em",
+          fontSize: "6em",
           lineHeight: "0%",
           color: "#FAA685",
           position: "absolute",
-          bottom: "-12%",
-          right: 0,
+          bottom: "-10%",
+          left: 0,
           transform: "scaleX(-1)",
         }}
       >
@@ -142,8 +143,11 @@ const DedicatedToTheirCareMobile = () => {
         to refrain from touching them for the cats’ health.
       </p>
       <section className={styles.heartSection}>
-        <img
+        <motion.img
           src={HeartCatBig1}
+          initial={{ scale: 1 }}
+          animate={{ scale: 0.92 }}
+          transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
           alt=""
           style={{ width: "80%", padding: "32px 0" }}
         />
@@ -166,8 +170,11 @@ const DedicatedToTheirCareMobile = () => {
           she still extends the same love and affection to the Cateneans, who
           have since become the mascots of the sprawling student center.
         </p>
-        <img
+        <motion.img
           src={HeartCatBig2}
+          initial={{ scale: 1 }}
+          animate={{ scale: 0.92 }}
+          transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
           alt=""
           style={{ width: "80%", padding: "32px 0" }}
         />

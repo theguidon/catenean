@@ -102,10 +102,11 @@ const ConclusionDesktop = () => {
             marginBottom: "36px",
           }}
         >
-          Still, the Cateneans persist, with many still wandering around campus,
-          bringing comfort and joy to those they encounter. Their mere presence
-          in the hallways, paths, on top of tables, or peeking from corners
-          deeply resonates with many Ateneans.
+          In spite of the challenges to their welfare, the Cateneans persist,
+          with many still wandering around campus, bringing comfort and joy to
+          those they encounter. Their mere presence in the hallways, paths, on
+          top of tables, or peeking from corners deeply resonates with many
+          Ateneans.
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}

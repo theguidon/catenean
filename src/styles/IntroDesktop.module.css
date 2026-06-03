@@ -87,6 +87,9 @@
 .polaroid {
   animation: 3s ease-in-out 0s infinite alternate-reverse swing;
   transform-origin: top center;
+  width: 40rem;
+  position: absolute;
+  z-index: 18;
 }
 
 @keyframes swing {
@@ -112,17 +115,11 @@
 }
 
 .catPhotos1 {
-  width: 25rem;
-  position: absolute;
-  inset: 0 auto auto 13rem;
-  z-index: 10;
+  inset: -7rem auto auto 10rem;
 }
 
 .catPhotos2 {
-  width: 25rem;
-  position: absolute;
   inset: 15rem auto auto 30rem;
-  z-index: 10;
 }
 
 .hearts {
@@ -152,7 +149,17 @@
 
 .RBR {
   position: absolute;
-  left: -2vw;
+  left: -10vw;
   bottom: -5%;
-  z-index: 15;
+  z-index: 10;
+}
+
+.graphics {
+  z-index: 10;
+}
+
+.photos {
+  position: absolute;
+  left: 90vw;
+  top: 12vh;
 }

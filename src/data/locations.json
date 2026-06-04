@@ -7,7 +7,7 @@
 		"cats": [
 			{
 				"name": "Dongyan",
-				"pic": "new/dongyan.png"
+				"pic": "new/dongyanCompressed.webp"
 			},
 			{
 				"name": "Barbie",
@@ -28,7 +28,7 @@
 		"cats": [
 			{
 				"name": "Princess",
-				"pic": "new/princess.JPG"
+				"pic": "new/princessCompressed.webp"
 			}
 		],
 		"bgColor": "#FFD7D9",
@@ -47,11 +47,11 @@
 		"cats": [
 			{
 				"name": "Hakaw",
-				"pic": "new/hakaw.png"
+				"pic": "new/hakawCompressed.webp"
 			},
 			{
 				"name": "Maimai",
-				"pic": "new/maimai.png"
+				"pic": "new/maimaiCompressed.webp"
 			}
 		],
 		"bgColor": "#A0D8CF",
@@ -69,11 +69,11 @@
 		"cats": [
 			{
 				"name": "Ponpon",
-				"pic": "new/ponpon.jpg"
+				"pic": "new/ponponCompressed.webp"
 			},
 			{
 				"name": "George",
-				"pic": "new/george.jpg"
+				"pic": "new/georgeCompressed.webp"
 			}
 		],
 		"bgColor": "#A0D8A7",
@@ -90,11 +90,11 @@
 		"cats": [
 			{
 				"name": "Blue Eyes",
-				"pic": "new/blueeyes.JPG"
+				"pic": "new/blueeyesCompressed.webp"
 			},
 			{
 				"name": "One Eye",
-				"pic": "new/oneeye.JPG"
+				"pic": "new/oneeyeCompressed.webp"
 			}
 		],
 		"bgColor": "#83C3E7",

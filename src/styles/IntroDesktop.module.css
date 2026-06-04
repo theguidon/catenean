@@ -158,8 +158,48 @@
   z-index: 10;
 }
 
+.scrollIndicator {
+  position: absolute;
+  left: 42vw;
+  bottom: 2vh;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+  color: white;
+  width: 30vw;
+  align-items: center;
+  opacity: 0;
+  animation: 3s ease-in-out 0s fadeInOut;
+}
+
+.scrollIndicator p {
+  color: white;
+  font-size: 1.3rem;
+  font-family: "Outfit";
+  font-weight: medium;
+  margin: 0;
+}
+
 .photos {
   position: absolute;
   left: 90vw;
   top: 12vh;
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }

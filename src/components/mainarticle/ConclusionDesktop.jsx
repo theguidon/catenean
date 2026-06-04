@@ -160,7 +160,7 @@ const ConclusionDesktop = () => {
       <section
         className={creditStyles.bylines}
         style={{
-          marginTop: "15vh",
+          marginTop: "12vh",
           marginRight: 100,
           width: "70ch",
           alignSelf: "start",

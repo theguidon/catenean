@@ -11,6 +11,9 @@ import ComeAndGoDesktop from "../components/mainarticle/ComeAndGoDesktop.jsx";
 import ComeAndGoMobile from "../components/mainarticle/ComeAndGoMobile.jsx";
 import ConclusionDesktop from "../components/mainarticle/ConclusionDesktop.jsx";
 import ConclusionMobile from "../components/mainarticle/ConclusionMobile.jsx";
+import { NavLink } from "react-router";
+import Map from "../assets/images/map.svg";
+import MapMobile from "../assets/images/mobile-map.svg";
 
 // https://stackoverflow.com/questions/56153797/horizontal-scrolling-on-react-component-using-vertical-mouse-wheel
 function useHorizontalScroll() {
@@ -51,6 +54,19 @@ const ArticleMain = () => {
           <DedicatedToTheirCareDesktop />
           <ComeAndGoDesktop />
           <ConclusionDesktop />
+          <NavLink to="/map">
+            <img
+              src={Map}
+              style={{
+                position: "fixed",
+                top: "2vh",
+                right: "2vw",
+                width: "4vw",
+                zIndex: 30,
+                cursor: "pointer",
+              }}
+            />
+          </NavLink>
         </main>
       </div>
     );
@@ -62,6 +78,19 @@ const ArticleMain = () => {
       <DedicatedToTheirCareMobile />
       <ComeAndGoMobile />
       <ConclusionMobile />
+      <NavLink to="/map">
+        <img
+          src={MapMobile}
+          style={{
+            position: "fixed",
+            top: "2vh",
+            right: "2vw",
+            width: "15vw",
+            zIndex: 30,
+            cursor: "pointer",
+          }}
+        />
+      </NavLink>
     </main>
   );
 };

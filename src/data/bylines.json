@@ -1,36 +1,34 @@
 [
-	{
-		"header": "Written by",
-		"bylines": [
-      "Basti Cabasagan",
-      "Grace C. Ona"
-		]
-	},
-	{
-		"header": "Photos by",
-		"bylines": [
-			"Finomena Chang",
-			"Via Panopio"
-		]
-	},
-	{
-		"header": "Designed by",
-		"bylines": [
-			"Abby Montayre",
-			"Bea Gan",
-			"Diego Andal",
-			"Helena Leaño",
-			"Jim Aban"
-		]
-	},
-	{
-		"header": "Developed by",
-		"bylines": [
-			"Abby Montayre",
-			"Cheska Huang",
-			"EJ Jaso",
-			"Paige Carbonell",
-			"Waleed Lugod"
-		]
-	}
+  {
+    "header": "Written by",
+    "bylines": ["Basti Cabasagan", "Grace C. Ona"]
+  },
+  {
+    "header": "Photos by",
+    "bylines": ["Finomena Chang", "Via Panopio"]
+  },
+  {
+    "header": "Photo courtesy of",
+    "bylines": ["AGILA"]
+  },
+  {
+    "header": "Designed by",
+    "bylines": [
+      "Abby Montayre",
+      "Bea Gan",
+      "Diego Andal",
+      "Helena Leaño",
+      "Jim Aban"
+    ]
+  },
+  {
+    "header": "Developed by",
+    "bylines": [
+      "Abby Montayre",
+      "Cheska Huang",
+      "EJ Jaso",
+      "Paige Carbonell",
+      "Waleed Lugod"
+    ]
+  }
 ]

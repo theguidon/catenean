@@ -8,6 +8,8 @@ import cat2 from "../../assets/images/cats/2.jpeg";
 import string1 from "../../assets/images/conclusion_string1.svg";
 import string2 from "../../assets/images/conclusion_string2.svg";
 import { easeInOut, easeOut, motion, spring } from "motion/react";
+import { NavLink } from "react-router";
+import back from "../../assets/images/back_to_start.svg";
 
 const ConclusionDesktop = () => {
   const bounceAnimation = {
@@ -36,7 +38,7 @@ const ConclusionDesktop = () => {
         src={string1}
         style={{
           position: "absolute",
-          top: 0,
+          top: "-10vh",
           right: 300,
         }}
       />
@@ -158,7 +160,7 @@ const ConclusionDesktop = () => {
       <section
         className={creditStyles.bylines}
         style={{
-          marginTop: "15vh",
+          marginTop: "12vh",
           marginRight: 100,
           width: "70ch",
           alignSelf: "start",
@@ -171,6 +173,14 @@ const ConclusionDesktop = () => {
             <p>{joinBylines(bylines)}</p>
           </>
         ))}
+      </section>
+      <section className={creditStyles.buttons}>
+        <NavLink to="/map" className={creditStyles.button}>
+          View map
+        </NavLink>
+        <a href="#start" className={creditStyles.back}>
+          <img src={back} />
+        </a>
       </section>
     </section>
   );

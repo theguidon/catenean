@@ -7,16 +7,13 @@ import line from "../../assets/images/intro/line.svg";
 import hearts from "../../assets/images/intro/hearts.svg";
 import cloud from "../../assets/images/cloud.svg";
 import RBR from "../../assets/images/intro/RBR.svg";
-import { easeInOut, easeOut, motion } from "motion/react";
+import { easeOut, motion } from "motion/react";
+import { BsFillMouseFill } from "react-icons/bs";
 import Ellipses from "../ellipses";
 
 export default function IntroDesktop() {
-  const childVars = {
-    show: { opacity: 1, transition: { duration: 1, ease: easeInOut } },
-    hidden: { opacity: 0, transition: { duration: 1, ease: easeInOut } },
-  };
   return (
-    <div className={styles.main}>
+    <div className={styles.main} id="start">
       <div className={styles.section}>
         <Ellipses style={{ height: "90vh", width: "50vw" }}>
           <p style={{ margin: 0, padding: 0 }}>
@@ -97,6 +94,10 @@ export default function IntroDesktop() {
             className={`${styles.polaroid} ${styles.catPhotos2}`}
           />
         </div>
+      </div>
+      <div className={styles.scrollIndicator}>
+        <BsFillMouseFill size={32} />
+        <p>Scroll to read the article</p>
       </div>
     </div>
   );

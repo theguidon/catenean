@@ -21,28 +21,46 @@ export default function BuildingWriteup() {
   });
 
   const NavArrows = ({ isHeader = false }) => (
-    <section className={`${styles.navArrows} ${isHeader ? styles.headerNav : ""}`}>
+    <section
+      className={`${styles.navArrows} ${isHeader ? styles.headerNav : ""}`}
+    >
       <Link to={`/location/${data.back.toLowerCase()}`} className={styles.link}>
         <motion.section
           initial={{ scale: 1 }}
           whileHover={{ scale: [1, 1.1] }}
-          transition={{ type: "spring", duration: 0.25, bounce: 0.1, bounceDamping: 50, stiffness: 500 }}
+          transition={{
+            type: "spring",
+            duration: 0.25,
+            bounce: 0.1,
+            bounceDamping: 50,
+            stiffness: 500,
+          }}
           className={`${styles.link} ${styles.back}`}
         >
           <img src={arrow} alt="Previous" />
           {!isSmallMobile && <p>{data.back.toUpperCase()}</p>}
-          {isSmallMobile && <p className={styles.mobileNavText}>{data.back.toUpperCase()}</p>}
+          {isSmallMobile && (
+            <p className={styles.mobileNavText}>{data.back.toUpperCase()}</p>
+          )}
         </motion.section>
       </Link>
       <Link to={`/location/${data.next.toLowerCase()}`} className={styles.link}>
         <motion.section
           initial={{ scale: 1 }}
           whileHover={{ scale: [1, 1.1] }}
-          transition={{ type: "spring", duration: 0.25, bounce: 0.1, bounceDamping: 50, stiffness: 500 }}
+          transition={{
+            type: "spring",
+            duration: 0.25,
+            bounce: 0.1,
+            bounceDamping: 50,
+            stiffness: 500,
+          }}
           className={`${styles.link} ${styles.next}`}
         >
           {!isSmallMobile && <p>{data.next.toUpperCase()}</p>}
-          {isSmallMobile && <p className={styles.mobileNavText}>{data.next.toUpperCase()}</p>}
+          {isSmallMobile && (
+            <p className={styles.mobileNavText}>{data.next.toUpperCase()}</p>
+          )}
           <img src={arrow} style={{ transform: "scaleX(-1)" }} alt="Next" />
         </motion.section>
       </Link>
@@ -61,7 +79,11 @@ export default function BuildingWriteup() {
         <header className={styles.mobileHeader}>
           <NavArrows isHeader={true} />
           <Link to="/map" className={styles.mobileBackButtonWrapper}>
-            <img src={back} className={styles.mobileBackButton} alt="Back to Map" />
+            <img
+              src={back}
+              className={styles.mobileBackButton}
+              alt="Back to Map"
+            />
           </Link>
         </header>
       ) : (
@@ -73,17 +95,18 @@ export default function BuildingWriteup() {
       <section className={styles.writeup}>
         {isMobile && !isSmallMobile && <NavArrows />}
         <section className={styles.heading}>
-          <img src={`/assets/buildings/no-shadow/${data.bldgImage}`} alt={data.name} />
+          <img
+            src={`/assets/buildings/no-shadow/${data.bldgImage}`}
+            alt={data.name}
+          />
           <section className={styles.titleCaption}>
             <h1
               style={{
                 color: data.nameColor,
-                fontSize: isMobile ? data.mobileTitleSize : data.titleSize,
               }}
             >
               {data.name}
             </h1>
-            <h2 style={{ color: data.captionColor }}>{data.caption}</h2>
           </section>
         </section>
 

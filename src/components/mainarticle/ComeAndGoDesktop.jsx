@@ -64,7 +64,7 @@ const ComeAndGoDesktop = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: easeInOut }}
           src={catHearts}
-          style={{ width: "70%" }}
+          style={{ width: "70%", position: "relative", bottom: "5vh" }}
         />
       </section>
       <motion.section

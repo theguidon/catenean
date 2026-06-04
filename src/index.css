@@ -19,6 +19,10 @@ html {
   scroll-snap-type: x proximity;
 }
 
+#start {
+  scroll-snap-align: start;
+}
+
 .snapContainer {
   scroll-snap-align: center center;
   scroll-snap-stop: always;

@@ -49,6 +49,7 @@ const ArticleMain = () => {
         }}
       >
         <main className={styles.main}>
+          <div id="start" style={{ left: 0, top: 0 }} />
           <IntroDesktop />
           <FurmiliarFacesDesktop />
           <DedicatedToTheirCareDesktop />

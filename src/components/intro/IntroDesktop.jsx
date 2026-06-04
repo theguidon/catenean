@@ -13,7 +13,7 @@ import Ellipses from "../ellipses";
 
 export default function IntroDesktop() {
   return (
-    <div className={styles.main} id="start">
+    <div className={styles.main}>
       <div className={styles.section}>
         <Ellipses style={{ height: "90vh", width: "50vw" }}>
           <p style={{ margin: 0, padding: 0 }}>

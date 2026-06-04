@@ -7,11 +7,11 @@
 		"cats": [
 			{
 				"name": "Dongyan",
-				"pic": "2.jpeg"
+				"pic": "new/dongyan.png"
 			},
 			{
 				"name": "Barbie",
-				"pic": "1.jpeg"
+				"pic": "barbie.png"
 			}
 		],
 		"bgColor": "#FFEDC5",
@@ -27,12 +27,8 @@
 		"article": "A few steps from the SEC walk, you will be taken to two seemingly twin buildings called CTC-SOM. Connected by overhead bridges, the expansive complex is filled with classrooms, multiple halls, and numerous departmental offices. The hallways of the buildings are often lined by lounging Cateneans like Princess, whom you would usually find ion the building’s hallways of the buildings or lying on the open lawn. Princess, a renowned Catenean, is even known to ride the elevator up and down SOM, humoring students with her presence as they share a ride with her.",
 		"cats": [
 			{
-				"name": "Dongyan",
-				"pic": "2.jpeg"
-			},
-			{
-				"name": "Barbie",
-				"pic": "1.jpeg"
+				"name": "Princess",
+				"pic": "new/princess.JPG"
 			}
 		],
 		"bgColor": "#FFD7D9",
@@ -50,12 +46,12 @@
 		"article": "Once you reach the edge of Red Brick Road, the familiar Schmitt Hall stands to greet you. It houses numerous laboratories and classrooms, all maintained by the dedicated Chemistry Department. Inside the building, Hakaw, an outgoing Catenean, patrols the halls and lounges, while skittish Catenean Maimai prefers to linger along the building's outskirts. The two cats brighten up what would be a hectic, sterile environment by providing comfort to the students and faculty who populate the rooms of this science building.",
 		"cats": [
 			{
-				"name": "Dongyan",
-				"pic": "2.jpeg"
+				"name": "Hakaw",
+				"pic": "new/hakaw.png"
 			},
 			{
-				"name": "Barbie",
-				"pic": "1.jpeg"
+				"name": "Maimai",
+				"pic": "new/maimai.png"
 			}
 		],
 		"bgColor": "#A0D8CF",
@@ -72,12 +68,12 @@
 		"article": "If you take a few strides away from Gate 3, you will soon be greeted by the imposing, modern structure that is Areté, where an array of classrooms, recreational spaces, and the Ateneo Art Gallery are found. Serving as the creative center of Ateneo, it serves as the hub for creativity and innovation where knowledge, skills, and expression flow.\n\nHowever, art students are not the only ones who populate Areté’s halls. Around the complex, you will find a particularly curious Catenean named Ponpon who often gets into trouble for coming too close to cars while watching people.",
 		"cats": [
 			{
-				"name": "Dongyan",
-				"pic": "2.jpeg"
+				"name": "Ponpon",
+				"pic": "new/ponpon.jpg"
 			},
 			{
-				"name": "Barbie",
-				"pic": "1.jpeg"
+				"name": "George",
+				"pic": "new/george.jpg"
 			}
 		],
 		"bgColor": "#A0D8A7",
@@ -93,12 +89,12 @@
 		"article": "When strolling along Lover’s Lane, you surely won’t miss Faura Hall, renowned for being an earthquake-proof building. Its maroon color and central courtyard guarantee that it is a hard miss. Faura is home to a lively set of Cateneans, most of whom are quite feral, roaming in the forested areas near Lover’s Lane, where they hunt for small prey, typically coming and going as they please. Although some formerly feral cats, like Dodong and Tatang, have become sociable residents and are well cared for by Kuya June, a maintenance staff member who has devoted much time and effort to the Cateneans.",
 		"cats": [
 			{
-				"name": "Dongyan",
-				"pic": "2.jpeg"
+				"name": "Blue Eyes",
+				"pic": "new/blueeyes.JPG"
 			},
 			{
-				"name": "Barbie",
-				"pic": "1.jpeg"
+				"name": "One Eye",
+				"pic": "new/oneeye.JPG"
 			}
 		],
 		"bgColor": "#83C3E7",

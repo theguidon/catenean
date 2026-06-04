@@ -36,7 +36,7 @@
 }
 
 .cats article {
-  background-color: #FFFFEC;
+  background-color: #ffffec;
   box-shadow: 5px 5px 3px 0 rgba(0, 0, 0, 0.15);
   padding: 20px;
   margin-top: 16px;
@@ -44,33 +44,34 @@
 }
 
 .cats article:nth-child(1),
-.cats article:nth-child(1)>img {
+.cats article:nth-child(1) > img {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
 }
 
 .cats article:nth-child(2),
-.cats article:nth-child(2)>img {
+.cats article:nth-child(2) > img {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
 
-.cats article>p {
+.cats article > p {
   width: 100%;
   text-align: center;
   font-family: "Outfit", sans-serif;
   margin-top: 4px;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1rem, 5vw, 3rem);
   padding: 0;
   font-weight: 600;
 }
 
 .cats img {
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
-.writeup>.heading {
-  flex-grow: 1;
+.writeup > .heading {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -84,9 +85,8 @@
 
 .titleCaption h1 {
   font-family: "Solway", serif;
-  font-size: 6.5vw;
+  font-size: clamp(2rem, 5vw, 6rem);
   line-height: 100%;
-  margin-top: 2.3rem;
 }
 
 .titleCaption h2 {
@@ -95,7 +95,7 @@
   font-size: 2.5vw;
 }
 
-.writeup>.content {
+.writeup > .content {
   flex-grow: 3;
   background: #ffffec;
   padding: 32px;
@@ -131,7 +131,7 @@
   justify-content: end;
 }
 
-.link+.next img {
+.link + .next img {
   transform: scaleX(-1);
 }
 
@@ -175,7 +175,7 @@
 
   .titleCaption h1 {
     margin-top: 0;
-    font-size: 9vw;
+    font-size: 8vw;
     line-height: 100%;
   }
 
@@ -188,7 +188,7 @@
     padding: 5vw;
   }
 
-  .cats article>p {
+  .cats article > p {
     font-size: 4vw;
   }
 
@@ -245,7 +245,6 @@
     justify-content: flex-start;
     align-items: center;
     --stroke-width: 3.5px;
-    flex-grow: 1;
     min-width: 0;
   }
 
@@ -280,7 +279,7 @@
   }
 
   .titleCaption h1 {
-    font-size: 11vw;
+    font-size: 8vw;
   }
 
   .content {
@@ -314,7 +313,7 @@
     border-radius: 12px;
   }
 
-  .cats article>p {
+  .cats article > p {
     font-size: 5vw;
     margin-top: 10px;
   }

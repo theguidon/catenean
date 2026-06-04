@@ -3,7 +3,7 @@ import envelope from "../../assets/images/letter.svg";
 import cat1 from "../../assets/images/cats/10.jpeg";
 import cat2 from "../../assets/images/cats/8.jpeg";
 import back from "../../assets/images/back_to_start.svg";
-import { easeInOut, motion, MotionConfig } from "motion/react";
+import { easeInOut, motion } from "motion/react";
 import bylines from "../../data/bylines.json";
 import { NavLink } from "react-router";
 
@@ -23,19 +23,6 @@ const Conclusion = () => {
           bylines[bylines.length - 1]
         );
     }
-  };
-
-  const endVariants = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-      transition: { duration: 0.5, ease: easeInOut },
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: easeInOut },
-    },
   };
 
   return (

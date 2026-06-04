@@ -21,7 +21,7 @@ section.container {
   filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
 }
 
-.container > > section {
+.container > section {
   width: min-content;
   min-width: 100vw;
   height: 100%;
@@ -37,16 +37,16 @@ section.container {
   width: 60vw;
 }
 
-.textSection > > p {
+.textSection > p {
   margin-bottom: 1.5em;
 }
 
-.container > > .title {
+.container > .title {
   justify-content: space-between;
   padding: 20vh 0 10vh;
 }
 
-.title > > .bushes {
+.title > .bushes {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -67,7 +67,7 @@ section.graphics {
   width: 80%;
 }
 
-.graphics > > * {
+.graphics > * {
   transform-origin: bottom center;
 }
 
@@ -83,47 +83,47 @@ section.graphics {
   height: 40vh;
 }
 
-.highFiveContainer > > img {
+.highFiveContainer > img {
   position: absolute;
   margin: 0;
   bottom: 0;
 }
 
 /* HEART BACKGROUND */
-.highFiveContainer > > img:nth-of-type(1) {
+.highFiveContainer > img:nth-of-type(1) {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
 }
 
-.highFiveContainer.active > > img:nth-of-type(1) {
+.highFiveContainer.active > img:nth-of-type(1) {
   animation: highFiveHeart 2s 2;
   animation-delay: 1.5s;
 }
 
 /* HAND */
-.highFiveContainer > > img:nth-of-type(2) {
+.highFiveContainer > img:nth-of-type(2) {
   left: 50%;
   width: 50%;
   transform-origin: bottom right;
 }
 
-.highFiveContainer.active > > img:nth-of-type(2) {
+.highFiveContainer.active > img:nth-of-type(2) {
   animation: highFiveHand 3s;
 }
 
 /* PAW */
-.highFiveContainer > > img:nth-of-type(3) {
+.highFiveContainer > img:nth-of-type(3) {
   right: 50%;
   width: 50%;
   transform-origin: bottom left;
 }
 
-.highFiveContainer.active > > img:nth-of-type(3) {
+.highFiveContainer.active > img:nth-of-type(3) {
   animation: highFivePaw 3s;
 }
 
-.highFiveWrapper > > p {
+.highFiveWrapper > p {
   font-family: "Cedarville Cursive Regular";
   position: absolute;
   text-align: center;
@@ -132,7 +132,7 @@ section.graphics {
   opacity: 0;
 }
 
-.highFiveWrapper.active > > p {
+.highFiveWrapper.active > p {
   animation: highFiveText 0.75s ease-out 0.75s forwards;
 }
 
@@ -190,11 +190,11 @@ section.graphics {
   animation: 3s ease-in-out 0s infinite alternate-reverse swing;
 }
 
-.polaroid > > * {
+.polaroid > * {
   width: 100%;
 }
 
-.polaroid > > p {
+.polaroid > p {
   text-align: center;
   margin: 0;
   font-family: "Cedarville Cursive Regular";

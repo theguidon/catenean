@@ -44,6 +44,7 @@ const ArticleMain = () => {
       <div
         ref={scrollRef}
         style={{
+          height: "100vh",
           overflowX: "auto",
           overflowY: "clip",
         }}

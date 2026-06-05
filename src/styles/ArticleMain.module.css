@@ -42,7 +42,7 @@
     max-width: none;
     width: min-content;
     min-width: 200vw;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: clip;
     position: relative;
     height: 100dvh;

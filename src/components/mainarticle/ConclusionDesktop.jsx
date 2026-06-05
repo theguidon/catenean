@@ -5,6 +5,7 @@ import bylines from "../../data/bylines.json";
 import joinBylines from "../../utils/joinBylines";
 import cat1 from "../../assets/images/cats/1.jpeg";
 import cat2 from "../../assets/images/cats/2.jpeg";
+import Paw from "../../assets/images/Paw.svg";
 import string1 from "../../assets/images/conclusion_string1.svg";
 import string2 from "../../assets/images/conclusion_string2.svg";
 import { easeInOut, easeOut, motion, spring } from "motion/react";
@@ -177,6 +178,7 @@ const ConclusionDesktop = () => {
       <section className={creditStyles.buttons}>
         <NavLink to="/map" className={creditStyles.button}>
           View map
+          <img src={Paw} />
         </NavLink>
         <a href="#start" className={creditStyles.back}>
           <img src={back} />

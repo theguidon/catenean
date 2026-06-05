@@ -149,7 +149,7 @@
 
 .RBR {
   position: absolute;
-  left: -10vw;
+  left: -800px;
   bottom: -5%;
   z-index: 10;
 }
@@ -161,7 +161,7 @@
 .scrollIndicator {
   position: absolute;
   left: 42vw;
-  bottom: 2vh;
+  bottom: 5vh;
   z-index: 10;
   display: flex;
   gap: 4px;
@@ -182,7 +182,7 @@
 
 .photos {
   position: absolute;
-  left: 90vw;
+  left: 1300px;
   top: 12vh;
 }
 

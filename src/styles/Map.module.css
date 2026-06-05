@@ -121,6 +121,24 @@
   filter: drop-shadow(0 0 10px rgb(0, 0, 0, 0.5));
 }
 
+.articleBtn {
+  position: fixed;
+  top: 2vh;
+  right: 2vw;
+  width: 4vw;
+  z-index: 30;
+  cursor: pointer;
+}
+
+.articleBtnHover {
+  transition: opacity ease-in-out 150ms;
+  opacity: 0;
+}
+
+.articleBtnHover:hover {
+  opacity: 1;
+}
+
 @keyframes bob {
   0% {
     transform: translateY(-0.5rem);
@@ -271,4 +289,3 @@
     z-index: 10;
   }
 }
-

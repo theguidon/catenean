@@ -202,13 +202,13 @@ section.polaroidContainer {
   }
 
   .button {
-    transition: border-bottom ease 150ms;
-    border-bottom: 0px solid #a56953;
+    transition: box-shadow ease 150ms;
+    box-shadow: 0 0px 0 #a56953;
     position: relative;
   }
 
   .button:hover {
-    border-bottom: 10px solid #a56953;
+    box-shadow: 0 10px 0 #a56953;
   }
 
   .button > img {
@@ -220,6 +220,6 @@ section.polaroidContainer {
   }
 
   .button:hover > img {
-    opacity: 0.8;
+    opacity: 1;
   }
 }

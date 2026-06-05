@@ -14,6 +14,7 @@ import smallCloud1 from "../assets/Map/Map_Images/small cloud 1.svg";
 import smallCloud2 from "../assets/Map/Map_Images/small cloud 2.svg";
 import smallCloud3 from "../assets/Map/Map_Images/small cloud 3.svg";
 import Article from "../assets/images/article.svg";
+import ArticleHover from "../assets/images/article-hover.svg";
 import ArticleMobile from "../assets/images/mobile-article.svg";
 import { Link } from "react-router";
 import { motion, spring, AnimatePresence } from "motion/react";
@@ -285,23 +286,11 @@ const DesktopMap = () => {
           </main>
         </TransformComponent>
       </TransformWrapper>
-      <Link
-        to="/"
-        style={{
-          position: "fixed",
-          top: "2vh",
-          right: "2vw",
-          width: "4vw",
-          zIndex: 30,
-          cursor: "pointer",
-          border: "0",
-        }}
-      >
+      <Link to="/">
+        <img src={Article} className={styles.articleBtn} />
         <img
-          src={Article}
-          style={{
-            width: "100%",
-          }}
+          src={ArticleHover}
+          className={`${styles.articleBtn} ${styles.articleBtnHover}`}
         />
       </Link>
     </>

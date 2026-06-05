@@ -13,6 +13,7 @@ import ConclusionDesktop from "../components/mainarticle/ConclusionDesktop.jsx";
 import ConclusionMobile from "../components/mainarticle/ConclusionMobile.jsx";
 import { NavLink } from "react-router";
 import Map from "../assets/images/map.svg";
+import MapHover from "../assets/images/map-hover.svg";
 import MapMobile from "../assets/images/mobile-map.svg";
 
 // https://stackoverflow.com/questions/56153797/horizontal-scrolling-on-react-component-using-vertical-mouse-wheel
@@ -57,16 +58,10 @@ const ArticleMain = () => {
           <ComeAndGoDesktop />
           <ConclusionDesktop />
           <NavLink to="/map">
+            <img src={Map} className={styles.map} />
             <img
-              src={Map}
-              style={{
-                position: "fixed",
-                top: "2vh",
-                right: "2vw",
-                width: "4vw",
-                zIndex: 30,
-                cursor: "pointer",
-              }}
+              src={MapHover}
+              className={`${styles.map} ${styles.mapHover}`}
             />
           </NavLink>
         </main>

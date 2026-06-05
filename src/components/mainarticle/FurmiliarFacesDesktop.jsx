@@ -66,10 +66,7 @@ const FurmiliarFacesDesktop = () => {
           </MotionConfig>
         </section>
       </section>
-      <section
-        className={`ellipse1 snapContainer`}
-        style={{ paddingTop: "7vh" }}
-      >
+      <section className={`ellipse1 snapContainer`} style={{ paddingTop: "0" }}>
         <Ellipses style={{ width: "70vw" }}>
           <p>
             Whether one is sitting on a bench in CTC-SOM or taking a walk on the

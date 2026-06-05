@@ -90,6 +90,16 @@ section.buttons > * {
   align-items: center;
   text-decoration: none;
   gap: 12px;
+  opacity: 0.5;
+  transition: opacity ease-in-out 150ms;
+}
+
+.back img {
+  width: 70%;
+}
+
+.back:hover {
+  opacity: 1;
 }
 
 section.polaroidContainer {

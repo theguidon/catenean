@@ -192,116 +192,119 @@ const DesktopMap = () => {
   const mainEl = useRef();
 
   return (
-    <TransformWrapper initialScale={1} minPositionX={0} minPositionY={0}>
-      <TransformComponent
-        wrapperStyle={{
-          width: "100vw",
-          maxWidth: "100vw",
-          height: "100vh",
-          maxHeight: "100vh",
+    <>
+      <TransformWrapper initialScale={1} minPositionX={0} minPositionY={0}>
+        <TransformComponent
+          wrapperStyle={{
+            width: "100vw",
+            maxWidth: "100vw",
+            height: "100vh",
+            maxHeight: "100vh",
+          }}
+        >
+          <main
+            ref={mainEl}
+            className={styles.main}
+            id="map-main"
+            style={{ right: "0vw", top: "0vh" }}
+          >
+            <div className={styles.cloud}>
+              <p>
+                Visit each cat to learn about the fascinating tales they hold
+                about campus life. Discover the hidden nooks, legendary
+                landmarks, and cherished memories through the eyes of our
+                beloved feline friends and their loving partners, the
+                caretakers.
+              </p>
+              <motion.div
+                initial={{ scale: 0.5 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  type: "spring",
+                  bounce: 0.1,
+                  stiffness: 250,
+                  visualDuration: 0.5,
+                }}
+                className={styles.popup}
+              >
+                <p>Drag to pan around the map!</p>
+              </motion.div>
+            </div>
+            <img
+              className={styles.smallCloud}
+              src={smallCloud3}
+              style={{ left: "40%", top: "-5%", animationDelay: "-1s" }}
+            />
+            <img
+              className={styles.smallCloud}
+              src={smallCloud1}
+              style={{ left: "60%", top: "4%" }}
+            />
+            <img
+              className={styles.smallCloud}
+              src={smallCloud2}
+              style={{ left: "75%", top: "-1%", animationDelay: "-2s" }}
+            />
+            {Object.entries(buildingData).map(([key, data]) => (
+              <div key={key} className={styles.location} style={data.position}>
+                <div>
+                  <motion.img
+                    animate={{ scaleY: [1.5, 1] }}
+                    transition={{
+                      type: spring,
+                      stiffness: 100,
+                      animationDuration: 0.2,
+                      bounce: 0.2,
+                    }}
+                    className={styles.building}
+                    src={data.building}
+                  />
+                  <motion.div
+                    initial={{ scaleY: 1 }}
+                    whileHover={{ scaleY: [1, 1.1] }}
+                    animate={{ scaleY: [1.1, 1] }}
+                    transition={{
+                      type: spring,
+                      stiffness: 520,
+                      duration: 0.1,
+                      bounce: 0.1,
+                    }}
+                    className={styles.cat}
+                    style={data.cat.style}
+                  >
+                    <motion.img src={data.cat.src} />
+                  </motion.div>
+                  <CatButton
+                    slug={key}
+                    label={data.button.label}
+                    style={data.button.style}
+                  />
+                </div>
+              </div>
+            ))}
+          </main>
+        </TransformComponent>
+      </TransformWrapper>
+      <Link
+        to="/"
+        style={{
+          position: "fixed",
+          top: "2vh",
+          right: "2vw",
+          width: "4vw",
+          zIndex: 30,
+          cursor: "pointer",
+          border: "0",
         }}
       >
-        <main
-          ref={mainEl}
-          className={styles.main}
-          id="map-main"
-          style={{ right: "0vw", top: "0vh" }}
-        >
-          <div className={styles.cloud}>
-            <p>
-              Visit each cat to learn about the fascinating tales they hold
-              about campus life. Discover the hidden nooks, legendary landmarks,
-              and cherished memories through the eyes of our beloved feline
-              friends and their loving partners, the caretakers.
-            </p>
-            <motion.div
-              initial={{ scale: 0.5 }}
-              animate={{ scale: 1 }}
-              transition={{
-                type: "spring",
-                bounce: 0.1,
-                stiffness: 250,
-                visualDuration: 0.5,
-              }}
-              className={styles.popup}
-            >
-              <p>Drag to pan around the map!</p>
-            </motion.div>
-          </div>
-          <img
-            className={styles.smallCloud}
-            src={smallCloud3}
-            style={{ left: "40%", top: "-5%", animationDelay: "-1s" }}
-          />
-          <img
-            className={styles.smallCloud}
-            src={smallCloud1}
-            style={{ left: "60%", top: "4%" }}
-          />
-          <img
-            className={styles.smallCloud}
-            src={smallCloud2}
-            style={{ left: "75%", top: "-1%", animationDelay: "-2s" }}
-          />
-          {Object.entries(buildingData).map(([key, data]) => (
-            <div key={key} className={styles.location} style={data.position}>
-              <div>
-                <motion.img
-                  animate={{ scaleY: [1.5, 1] }}
-                  transition={{
-                    type: spring,
-                    stiffness: 100,
-                    animationDuration: 0.2,
-                    bounce: 0.2,
-                  }}
-                  className={styles.building}
-                  src={data.building}
-                />
-                <motion.div
-                  initial={{ scaleY: 1 }}
-                  whileHover={{ scaleY: [1, 1.1] }}
-                  animate={{ scaleY: [1.1, 1] }}
-                  transition={{
-                    type: spring,
-                    stiffness: 520,
-                    duration: 0.1,
-                    bounce: 0.1,
-                  }}
-                  className={styles.cat}
-                  style={data.cat.style}
-                >
-                  <motion.img src={data.cat.src} />
-                </motion.div>
-                <CatButton
-                  slug={key}
-                  label={data.button.label}
-                  style={data.button.style}
-                />
-              </div>
-            </div>
-          ))}
-          <Link
-            to="/"
-            style={{
-              position: "fixed",
-              top: "2vh",
-              right: "2vw",
-              width: "4vw",
-              zIndex: 30,
-              cursor: "pointer",
-              border: "0",
-            }}
-          >
-            <img
-              src={Article}
-              style={{
-                width: "100%",
-              }}
-            />
-          </Link>
-        </main>
-      </TransformComponent>
-    </TransformWrapper>
+        <img
+          src={Article}
+          style={{
+            width: "100%",
+          }}
+        />
+      </Link>
+    </>
   );
 };
 

@@ -194,13 +194,19 @@ const DesktopMap = () => {
 
   return (
     <>
-      <TransformWrapper initialScale={1} minPositionX={0} minPositionY={0}>
+      <TransformWrapper
+        initialScale={1}
+        minPositionX={0}
+        minPositionY={0}
+        disablePadding={true}
+      >
         <TransformComponent
           wrapperStyle={{
             width: "100vw",
             maxWidth: "100vw",
             height: "100vh",
             maxHeight: "100vh",
+            background: "#90dbc3",
           }}
         >
           <main

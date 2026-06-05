@@ -57,4 +57,22 @@
   .main * {
     z-index: 10;
   }
+
+  .map {
+    position: fixed;
+    top: 2vh;
+    right: 2vw;
+    width: 4vw;
+    z-index: 30;
+    cursor: pointer;
+  }
+
+  .mapHover {
+    transition: opacity ease-in-out 150ms;
+    opacity: 0;
+  }
+
+  .mapHover:hover {
+    opacity: 1;
+  }
 }

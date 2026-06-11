@@ -16,6 +16,7 @@ import smallCloud3 from "../assets/Map/Map_Images/small cloud 3.svg";
 import Article from "../assets/images/article.svg";
 import ArticleHover from "../assets/images/article-hover.svg";
 import ArticleMobile from "../assets/images/mobile-article.svg";
+import { BgMusic2 } from "../hooks/sounds.jsx";
 import { Link } from "react-router";
 import { motion, spring, AnimatePresence } from "motion/react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -113,6 +114,7 @@ const MobileMap = () => {
 
   return (
     <div className={styles.mobileMain}>
+      <BgMusic2 />
       <div className={styles.mobileCloud}>
         <p>
           Visit each cat to learn about the fascinating tales they hold about
@@ -299,6 +301,7 @@ const DesktopMap = () => {
           className={`${styles.articleBtn} ${styles.articleBtnHover}`}
         />
       </Link>
+      <BgMusic2 />
     </>
   );
 };

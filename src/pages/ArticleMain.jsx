@@ -15,6 +15,7 @@ import { NavLink } from "react-router";
 import Map from "../assets/images/map.svg";
 import MapHover from "../assets/images/map-hover.svg";
 import MapMobile from "../assets/images/mobile-map.svg";
+import { BgMusic1 } from "../hooks/sounds.jsx";
 
 // https://stackoverflow.com/questions/56153797/horizontal-scrolling-on-react-component-using-vertical-mouse-wheel
 function useHorizontalScroll() {
@@ -50,6 +51,7 @@ const ArticleMain = () => {
           overflowY: "clip",
         }}
       >
+        <BgMusic1 />
         <main className={styles.main}>
           <div id="start" style={{ left: 0, top: 0 }} />
           <IntroDesktop />
@@ -70,6 +72,7 @@ const ArticleMain = () => {
   }
   return (
     <main className={styles.main}>
+      <BgMusic1 />
       <IntroMobile />
       <FurmiliarFacesMobile />
       <DedicatedToTheirCareMobile />

@@ -12,8 +12,6 @@
 
 .ellipseOuter,
 .ellipseInner {
-  min-width: 100vw;
-  min-height: 100vh;
   background-color: #f3e7cc;
   border-radius: 50%;
   grid-row: 1 / -1;
@@ -39,7 +37,8 @@ p {
 
 h1 {
   font-family: "Solway", serif;
-  font-size: 5em;
+  font-size: 6em;
+  line-height: 1em;
   font-weight: bold;
 }
 
@@ -97,4 +96,37 @@ p {
   height: 12%;
   position: relative;
   right: 20%;
+}
+
+.pageButtons {
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10%;
+}
+
+.pageButtons img {
+  height: 8vh;
+}
+
+.lastEllipse {
+  width: 50vw;
+}
+
+.cloud {
+  position: absolute;
+  animation: 3s ease-in-out 0s infinite alternate-reverse bob;
+}
+
+@keyframes bob {
+  0% {
+    transform: translateY(-0.5rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import ArticleMain from "./pages/ArticleMain.jsx";
 import BuildingWriteup from "./pages/BuildingWriteup.jsx";
 import GameIntro from "./pages/GameIntro.jsx";
+import { GamePage1, GamePage2 } from "./pages/GameIntroPages.jsx";
 import GameLayout from "./pages/GameLayout.jsx";
 import buildings from "./data/locations.json";
 import Map from "./pages/Map.jsx";
@@ -39,7 +40,25 @@ let router = createBrowserRouter([
       {
         path: "game",
         Component: GameLayout,
-        children: [{ path: "intro", Component: GameIntro }],
+        children: [
+          {
+            path: "intro",
+            children: [
+              {
+                index: true,
+                Component: GameIntro,
+              },
+              {
+                path: "1",
+                Component: GamePage1,
+              },
+              {
+                path: "2",
+                Component: GamePage2,
+              },
+            ],
+          },
+        ],
       },
     ],
   },

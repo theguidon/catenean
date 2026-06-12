@@ -1,11 +1,5 @@
-import styles from "../styles/game.module.css";
-import {
-  motion,
-  AnimatePresence,
-  easeInOut,
-  MotionConfig,
-  spring,
-} from "motion/react";
+import styles from "../../styles/game.module.css";
+import { motion, AnimatePresence, easeInOut } from "motion/react";
 
 export default function EllipseBG() {
   const transitionOps = { ease: easeInOut, duration: 0.15 };
@@ -18,7 +12,7 @@ export default function EllipseBG() {
         animate={{ opacity: 0.5 }}
         exit={{ opacity: 0 }}
         transition={transitionOps}
-        className={styles.ellipseOuter}
+        className={`${styles.ellipseOuter}`}
       />
       <motion.div
         key="ellipse-inner"

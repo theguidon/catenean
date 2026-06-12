@@ -5,18 +5,11 @@ import CatHouse from "../assets/images/Cat House.svg";
 import CatSitting from "../assets/images/Cat (Sitting).svg";
 import FoodBowl from "../assets/images/Food Bowl.svg";
 import { Link } from "react-router";
-import {
-  motion,
-  AnimatePresence,
-  easeInOut,
-  MotionConfig,
-  spring,
-} from "motion/react";
-
+import { motion, easeInOut, MotionConfig, spring } from "motion/react";
 
 function CatButton() {
   return (
-    <Link to="/intro/1" className={styles.catButton}>
+    <Link to="/game/intro/1" className={styles.catButton}>
       <img src={ears} />
       <p>Start Game</p>
     </Link>
@@ -39,9 +32,9 @@ export default function GameIntro() {
     <>
       <EllipseBG />
       <motion.section
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ ease: easeInOut, duration: 0.25, delay: 0.7 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: easeInOut, duration: 0.25, delay: 0.7 }}
         style={{
           width: "35%",
           display: "flex",
@@ -71,7 +64,11 @@ export default function GameIntro() {
           animate={bounceAnimation.animate}
           transition={bounceAnimation.transition}
         >
-          <motion.img src={CatHouse} className={styles.catHouse} transition={{ ...bounceAnimation.transition, delay: 1 }} />
+          <motion.img
+            src={CatHouse}
+            className={styles.catHouse}
+            transition={{ ...bounceAnimation.transition, delay: 1 }}
+          />
           <motion.img
             src={CatSitting}
             className={styles.catSit}

@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import ArticleMain from "./pages/ArticleMain.jsx";
 import BuildingWriteup from "./pages/BuildingWriteup.jsx";
+import GameIntro from "./pages/GameIntro.jsx";
+import GameLayout from "./pages/GameLayout.jsx";
 import buildings from "./data/locations.json";
 import Map from "./pages/Map.jsx";
 import { Analytics } from "@vercel/analytics/react";
@@ -33,6 +35,11 @@ let router = createBrowserRouter([
         path: "location/:bldg",
         Component: BuildingWriteup,
         loader: ({ params }) => buildings[params.bldg],
+      },
+      {
+        path: "game",
+        Component: GameLayout,
+        children: [{ path: "intro", Component: GameIntro }],
       },
     ],
   },

@@ -1,67 +1,100 @@
-section {
-  background-color: #A0D8CF;
+.main {
+  background: center / cover url("/assets/game_desktop_bg.svg") repeat;
+  width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: row;
-  padding: 5%;
-}
-
-.gamearea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 70px 0px 0px 0px;
-  text-align: center;
+  display: grid;
+  overflow: clip;
+  grid-template-rows: 100vh;
+  grid-template-columns: 100vw;
+  place-items: center;
   position: relative;
 }
 
-.droppable{
-  border: 2px solid red;
-  width: 120px;
-  height: 120px;
-  position: absolute;
+.ellipseOuter,
+.ellipseInner {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #f3e7cc;
+  border-radius: 50%;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
 }
 
-.heading {
+.ellipseOuter {
+  opacity: 0.5;
+  width: 105vw;
+  aspect-ratio: 1294/941;
+}
+
+.ellipseInner {
+  opacity: 1;
+  width: 101vw;
+  aspect-ratio: 1262/894;
+}
+
+h1,
+p {
+  color: #205950;
+}
+
+h1 {
+  font-family: "Solway", serif;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 2em;
+}
+
+.catButton {
+  width: 22em;
   display: flex;
+  flex-flow: column nowrap;
   align-items: center;
+  background: none;
+  border: none;
+  margin-top: 3em;
 }
 
-.heading h1 {
-  font-family: "Cherry Swash", serif;
-  color: #205950;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 35px;
-  padding-left: 0.5em;
+.catButton p {
+  background: #ffffec;
+  border: 1px solid #ffffec;
+  padding: 0.8em 1em;
+  width: 100%;
+  border-radius: 99999px;
+  font-family: "AndesNeue Alt 2 Bold", serif;
+  font-size: 2.5em;
 }
 
-.submit {
-  display: inline-block;
-  font-family: "AndesNeue Alt 2 Bold", sans-serif;
-  text-align: center;
-  color: #205950;
-  background: #FFFCEE;
-  padding: 10px 30px;
-  border-radius: 30px;
-  font-size: 1.5em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: -1.6px;
+.catButton > img {
+  width: 40%;
+  position: relative;
+  top: 2px;
 }
 
-.submit:hover {
-  transform: translateY(-7px);
-  box-shadow: 0px 7px #205950;
+.introGraphic {
+  height: 80vh;
+  position: absolute;
+  left: 7%;
+  bottom: 8%;
+  display: flex;
+  align-items: flex-end;
 }
 
-.submit:active {
-  transform: translateY(0px);
-  box-shadow: 0px 0px #205950;
+.catHouse {
+  height: 80%;
 }
 
-aside {
-  width: 50%;
+.catSit {
+  height: 50%;
+  position: relative;
+  right: 20%;
 }
 
+.foodBowl {
+  height: 12%;
+  position: relative;
+  right: 20%;
+}

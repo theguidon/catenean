@@ -3,9 +3,9 @@ import CloudLeft from "../assets/images/game/CloudLeft.svg";
 import CloudRight from "../assets/images/game/CloudRight.svg";
 import styles from "../styles/game.module.css";
 
-export default function GameLayout() {
+export function GameIntroLayout() {
   return (
-    <main className={styles.main}>
+    <>
       <Outlet />
       <img
         src={CloudLeft}
@@ -39,6 +39,14 @@ export default function GameLayout() {
           animationDelay: -2,
         }}
       />
+    </>
+  );
+}
+
+export function GameLayout() {
+  return (
+    <main className={styles.main}>
+      <Outlet />
     </main>
   );
 }

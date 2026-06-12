@@ -5,7 +5,7 @@ import ArticleMain from "./pages/ArticleMain.jsx";
 import BuildingWriteup from "./pages/BuildingWriteup.jsx";
 import GameIntro from "./pages/GameIntro.jsx";
 import { GamePage1, GamePage2 } from "./pages/GameIntroPages.jsx";
-import GameLayout from "./pages/GameLayout.jsx";
+import { GameLayout, GameIntroLayout } from "./pages/GameLayout.jsx";
 import buildings from "./data/locations.json";
 import Map from "./pages/Map.jsx";
 import { Analytics } from "@vercel/analytics/react";
@@ -43,6 +43,7 @@ let router = createBrowserRouter([
         children: [
           {
             path: "intro",
+            Component: GameIntroLayout,
             children: [
               {
                 index: true,

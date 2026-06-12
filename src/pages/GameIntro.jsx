@@ -1,4 +1,5 @@
 import styles from "../styles/game.module.css";
+import EllipseBG from "../components/gameintro/ellipsesBG";
 import ears from "../assets/images/cats/illustrations/Ears.svg";
 import CatHouse from "../assets/images/Cat House.svg";
 import CatSitting from "../assets/images/Cat (Sitting).svg";
@@ -12,30 +13,6 @@ import {
   spring,
 } from "motion/react";
 
-function EllipseBG() {
-  const transitionOps = { ease: easeInOut, duration: 0.15 };
-
-  return (
-      <AnimatePresence>
-        <motion.div
-          key="ellipse-outer"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          exit={{ opacity: 0 }}
-    transition={ transitionOps }
-          className={styles.ellipseOuter}
-        />
-        <motion.div
-          key="ellipse-inner"
-          className={styles.ellipseInner}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={ transitionOps }
-          exit={{ opacity: 0 }}
-        />
-      </AnimatePresence>
-  );
-}
 
 function CatButton() {
   return (

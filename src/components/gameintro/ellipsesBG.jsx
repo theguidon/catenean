@@ -5,14 +5,24 @@ export default function EllipseBG() {
   const transitionOps = { ease: easeInOut, duration: 0.15 };
 
   return (
-    <AnimatePresence>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        overflow: "clip",
+        display: "grid",
+        gridTemplateRows: "100vh",
+        gridTemplateColumns: "100vw",
+        placeItems: "center",
+        position: "absolute",
+      }}
+    >
       <motion.div
         key="ellipse-outer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
-        exit={{ opacity: 0 }}
         transition={transitionOps}
-        className={`${styles.ellipseOuter}`}
+        className={styles.ellipseOuter}
       />
       <motion.div
         key="ellipse-inner"
@@ -20,8 +30,7 @@ export default function EllipseBG() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={transitionOps}
-        exit={{ opacity: 0 }}
       />
-    </AnimatePresence>
+    </div>
   );
 }

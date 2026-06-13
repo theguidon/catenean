@@ -2,12 +2,11 @@
   background: center / cover url("/assets/game_desktop_bg.svg") repeat;
   width: 100vw;
   height: 100vh;
-  display: grid;
   overflow: clip;
-  grid-template-rows: 100vh;
-  grid-template-columns: 100vw;
-  place-items: center;
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .ellipseOuter,
@@ -20,13 +19,13 @@
 
 .ellipseOuter {
   opacity: 0.5;
-  width: 105vw;
+  width: 105%;
   aspect-ratio: 1294/941;
 }
 
 .ellipseInner {
   opacity: 1;
-  width: 101vw;
+  width: 101%;
   aspect-ratio: 1262/894;
 }
 

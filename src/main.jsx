@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import ArticleMain from "./pages/ArticleMain.jsx";
 import BuildingWriteup from "./pages/BuildingWriteup.jsx";
+import Game from "./pages/Game.jsx";
 import GameIntro from "./pages/GameIntro.jsx";
 import { GamePage1, GamePage2 } from "./pages/GameIntroPages.jsx";
 import { GameLayout, GameIntroLayout } from "./pages/GameLayout.jsx";
@@ -58,6 +59,10 @@ let router = createBrowserRouter([
                 Component: GamePage2,
               },
             ],
+          },
+          {
+            path: "play",
+            Component: Game,
           },
         ],
       },

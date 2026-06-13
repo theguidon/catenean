@@ -7,32 +7,56 @@ import Fish from "../assets/images/game/placeholders/Fish.svg";
 
 export default function Game() {
   const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
-  const categories = [
-    { name: "Location", icon: Pin },
-    { name: "Quirk", icon: Star },
-    { name: "Personality", icon: Paw },
-    { name: "Fave Spot", icon: House },
-    { name: "Fave Food", icon: Fish },
-  ];
-  const CategoryRow = (category) => {
-    return (
-      <>
-        <h1 className={category.catHeader}>{category}</h1>
-        <section className={category.catCell}>
-          <img src={category.icon} />
-        </section>
-      </>
-    );
-  };
   return (
     <section className={styles.gameTable}>
-      {catNames.map((name) => (
-        <h1 key={name} className={styles.nameHeader}>
-          {name}
-        </h1>
+      {catNames.map((name, ix) => (
+        <section
+          style={{ gridColumn: ix + 2 }}
+          key={name}
+          className={styles.nameHeader}
+        >
+          <h1>{name}</h1>
+        </section>
       ))}
-      {categories.map((category) => (
-        <CategoryRow key={category.name} category={category} />
+      <section className={styles.catHeader}>
+        <h1>Location</h1>
+      </section>
+      {Array.from({ length: 5 }).map((ix) => (
+        <section key={`location-${ix}`} className={styles.catCell}>
+          <img src={House} />
+        </section>
+      ))}
+      <section className={styles.catHeader}>
+        <h1>Quirk</h1>
+      </section>
+      {Array.from({ length: 5 }).map((ix) => (
+        <section key={`location-${ix}`} className={styles.catCell}>
+          <img src={Star} />
+        </section>
+      ))}
+      <section className={styles.catHeader}>
+        <h1>Personality</h1>
+      </section>
+      {Array.from({ length: 5 }).map((ix) => (
+        <section key={`location-${ix}`} className={styles.catCell}>
+          <img src={Paw} />
+        </section>
+      ))}
+      <section className={styles.catHeader}>
+        <h1>Fave Spot</h1>
+      </section>
+      {Array.from({ length: 5 }).map((ix) => (
+        <section key={`location-${ix}`} className={styles.catCell}>
+          <img src={Pin} />
+        </section>
+      ))}
+      <section className={styles.catHeader}>
+        <h1>Fave Food</h1>
+      </section>
+      {Array.from({ length: 5 }).map((ix) => (
+        <section key={`location-${ix}`} className={styles.catCell}>
+          <img src={Pin} />
+        </section>
       ))}
     </section>
   );

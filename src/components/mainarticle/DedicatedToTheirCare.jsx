@@ -253,7 +253,9 @@ const DedicatedToTheirCareDesktop = () => {
             stewards when it comes to animals, so I provide them with help when
             they are in need as much as I can.)
           </QuoteCard>
-          <p>Rampola expresses.</p>
+          <p style={{ marginTop: "0.5em" }}>
+            Pauline Rampola, <em>Punla Formator</em>
+          </p>
         </section>
         <section className={`${styles.graphics}`}></section>
       </section>

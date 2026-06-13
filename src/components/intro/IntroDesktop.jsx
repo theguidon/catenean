@@ -15,15 +15,12 @@ export default function IntroDesktop() {
   return (
     <div className={styles.main}>
       <div className={styles.section}>
-        <Ellipses style={{ height: "90vh", width: "50vw" }}>
+        <Ellipses style={{ height: "80vh", width: "50vw" }}>
           <p style={{ margin: 0, padding: 0 }}>
             <strong>TINY PAWS</strong> and swaying tails are a common sight in
-            nearly every hallway and corridor of the Ateneo.
-          </p>
-          <p style={{ margin: 0, padding: 0 }}>
-            The <em>Cateneans</em>&mdash;as the community has affectionately
-            called the campus cats&mdash;blend seamlessly among chattering
-            students.
+            nearly every hallway and corridor of the Ateneo. The{" "}
+            <em>Cateneans</em>&mdash;as the community has affectionately called
+            the campus cats&mdash;blend seamlessly among chattering students.
           </p>
         </Ellipses>
         <div className={styles.graphics}>
@@ -45,7 +42,7 @@ export default function IntroDesktop() {
         </div>
       </div>
       <div className={`${styles.section} ${styles.section2}`}>
-        <Ellipses style={{ height: "90vh", width: "50vw" }}>
+        <Ellipses style={{ height: "80vh", width: "50vw" }}>
           <p style={{ margin: 0, padding: 0 }}>
             Amid the daily bustle of the Loyola Heights campus, the Cateneans
             take solace in the tiniest nooks and crannies of buildings.
@@ -97,7 +94,7 @@ export default function IntroDesktop() {
       </div>
       <div className={styles.scrollIndicator}>
         <BsFillMouseFill size={32} />
-        <p>Scroll to read the article</p>
+        <p>Scroll down to read the article</p>
       </div>
     </div>
   );

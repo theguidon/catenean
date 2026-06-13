@@ -197,7 +197,7 @@ const DesktopMap = () => {
   return (
     <>
       <TransformWrapper
-        initialScale={1}
+        initialScale={1.3}
         minPositionX={0}
         minPositionY={0}
         disablePadding={true}

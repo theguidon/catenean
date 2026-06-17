@@ -1,9 +1,10 @@
 import styles from "../styles/ArticleMain.module.css";
+import StartScreen from "./StartScreen.jsx";
 import IntroDesktop from "../components/intro/IntroDesktop";
 import IntroMobile from "../components/intro/IntroMobile";
 import FurmiliarFacesMobile from "../components/mainarticle/FurmiliarFacesMobile.jsx";
 import { useMediaQuery } from "react-responsive";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import FurmiliarFacesDesktop from "../components/mainarticle/FurmiliarFacesDesktop.jsx";
 import DedicatedToTheirCareDesktop from "../components/mainarticle/DedicatedToTheirCare.jsx";
 import DedicatedToTheirCareMobile from "../components/mainarticle/DedicatedToTheirCareMobile.jsx";
@@ -41,34 +42,43 @@ function useHorizontalScroll() {
 const ArticleMain = () => {
   const scrollRef = useHorizontalScroll();
   const isDesktop = useMediaQuery({ query: "(min-width: 501px)" });
+  const [startPressed, setStartPressed] = useState(false);
   if (isDesktop) {
-    return (
-      <div
-        ref={scrollRef}
-        style={{
-          height: "100vh",
-          overflowX: "auto",
-          overflowY: "clip",
-        }}
-      >
-        <BgMusic1 />
+    if (!startPressed) {
+      return (
         <main className={styles.main}>
-          <div id="start" style={{ left: 0, top: 0 }} />
-          <IntroDesktop />
-          <FurmiliarFacesDesktop />
-          <DedicatedToTheirCareDesktop />
-          <ComeAndGoDesktop />
-          <ConclusionDesktop />
-          <NavLink to="/map">
-            <img src={Map} className={styles.map} />
-            <img
-              src={MapHover}
-              className={`${styles.map} ${styles.mapHover}`}
-            />
-          </NavLink>
+          <StartScreen startInteractive={() => setStartPressed(true)} />
         </main>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div
+          ref={scrollRef}
+          style={{
+            height: "100vh",
+            overflowX: "auto",
+            overflowY: "clip",
+          }}
+        >
+          <BgMusic1 />
+          <main className={styles.main}>
+            <div id="start" style={{ left: 0, top: 0 }} />
+            <IntroDesktop />
+            <FurmiliarFacesDesktop />
+            <DedicatedToTheirCareDesktop />
+            <ComeAndGoDesktop />
+            <ConclusionDesktop />
+            <NavLink to="/map">
+              <img src={Map} className={styles.map} />
+              <img
+                src={MapHover}
+                className={`${styles.map} ${styles.mapHover}`}
+              />
+            </NavLink>
+          </main>
+        </div>
+      );
+    }
   }
   return (
     <main className={styles.main}>

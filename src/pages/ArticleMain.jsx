@@ -39,10 +39,37 @@ function useHorizontalScroll() {
   return elRef;
 }
 
-const ArticleMain = () => {
+function ArticleDesktop() {
   const scrollRef = useHorizontalScroll();
-  const isDesktop = useMediaQuery({ query: "(min-width: 501px)" });
+  return (
+    <div
+      ref={scrollRef}
+      style={{
+        height: "100vh",
+        overflowX: "auto",
+        overflowY: "clip",
+      }}
+    >
+      <BgMusic1 />
+      <main className={styles.main}>
+        <div id="start" style={{ left: 0, top: 0 }} />
+        <IntroDesktop />
+        <FurmiliarFacesDesktop />
+        <DedicatedToTheirCareDesktop />
+        <ComeAndGoDesktop />
+        <ConclusionDesktop />
+        <NavLink to="/map">
+          <img src={Map} className={styles.map} />
+          <img src={MapHover} className={`${styles.map} ${styles.mapHover}`} />
+        </NavLink>
+      </main>
+    </div>
+  );
+}
+
+const ArticleMain = () => {
   const [startPressed, setStartPressed] = useState(false);
+  const isDesktop = useMediaQuery({ query: "(min-width: 501px)" });
   if (isDesktop) {
     if (!startPressed) {
       return (
@@ -51,33 +78,7 @@ const ArticleMain = () => {
         </main>
       );
     } else {
-      return (
-        <div
-          ref={scrollRef}
-          style={{
-            height: "100vh",
-            overflowX: "auto",
-            overflowY: "clip",
-          }}
-        >
-          <BgMusic1 />
-          <main className={styles.main}>
-            <div id="start" style={{ left: 0, top: 0 }} />
-            <IntroDesktop />
-            <FurmiliarFacesDesktop />
-            <DedicatedToTheirCareDesktop />
-            <ComeAndGoDesktop />
-            <ConclusionDesktop />
-            <NavLink to="/map">
-              <img src={Map} className={styles.map} />
-              <img
-                src={MapHover}
-                className={`${styles.map} ${styles.mapHover}`}
-              />
-            </NavLink>
-          </main>
-        </div>
-      );
+      return <ArticleDesktop />;
     }
   }
   return (

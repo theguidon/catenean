@@ -60,21 +60,22 @@
 }
 
 .cloud1 {
-  width: 20rem;
-  inset: 50% auto auto -5%;
-  translate: 0 calc(-50% - 17rem);
+  height: 25vh;
+  left: 0;
+  top: 5vh;
 }
 
 .cloud2 {
-  width: 17rem;
-  translate: calc(-50% - 23rem) calc(-50% - 25rem);
+  height: 28vh;
+  left: 30vw;
+  top: -5vh;
   animation-delay: -2s;
 }
 
 .cloud3 {
-  width: 16rem;
-  translate: calc(-50% + 25rem) calc(-50% - 20rem);
-  animation-delay: -1s;
+  height: 23vh;
+  left: 60vw;
+  top: 10vh;
 }
 
 .ellipses {
@@ -150,7 +151,7 @@
 .RBR {
   position: absolute;
   left: -800px;
-  bottom: -5%;
+  bottom: -2%;
   z-index: 10;
 }
 
@@ -161,7 +162,7 @@
 .scrollIndicator {
   position: absolute;
   left: 42vw;
-  bottom: 5vh;
+  bottom: 4vh;
   z-index: 10;
   display: flex;
   gap: 4px;
@@ -174,7 +175,8 @@
 
 .scrollIndicator p {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  line-height: 1rem;
   font-family: "Outfit";
   font-weight: medium;
   margin: 0;
@@ -182,8 +184,8 @@
 
 .photos {
   position: absolute;
-  left: 1300px;
-  top: 12vh;
+  left: 60vw;
+  bottom: 65vh;
 }
 
 @keyframes fadeInOut {

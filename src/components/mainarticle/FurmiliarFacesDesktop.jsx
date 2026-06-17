@@ -70,9 +70,8 @@ const FurmiliarFacesDesktop = () => {
         <Ellipses style={{ width: "70vw" }}>
           <p>
             Whether one is sitting on a bench in CTC-SOM or taking a walk on the
-            Red Brick Road, a furry company will never be far from sight.
-            <br />
-            They can be found either lounging with their legs stretched forward,
+            Red Brick Road, a furry company will never be far from sight. They
+            can be found either lounging with their legs stretched forward,
             brushing softly against a passerby&apos;s leg, or wandering up to
             students and staff seeking food.
           </p>
@@ -238,8 +237,8 @@ const FurmiliarFacesDesktop = () => {
             In Areté, the cats do not shy away from showing off their unique
             quirks. For instance, the late Ponpon was often kept inside a cage
             due to his habit of staying near cars. He and George shared a
-            playful rivalry, with George’s bunso title once stolen by Ponpon
-            before his untimely passing.
+            playful rivalry, with George’s <em>bunso</em> title once stolen by
+            Ponpon before his untimely passing.
           </p>
           <p>
             A few steps away, in another corner of Areté, cateneans Tita Mel and
@@ -295,17 +294,23 @@ const FurmiliarFacesDesktop = () => {
         <section className={`${styles.textSection}`}>
           <p>
             Over in Schmitt Hall, Hakaw and Maimai share the space in spite of
-            their contrasting personalities. According to Ateneans Guided and
-            Inspired by Love for Animals (AGILA) moderator and Chemistry
-            Department Chair Olivia Erin Buenafe, the extroverted Hakaw is
-            considered the “spiritual successor” to{" "}
+            their contrasting personalities.
+          </p>
+          <p>
+            According to Ateneans Guided and Inspired by Love for Animals
+            (AGILA) moderator and Chemistry Department Chair Olivia Erin
+            Buenafe, the extroverted Hakaw is considered the “spiritual
+            successor” to{" "}
             <a href="https://www.facebook.com/photo/?fbid=699889072175925&set=a.463936722437829">
               late Paopao
             </a>
             , after inheriting some of his endearing habits like opening
-            windows. On the other hand, introverted Maimai plays by her own
-            terms, only interacting with people whenever she deems fit and
-            retreats inside buildings to relish in her own company.
+            windows.
+          </p>
+          <p>
+            On the other hand, introverted Maimai plays by her own terms, only
+            interacting with people whenever she deems fit and retreats inside
+            buildings to relish in her own company.
           </p>
         </section>
         <section
@@ -317,6 +322,7 @@ const FurmiliarFacesDesktop = () => {
               whileInView={bounceAnimation.whileInView}
               transition={{ ...bounceAnimation.transition, delay: 0.25 }}
               className={styles.bldg}
+              style={{ zIndex: 30 }}
               src={Schmitt}
             />
             <motion.img

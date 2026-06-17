@@ -40,7 +40,7 @@ const ConclusionDesktop = () => {
         style={{
           position: "absolute",
           top: "-10vh",
-          right: 300,
+          right: 900,
         }}
       />
       <img
@@ -161,7 +161,7 @@ const ConclusionDesktop = () => {
       <section
         className={creditStyles.bylines}
         style={{
-          marginTop: "12vh",
+          marginTop: "6vh",
           marginRight: 100,
           width: "70ch",
           alignSelf: "start",

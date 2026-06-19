@@ -231,6 +231,44 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
+      <section
+        style={{
+          display: "flex",
+          flexFlow: "column nowrap",
+          justifyContent: "flex-start",
+          paddingTop: "10vh",
+          alignItems: "stretch",
+          margin: "0 32px",
+          minWidth: 0,
+          width: "450px",
+        }}
+      >
+        <article
+          className={styles.polaroid}
+          style={{
+            zIndex: 1,
+            transform: "rotate(5deg)",
+            animation: `3s ease-in-out 0s infinite alternate-reverse ${styles.swingLeftPolaroid}`,
+          }}
+        >
+          <img src="/assets/cats/new/blueeyesCompressed.webp" alt="" />
+          <p>Blue Eyes</p>
+        </article>
+        <article
+          className={styles.polaroid}
+          style={{
+            position: "relative",
+            transform: "rotate(5deg)",
+            animation: `3s ease-in-out -1s infinite alternate-reverse ${styles.swingLeftPolaroid}`,
+            bottom: "2%",
+            left: 40,
+            zIndex: 0,
+          }}
+        >
+          <img src="/assets/cats/new/bardagulCompressed.webp" alt="" />
+          <p>Bardagul</p>
+        </article>
+      </section>
       <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
@@ -260,18 +298,40 @@ const FurmiliarFacesDesktop = () => {
             }}
             style={{ width: "50%", transformOrigin: "bottom center" }}
           />
-          <motion.img
-            src={Bush}
-            whileInView={{ scaleY: [0, 1.5, 1] }}
-            transition={{
-              type: spring,
-              stiffness: 100,
-              animationDuration: 0.2,
-              bounce: 0.2,
-              delay: 0.5,
+          <section
+            style={{
+              display: "flex",
+              flexFlow: "row nowrap",
+              position: "relative",
+              left: "5vw",
+              bottom: "2vh",
             }}
-            style={{ height: "20vh", transformOrigin: "bottom center" }}
-          />
+          >
+            <article
+              className={styles.polaroid}
+              style={{
+                zIndex: 1,
+                transform: "rotate(5deg)",
+                animation: `3s ease-in-out 0s infinite alternate-reverse ${styles.swingLeftPolaroid}`,
+              }}
+            >
+              <img src="/assets/cats/new/ponponCompressed.webp" alt="" />
+              <p>Ponpon</p>
+            </article>
+            <article
+              className={styles.polaroid}
+              style={{
+                zIndex: 0,
+                transform: "rotate(-10deg)",
+                right: "3vw",
+                bottom: "8vh",
+                animation: `3s ease-in-out 500ms infinite alternate-reverse ${styles.swingRightPolaroid}`,
+              }}
+            >
+              <img src="/assets/cats/new/georgeCompressed.webp" alt="" />
+              <p>George</p>
+            </article>
+          </section>
           <img
             src={RedFlower}
             className={styles.flower}
@@ -325,6 +385,21 @@ const FurmiliarFacesDesktop = () => {
               style={{ zIndex: 30 }}
               src={Schmitt}
             />
+            <article
+              className={styles.polaroid}
+              style={{
+                zIndex: 0,
+                transform: "rotate(-10deg)",
+                padding: "2%",
+                width: 400,
+                right: -100,
+                bottom: "2vh",
+                animation: `3s ease-in-out 500ms infinite alternate-reverse ${styles.swingRightPolaroid}`,
+              }}
+            >
+              <img src="/assets/cats/new/hakawCompressed.webp" alt="" />
+              <p style={{ fontSize: "3em" }}>Hakaw</p>
+            </article>
             <motion.img
               src={Bush}
               whileInView={bounceAnimation.whileInView}
@@ -342,7 +417,7 @@ const FurmiliarFacesDesktop = () => {
               style={{
                 height: "22vh",
                 position: "absolute",
-                right: "0%",
+                right: -400,
                 bottom: "-5%",
               }}
             />
@@ -353,16 +428,6 @@ const FurmiliarFacesDesktop = () => {
             style={{
               position: "absolute",
               left: "-8%",
-              height: "10vh",
-              bottom: "22%",
-            }}
-          />
-          <img
-            src={YellowFlower2}
-            className={styles.flower}
-            style={{
-              position: "absolute",
-              right: "28%",
               height: "10vh",
               bottom: "22%",
             }}

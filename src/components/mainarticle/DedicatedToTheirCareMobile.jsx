@@ -159,7 +159,7 @@ const DedicatedToTheirCareMobile = () => {
         </p>
         <p>
           In return, the cats brighten the mood of their workspace as they
-          scurry around the grounds of thae science building. “We are all
+          scurry around the grounds of the science building. “We are all
           burdened with a lot of work on our plates—but seeing them, interacting
           with them, kind of helps distract us from the stress,” states Buenafe.
         </p>
@@ -191,7 +191,9 @@ const DedicatedToTheirCareMobile = () => {
         when it comes to animals, so I help them as much as I can when they are
         in need.)”
       </QuoteCard>
-      <p style={{ width: "100%" }}>Rampola expresses.</p>
+      <p style={{ width: "100%" }}>
+        Pauline Rampola, <em>Punla Formator</em>
+      </p>
       <p>
         Through consistent nurture, the Cateneans have become an endearing
         feature of our community, providing brief solace to many of its members,

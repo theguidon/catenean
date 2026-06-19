@@ -123,6 +123,7 @@
 .polaroid {
   background: #ffffff;
   width: 70vw;
+  height: 30vh;
   padding: 3% 3%;
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.15);
   position: relative;

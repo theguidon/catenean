@@ -24,6 +24,9 @@ export default function Game() {
       {Array.from({ length: 5 }).map((ix) => (
         <section key={`location-${ix}`} className={styles.catCell}>
           <img src={House} />
+          <div className={styles.catCellHover}>
+            <p>Guess Answer</p>
+          </div>
         </section>
       ))}
       <section className={styles.catHeader}>
@@ -32,6 +35,9 @@ export default function Game() {
       {Array.from({ length: 5 }).map((ix) => (
         <section key={`location-${ix}`} className={styles.catCell}>
           <img src={Star} />
+          <div className={styles.catCellHover}>
+            <p>Guess Answer</p>
+          </div>
         </section>
       ))}
       <section className={styles.catHeader}>
@@ -40,6 +46,9 @@ export default function Game() {
       {Array.from({ length: 5 }).map((ix) => (
         <section key={`location-${ix}`} className={styles.catCell}>
           <img src={Paw} />
+          <div className={styles.catCellHover}>
+            <p>Guess Answer</p>
+          </div>
         </section>
       ))}
       <section className={styles.catHeader}>
@@ -48,6 +57,9 @@ export default function Game() {
       {Array.from({ length: 5 }).map((ix) => (
         <section key={`location-${ix}`} className={styles.catCell}>
           <img src={Pin} />
+          <div className={styles.catCellHover}>
+            <p>Guess Answer</p>
+          </div>
         </section>
       ))}
       <section className={styles.catHeader}>
@@ -56,6 +68,9 @@ export default function Game() {
       {Array.from({ length: 5 }).map((ix) => (
         <section key={`location-${ix}`} className={styles.catCell}>
           <img src={Pin} />
+          <div className={styles.catCellHover}>
+            <p>Guess Answer</p>
+          </div>
         </section>
       ))}
     </section>

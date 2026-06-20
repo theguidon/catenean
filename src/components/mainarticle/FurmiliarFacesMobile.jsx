@@ -202,7 +202,7 @@ const FurmiliarFacesMobile = () => {
             style={{ position: "absolute", bottom: "0", width: "101dvw" }}
           />
         </div>
-        <p>
+        <p style={{ marginBottom: "5vh" }}>
           Over in Schmitt Hall, Hakaw and Maimai share the space in spite of
           their contrasting personalities. According to Ateneans Guided and
           Inspired by Love for Animals (AGILA) moderator and Chemistry

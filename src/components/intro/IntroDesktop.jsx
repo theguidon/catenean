@@ -113,8 +113,8 @@ export default function IntroDesktop() {
         <motion.img
           src={Bush}
           initial={{ left: -200 }}
-          animate={{ left: -400 }}
-          transition={{ duration: 1, ease: easeOut }}
+          animate={{ left: -500 }}
+          transition={{ duration: 2, ease: easeOut }}
           style={{
             position: "absolute",
             bottom: "-5%",

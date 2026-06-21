@@ -64,7 +64,11 @@ const clues = [
   {
     text: "This feisty resident of Faura Hall got his battle scars after fighting a crow.",
     clearCondition: (answers) =>
-      isInSameColumn(answers, { Location: Faura, Quirk: "Fought a crow" }),
+      isInSameColumn(answers, {
+        Location: Faura,
+        Quirk: "Fought a crow",
+        Personality: "Feisty",
+      }),
   },
   {
     text: "Hakaw runs the halls and offices of this building situated northeast of Faura.",

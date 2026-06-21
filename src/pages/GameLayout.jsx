@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import CloudLeft from "../assets/images/game/CloudLeft.svg";
 import CloudRight from "../assets/images/game/CloudRight.svg";
 import styles from "../styles/game.module.css";
+import { BgMusic3 } from "../hooks/sounds.jsx";
 
 export function GameIntroLayout() {
   return (
@@ -35,7 +36,7 @@ export function GameIntroLayout() {
           height: "28vh",
           position: "absolute",
           right: "-5vw",
-          top: "2vh",
+          top: "-5vh",
           animationDelay: -2,
         }}
       />
@@ -46,6 +47,7 @@ export function GameIntroLayout() {
 export function GameLayout() {
   return (
     <main className={styles.main}>
+      <BgMusic3 />
       <Outlet />
     </main>
   );

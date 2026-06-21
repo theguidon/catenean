@@ -11,7 +11,6 @@ import Schmitt from "../assets/images/buildings/schmitt.svg";
 import Faura from "../assets/images/buildings/faura.svg";
 import Arete from "../assets/images/buildings/arete.svg";
 import CTCSOM from "../assets/images/buildings/ctc-som.svg";
-import { BgMusic3 } from "../hooks/sounds.jsx";
 import { useState } from "react";
 import { shuffle } from "remeda";
 import { useStopwatch } from "react-timer-hook";
@@ -460,7 +459,6 @@ export default function Game() {
   if (!showResultsScreen) {
     return (
       <section className={styles.gameArea}>
-        <BgMusic3 />
         <GameTable
           openOptionsModal={openOptionsModal}
           hasAnswer={hasAnswer}
@@ -520,8 +518,6 @@ export default function Game() {
       </section>
     );
   } else {
-    <section className={styles.resultsScreen}>
-      <BgMusic3 />
-    </section>;
+    <section className={styles.resultsScreen}></section>;
   }
 }

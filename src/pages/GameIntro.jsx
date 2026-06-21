@@ -43,8 +43,8 @@ export default function GameIntro() {
           alignItems: "center",
           position: "absolute",
           textAlign: "center",
-          bottom: "30%",
-          right: "15%",
+          bottom: "25vh",
+          right: "10%",
         }}
       >
         <h1>

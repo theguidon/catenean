@@ -249,7 +249,7 @@ p {
   height: 84%;
   background: #ffffec;
   border: 20px solid #b18e7d;
-  padding: 5%;
+  padding: 10%;
   overflow: scroll;
 }
 
@@ -260,6 +260,51 @@ p {
 
 li.clearedClue {
   opacity: 0.6;
+}
+
+.checklist ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5em;
+}
+
+.checklist li::before {
+  content: "";
+  /* Set exact custom bullet size */
+  width: 2em;
+  height: 2em;
+  max-width: 2em;
+  min-width: 2em;
+  max-height: 2em;
+  min-height: 2em;
+  /* Space between bullet and text */
+  margin-right: 12px;
+  background-image: url("/assets/checkBox.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.checklist .clearedClue::before {
+  content: "";
+  /* Set exact custom bullet size */
+  width: 2em;
+  height: 2em;
+  max-width: 2em;
+  min-width: 2em;
+  max-height: 2em;
+  min-height: 2em;
+  /* Space between bullet and text */
+  margin-right: 12px;
+  background-image: url("/assets/checkedBox.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .clearedClue p {

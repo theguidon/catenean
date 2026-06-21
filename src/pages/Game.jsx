@@ -59,7 +59,7 @@ const clues = [
     clearCondition: (answers) =>
       answers["Fave Food"]["Princess"].answer &&
       answers["Fave Food"]["Princess"].answer.length > 0 &&
-      answers["Fave Food"]["Princess"].answer !== "Wet food",
+      answers["Fave Food"]["Princess"].answer == "Dry food",
   },
   {
     text: "This feisty resident of Faura Hall got his battle scars after fighting a crow.",

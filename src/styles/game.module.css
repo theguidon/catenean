@@ -308,6 +308,31 @@ p {
   height: 35vh;
   background: #866f65;
   border: 8px solid #4e3e47;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+  z-index: 20;
+}
+
+.optionsModal button {
+  aspect-ratio: 1 / 1;
+  height: 60%;
+  background: #ffffec;
+  border: 6px solid #755445;
+  box-shadow: 0px 4px 0px #65544c;
+  font-size: 1.6em;
+  font-family: "Cherry Swash";
+  font-weight: bold;
+  color: #593d2f;
+  transition:
+    border-color 100ms ease-in-out,
+    background-color 100ms ease-in-out;
+}
+
+.optionsModal button:hover {
+  border-color: #389c8c;
+  background: #ecf7e6;
 }
 
 .optionsLabel {
@@ -317,6 +342,16 @@ p {
   position: relative;
   top: 4vh;
   box-shadow: 0 4px 0.8px rgba(0, 0, 0, 0.25);
+  display: grid;
+  place-items: center;
+  z-index: 25;
+}
+
+.optionsLabel p {
+  font-family: "Cherry Swash", serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ffffec;
 }
 
 @keyframes bob {

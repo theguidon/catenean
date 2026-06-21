@@ -6,8 +6,9 @@ import House from "../assets/images/game/placeholders/House.svg";
 import Fish from "../assets/images/game/placeholders/Fish.svg";
 import QMark from "../assets/images/game/qmark.svg";
 import ears from "../assets/images/cats/illustrations/Ears.svg";
+import { useState } from "react";
 
-const AnswerKey = {
+const answerKey = {
   Location: {
     Dongyan: "MVP",
     Hakaw: "Schmitt",
@@ -23,20 +24,20 @@ const AnswerKey = {
     Princess: "Rides the elevator",
   },
   Personality: {
-    Dongyan: "Stubby tail",
-    Hakaw: "Drinks cold water",
-    OneEye: "Fought a crow",
-    Ponpon: "The youngest",
-    Princess: "Rides the elevator",
+    Dongyan: "Lazy",
+    Hakaw: "Clingy",
+    OneEye: "Feisty",
+    Ponpon: "Curious",
+    Princess: "Sassy",
   },
-  "Favorite Spot": {
+  "Fave Spot": {
     Dongyan: "Guard's table",
     Hakaw: "Department offices",
     OneEye: "Building Facade",
     Ponpon: "Parking lot",
     Princess: "Elevators",
   },
-  "Favorite Food": {
+  "Fave Food": {
     Dongyan: "Liver spread",
     Hakaw: "Eats anything",
     OneEye: "Kibble",
@@ -54,25 +55,38 @@ function CatButton() {
   );
 }
 
-function OptionsModal() {
+function OptionsModal({ trait, cat, options, closeOptionsModal }) {
   return (
     <section className={`${styles.fullScreenLayer} ${styles.optionsLayer}`}>
       <div
         className={styles.fullScreenLayer}
         style={{ background: "rgba(0,0,0,0.3)" }}
       />
-      <section className={styles.optionsLabel}></section>
-      <section className={styles.optionsModal}></section>
+      <section className={styles.optionsLabel}>
+        <p>{`${trait} of ${cat}`}</p>
+      </section>
+      <section className={styles.optionsModal}>
+        {options &&
+          options.map((option) => (
+            <button onClick={closeOptionsModal} className={styles.optionButton}>
+              {option}
+            </button>
+          ))}
+      </section>
     </section>
   );
 }
 
-export function GameTable() {
+export function GameTable({ openOptionsModal }) {
   const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
   return (
     <section className={styles.gameTable}>
-      {Array.from({ length: catNames.length }).map((_, ix) => (
-        <div style={{ gridColumn: ix + 2 }} className={styles.picFrame} />
+      {catNames.map((name, ix) => (
+        <div
+          key={`${name}-pic`}
+          style={{ gridColumn: ix + 2 }}
+          className={styles.picFrame}
+        />
       ))}
       {catNames.map((name, ix) => (
         <section
@@ -86,41 +100,57 @@ export function GameTable() {
       <section className={styles.catHeader}>
         <h1>Location</h1>
       </section>
-      {Array.from({ length: 5 }).map((ix) => (
-        <section key={`location-${ix}`} className={styles.catCell}>
+      {catNames.map((name) => (
+        <button
+          key={`location-${name}`}
+          onClick={() => openOptionsModal(name, "Location")}
+          className={styles.catCell}
+        >
           <img src={House} />
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
-        </section>
+        </button>
       ))}
       <section className={styles.catHeader}>
         <h1>Quirk</h1>
       </section>
-      {Array.from({ length: 5 }).map((ix) => (
-        <section key={`location-${ix}`} className={styles.catCell}>
+      {catNames.map((name) => (
+        <button
+          key={`quirk-${name}`}
+          onClick={() => openOptionsModal(name, "Quirk")}
+          className={styles.catCell}
+        >
           <img src={Paw} />
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
-        </section>
+        </button>
       ))}
       <section className={styles.catHeader}>
         <h1>Personality</h1>
       </section>
-      {Array.from({ length: 5 }).map((ix) => (
-        <section key={`location-${ix}`} className={styles.catCell}>
+      {catNames.map((name) => (
+        <button
+          key={`personality-${name}`}
+          onClick={() => openOptionsModal(name, "Personality")}
+          className={styles.catCell}
+        >
           <img src={Cat} />
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
-        </section>
+        </button>
       ))}
       <section className={styles.catHeader}>
         <h1>Fave Spot</h1>
       </section>
-      {Array.from({ length: 5 }).map((ix) => (
-        <section key={`location-${ix}`} className={styles.catCell}>
+      {catNames.map((name) => (
+        <section
+          key={`spot-${name}`}
+          onClick={() => openOptionsModal(name, "Fave Spot")}
+          className={styles.catCell}
+        >
           <img src={Box} />
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
@@ -130,8 +160,12 @@ export function GameTable() {
       <section className={styles.catHeader}>
         <h1>Fave Food</h1>
       </section>
-      {Array.from({ length: 5 }).map((ix) => (
-        <section key={`location-${ix}`} className={styles.catCell}>
+      {catNames.map((name) => (
+        <section
+          key={`food-${name}`}
+          onClick={() => openOptionsModal(name, "Fave Food")}
+          className={styles.catCell}
+        >
           <img src={Fish} style={{ height: "50%" }} />
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
@@ -142,10 +176,30 @@ export function GameTable() {
   );
 }
 
+function getOptionsFromTrait(trait) {
+  return Object.values(answerKey[trait]);
+}
+
 export default function Game() {
+  const [currentCat, setCurrentCat] = useState("Dongyan");
+  const [currentTrait, setCurrentTrait] = useState("Fave Spot");
+  const [showOptionsModal, setShowOptionsModal] = useState(false);
+  console.log("Cat:", currentCat);
+  console.log("showOptionsModal: ", showOptionsModal);
+
+  function openOptionsModal(cat, trait) {
+    setCurrentCat(cat);
+    setCurrentTrait(trait);
+    setShowOptionsModal(true);
+  }
+
+  function closeOptionsModal() {
+    setShowOptionsModal(false);
+  }
+
   return (
     <section className={styles.gameArea}>
-      <GameTable />
+      <GameTable openOptionsModal={openOptionsModal} />
       <section className={styles.menuSide}>
         <section className={styles.gameOpts}>
           <p className={styles.timer}>00:00</p>
@@ -159,7 +213,14 @@ export default function Game() {
         </section>
         <section className={styles.checklist}></section>
       </section>
-      <OptionsModal />
+      {showOptionsModal && (
+        <OptionsModal
+          trait={currentTrait}
+          cat={currentCat}
+          options={getOptionsFromTrait(currentTrait)}
+          closeOptionsModal={closeOptionsModal}
+        />
+      )}
     </section>
   );
 }

@@ -381,6 +381,7 @@ export default function Game() {
   const [showOptionsModal, setShowOptionsModal] = useState(false);
   const [answers, setAnswers] = useState(initialAnswers);
   const [submitClicked, setSubmitClicked] = useState(false);
+  const [showResultsScreen, setShowResultsScreen] = useState(false);
 
   function openOptionsModal(cat, trait) {
     setCurrentCat(cat);
@@ -438,67 +439,88 @@ export default function Game() {
     setAnswers(newAnswers);
   }
 
+  function isAllCorrect() {
+    for (const trait in answers) {
+      for (const cat in answers[trait]) {
+        if (!answers[trait][cat].correct) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
   // sorry nalang
   function isCorrect(trait, cat) {
     return answers[trait][cat].correct;
   }
 
-  return (
-    <section className={styles.gameArea}>
-      <BgMusic3 />
-      <GameTable
-        openOptionsModal={openOptionsModal}
-        hasAnswer={hasAnswer}
-        getAnswer={getAnswer}
-        checkAnswer={isCorrect}
-        isChecked={isChecked}
-        submitClicked={submitClicked}
-      />
-      <section className={styles.menuSide}>
-        <section className={styles.gameOpts}>
-          <Timer />
-          <button className={styles.instructionBtn}>
-            <img src={QMark} />
-          </button>
-          <section style={{ display: "flex", alignItems: "center" }}>
-            <Link
-              to="/"
-              className={styles.exitBtn}
-              style={{ color: "#205950" }}
-            >
-              x
-            </Link>
-            <CatButton
-              onClick={() => {
-                checkAllAnswers();
-                setSubmitClicked(true);
-              }}
-            />
+  if (!showResultsScreen) {
+    return (
+      <section className={styles.gameArea}>
+        <BgMusic3 />
+        <GameTable
+          openOptionsModal={openOptionsModal}
+          hasAnswer={hasAnswer}
+          getAnswer={getAnswer}
+          checkAnswer={isCorrect}
+          isChecked={isChecked}
+          submitClicked={submitClicked}
+        />
+        <section className={styles.menuSide}>
+          <section className={styles.gameOpts}>
+            <Timer />
+            <button className={styles.instructionBtn}>
+              <img src={QMark} />
+            </button>
+            <section style={{ display: "flex", alignItems: "center" }}>
+              <Link
+                to="/"
+                className={styles.exitBtn}
+                style={{ color: "#205950" }}
+              >
+                x
+              </Link>
+              <CatButton
+                onClick={() => {
+                  checkAllAnswers();
+                  setSubmitClicked(true);
+                  if (isAllCorrect()) {
+                    setShowResultsScreen(true);
+                  }
+                }}
+              />
+            </section>
+          </section>
+          <section className={styles.checklist}>
+            <ul>
+              {clues.map((clue) => (
+                <li
+                  className={
+                    clue.clearCondition(answers) ? styles.clearedClue : ""
+                  }
+                >
+                  <p>{clue.text}</p>
+                </li>
+              ))}
+            </ul>
           </section>
         </section>
-        <section className={styles.checklist}>
-          <ul>
-            {clues.map((clue) => (
-              <li
-                className={
-                  clue.clearCondition(answers) ? styles.clearedClue : ""
-                }
-              >
-                <p>{clue.text}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {showOptionsModal && (
+          <OptionsModal
+            trait={currentTrait}
+            cat={currentCat}
+            options={getOptionsFromTrait(currentTrait)}
+            closeOptionsModal={closeOptionsModal}
+            setAnswer={setAnswer}
+          />
+        )}
       </section>
-      {showOptionsModal && (
-        <OptionsModal
-          trait={currentTrait}
-          cat={currentCat}
-          options={getOptionsFromTrait(currentTrait)}
-          closeOptionsModal={closeOptionsModal}
-          setAnswer={setAnswer}
-        />
-      )}
-    </section>
-  );
+    );
+  } else {
+    <section className={styles.resultsScreen}>
+      <BgMusic3 />
+    </section>;
+  }
 }

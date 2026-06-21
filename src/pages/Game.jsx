@@ -17,17 +17,63 @@ import { useStopwatch } from "react-timer-hook";
 
 // todo: add win conditions for clues
 const clues = [
-  "The lazy cat lives in the building beside the Catenean named after a dumpling.",
-  "This curious cat is a resident of the modern building that's home to artists.",
-  "Princess loves riding the elevators of this sprawling multi-floor complex.",
-  "Princess is not fond of eating anything wet.",
-  "This feisty resident of Faura Hall got his battle scars after fighting a crow.",
-  "Hakaw runs the halls and offices of this building situated northeast of Faura.",
-  "Hakaw, though not a picky cat, needs a chilly drink to feel refreshed.",
-  "Dongyan loves people-watching atop his perch in this building.",
-  "Liver spread is the ideal snack of choice for this MVP resident.",
-  "Schmitt Hall is home to this clingy Catenean, named after a seafood dimsum classic.",
-  "Ponpon's youthful and curious nature usually gets him in trouble.",
+  {
+    text: "The lazy cat lives in the building beside the Catenean named after a dumpling.",
+    clearCondition: (answers) =>
+      answers["Personality"]["Dongyan"] === "Lazy" ||
+      answers["Personality"]["One Eye"] === "Lazy",
+  },
+  {
+    text: "This curious cat is a resident of the modern building that's home to artists.",
+    clearCondition: (answers) => true,
+  },
+  {
+    text: "Princess loves riding the elevators of this sprawling multi-floor complex.",
+    clearCondition: (answers) =>
+      answers["Quirk"]["Princess"] === "Rides the elevator" &&
+      answers["Location"]["Princess"] === CTCSOM,
+  },
+  {
+    text: "Princess is not fond of eating anything wet.",
+    clearCondition: (answers) =>
+      answers["Fave Food"]["Princess"] !== "Wet food",
+  },
+  {
+    text: "This feisty resident of Faura Hall got his battle scars after fighting a crow.",
+    clearCondition: (answers) => true,
+  },
+  {
+    text: "Hakaw runs the halls and offices of this building situated northeast of Faura.",
+    clearCondition: (answers) =>
+      answers["Fave Spot"]["Hakaw"] === "Department offices" &&
+      answers["Location"]["Hakaw"] === "Scmitt",
+  },
+  {
+    text: "Hakaw, though not a picky cat, needs a chilly drink to feel refreshed.",
+    clearCondition: (answers) =>
+      answers["Fave Food"]["Hakaw"] === "Eats anything" &&
+      answers["Quirk"]["Hakaw"] == "Drinks cold water",
+  },
+  {
+    text: "Dongyan loves people-watching atop his perch in this building.",
+    clearCondition: (answers) =>
+      answers["Fave Spot"]["Dongyan"] === "Guard's table" &&
+      answers["Location"]["Dongyan"] === "MVP",
+  },
+  {
+    text: "Liver spread is the ideal snack of choice for this MVP resident.",
+    clearCondition: (answers) => true,
+  },
+  {
+    text: "Schmitt Hall is home to this clingy Catenean, named after a seafood dimsum classic.",
+    clearCondition: (answers) => true,
+  },
+  {
+    text: "Ponpon's youthful and curious nature usually gets him in trouble.",
+    clearCondition: (answers) =>
+      answers["Quirk"]["Ponpon"] === "The youngest" &&
+      answers["Personality"]["Ponpon"] === "Curious",
+  },
 ];
 
 const answerKey = {
@@ -333,7 +379,19 @@ export default function Game() {
     setShowOptionsModal(false);
   }
 
+  function clearExistingAnswer(trait, cat, answer) {
+    // if answer exists in another cat, clear it first
+    let newAnswers = { ...answers };
+    for (const otherCat in newAnswers[trait]) {
+      if (cat !== otherCat && newAnswers[trait][otherCat] === answer) {
+        newAnswers[trait][otherCat] = null;
+      }
+    }
+    return newAnswers;
+  }
+
   function setAnswer(trait, cat, answer) {
+    clearExistingAnswer(trait, cat, answer);
     let newAnswers = { ...answers };
     newAnswers[trait][cat] = answer;
     setAnswers(newAnswers);
@@ -370,8 +428,12 @@ export default function Game() {
         <section className={styles.checklist}>
           <ul>
             {clues.map((clue) => (
-              <li>
-                <p>{clue}</p>
+              <li
+                className={
+                  clue.clearCondition(answers) ? styles.clearedClue : ""
+                }
+              >
+                <p>{clue.text}</p>
               </li>
             ))}
           </ul>

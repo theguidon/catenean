@@ -258,6 +258,14 @@ p {
   font-family: "Gelagio", serif;
 }
 
+li.clearedClue {
+  opacity: 0.6;
+}
+
+.clearedClue p {
+  text-decoration: line-through;
+}
+
 .instructionBtn,
 .exitBtn {
   aspect-ratio: 1 / 1;

@@ -21,6 +21,7 @@
     "react-router": "^7.9.4",
     "react-swipeable": "^7.0.2",
     "react-zoom-pan-pinch": "^3.7.0",
+    "remeda": "^2.39.0",
     "use-sound": "^5.0.0"
   },
   "devDependencies": {

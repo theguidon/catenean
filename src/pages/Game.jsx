@@ -166,7 +166,7 @@ function OptionsModal({ trait, cat, options, closeOptionsModal, setAnswer }) {
   );
 }
 
-export function GameTable({ openOptionsModal }) {
+export function GameTable({ openOptionsModal, hasAnswer, getAnswer }) {
   const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
   return (
     <section className={styles.gameTable}>
@@ -174,7 +174,12 @@ export function GameTable({ openOptionsModal }) {
         <button
           onClick={() => openOptionsModal(name, "Picture")}
           key={`${name}-pic`}
-          style={{ gridColumn: ix + 2 }}
+          style={{
+            gridColumn: ix + 2,
+            background: hasAnswer("Picture", name)
+              ? `no-repeat center / cover url(${getAnswer("Picture", name)})`
+              : "#d9d9d9",
+          }}
           className={styles.picFrame}
         />
       ))}
@@ -196,7 +201,14 @@ export function GameTable({ openOptionsModal }) {
           onClick={() => openOptionsModal(name, "Location")}
           className={styles.catCell}
         >
-          <img src={House} />
+          {hasAnswer("Location", name) ? (
+            <img
+              src={getAnswer("Location", name)}
+              style={{ maxHeight: "70%", maxWidth: "80%" }}
+            />
+          ) : (
+            <img src={House} />
+          )}
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
@@ -211,7 +223,11 @@ export function GameTable({ openOptionsModal }) {
           onClick={() => openOptionsModal(name, "Quirk")}
           className={styles.catCell}
         >
-          <img src={Paw} />
+          {hasAnswer("Quirk", name) ? (
+            <p>{getAnswer("Quirk", name)}</p>
+          ) : (
+            <img src={Paw} />
+          )}
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
@@ -226,7 +242,11 @@ export function GameTable({ openOptionsModal }) {
           onClick={() => openOptionsModal(name, "Personality")}
           className={styles.catCell}
         >
-          <img src={Cat} />
+          {hasAnswer("Personality", name) ? (
+            <p>{getAnswer("Personality", name)}</p>
+          ) : (
+            <img src={Cat} />
+          )}
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
@@ -241,7 +261,11 @@ export function GameTable({ openOptionsModal }) {
           onClick={() => openOptionsModal(name, "Fave Spot")}
           className={styles.catCell}
         >
-          <img src={Box} />
+          {hasAnswer("Fave Spot", name) ? (
+            <p>{getAnswer("Fave Spot", name)}</p>
+          ) : (
+            <img src={Box} />
+          )}
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
@@ -256,7 +280,11 @@ export function GameTable({ openOptionsModal }) {
           onClick={() => openOptionsModal(name, "Fave Food")}
           className={styles.catCell}
         >
-          <img src={Fish} style={{ height: "50%" }} />
+          {hasAnswer("Fave Food", name) ? (
+            <p>{getAnswer("Fave Food", name)}</p>
+          ) : (
+            <img src={Fish} style={{ height: "50%" }} />
+          )}
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
@@ -311,9 +339,21 @@ export default function Game() {
     setAnswers(newAnswers);
   }
 
+  function hasAnswer(trait, cat) {
+    return answers[trait][cat] && answers[trait][cat].length > 0;
+  }
+
+  function getAnswer(trait, cat) {
+    return answers[trait][cat];
+  }
+
   return (
     <section className={styles.gameArea}>
-      <GameTable openOptionsModal={openOptionsModal} />
+      <GameTable
+        openOptionsModal={openOptionsModal}
+        hasAnswer={hasAnswer}
+        getAnswer={getAnswer}
+      />
       <section className={styles.menuSide}>
         <section className={styles.gameOpts}>
           <p className={styles.timer}>

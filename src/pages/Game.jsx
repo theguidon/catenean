@@ -6,11 +6,11 @@ import House from "../assets/images/game/placeholders/House.svg";
 import Fish from "../assets/images/game/placeholders/Fish.svg";
 import QMark from "../assets/images/game/qmark.svg";
 import ears from "../assets/images/cats/illustrations/Ears.svg";
-import MVP from "../assets/images/buildings/no-shadow/mvp.svg";
-import Schmitt from "../assets/images/buildings/no-shadow/schmitt.svg";
-import Faura from "../assets/images/buildings/no-shadow/faura.svg";
-import Arete from "../assets/images/buildings/no-shadow/arete.svg";
-import CTCSOM from "../assets/images/buildings/no-shadow/ctc-som.svg";
+import MVP from "../assets/images/buildings/mvp.svg";
+import Schmitt from "../assets/images/buildings/schmitt.svg";
+import Faura from "../assets/images/buildings/faura.svg";
+import Arete from "../assets/images/buildings/arete.svg";
+import CTCSOM from "../assets/images/buildings/ctc-som.svg";
 import { BgMusic3 } from "../hooks/sounds.jsx";
 import { useState } from "react";
 import { shuffle } from "remeda";
@@ -150,46 +150,46 @@ const answerKey = {
 
 const initialAnswers = {
   Picture: {
-    Dongyan: { answer: "", correct: false },
-    Hakaw: { answer: "", correct: false },
-    "One Eye": { answer: "", correct: false },
-    Ponpon: { answer: "", correct: false },
-    Princess: { answer: "", correct: false },
+    Dongyan: { answer: "", correct: null },
+    Hakaw: { answer: "", correct: null },
+    "One Eye": { answer: "", correct: null },
+    Ponpon: { answer: "", correct: null },
+    Princess: { answer: "", correct: null },
   },
   Location: {
-    Dongyan: { answer: null, correct: false },
-    Hakaw: { answer: null, correct: false },
-    "One Eye": { answer: null, correct: false },
-    Ponpon: { answer: null, correct: false },
-    Princess: { answer: null, correct: false },
+    Dongyan: { answer: null, correct: null },
+    Hakaw: { answer: null, correct: null },
+    "One Eye": { answer: null, correct: null },
+    Ponpon: { answer: null, correct: null },
+    Princess: { answer: null, correct: null },
   },
   Quirk: {
-    Dongyan: { answer: "", correct: false },
-    Hakaw: { answer: "", correct: false },
-    "One Eye": { answer: "", correct: false },
-    Ponpon: { answer: "", correct: false },
-    Princess: { answer: "", correct: false },
+    Dongyan: { answer: "", correct: null },
+    Hakaw: { answer: "", correct: null },
+    "One Eye": { answer: "", correct: null },
+    Ponpon: { answer: "", correct: null },
+    Princess: { answer: "", correct: null },
   },
   Personality: {
-    Dongyan: { answer: "", correct: false },
-    Hakaw: { answer: "", correct: false },
-    "One Eye": { answer: "", correct: false },
-    Ponpon: { answer: "", correct: false },
-    Princess: { answer: "", correct: false },
+    Dongyan: { answer: "", correct: null },
+    Hakaw: { answer: "", correct: null },
+    "One Eye": { answer: "", correct: null },
+    Ponpon: { answer: "", correct: null },
+    Princess: { answer: "", correct: null },
   },
   "Fave Spot": {
-    Dongyan: { answer: "", correct: false },
-    Hakaw: { answer: "", correct: false },
-    "One Eye": { answer: "", correct: false },
-    Ponpon: { answer: "", correct: false },
-    Princess: { answer: "", correct: false },
+    Dongyan: { answer: "", correct: null },
+    Hakaw: { answer: "", correct: null },
+    "One Eye": { answer: "", correct: null },
+    Ponpon: { answer: "", correct: null },
+    Princess: { answer: "", correct: null },
   },
   "Fave Food": {
-    Dongyan: { answer: "", correct: false },
-    Hakaw: { answer: "", correct: false },
-    "One Eye": { answer: "", correct: false },
-    Ponpon: { answer: "", correct: false },
-    Princess: { answer: "", correct: false },
+    Dongyan: { answer: "", correct: null },
+    Hakaw: { answer: "", correct: null },
+    "One Eye": { answer: "", correct: null },
+    Ponpon: { answer: "", correct: null },
+    Princess: { answer: "", correct: null },
   },
 };
 
@@ -250,6 +250,7 @@ export function GameTable({
   hasAnswer,
   getAnswer,
   checkAnswer,
+  isChecked,
   submitClicked,
 }) {
   function GameCell({ trait, name, placeholder }) {
@@ -257,7 +258,7 @@ export function GameTable({
       <button
         key={`${trait}-${name}`}
         onClick={() => openOptionsModal(name, trait)}
-        className={`${styles.catCell} ${submitClicked ? (checkAnswer(trait, name) ? styles.correctCell : styles.wrongCell) : ""}`}
+        className={`${styles.catCell} ${submitClicked && isChecked(trait, name) ? (checkAnswer(trait, name) ? styles.correctCell : styles.wrongCell) : ""}`}
       >
         {hasAnswer(trait, name) ? (
           trait === "Location" ? (
@@ -293,7 +294,7 @@ export function GameTable({
               ? `no-repeat center / cover url(${getAnswer("Picture", name)})`
               : "#d9d9d9",
           }}
-          className={`${styles.picFrame} ${submitClicked ? (checkAnswer("Picture", name) ? styles.correctFrame : styles.wrongFrame) : ""}`}
+          className={`${styles.picFrame} ${submitClicked && isChecked("Picture", name) ? (checkAnswer("Picture", name) ? styles.correctFrame : styles.wrongFrame) : ""}`}
         />
       ))}
       {catNames.map((name, ix) => (
@@ -409,6 +410,10 @@ export default function Game() {
     return answers[trait][cat].answer && answers[trait][cat].answer.length > 0;
   }
 
+  function isChecked(trait, cat) {
+    return answers[trait][cat].correct !== null;
+  }
+
   function getAnswer(trait, cat) {
     return answers[trait][cat].answer;
   }
@@ -417,6 +422,9 @@ export default function Game() {
     let newAnswers = { ...answers };
     for (const trait in answers) {
       for (const cat in answers[trait]) {
+        if (!hasAnswer(trait, cat)) {
+          continue;
+        }
         const isCorrect = answers[trait][cat].answer === answerKey[trait][cat];
         newAnswers[trait][cat].correct = isCorrect;
       }
@@ -438,6 +446,7 @@ export default function Game() {
         hasAnswer={hasAnswer}
         getAnswer={getAnswer}
         checkAnswer={isCorrect}
+        isChecked={isChecked}
         submitClicked={submitClicked}
       />
       <section className={styles.menuSide}>

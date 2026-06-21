@@ -16,6 +16,19 @@ function CatButton() {
   );
 }
 
+function OptionsModal() {
+  return (
+    <section className={`${styles.fullScreenLayer} ${styles.optionsLayer}`}>
+      <div
+        className={styles.fullScreenLayer}
+        style={{ background: "rgba(0,0,0,0.3)" }}
+      />
+      <section className={styles.optionsLabel}></section>
+      <section className={styles.optionsModal}></section>
+    </section>
+  );
+}
+
 export function GameTable() {
   const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
   return (
@@ -108,6 +121,7 @@ export default function Game() {
         </section>
         <section className={styles.checklist}></section>
       </section>
+      <OptionsModal />
     </section>
   );
 }

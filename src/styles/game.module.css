@@ -286,6 +286,39 @@ p {
   top: 0.2vh;
 }
 
+.fullScreenLayer {
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.optionsLayer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding-top: 22vh;
+  background: rgba(165, 255, 241, 0.25);
+}
+
+.optionsModal {
+  width: 70vw;
+  height: 35vh;
+  background: #866f65;
+  border: 8px solid #4e3e47;
+}
+
+.optionsLabel {
+  width: 30vw;
+  min-height: 12vh;
+  background: #4e3e47;
+  position: relative;
+  top: 4vh;
+  box-shadow: 0 4px 0.8px rgba(0, 0, 0, 0.25);
+}
+
 @keyframes bob {
   0% {
     transform: translateY(-0.5rem);

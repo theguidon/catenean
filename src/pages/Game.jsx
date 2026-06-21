@@ -243,13 +243,19 @@ function OptionsModal({ trait, cat, options, closeOptionsModal, setAnswer }) {
 
 // might make state a reducer
 // make component for the cells im kms
-export function GameTable({ openOptionsModal, hasAnswer, getAnswer }) {
+export function GameTable({
+  openOptionsModal,
+  hasAnswer,
+  getAnswer,
+  checkAnswer,
+  submitClicked,
+}) {
   function GameCell({ trait, name, placeholder }) {
     return (
       <button
         key={`${trait}-${name}`}
         onClick={() => openOptionsModal(name, trait)}
-        className={styles.catCell}
+        className={`${styles.catCell} ${submitClicked ? (checkAnswer(trait, name) ? styles.correctCell : styles.wrongCell) : ""}`}
       >
         {hasAnswer(trait, name) ? (
           trait === "Location" ? (
@@ -285,7 +291,7 @@ export function GameTable({ openOptionsModal, hasAnswer, getAnswer }) {
               ? `no-repeat center / cover url(${getAnswer("Picture", name)})`
               : "#d9d9d9",
           }}
-          className={styles.picFrame}
+          className={`${styles.picFrame} ${submitClicked ? (checkAnswer("Picture", name) ? styles.correctFrame : styles.wrongFrame) : ""}`}
         />
       ))}
       {catNames.map((name, ix) => (
@@ -367,7 +373,7 @@ export default function Game() {
   const [currentTrait, setCurrentTrait] = useState("Fave Spot");
   const [showOptionsModal, setShowOptionsModal] = useState(false);
   const [answers, setAnswers] = useState(initialAnswers);
-  const [submitCalled, setSubmitCalled] = useState(false);
+  const [submitClicked, setSubmitClicked] = useState(false);
 
   function openOptionsModal(cat, trait) {
     setCurrentCat(cat);
@@ -405,11 +411,21 @@ export default function Game() {
     return answers[trait][cat].answer;
   }
 
-  function checkAnswer(trait, cat) {
-    const isCorrect = answers[trait][cat].answer === answerKey[trait][cat];
+  function checkAllAnswers() {
     let newAnswers = { ...answers };
-    newAnswers[trait][cat].correct = isCorrect;
+    for (const trait in answers) {
+      for (const cat in answers[trait]) {
+        const isCorrect = answers[trait][cat].answer === answerKey[trait][cat];
+        newAnswers[trait][cat].correct = isCorrect;
+      }
+    }
+
     setAnswers(newAnswers);
+  }
+
+  // sorry nalang
+  function isCorrect(trait, cat) {
+    return answers[trait][cat].correct;
   }
 
   return (
@@ -418,8 +434,8 @@ export default function Game() {
         openOptionsModal={openOptionsModal}
         hasAnswer={hasAnswer}
         getAnswer={getAnswer}
-        checkAnswer={checkAnswer}
-        submitCalled={submitCalled}
+        checkAnswer={isCorrect}
+        submitClicked={submitClicked}
       />
       <section className={styles.menuSide}>
         <section className={styles.gameOpts}>
@@ -429,7 +445,12 @@ export default function Game() {
           </button>
           <section style={{ display: "flex", alignItems: "center" }}>
             <button className={styles.exitBtn}>x</button>
-            <CatButton onClick={() => setSubmitCalled(true)} />
+            <CatButton
+              onClick={() => {
+                checkAllAnswers();
+                setSubmitClicked(true);
+              }}
+            />
           </section>
         </section>
         <section className={styles.checklist}>

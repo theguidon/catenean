@@ -129,7 +129,12 @@ function CatButton() {
   );
 }
 
-function OptionsModal({ trait, cat, options, closeOptionsModal }) {
+function OptionsModal({ trait, cat, options, closeOptionsModal, setAnswer }) {
+  function onOptionClick(answer) {
+    setAnswer(trait, cat, answer);
+    closeOptionsModal();
+  }
+
   return (
     <section className={`${styles.fullScreenLayer} ${styles.optionsLayer}`}>
       <div
@@ -142,7 +147,10 @@ function OptionsModal({ trait, cat, options, closeOptionsModal }) {
       <section className={styles.optionsModal}>
         {options &&
           options.map((option) => (
-            <button onClick={closeOptionsModal} className={styles.optionButton}>
+            <button
+              onClick={() => onOptionClick(option)}
+              className={styles.optionButton}
+            >
               {["Location", "Picture"].includes(trait) ? (
                 <img
                   src={option}
@@ -284,6 +292,7 @@ export default function Game() {
   const [currentCat, setCurrentCat] = useState("Dongyan");
   const [currentTrait, setCurrentTrait] = useState("Fave Spot");
   const [showOptionsModal, setShowOptionsModal] = useState(false);
+  const [answers, setAnswers] = useState(initialAnswers);
   const { minutes, seconds } = useStopwatch({ autoStart: true });
 
   function openOptionsModal(cat, trait) {
@@ -294,6 +303,12 @@ export default function Game() {
 
   function closeOptionsModal() {
     setShowOptionsModal(false);
+  }
+
+  function setAnswer(trait, cat, answer) {
+    let newAnswers = { ...answers };
+    newAnswers[trait][cat] = answer;
+    setAnswers(newAnswers);
   }
 
   return (
@@ -320,6 +335,7 @@ export default function Game() {
           cat={currentCat}
           options={getOptionsFromTrait(currentTrait)}
           closeOptionsModal={closeOptionsModal}
+          setAnswer={setAnswer}
         />
       )}
     </section>

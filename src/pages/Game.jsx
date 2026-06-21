@@ -19,9 +19,9 @@ const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
 
 function isInSameColumn(answers, traits) {
   // check if a set of traits is under the same cat
-  for (const cat in catNames) {
+  for (const cat of catNames) {
     let allTraitsFulfilled = true;
-    for (const trait of traits) {
+    for (const trait in traits) {
       if (answers[trait][cat] !== traits[trait]) {
         allTraitsFulfilled = false;
         break;
@@ -43,7 +43,8 @@ const clues = [
   },
   {
     text: "This curious cat is a resident of the modern building that's home to artists.",
-    clearCondition: (answers) => true,
+    clearCondition: (answers) =>
+      isInSameColumn(answers, { Personality: "Curious", Location: Arete }),
   },
   {
     text: "Princess loves riding the elevators of this sprawling multi-floor complex.",
@@ -58,7 +59,8 @@ const clues = [
   },
   {
     text: "This feisty resident of Faura Hall got his battle scars after fighting a crow.",
-    clearCondition: (answers) => true,
+    clearCondition: (answers) =>
+      isInSameColumn(answers, { Location: Faura, Quirk: "Fought a crow" }),
   },
   {
     text: "Hakaw runs the halls and offices of this building situated northeast of Faura.",
@@ -80,11 +82,14 @@ const clues = [
   },
   {
     text: "Liver spread is the ideal snack of choice for this MVP resident.",
-    clearCondition: (answers) => true,
+    clearCondition: (answers) =>
+      isInSameColumn(answers, { "Fave Food": "Liver spread", Location: MVP }),
   },
   {
     text: "Schmitt Hall is home to this clingy Catenean, named after a seafood dimsum classic.",
-    clearCondition: (answers) => true,
+    clearCondition: (answers) =>
+      answers["Location"]["Hakaw"] === Schmitt &&
+      answers["Personality"]["Hakaw"] === "Clingy",
   },
   {
     text: "Ponpon's youthful and curious nature usually gets him in trouble.",

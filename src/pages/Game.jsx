@@ -427,6 +427,10 @@ export default function Game() {
     return answers[trait][cat];
   }
 
+  function checkAnswer(trait, cat) {
+    answers[trait][cat] == answerKey[trait][cat];
+  }
+
   return (
     <section className={styles.gameArea}>
       <GameTable

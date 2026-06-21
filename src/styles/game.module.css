@@ -330,6 +330,11 @@ p {
     background-color 100ms ease-in-out;
 }
 
+.optionButton img {
+  max-height: 90%;
+  max-width: 90%;
+}
+
 .optionsModal button:hover {
   border-color: #389c8c;
   background: #ecf7e6;

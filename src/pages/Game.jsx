@@ -6,17 +6,22 @@ import House from "../assets/images/game/placeholders/House.svg";
 import Fish from "../assets/images/game/placeholders/Fish.svg";
 import QMark from "../assets/images/game/qmark.svg";
 import ears from "../assets/images/cats/illustrations/Ears.svg";
+import MVP from "../assets/images/buildings/no-shadow/mvp.svg";
+import Schmitt from "../assets/images/buildings/no-shadow/schmitt.svg";
+import Faura from "../assets/images/buildings/no-shadow/faura.svg";
+import Arete from "../assets/images/buildings/no-shadow/arete.svg";
+import CTCSOM from "../assets/images/buildings/no-shadow/ctc-som.svg";
 import { useState } from "react";
 import { shuffle } from "remeda";
 import { useStopwatch } from "react-timer-hook";
 
 const answerKey = {
   Location: {
-    Dongyan: "MVP",
-    Hakaw: "Schmitt",
-    OneEye: "Faura",
-    Ponpon: "Aretè",
-    Princess: "CTC-SOM",
+    Dongyan: MVP,
+    Hakaw: Schmitt,
+    OneEye: Faura,
+    Ponpon: Arete,
+    Princess: CTCSOM,
   },
   Quirk: {
     Dongyan: "Stubby tail",
@@ -71,7 +76,11 @@ function OptionsModal({ trait, cat, options, closeOptionsModal }) {
         {options &&
           options.map((option) => (
             <button onClick={closeOptionsModal} className={styles.optionButton}>
-              {option}
+              {["Location", "Picture"].includes(trait) ? (
+                <img src={option} />
+              ) : (
+                option
+              )}
             </button>
           ))}
       </section>

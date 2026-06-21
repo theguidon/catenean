@@ -362,6 +362,14 @@ li.clearedClue {
   background: #ef9797;
 }
 
+.correctFrame {
+  border-color: #389c8c;
+}
+
+.wrongFrame {
+  border-color: #e82424;
+}
+
 .optionButton img.picBtn {
   height: 100%;
   width: 100%;

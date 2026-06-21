@@ -14,6 +14,7 @@ import CTCSOM from "../assets/images/buildings/no-shadow/ctc-som.svg";
 import { useState } from "react";
 import { shuffle } from "remeda";
 import { useStopwatch } from "react-timer-hook";
+import { Link } from "react-router";
 
 const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
 
@@ -107,7 +108,7 @@ const answerKey = {
     Hakaw: "/assets/cats/new/hakawCompressed.webp",
     "One Eye": "/assets/cats/new/oneeyeCompressed.webp",
     Ponpon: "/assets/cats/new/ponponCompressed.webp",
-    princess: "/assets/cats/new/princessCompressed.webp",
+    Princess: "/assets/cats/new/princessCompressed.webp",
   },
   Location: {
     Dongyan: MVP,
@@ -444,7 +445,13 @@ export default function Game() {
             <img src={QMark} />
           </button>
           <section style={{ display: "flex", alignItems: "center" }}>
-            <button className={styles.exitBtn}>x</button>
+            <Link
+              to="/"
+              className={styles.exitBtn}
+              style={{ color: "#205950" }}
+            >
+              x
+            </Link>
             <CatButton
               onClick={() => {
                 checkAllAnswers();

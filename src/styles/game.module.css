@@ -120,12 +120,35 @@ p {
   animation: 3s ease-in-out 0s infinite alternate-reverse bob;
 }
 
+.gameArea {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 2% 5%;
+  gap: 2vw;
+}
+
 .gameTable {
-  margin-top: 2vh;
   display: grid;
-  grid-template-columns: 5vw repeat(5, 10vw);
-  grid-template-rows: 6vh repeat(5, 15vh);
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 3em repeat(5, 1fr);
+  grid-template-rows: 15vh 4em repeat(5, 1fr);
   place-items: center;
+}
+
+.picFrame {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  border: 4px solid #ffffec;
+  box-shadow: 0 8px 0.2px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  position: relative;
+  top: 0.8em;
 }
 
 .nameHeader,
@@ -140,6 +163,7 @@ p {
 .catHeader {
   border-top: 1px solid #a0d8cf;
   padding: 4% 0;
+  font-size: 0.9em;
 }
 
 .gameTable h1 {
@@ -189,6 +213,77 @@ p {
   color: white;
   font-family: "AndesNeue Alt 2 Bold", serif;
   font-size: 2em;
+}
+
+.menuSide {
+  height: 100%;
+  width: 42vw;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+}
+
+.gameOpts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.timer {
+  font-family: "Cherry Swash", sans-serif;
+  font-weight: bold;
+  font-size: 3.5em;
+}
+
+.menuSide > * {
+  width: 100%;
+}
+
+.checklist {
+  height: 84%;
+  background: #ffffec;
+  border: 20px solid #b18e7d;
+}
+
+.instructionBtn,
+.exitBtn {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-items: center;
+}
+
+.instructionBtn {
+  height: 5em;
+  background: #3b756c;
+}
+
+.instructionBtn > img {
+  height: 60%;
+  position: relative;
+  left: 3%;
+}
+
+.exitBtn {
+  background: #ffffec;
+  height: 1.7em;
+  font-family: "Solway";
+  font-weight: bold;
+  font-size: 2.5em;
+  color: #205950;
+}
+
+.instructionBtn,
+.exitBtn {
+  position: relative;
+  top: 0.2em;
+}
+
+.timer {
+  position: relative;
+  top: 0.2vh;
 }
 
 @keyframes bob {

@@ -366,14 +366,31 @@ function padNumber(number) {
   return `${number}`;
 }
 
-function Timer() {
-  const { minutes, seconds } = useStopwatch({ autoStart: true });
+// a forwardRef is necessary because otherwise it would
+// cause the whole game to rerender every second
+const Timer = forwardRef(function Timer(_, ref) {
+  const { minutes, seconds, pause } = useStopwatch({ autoStart: true });
+
+  useImperativeHandle(ref, () => {
+    return {
+      getMinutes() {
+        return minutes;
+      },
+      getSeconds() {
+        return seconds;
+      },
+      pauseTimer() {
+        pause();
+      },
+    };
+  }, [minutes, seconds]);
+
   return (
     <p className={styles.timer}>
       {padNumber(minutes)}:{padNumber(seconds)}
     </p>
   );
-}
+});
 
 export default function Game() {
   const [currentCat, setCurrentCat] = useState("Dongyan");
@@ -382,6 +399,7 @@ export default function Game() {
   const [answers, setAnswers] = useState(initialAnswers);
   const [submitClicked, setSubmitClicked] = useState(false);
   const [showResultsScreen, setShowResultsScreen] = useState(false);
+  const timerRef = useRef < any > null;
 
   function openOptionsModal(cat, trait) {
     setCurrentCat(cat);
@@ -456,68 +474,64 @@ export default function Game() {
     return answers[trait][cat].correct;
   }
 
-  if (!showResultsScreen) {
-    return (
-      <section className={styles.gameArea}>
-        <GameTable
-          openOptionsModal={openOptionsModal}
-          hasAnswer={hasAnswer}
-          getAnswer={getAnswer}
-          checkAnswer={isCorrect}
-          isChecked={isChecked}
-          submitClicked={submitClicked}
-        />
-        <section className={styles.menuSide}>
-          <section className={styles.gameOpts}>
-            <Timer />
-            <button className={styles.instructionBtn}>
-              <img src={QMark} />
-            </button>
-            <section style={{ display: "flex", alignItems: "center" }}>
-              <Link
-                to="/"
-                className={styles.exitBtn}
-                style={{ color: "#205950" }}
-              >
-                x
-              </Link>
-              <CatButton
-                onClick={() => {
-                  checkAllAnswers();
-                  setSubmitClicked(true);
-                  if (isAllCorrect()) {
-                    setShowResultsScreen(true);
-                  }
-                }}
-              />
-            </section>
-          </section>
-          <section className={styles.checklist}>
-            <ul>
-              {clues.map((clue) => (
-                <li
-                  className={
-                    clue.clearCondition(answers) ? styles.clearedClue : ""
-                  }
-                >
-                  <p>{clue.text}</p>
-                </li>
-              ))}
-            </ul>
+  return (
+    <section className={styles.gameArea}>
+      <GameTable
+        openOptionsModal={openOptionsModal}
+        hasAnswer={hasAnswer}
+        getAnswer={getAnswer}
+        checkAnswer={isCorrect}
+        isChecked={isChecked}
+        submitClicked={submitClicked}
+      />
+      <section className={styles.menuSide}>
+        <section className={styles.gameOpts}>
+          <Timer />
+          <button className={styles.instructionBtn}>
+            <img src={QMark} />
+          </button>
+          <section style={{ display: "flex", alignItems: "center" }}>
+            <Link
+              to="/"
+              className={styles.exitBtn}
+              style={{ color: "#205950" }}
+            >
+              x
+            </Link>
+            <CatButton
+              onClick={() => {
+                checkAllAnswers();
+                setSubmitClicked(true);
+                if (isAllCorrect()) {
+                  setShowResultsScreen(true);
+                }
+              }}
+            />
           </section>
         </section>
-        {showOptionsModal && (
-          <OptionsModal
-            trait={currentTrait}
-            cat={currentCat}
-            options={getOptionsFromTrait(currentTrait)}
-            closeOptionsModal={closeOptionsModal}
-            setAnswer={setAnswer}
-          />
-        )}
+        <section className={styles.checklist}>
+          <ul>
+            {clues.map((clue) => (
+              <li
+                className={
+                  clue.clearCondition(answers) ? styles.clearedClue : ""
+                }
+              >
+                <p>{clue.text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
       </section>
-    );
-  } else {
-    <section className={styles.resultsScreen}></section>;
-  }
+      {showOptionsModal && (
+        <OptionsModal
+          trait={currentTrait}
+          cat={currentCat}
+          options={getOptionsFromTrait(currentTrait)}
+          closeOptionsModal={closeOptionsModal}
+          setAnswer={setAnswer}
+        />
+      )}
+    </section>
+  );
 }

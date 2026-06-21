@@ -52,7 +52,8 @@ const clues = [
     text: "Princess loves riding the elevators of this sprawling multi-floor complex.",
     clearCondition: (answers) =>
       answers["Quirk"]["Princess"].answer === "Rides the elevator" &&
-      answers["Location"]["Princess"].answer === CTCSOM,
+      answers["Location"]["Princess"].answer === CTCSOM &&
+      answers["Fave Spot"]["Princess"].answer === "Elevators",
   },
   {
     text: "Princess is not fond of eating anything wet.",
@@ -74,7 +75,7 @@ const clues = [
     text: "Hakaw runs the halls and offices of this building situated northeast of Faura.",
     clearCondition: (answers) =>
       answers["Fave Spot"]["Hakaw"].answer === "Department offices" &&
-      answers["Location"]["Hakaw"].answer === "Scmitt",
+      answers["Location"]["Hakaw"].answer === Schmitt,
   },
   {
     text: "Hakaw, though not a picky cat, needs a chilly drink to feel refreshed.",
@@ -86,7 +87,7 @@ const clues = [
     text: "Dongyan loves people-watching atop his perch in this building.",
     clearCondition: (answers) =>
       answers["Fave Spot"]["Dongyan"].answer === "Guard's table" &&
-      answers["Location"]["Dongyan"].answer === "MVP",
+      answers["Location"]["Dongyan"].answer === MVP,
   },
   {
     text: "Liver spread is the ideal snack of choice for this MVP resident.",

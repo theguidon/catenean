@@ -81,7 +81,7 @@ export function GameTable() {
       </section>
       {Array.from({ length: 5 }).map((ix) => (
         <section key={`location-${ix}`} className={styles.catCell}>
-          <img src={Fish} />
+          <img src={Fish} style={{ height: "50%" }} />
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>

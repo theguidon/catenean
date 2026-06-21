@@ -354,6 +354,19 @@ li.clearedClue {
   color: #593d2f;
 }
 
+.correctCell {
+  background: #aadad3;
+}
+
+.wrongCell {
+  background: #ef9797;
+}
+
+.wrongCell img,
+.correctCell img {
+  opacity: 50%;
+}
+
 .optionButton img.picBtn {
   height: 100%;
   width: 100%;

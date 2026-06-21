@@ -22,7 +22,7 @@ function isInSameColumn(answers, traits) {
   for (const cat of catNames) {
     let allTraitsFulfilled = true;
     for (const trait in traits) {
-      if (answers[trait][cat] !== traits[trait]) {
+      if (answers[trait][cat].answer !== traits[trait]) {
         allTraitsFulfilled = false;
         break;
       }
@@ -38,8 +38,8 @@ const clues = [
   {
     text: "The lazy cat lives in the building beside the Catenean named after a dumpling.",
     clearCondition: (answers) =>
-      answers["Personality"]["Dongyan"] === "Lazy" ||
-      answers["Personality"]["One Eye"] === "Lazy",
+      answers["Personality"]["Dongyan"].answer === "Lazy" ||
+      answers["Personality"]["One Eye"].answer === "Lazy",
   },
   {
     text: "This curious cat is a resident of the modern building that's home to artists.",
@@ -49,15 +49,15 @@ const clues = [
   {
     text: "Princess loves riding the elevators of this sprawling multi-floor complex.",
     clearCondition: (answers) =>
-      answers["Quirk"]["Princess"] === "Rides the elevator" &&
-      answers["Location"]["Princess"] === CTCSOM,
+      answers["Quirk"]["Princess"].answer === "Rides the elevator" &&
+      answers["Location"]["Princess"].answer === CTCSOM,
   },
   {
     text: "Princess is not fond of eating anything wet.",
     clearCondition: (answers) =>
-      answers["Fave Food"]["Princess"] &&
-      answers["Fave Food"]["Princess"].length > 0 &&
-      answers["Fave Food"]["Princess"] !== "Wet food",
+      answers["Fave Food"]["Princess"].answer &&
+      answers["Fave Food"]["Princess"].answer.length > 0 &&
+      answers["Fave Food"]["Princess"].answer !== "Wet food",
   },
   {
     text: "This feisty resident of Faura Hall got his battle scars after fighting a crow.",
@@ -67,20 +67,20 @@ const clues = [
   {
     text: "Hakaw runs the halls and offices of this building situated northeast of Faura.",
     clearCondition: (answers) =>
-      answers["Fave Spot"]["Hakaw"] === "Department offices" &&
-      answers["Location"]["Hakaw"] === "Scmitt",
+      answers["Fave Spot"]["Hakaw"].answer === "Department offices" &&
+      answers["Location"]["Hakaw"].answer === "Scmitt",
   },
   {
     text: "Hakaw, though not a picky cat, needs a chilly drink to feel refreshed.",
     clearCondition: (answers) =>
-      answers["Fave Food"]["Hakaw"] === "Eats anything" &&
-      answers["Quirk"]["Hakaw"] == "Drinks cold water",
+      answers["Fave Food"]["Hakaw"].answer === "Eats anything" &&
+      answers["Quirk"]["Hakaw"].answer == "Drinks cold water",
   },
   {
     text: "Dongyan loves people-watching atop his perch in this building.",
     clearCondition: (answers) =>
-      answers["Fave Spot"]["Dongyan"] === "Guard's table" &&
-      answers["Location"]["Dongyan"] === "MVP",
+      answers["Fave Spot"]["Dongyan"].answer === "Guard's table" &&
+      answers["Location"]["Dongyan"].answer === "MVP",
   },
   {
     text: "Liver spread is the ideal snack of choice for this MVP resident.",
@@ -90,14 +90,14 @@ const clues = [
   {
     text: "Schmitt Hall is home to this clingy Catenean, named after a seafood dimsum classic.",
     clearCondition: (answers) =>
-      answers["Location"]["Hakaw"] === Schmitt &&
-      answers["Personality"]["Hakaw"] === "Clingy",
+      answers["Location"]["Hakaw"].answer === Schmitt &&
+      answers["Personality"]["Hakaw"].answer === "Clingy",
   },
   {
     text: "Ponpon's youthful and curious nature usually gets him in trouble.",
     clearCondition: (answers) =>
-      answers["Quirk"]["Ponpon"] === "The youngest" &&
-      answers["Personality"]["Ponpon"] === "Curious",
+      answers["Quirk"]["Ponpon"].answer === "The youngest" &&
+      answers["Personality"]["Ponpon"].answer === "Curious",
   },
 ];
 
@@ -105,42 +105,42 @@ const answerKey = {
   Picture: {
     Dongyan: "/assets/cats/new/dongyanCompressed.webp",
     Hakaw: "/assets/cats/new/hakawCompressed.webp",
-    OneEye: "/assets/cats/new/oneeyeCompressed.webp",
+    "One Eye": "/assets/cats/new/oneeyeCompressed.webp",
     Ponpon: "/assets/cats/new/ponponCompressed.webp",
     princess: "/assets/cats/new/princessCompressed.webp",
   },
   Location: {
     Dongyan: MVP,
     Hakaw: Schmitt,
-    OneEye: Faura,
+    "One Eye": Faura,
     Ponpon: Arete,
     Princess: CTCSOM,
   },
   Quirk: {
     Dongyan: "Stubby tail",
     Hakaw: "Drinks cold water",
-    OneEye: "Fought a crow",
+    "One Eye": "Fought a crow",
     Ponpon: "The youngest",
     Princess: "Rides the elevator",
   },
   Personality: {
     Dongyan: "Lazy",
     Hakaw: "Clingy",
-    OneEye: "Feisty",
+    "One Eye": "Feisty",
     Ponpon: "Curious",
     Princess: "Sassy",
   },
   "Fave Spot": {
     Dongyan: "Guard's table",
     Hakaw: "Department offices",
-    OneEye: "Building Facade",
+    "One Eye": "Building Facade",
     Ponpon: "Parking lot",
     Princess: "Elevators",
   },
   "Fave Food": {
     Dongyan: "Liver spread",
     Hakaw: "Eats anything",
-    OneEye: "Kibble",
+    "One Eye": "Kibble",
     Ponpon: "Wet food",
     Princess: "Dry food",
   },
@@ -148,52 +148,56 @@ const answerKey = {
 
 const initialAnswers = {
   Picture: {
-    Dongyan: "",
-    Hakaw: "",
-    OneEye: "",
-    Ponpon: "",
-    princess: "",
+    Dongyan: { answer: "", correct: false },
+    Hakaw: { answer: "", correct: false },
+    "One Eye": { answer: "", correct: false },
+    Ponpon: { answer: "", correct: false },
+    Princess: { answer: "", correct: false },
   },
   Location: {
-    Dongyan: null,
-    Hakaw: null,
-    OneEye: null,
-    Ponpon: null,
-    Princess: null,
+    Dongyan: { answer: null, correct: false },
+    Hakaw: { answer: null, correct: false },
+    "One Eye": { answer: null, correct: false },
+    Ponpon: { answer: null, correct: false },
+    Princess: { answer: null, correct: false },
   },
   Quirk: {
-    Dongyan: "",
-    Hakaw: "",
-    OneEye: "",
-    Ponpon: "",
-    Princess: "",
+    Dongyan: { answer: "", correct: false },
+    Hakaw: { answer: "", correct: false },
+    "One Eye": { answer: "", correct: false },
+    Ponpon: { answer: "", correct: false },
+    Princess: { answer: "", correct: false },
   },
   Personality: {
-    Dongyan: "",
-    Hakaw: "",
-    OneEye: "",
-    Ponpon: "",
-    Princess: "",
+    Dongyan: { answer: "", correct: false },
+    Hakaw: { answer: "", correct: false },
+    "One Eye": { answer: "", correct: false },
+    Ponpon: { answer: "", correct: false },
+    Princess: { answer: "", correct: false },
   },
   "Fave Spot": {
-    Dongyan: "",
-    Hakaw: "",
-    OneEye: "",
-    Ponpon: "",
-    Princess: "",
+    Dongyan: { answer: "", correct: false },
+    Hakaw: { answer: "", correct: false },
+    "One Eye": { answer: "", correct: false },
+    Ponpon: { answer: "", correct: false },
+    Princess: { answer: "", correct: false },
   },
   "Fave Food": {
-    Dongyan: "",
-    Hakaw: "",
-    OneEye: "",
-    Ponpon: "",
-    Princess: "",
+    Dongyan: { answer: "", correct: false },
+    Hakaw: { answer: "", correct: false },
+    "One Eye": { answer: "", correct: false },
+    Ponpon: { answer: "", correct: false },
+    Princess: { answer: "", correct: false },
   },
 };
 
-function CatButton() {
+function CatButton({ onClick }) {
   return (
-    <button className={styles.catButton} style={{ width: "12em", margin: 0 }}>
+    <button
+      onClick={onClick}
+      className={styles.catButton}
+      style={{ width: "12em", margin: 0 }}
+    >
       <img src={ears} />
       <p style={{ padding: "12px 0" }}>Submit</p>
     </button>
@@ -237,7 +241,38 @@ function OptionsModal({ trait, cat, options, closeOptionsModal, setAnswer }) {
   );
 }
 
+// might make state a reducer
+// make component for the cells im kms
 export function GameTable({ openOptionsModal, hasAnswer, getAnswer }) {
+  function GameCell({ trait, name, placeholder }) {
+    return (
+      <button
+        key={`${trait}-${name}`}
+        onClick={() => openOptionsModal(name, trait)}
+        className={styles.catCell}
+      >
+        {hasAnswer(trait, name) ? (
+          trait === "Location" ? (
+            <img
+              src={getAnswer(trait, name)}
+              style={{ maxHeight: "70%", maxWidth: "80%" }}
+            />
+          ) : (
+            <p>{getAnswer(trait, name)}</p>
+          )
+        ) : (
+          <img
+            src={placeholder}
+            style={{ height: placeholder === Fish ? "50%" : "70%" }}
+          />
+        )}
+        <div className={styles.catCellHover}>
+          <p>Guess Answer</p>
+        </div>
+      </button>
+    );
+  }
+
   return (
     <section className={styles.gameTable}>
       {catNames.map((name, ix) => (
@@ -266,99 +301,31 @@ export function GameTable({ openOptionsModal, hasAnswer, getAnswer }) {
         <h1>Location</h1>
       </section>
       {catNames.map((name) => (
-        <button
-          key={`location-${name}`}
-          onClick={() => openOptionsModal(name, "Location")}
-          className={styles.catCell}
-        >
-          {hasAnswer("Location", name) ? (
-            <img
-              src={getAnswer("Location", name)}
-              style={{ maxHeight: "70%", maxWidth: "80%" }}
-            />
-          ) : (
-            <img src={House} />
-          )}
-          <div className={styles.catCellHover}>
-            <p>Guess Answer</p>
-          </div>
-        </button>
+        <GameCell trait="Location" name={name} placeholder={House} />
       ))}
       <section className={styles.catHeader}>
         <h1>Quirk</h1>
       </section>
       {catNames.map((name) => (
-        <button
-          key={`quirk-${name}`}
-          onClick={() => openOptionsModal(name, "Quirk")}
-          className={styles.catCell}
-        >
-          {hasAnswer("Quirk", name) ? (
-            <p>{getAnswer("Quirk", name)}</p>
-          ) : (
-            <img src={Paw} />
-          )}
-          <div className={styles.catCellHover}>
-            <p>Guess Answer</p>
-          </div>
-        </button>
+        <GameCell trait="Quirk" name={name} placeholder={Paw} />
       ))}
       <section className={styles.catHeader}>
         <h1>Personality</h1>
       </section>
       {catNames.map((name) => (
-        <button
-          key={`personality-${name}`}
-          onClick={() => openOptionsModal(name, "Personality")}
-          className={styles.catCell}
-        >
-          {hasAnswer("Personality", name) ? (
-            <p>{getAnswer("Personality", name)}</p>
-          ) : (
-            <img src={Cat} />
-          )}
-          <div className={styles.catCellHover}>
-            <p>Guess Answer</p>
-          </div>
-        </button>
+        <GameCell trait="Personality" name={name} placeholder={Cat} />
       ))}
       <section className={styles.catHeader}>
         <h1>Fave Spot</h1>
       </section>
       {catNames.map((name) => (
-        <button
-          key={`spot-${name}`}
-          onClick={() => openOptionsModal(name, "Fave Spot")}
-          className={styles.catCell}
-        >
-          {hasAnswer("Fave Spot", name) ? (
-            <p>{getAnswer("Fave Spot", name)}</p>
-          ) : (
-            <img src={Box} />
-          )}
-          <div className={styles.catCellHover}>
-            <p>Guess Answer</p>
-          </div>
-        </button>
+        <GameCell trait="Fave Spot" name={name} placeholder={Box} />
       ))}
       <section className={styles.catHeader}>
         <h1>Fave Food</h1>
       </section>
       {catNames.map((name) => (
-        <button
-          key={`food-${name}`}
-          onClick={() => openOptionsModal(name, "Fave Food")}
-          className={styles.catCell}
-        >
-          {hasAnswer("Fave Food", name) ? (
-            <p>{getAnswer("Fave Food", name)}</p>
-          ) : (
-            <img src={Fish} style={{ height: "50%" }} />
-          )}
-          <div className={styles.catCellHover}>
-            <p>Guess Answer</p>
-          </div>
-        </button>
+        <GameCell trait="Fave Food" name={name} placeholder={Fish} />
       ))}
     </section>
   );
@@ -386,12 +353,21 @@ function padNumber(number) {
   return `${number}`;
 }
 
+function Timer() {
+  const { minutes, seconds } = useStopwatch({ autoStart: true });
+  return (
+    <p className={styles.timer}>
+      {padNumber(minutes)}:{padNumber(seconds)}
+    </p>
+  );
+}
+
 export default function Game() {
   const [currentCat, setCurrentCat] = useState("Dongyan");
   const [currentTrait, setCurrentTrait] = useState("Fave Spot");
   const [showOptionsModal, setShowOptionsModal] = useState(false);
   const [answers, setAnswers] = useState(initialAnswers);
-  const { minutes, seconds } = useStopwatch({ autoStart: true });
+  const [submitCalled, setSubmitCalled] = useState(false);
 
   function openOptionsModal(cat, trait) {
     setCurrentCat(cat);
@@ -407,8 +383,8 @@ export default function Game() {
     // if answer exists in another cat, clear it first
     let newAnswers = { ...answers };
     for (const otherCat in newAnswers[trait]) {
-      if (cat !== otherCat && newAnswers[trait][otherCat] === answer) {
-        newAnswers[trait][otherCat] = null;
+      if (cat !== otherCat && newAnswers[trait][otherCat].answer === answer) {
+        newAnswers[trait][otherCat].answer = null;
       }
     }
     return newAnswers;
@@ -417,20 +393,23 @@ export default function Game() {
   function setAnswer(trait, cat, answer) {
     clearExistingAnswer(trait, cat, answer);
     let newAnswers = { ...answers };
-    newAnswers[trait][cat] = answer;
+    newAnswers[trait][cat].answer = answer;
     setAnswers(newAnswers);
   }
 
   function hasAnswer(trait, cat) {
-    return answers[trait][cat] && answers[trait][cat].length > 0;
+    return answers[trait][cat].answer && answers[trait][cat].answer.length > 0;
   }
 
   function getAnswer(trait, cat) {
-    return answers[trait][cat];
+    return answers[trait][cat].answer;
   }
 
   function checkAnswer(trait, cat) {
-    answers[trait][cat] == answerKey[trait][cat];
+    const isCorrect = answers[trait][cat].answer === answerKey[trait][cat];
+    let newAnswers = { ...answers };
+    newAnswers[trait][cat].correct = isCorrect;
+    setAnswers(newAnswers);
   }
 
   return (
@@ -439,18 +418,18 @@ export default function Game() {
         openOptionsModal={openOptionsModal}
         hasAnswer={hasAnswer}
         getAnswer={getAnswer}
+        checkAnswer={checkAnswer}
+        submitCalled={submitCalled}
       />
       <section className={styles.menuSide}>
         <section className={styles.gameOpts}>
-          <p className={styles.timer}>
-            {padNumber(minutes)}:{padNumber(seconds)}
-          </p>
+          <Timer />
           <button className={styles.instructionBtn}>
             <img src={QMark} />
           </button>
           <section style={{ display: "flex", alignItems: "center" }}>
             <button className={styles.exitBtn}>x</button>
-            <CatButton />
+            <CatButton onClick={() => setSubmitCalled(true)} />
           </section>
         </section>
         <section className={styles.checklist}>

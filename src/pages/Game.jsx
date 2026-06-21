@@ -7,6 +7,44 @@ import Fish from "../assets/images/game/placeholders/Fish.svg";
 import QMark from "../assets/images/game/qmark.svg";
 import ears from "../assets/images/cats/illustrations/Ears.svg";
 
+const AnswerKey = {
+  Location: {
+    Dongyan: "MVP",
+    Hakaw: "Schmitt",
+    OneEye: "Faura",
+    Ponpon: "Aretè",
+    Princess: "CTC-SOM",
+  },
+  Quirk: {
+    Dongyan: "Stubby tail",
+    Hakaw: "Drinks cold water",
+    OneEye: "Fought a crow",
+    Ponpon: "The youngest",
+    Princess: "Rides the elevator",
+  },
+  Personality: {
+    Dongyan: "Stubby tail",
+    Hakaw: "Drinks cold water",
+    OneEye: "Fought a crow",
+    Ponpon: "The youngest",
+    Princess: "Rides the elevator",
+  },
+  "Favorite Spot": {
+    Dongyan: "Guard's table",
+    Hakaw: "Department offices",
+    OneEye: "Building Facade",
+    Ponpon: "Parking lot",
+    Princess: "Elevators",
+  },
+  "Favorite Food": {
+    Dongyan: "Liver spread",
+    Hakaw: "Eats anything",
+    OneEye: "Kibble",
+    Ponpon: "Wet food",
+    Princess: "Dry food",
+  },
+};
+
 function CatButton() {
   return (
     <button className={styles.catButton} style={{ width: "12em", margin: 0 }}>

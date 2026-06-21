@@ -11,6 +11,7 @@ import Schmitt from "../assets/images/buildings/no-shadow/schmitt.svg";
 import Faura from "../assets/images/buildings/no-shadow/faura.svg";
 import Arete from "../assets/images/buildings/no-shadow/arete.svg";
 import CTCSOM from "../assets/images/buildings/no-shadow/ctc-som.svg";
+import { BgMusic3 } from "../hooks/sounds.jsx";
 import { useState } from "react";
 import { shuffle } from "remeda";
 import { useStopwatch } from "react-timer-hook";
@@ -431,6 +432,7 @@ export default function Game() {
 
   return (
     <section className={styles.gameArea}>
+      <BgMusic3 />
       <GameTable
         openOptionsModal={openOptionsModal}
         hasAnswer={hasAnswer}

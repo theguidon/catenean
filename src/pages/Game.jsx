@@ -8,6 +8,7 @@ import QMark from "../assets/images/game/qmark.svg";
 import ears from "../assets/images/cats/illustrations/Ears.svg";
 import { useState } from "react";
 import { shuffle } from "remeda";
+import { useStopwatch } from "react-timer-hook";
 
 const answerKey = {
   Location: {
@@ -177,16 +178,32 @@ export function GameTable({ openOptionsModal }) {
   );
 }
 
+// have to make this because the timer keeps shuffling
+// the options every second
+const gameOptions = {
+  Location: shuffle(Object.values(answerKey["Location"])),
+  Quirk: shuffle(Object.values(answerKey["Quirk"])),
+  Personality: shuffle(Object.values(answerKey["Personality"])),
+  "Fave Spot": shuffle(Object.values(answerKey["Fave Spot"])),
+  "Fave Food": shuffle(Object.values(answerKey["Fave Food"])),
+};
+
 function getOptionsFromTrait(trait) {
-  return shuffle(Object.values(answerKey[trait]));
+  return gameOptions[trait];
+}
+
+function padNumber(number) {
+  if (number < 10) {
+    return `0${number}`;
+  }
+  return `${number}`;
 }
 
 export default function Game() {
   const [currentCat, setCurrentCat] = useState("Dongyan");
   const [currentTrait, setCurrentTrait] = useState("Fave Spot");
   const [showOptionsModal, setShowOptionsModal] = useState(false);
-  console.log("Cat:", currentCat);
-  console.log("showOptionsModal: ", showOptionsModal);
+  const { minutes, seconds } = useStopwatch({ autoStart: true });
 
   function openOptionsModal(cat, trait) {
     setCurrentCat(cat);
@@ -203,7 +220,9 @@ export default function Game() {
       <GameTable openOptionsModal={openOptionsModal} />
       <section className={styles.menuSide}>
         <section className={styles.gameOpts}>
-          <p className={styles.timer}>00:00</p>
+          <p className={styles.timer}>
+            {padNumber(minutes)}:{padNumber(seconds)}
+          </p>
           <button className={styles.instructionBtn}>
             <img src={QMark} />
           </button>

@@ -249,6 +249,13 @@ p {
   height: 84%;
   background: #ffffec;
   border: 20px solid #b18e7d;
+  padding: 5%;
+  overflow: scroll;
+}
+
+.checklist p {
+  font-size: 1.4em;
+  font-family: "Gelagio", serif;
 }
 
 .instructionBtn,

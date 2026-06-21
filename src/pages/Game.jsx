@@ -25,7 +25,7 @@ const clues = [
   "Hakaw runs the halls and offices of this building situated northeast of Faura.",
   "Hakaw, though not a picky cat, needs a chilly drink to feel refreshed.",
   "Dongyan loves people-watching atop his perch in this building.",
-  "Liver spraed is the ideal snack of choice for this MVP resident.",
+  "Liver spread is the ideal snack of choice for this MVP resident.",
   "Schmitt Hall is home to this clingy Catenean, named after a seafood dimsum classic.",
   "Ponpon's youthful and curious nature usually gets him in trouble.",
 ];
@@ -367,7 +367,15 @@ export default function Game() {
             <CatButton />
           </section>
         </section>
-        <section className={styles.checklist}></section>
+        <section className={styles.checklist}>
+          <ul>
+            {clues.map((clue) => (
+              <li>
+                <p>{clue}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
       </section>
       {showOptionsModal && (
         <OptionsModal

@@ -7,6 +7,7 @@ import Fish from "../assets/images/game/placeholders/Fish.svg";
 import QMark from "../assets/images/game/qmark.svg";
 import ears from "../assets/images/cats/illustrations/Ears.svg";
 import { useState } from "react";
+import { shuffle } from "remeda";
 
 const answerKey = {
   Location: {
@@ -177,7 +178,7 @@ export function GameTable({ openOptionsModal }) {
 }
 
 function getOptionsFromTrait(trait) {
-  return Object.values(answerKey[trait]);
+  return shuffle(Object.values(answerKey[trait]));
 }
 
 export default function Game() {

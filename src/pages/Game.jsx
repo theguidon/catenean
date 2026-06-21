@@ -15,7 +15,25 @@ import { useState } from "react";
 import { shuffle } from "remeda";
 import { useStopwatch } from "react-timer-hook";
 
-// todo: add win conditions for clues
+const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
+
+function isInSameColumn(answers, traits) {
+  // check if a set of traits is under the same cat
+  for (const cat in catNames) {
+    let allTraitsFulfilled = true;
+    for (const trait of traits) {
+      if (answers[trait][cat] !== traits[trait]) {
+        allTraitsFulfilled = false;
+        break;
+      }
+    }
+    if (allTraitsFulfilled) {
+      return true;
+    }
+  }
+  return false;
+}
+
 const clues = [
   {
     text: "The lazy cat lives in the building beside the Catenean named after a dumpling.",
@@ -213,7 +231,6 @@ function OptionsModal({ trait, cat, options, closeOptionsModal, setAnswer }) {
 }
 
 export function GameTable({ openOptionsModal, hasAnswer, getAnswer }) {
-  const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
   return (
     <section className={styles.gameTable}>
       {catNames.map((name, ix) => (

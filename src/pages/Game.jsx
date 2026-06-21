@@ -55,6 +55,8 @@ const clues = [
   {
     text: "Princess is not fond of eating anything wet.",
     clearCondition: (answers) =>
+      answers["Fave Food"]["Princess"] &&
+      answers["Fave Food"]["Princess"].length > 0 &&
       answers["Fave Food"]["Princess"] !== "Wet food",
   },
   {

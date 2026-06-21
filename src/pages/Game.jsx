@@ -394,6 +394,7 @@ export default function Game() {
     for (const otherCat in newAnswers[trait]) {
       if (cat !== otherCat && newAnswers[trait][otherCat].answer === answer) {
         newAnswers[trait][otherCat].answer = null;
+        newAnswers[trait][otherCat].correct = null;
       }
     }
     return newAnswers;

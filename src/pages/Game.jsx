@@ -15,7 +15,29 @@ import { useState } from "react";
 import { shuffle } from "remeda";
 import { useStopwatch } from "react-timer-hook";
 
+// todo: add win conditions for clues
+const clues = [
+  "The lazy cat lives in the building beside the Catenean named after a dumpling.",
+  "This curious cat is a resident of the modern building that's home to artists.",
+  "Princess loves riding the elevators of this sprawling multi-floor complex.",
+  "Princess is not fond of eating anything wet.",
+  "This feisty resident of Faura Hall got his battle scars after fighting a crow.",
+  "Hakaw runs the halls and offices of this building situated northeast of Faura.",
+  "Hakaw, though not a picky cat, needs a chilly drink to feel refreshed.",
+  "Dongyan loves people-watching atop his perch in this building.",
+  "Liver spraed is the ideal snack of choice for this MVP resident.",
+  "Schmitt Hall is home to this clingy Catenean, named after a seafood dimsum classic.",
+  "Ponpon's youthful and curious nature usually gets him in trouble.",
+];
+
 const answerKey = {
+  Picture: {
+    Dongyan: "/assets/cats/new/dongyanCompressed.webp",
+    Hakaw: "/assets/cats/new/hakawCompressed.webp",
+    OneEye: "/assets/cats/new/oneeyeCompressed.webp",
+    Ponpon: "/assets/cats/new/ponponCompressed.webp",
+    princess: "/assets/cats/new/princessCompressed.webp",
+  },
   Location: {
     Dongyan: MVP,
     Hakaw: Schmitt,
@@ -53,6 +75,51 @@ const answerKey = {
   },
 };
 
+const initialAnswers = {
+  Picture: {
+    Dongyan: "",
+    Hakaw: "",
+    OneEye: "",
+    Ponpon: "",
+    princess: "",
+  },
+  Location: {
+    Dongyan: null,
+    Hakaw: null,
+    OneEye: null,
+    Ponpon: null,
+    Princess: null,
+  },
+  Quirk: {
+    Dongyan: "",
+    Hakaw: "",
+    OneEye: "",
+    Ponpon: "",
+    Princess: "",
+  },
+  Personality: {
+    Dongyan: "",
+    Hakaw: "",
+    OneEye: "",
+    Ponpon: "",
+    Princess: "",
+  },
+  "Fave Spot": {
+    Dongyan: "",
+    Hakaw: "",
+    OneEye: "",
+    Ponpon: "",
+    Princess: "",
+  },
+  "Fave Food": {
+    Dongyan: "",
+    Hakaw: "",
+    OneEye: "",
+    Ponpon: "",
+    Princess: "",
+  },
+};
+
 function CatButton() {
   return (
     <button className={styles.catButton} style={{ width: "12em", margin: 0 }}>
@@ -77,7 +144,10 @@ function OptionsModal({ trait, cat, options, closeOptionsModal }) {
           options.map((option) => (
             <button onClick={closeOptionsModal} className={styles.optionButton}>
               {["Location", "Picture"].includes(trait) ? (
-                <img src={option} />
+                <img
+                  src={option}
+                  className={`${trait == "Location" ? styles.locationBtn : styles.picBtn}`}
+                />
               ) : (
                 option
               )}
@@ -93,7 +163,8 @@ export function GameTable({ openOptionsModal }) {
   return (
     <section className={styles.gameTable}>
       {catNames.map((name, ix) => (
-        <div
+        <button
+          onClick={() => openOptionsModal(name, "Picture")}
           key={`${name}-pic`}
           style={{ gridColumn: ix + 2 }}
           className={styles.picFrame}
@@ -157,7 +228,7 @@ export function GameTable({ openOptionsModal }) {
         <h1>Fave Spot</h1>
       </section>
       {catNames.map((name) => (
-        <section
+        <button
           key={`spot-${name}`}
           onClick={() => openOptionsModal(name, "Fave Spot")}
           className={styles.catCell}
@@ -166,13 +237,13 @@ export function GameTable({ openOptionsModal }) {
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
-        </section>
+        </button>
       ))}
       <section className={styles.catHeader}>
         <h1>Fave Food</h1>
       </section>
       {catNames.map((name) => (
-        <section
+        <button
           key={`food-${name}`}
           onClick={() => openOptionsModal(name, "Fave Food")}
           className={styles.catCell}
@@ -181,7 +252,7 @@ export function GameTable({ openOptionsModal }) {
           <div className={styles.catCellHover}>
             <p>Guess Answer</p>
           </div>
-        </section>
+        </button>
       ))}
     </section>
   );
@@ -190,6 +261,7 @@ export function GameTable({ openOptionsModal }) {
 // have to make this because the timer keeps shuffling
 // the options every second
 const gameOptions = {
+  Picture: shuffle(Object.values(answerKey["Picture"])),
   Location: shuffle(Object.values(answerKey["Location"])),
   Quirk: shuffle(Object.values(answerKey["Quirk"])),
   Personality: shuffle(Object.values(answerKey["Personality"])),

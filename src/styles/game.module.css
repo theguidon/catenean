@@ -149,6 +149,11 @@ p {
   z-index: 1;
   position: relative;
   top: 0.8em;
+  transition: border-color 100ms ease-in-out;
+}
+
+.picFrame:hover {
+  border-color: #389c8c;
 }
 
 .nameHeader,
@@ -330,7 +335,13 @@ p {
     background-color 100ms ease-in-out;
 }
 
-.optionButton img {
+.optionButton img.picBtn {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.optionButton img.locationBtn {
   max-height: 90%;
   max-width: 90%;
 }

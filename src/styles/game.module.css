@@ -451,8 +451,19 @@ li.clearedClue {
 }
 
 .resultsScreen {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: center / cover url("/assets/game_desktop_bg.svg") repeat;
+  overflow: clip;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
 }
 
 @keyframes bob {

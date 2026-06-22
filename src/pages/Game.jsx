@@ -502,63 +502,75 @@ export default function Game() {
   }
 
   return (
-    <section className={styles.gameArea}>
-      <GameTable
-        openOptionsModal={openOptionsModal}
-        hasAnswer={hasAnswer}
-        getAnswer={getAnswer}
-        checkAnswer={isCorrect}
-        isChecked={isChecked}
-        submitClicked={submitClicked}
-      />
-      <section className={styles.menuSide}>
-        <section className={styles.gameOpts}>
-          <Timer />
-          <button className={styles.instructionBtn}>
-            <img src={QMark} />
-          </button>
-          <section style={{ display: "flex", alignItems: "center" }}>
-            <Link
-              to="/"
-              className={styles.exitBtn}
-              style={{ color: "#205950" }}
-            >
-              x
-            </Link>
-            <CatButton
-              onClick={() => {
-                checkAllAnswers();
-                setSubmitClicked(true);
-                if (isAllCorrect()) {
-                  setShowResultsScreen(true);
-                }
-              }}
-            />
+    <>
+      <section className={styles.gameArea}>
+        <GameTable
+          openOptionsModal={openOptionsModal}
+          hasAnswer={hasAnswer}
+          getAnswer={getAnswer}
+          checkAnswer={isCorrect}
+          isChecked={isChecked}
+          submitClicked={submitClicked}
+        />
+        <section className={styles.menuSide}>
+          <section className={styles.gameOpts}>
+            <Timer ref={timerRef} />
+            <button className={styles.instructionBtn}>
+              <img src={QMark} />
+            </button>
+            <section style={{ display: "flex", alignItems: "center" }}>
+              <Link
+                to="/"
+                className={styles.exitBtn}
+                style={{ color: "#205950" }}
+              >
+                x
+              </Link>
+              <CatButton
+                onClick={() => {
+                  checkAllAnswers();
+                  setSubmitClicked(true);
+                  if (isAllCorrect()) {
+                    timerRef.current.pauseTimer();
+                    setShowResultsScreen(true);
+                  }
+                }}
+              />
+            </section>
+          </section>
+          <section className={styles.checklist}>
+            <ul>
+              {clues.map((clue) => (
+                <li
+                  className={
+                    clue.clearCondition(answers) ? styles.clearedClue : ""
+                  }
+                >
+                  <p>{clue.text}</p>
+                </li>
+              ))}
+            </ul>
           </section>
         </section>
-        <section className={styles.checklist}>
-          <ul>
-            {clues.map((clue) => (
-              <li
-                className={
-                  clue.clearCondition(answers) ? styles.clearedClue : ""
-                }
-              >
-                <p>{clue.text}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {showOptionsModal && (
+          <OptionsModal
+            trait={currentTrait}
+            cat={currentCat}
+            options={getOptionsFromTrait(currentTrait)}
+            closeOptionsModal={closeOptionsModal}
+            setAnswer={setAnswer}
+          />
+        )}
       </section>
-      {showOptionsModal && (
-        <OptionsModal
-          trait={currentTrait}
-          cat={currentCat}
-          options={getOptionsFromTrait(currentTrait)}
-          closeOptionsModal={closeOptionsModal}
-          setAnswer={setAnswer}
-        />
-      )}
-    </section>
+      <section className={styles.resultsScreen}>
+        <h1>You’ve found all the cats—well done!</h1>
+        <h2>Let’s hope they don’t get into any more trouble next time.</h2>
+        <p>Your Time</p>
+        <p>
+          {timerRef.current && padNumber(timerRef.current.getMinutes())}:
+          {timerRef.current && padNumber(timerRef.current.getSeconds())}
+        </p>
+      </section>
+    </>
   );
 }

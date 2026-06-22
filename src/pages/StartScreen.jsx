@@ -7,8 +7,11 @@ import CatHouse from "../assets/images/Cat House.svg";
 import CatBowl from "../assets/images/Food Bowl.svg";
 import Ears from "../assets/images/cats/illustrations/Ears.svg";
 import { AnimatePresence, easeInOut, motion, spring } from "motion/react";
+import popSound from "../assets/sounds/sfx/pop.m4a";
+import useSound from "use-sound";
 
 export default function StartScreen({ startInteractive }) {
+  const [playPop] = useSound(popSound);
   return (
     <section className={styles.container}>
       <AnimatePresence mode="sync">
@@ -35,7 +38,11 @@ export default function StartScreen({ startInteractive }) {
               duration: 0.1,
               bounce: 0.1,
             }}
-            onClick={startInteractive}
+            onMouseOver={playPop}
+            onClick={() => {
+              playPop();
+              startInteractive();
+            }}
             className={styles.catButton}
           >
             <img src={Ears} />

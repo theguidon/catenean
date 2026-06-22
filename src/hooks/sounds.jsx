@@ -2,7 +2,7 @@ import useSound from "use-sound";
 import paperSound1 from "../assets/sounds/sfx/paper_sound_1.wav";
 import paperSound2 from "../assets/sounds/sfx/paper_sound_2.wav";
 import paperSound3 from "../assets/sounds/sfx/paper_sound_3.wav";
-import meowSound1 from "../assets/sounds/sfx/meow1.mp3";
+import meowSound1 from "../assets/sounds/sfx/meow1.m4a";
 import meowSound2 from "../assets/sounds/sfx/meow2.m4a";
 import meowSound3 from "../assets/sounds/sfx/meow3.m4a";
 import boingSound1 from "../assets/sounds/sfx/boing1.m4a";

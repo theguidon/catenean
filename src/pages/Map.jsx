@@ -22,6 +22,8 @@ import { motion, spring, AnimatePresence } from "motion/react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useRef, useState, useEffect } from "react";
 import { useBoings, useMeows } from "../hooks/sounds.jsx";
+import useSound from "use-sound";
+import popSound from "../assets/sounds/sfx/pop.m4a";
 
 const buildingData = {
   arete: {
@@ -82,6 +84,7 @@ const CatButton = ({ label, slug, style }) => {
 };
 
 const MobileMap = () => {
+  const [playPop] = useSound(popSound);
   const order = ["schmitt", "arete", "faura", "mvp", "ctc-som"];
   const [[page, direction], setPage] = useState([0, 0]);
 
@@ -176,7 +179,7 @@ const MobileMap = () => {
             </div>
           </motion.div>
         </AnimatePresence>
-        <Link to="/">
+        <Link to="/" onClick={playPop}>
           <img
             src={ArticleMobile}
             style={{
@@ -198,6 +201,7 @@ const DesktopMap = () => {
   const mainEl = useRef();
   const boings = useBoings();
   const meows = useMeows();
+  const [playPop] = useSound(popSound);
 
   return (
     <>
@@ -303,7 +307,7 @@ const DesktopMap = () => {
           </main>
         </TransformComponent>
       </TransformWrapper>
-      <Link to="/">
+      <Link to="/" onMouseEnter={playPop} onClick={playPop}>
         <img src={Article} className={styles.articleBtn} />
         <img
           src={ArticleHover}

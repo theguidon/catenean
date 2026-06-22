@@ -21,6 +21,7 @@ import { Link } from "react-router";
 import { motion, spring, AnimatePresence } from "motion/react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useRef, useState, useEffect } from "react";
+import { useBoings, useMeows } from "../hooks/sounds.jsx";
 
 const buildingData = {
   arete: {
@@ -56,11 +57,13 @@ const buildingData = {
 };
 
 const CatButton = ({ label, slug, style }) => {
+  const boings = useBoings();
   return (
     <Link to={`/location/${slug}`} style={style}>
       <motion.div
         animate={{ scale: [1.1, 1] }}
         whileHover={{ scale: [1, 1.1] }}
+        onMouseEnter={boings[Math.floor(Math.random() * 3)]}
         transition={{
           type: spring,
           stiffness: 360,
@@ -193,6 +196,8 @@ const MobileMap = () => {
 
 const DesktopMap = () => {
   const mainEl = useRef();
+  const boings = useBoings();
+  const meows = useMeows();
 
   return (
     <>
@@ -271,6 +276,10 @@ const DesktopMap = () => {
                   <motion.div
                     initial={{ scaleY: 1 }}
                     whileHover={{ scaleY: [1, 1.1] }}
+                    onMouseEnter={() => {
+                      meows[Math.floor(Math.random() * 3)]();
+                      boings[Math.floor(Math.random() * 3)]();
+                    }}
                     animate={{ scaleY: [1.1, 1] }}
                     transition={{
                       type: spring,

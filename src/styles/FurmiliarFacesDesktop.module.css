@@ -194,6 +194,11 @@ section.graphics {
   width: 100%;
 }
 
+.polaroid > img {
+  aspect-ratio: 249 / 221;
+  object-fit: cover;
+}
+
 .polaroid > p {
   text-align: center;
   margin: 0;

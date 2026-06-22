@@ -170,8 +170,8 @@ const FurmiliarFacesMobile = () => {
           In Areté, the cats do not shy away from showing off their unique
           quirks. For instance, the late Ponpon was often kept inside a cage due
           to his habit of staying near cars. He and George shared a playful
-          rivalry, with George’s bunso title once stolen by Ponpon before his
-          untimely passing.
+          rivalry, with George’s <em>bunso</em> title once stolen by Ponpon
+          before his untimely passing.
         </p>
         <p>
           A few steps away, in another corner of Areté, cateneans Tita Mel and
@@ -202,7 +202,7 @@ const FurmiliarFacesMobile = () => {
             style={{ position: "absolute", bottom: "0", width: "101dvw" }}
           />
         </div>
-        <p>
+        <p style={{ marginBottom: "5vh" }}>
           Over in Schmitt Hall, Hakaw and Maimai share the space in spite of
           their contrasting personalities. According to Ateneans Guided and
           Inspired by Love for Animals (AGILA) moderator and Chemistry

@@ -54,9 +54,9 @@ const ComeAndGoDesktop = () => {
               live far shorter
             </a>{" "}
             than humans. Nonetheless, concerned individuals such as the AGILA
-            team, certain faculty, and custodial staff still strive to ensure
-            that the Cateneans experience a good quality of life while they are
-            around.
+            team, certain faculty, and custodial staff remain committed to
+            ensuring that the Cateneans experience a good quality of life while
+            they are around.
           </p>
         </section>
         <motion.img
@@ -90,8 +90,8 @@ const ComeAndGoDesktop = () => {
           >
             lost his life
           </motion.a>{" "}
-          in a vehicular accident, an outpouring of support was seen on social
-          media, with{" "}
+          after being hit by a vehicle, an outpouring of support was seen on
+          social media, with{" "}
           <motion.a
             variants={linkVariants}
             href="https://www.facebook.com/profile/100069163320793/search/?q=paopao"

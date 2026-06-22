@@ -70,9 +70,8 @@ const FurmiliarFacesDesktop = () => {
         <Ellipses style={{ width: "70vw" }}>
           <p>
             Whether one is sitting on a bench in CTC-SOM or taking a walk on the
-            Red Brick Road, a furry company will never be far from sight.
-            <br />
-            They can be found either lounging with their legs stretched forward,
+            Red Brick Road, a furry company will never be far from sight. They
+            can be found either lounging with their legs stretched forward,
             brushing softly against a passerby&apos;s leg, or wandering up to
             students and staff seeking food.
           </p>
@@ -232,14 +231,52 @@ const FurmiliarFacesDesktop = () => {
           />
         </section>
       </section>
+      <section
+        style={{
+          display: "flex",
+          flexFlow: "column nowrap",
+          justifyContent: "flex-start",
+          paddingTop: "10vh",
+          alignItems: "stretch",
+          margin: "0 32px",
+          minWidth: 0,
+          width: "450px",
+        }}
+      >
+        <article
+          className={styles.polaroid}
+          style={{
+            zIndex: 1,
+            transform: "rotate(5deg)",
+            animation: `3s ease-in-out 0s infinite alternate-reverse ${styles.swingLeftPolaroid}`,
+          }}
+        >
+          <img src="/assets/cats/new/blueeyesCompressed.webp" alt="" />
+          <p>Blue Eyes</p>
+        </article>
+        <article
+          className={styles.polaroid}
+          style={{
+            position: "relative",
+            transform: "rotate(5deg)",
+            animation: `3s ease-in-out -1s infinite alternate-reverse ${styles.swingLeftPolaroid}`,
+            bottom: "2%",
+            left: 40,
+            zIndex: 0,
+          }}
+        >
+          <img src="/assets/cats/new/bardagulCompressed.webp" alt="" />
+          <p>Bardagul</p>
+        </article>
+      </section>
       <section className="snapContainer">
         <section className={`${styles.textSection}`}>
           <p>
             In Areté, the cats do not shy away from showing off their unique
             quirks. For instance, the late Ponpon was often kept inside a cage
             due to his habit of staying near cars. He and George shared a
-            playful rivalry, with George’s bunso title once stolen by Ponpon
-            before his untimely passing.
+            playful rivalry, with George’s <em>bunso</em> title once stolen by
+            Ponpon before his untimely passing.
           </p>
           <p>
             A few steps away, in another corner of Areté, cateneans Tita Mel and
@@ -261,18 +298,40 @@ const FurmiliarFacesDesktop = () => {
             }}
             style={{ width: "50%", transformOrigin: "bottom center" }}
           />
-          <motion.img
-            src={Bush}
-            whileInView={{ scaleY: [0, 1.5, 1] }}
-            transition={{
-              type: spring,
-              stiffness: 100,
-              animationDuration: 0.2,
-              bounce: 0.2,
-              delay: 0.5,
+          <section
+            style={{
+              display: "flex",
+              flexFlow: "row nowrap",
+              position: "relative",
+              left: "5vw",
+              bottom: "2vh",
             }}
-            style={{ height: "20vh", transformOrigin: "bottom center" }}
-          />
+          >
+            <article
+              className={styles.polaroid}
+              style={{
+                zIndex: 1,
+                transform: "rotate(5deg)",
+                animation: `3s ease-in-out 0s infinite alternate-reverse ${styles.swingLeftPolaroid}`,
+              }}
+            >
+              <img src="/assets/cats/new/ponponCompressed.webp" alt="" />
+              <p>Ponpon</p>
+            </article>
+            <article
+              className={styles.polaroid}
+              style={{
+                zIndex: 0,
+                transform: "rotate(-10deg)",
+                right: "3vw",
+                bottom: "8vh",
+                animation: `3s ease-in-out 500ms infinite alternate-reverse ${styles.swingRightPolaroid}`,
+              }}
+            >
+              <img src="/assets/cats/new/georgeCompressed.webp" alt="" />
+              <p>George</p>
+            </article>
+          </section>
           <img
             src={RedFlower}
             className={styles.flower}
@@ -295,17 +354,23 @@ const FurmiliarFacesDesktop = () => {
         <section className={`${styles.textSection}`}>
           <p>
             Over in Schmitt Hall, Hakaw and Maimai share the space in spite of
-            their contrasting personalities. According to Ateneans Guided and
-            Inspired by Love for Animals (AGILA) moderator and Chemistry
-            Department Chair Olivia Erin Buenafe, the extroverted Hakaw is
-            considered the “spiritual successor” to{" "}
+            their contrasting personalities.
+          </p>
+          <p>
+            According to Ateneans Guided and Inspired by Love for Animals
+            (AGILA) moderator and Chemistry Department Chair Olivia Erin
+            Buenafe, the extroverted Hakaw is considered the “spiritual
+            successor” to{" "}
             <a href="https://www.facebook.com/photo/?fbid=699889072175925&set=a.463936722437829">
               late Paopao
             </a>
             , after inheriting some of his endearing habits like opening
-            windows. On the other hand, introverted Maimai plays by her own
-            terms, only interacting with people whenever she deems fit and
-            retreats inside buildings to relish in her own company.
+            windows.
+          </p>
+          <p>
+            On the other hand, introverted Maimai plays by her own terms, only
+            interacting with people whenever she deems fit and retreats inside
+            buildings to relish in her own company.
           </p>
         </section>
         <section
@@ -317,8 +382,24 @@ const FurmiliarFacesDesktop = () => {
               whileInView={bounceAnimation.whileInView}
               transition={{ ...bounceAnimation.transition, delay: 0.25 }}
               className={styles.bldg}
+              style={{ zIndex: 30 }}
               src={Schmitt}
             />
+            <article
+              className={styles.polaroid}
+              style={{
+                zIndex: 0,
+                transform: "rotate(-10deg)",
+                padding: "2%",
+                width: 400,
+                right: -100,
+                bottom: "2vh",
+                animation: `3s ease-in-out 500ms infinite alternate-reverse ${styles.swingRightPolaroid}`,
+              }}
+            >
+              <img src="/assets/cats/new/hakawCompressed.webp" alt="" />
+              <p style={{ fontSize: "3em" }}>Hakaw</p>
+            </article>
             <motion.img
               src={Bush}
               whileInView={bounceAnimation.whileInView}
@@ -336,7 +417,7 @@ const FurmiliarFacesDesktop = () => {
               style={{
                 height: "22vh",
                 position: "absolute",
-                right: "0%",
+                right: -400,
                 bottom: "-5%",
               }}
             />
@@ -347,16 +428,6 @@ const FurmiliarFacesDesktop = () => {
             style={{
               position: "absolute",
               left: "-8%",
-              height: "10vh",
-              bottom: "22%",
-            }}
-          />
-          <img
-            src={YellowFlower2}
-            className={styles.flower}
-            style={{
-              position: "absolute",
-              right: "28%",
               height: "10vh",
               bottom: "22%",
             }}

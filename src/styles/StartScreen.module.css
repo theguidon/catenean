@@ -1,0 +1,46 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: clip;
+  padding: 20vh 15vw;
+}
+
+.textCont,
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.textCont {
+  gap: 1em;
+  text-align: center;
+}
+
+.graphics * {
+  position: absolute;
+}
+
+.catButton {
+  padding: 1em 2em;
+  border-radius: 9999999px;
+  border: none;
+  background: #ffffec;
+  margin-top: 2em;
+  position: relative;
+}
+
+.catButton img {
+  position: absolute;
+  top: -24%;
+  height: 1.7em;
+  right: 16%;
+}
+
+.catButton p {
+  font-family: "Solway", serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: #205950;
+  cursor: pointer;
+}

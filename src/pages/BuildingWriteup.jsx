@@ -38,9 +38,13 @@ export default function BuildingWriteup() {
           className={`${styles.link} ${styles.back}`}
         >
           <img src={arrow} alt="Previous" />
-          {!isSmallMobile && <p>{data.back.toUpperCase()}</p>}
+          {!isSmallMobile && (
+            <p>{data.back === "arete" ? "ARETÉ" : data.back.toUpperCase()}</p>
+          )}
           {isSmallMobile && (
-            <p className={styles.mobileNavText}>{data.back.toUpperCase()}</p>
+            <p className={styles.mobileNavText}>
+              {data.back === "arete" ? "ARETÉ" : data.back.toUpperCase()}
+            </p>
           )}
         </motion.section>
       </Link>
@@ -57,9 +61,13 @@ export default function BuildingWriteup() {
           }}
           className={`${styles.link} ${styles.next}`}
         >
-          {!isSmallMobile && <p>{data.next.toUpperCase()}</p>}
+          {!isSmallMobile && (
+            <p>{data.next === "arete" ? "ARETÉ" : data.next.toUpperCase()}</p>
+          )}
           {isSmallMobile && (
-            <p className={styles.mobileNavText}>{data.next.toUpperCase()}</p>
+            <p className={styles.mobileNavText}>
+              {data.next === "arete" ? "ARETÉ" : data.next.toUpperCase()}
+            </p>
           )}
           <img src={arrow} style={{ transform: "scaleX(-1)" }} alt="Next" />
         </motion.section>

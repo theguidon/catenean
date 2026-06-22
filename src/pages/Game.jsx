@@ -11,7 +11,7 @@ import Schmitt from "../assets/images/buildings/schmitt.svg";
 import Faura from "../assets/images/buildings/faura.svg";
 import Arete from "../assets/images/buildings/arete.svg";
 import CTCSOM from "../assets/images/buildings/ctc-som.svg";
-import { useState } from "react";
+import { useState, forwardRef, useRef, useImperativeHandle } from "react";
 import { shuffle } from "remeda";
 import { useStopwatch } from "react-timer-hook";
 import { Link } from "react-router";
@@ -89,6 +89,11 @@ const clues = [
       answers["Location"]["Dongyan"].answer === MVP,
   },
   {
+    text: "Dongyan's tail doesn't hang low; it stubs along.",
+    clearCondition: (answers) =>
+      answers["Quirk"]["Dongyan"].answer === "Stubby tail",
+  },
+  {
     text: "Liver spread is the ideal snack of choice for this MVP resident.",
     clearCondition: (answers) =>
       isInSameColumn(answers, { "Fave Food": "Liver spread", Location: MVP }),
@@ -104,6 +109,28 @@ const clues = [
     clearCondition: (answers) =>
       answers["Quirk"]["Ponpon"].answer === "The youngest" &&
       answers["Personality"]["Ponpon"].answer === "Curious",
+  },
+  {
+    text: "Ponpon loves watching the cars go by in front of Areté.",
+    clearCondition: (answers) =>
+      answers["Fave Spot"]["Ponpon"].answer === "Parking lot" &&
+      answers["Location"]["Ponpon"].answer == Arete,
+  },
+  {
+    text: "One Eye usually stays in front of this earthquake-proof building near MVP",
+    clearCondition: (answers) =>
+      answers["Location"]["One Eye"].answer === Faura,
+  },
+  {
+    text: "CTC-SOM’s numerous hallways are patrolled by this sassy Catenean.",
+    clearCondition: (answers) =>
+      isInSameColumn(answers, { Location: CTCSOM, Personality: "Sassy" }),
+  },
+  {
+    text: "One Eye likes to nibble on kibble in this building near MVP and Schmitt Hall.",
+    clearCondition: (answers) =>
+      answers["Location"]["One Eye"].answer === Faura &&
+      answers["Fave Food"]["One Eye"].answer === "Kibble",
   },
 ];
 
@@ -399,7 +426,7 @@ export default function Game() {
   const [answers, setAnswers] = useState(initialAnswers);
   const [submitClicked, setSubmitClicked] = useState(false);
   const [showResultsScreen, setShowResultsScreen] = useState(false);
-  const timerRef = useRef < any > null;
+  const timerRef = useRef(null);
 
   function openOptionsModal(cat, trait) {
     setCurrentCat(cat);

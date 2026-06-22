@@ -21,6 +21,9 @@ import { Link } from "react-router";
 import { motion, spring, AnimatePresence } from "motion/react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useRef, useState, useEffect } from "react";
+import { useBoings, useMeows } from "../hooks/sounds.jsx";
+import useSound from "use-sound";
+import popSound from "../assets/sounds/sfx/pop.m4a";
 
 const buildingData = {
   arete: {
@@ -56,11 +59,13 @@ const buildingData = {
 };
 
 const CatButton = ({ label, slug, style }) => {
+  const boings = useBoings();
   return (
     <Link to={`/location/${slug}`} style={style}>
       <motion.div
         animate={{ scale: [1.1, 1] }}
         whileHover={{ scale: [1, 1.1] }}
+        onMouseEnter={boings[Math.floor(Math.random() * 3)]}
         transition={{
           type: spring,
           stiffness: 360,
@@ -79,6 +84,7 @@ const CatButton = ({ label, slug, style }) => {
 };
 
 const MobileMap = () => {
+  const [playPop] = useSound(popSound);
   const order = ["schmitt", "arete", "faura", "mvp", "ctc-som"];
   const [[page, direction], setPage] = useState([0, 0]);
 
@@ -173,7 +179,7 @@ const MobileMap = () => {
             </div>
           </motion.div>
         </AnimatePresence>
-        <Link to="/">
+        <Link to="/" onClick={playPop}>
           <img
             src={ArticleMobile}
             style={{
@@ -193,6 +199,9 @@ const MobileMap = () => {
 
 const DesktopMap = () => {
   const mainEl = useRef();
+  const boings = useBoings();
+  const meows = useMeows();
+  const [playPop] = useSound(popSound);
 
   return (
     <>
@@ -271,6 +280,10 @@ const DesktopMap = () => {
                   <motion.div
                     initial={{ scaleY: 1 }}
                     whileHover={{ scaleY: [1, 1.1] }}
+                    onMouseEnter={() => {
+                      meows[Math.floor(Math.random() * 3)]();
+                      boings[Math.floor(Math.random() * 3)]();
+                    }}
                     animate={{ scaleY: [1.1, 1] }}
                     transition={{
                       type: spring,
@@ -294,7 +307,7 @@ const DesktopMap = () => {
           </main>
         </TransformComponent>
       </TransformWrapper>
-      <Link to="/">
+      <Link to="/" onMouseEnter={playPop} onClick={playPop}>
         <img src={Article} className={styles.articleBtn} />
         <img
           src={ArticleHover}

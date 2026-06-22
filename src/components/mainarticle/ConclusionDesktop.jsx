@@ -11,8 +11,11 @@ import string2 from "../../assets/images/conclusion_string2.svg";
 import { easeInOut, easeOut, motion, spring } from "motion/react";
 import { NavLink } from "react-router";
 import back from "../../assets/images/back_to_start.svg";
+import popSound from "../../assets/sounds/sfx/pop.m4a";
+import useSound from "use-sound";
 
 const ConclusionDesktop = () => {
+  const [playPop] = useSound(popSound);
   const bounceAnimation = {
     whileInView: {
       scaleY: [0, 1.5, 1],
@@ -176,7 +179,12 @@ const ConclusionDesktop = () => {
         ))}
       </section>
       <section className={creditStyles.buttons}>
-        <NavLink to="/map" className={creditStyles.button}>
+        <NavLink
+          to="/map"
+          className={creditStyles.button}
+          onMouseEnter={playPop}
+          onClick={playPop}
+        >
           View map
           <img src={Paw} />
         </NavLink>

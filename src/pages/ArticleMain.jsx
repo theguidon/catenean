@@ -73,7 +73,15 @@ const ArticleMain = () => {
   if (isDesktop) {
     if (!startPressed) {
       return (
-        <main className={styles.main}>
+        <main
+          className={styles.main}
+          style={{
+            overflow: "clip",
+            height: "100vh",
+            width: "100vw",
+            minWidth: "0",
+          }}
+        >
           <StartScreen startInteractive={() => setStartPressed(true)} />
         </main>
       );

@@ -17,6 +17,8 @@ import Map from "../assets/images/map.svg";
 import MapHover from "../assets/images/map-hover.svg";
 import MapMobile from "../assets/images/mobile-map.svg";
 import { BgMusic1 } from "../hooks/sounds.jsx";
+import popSound from "../assets/sounds/sfx/pop.m4a";
+import useSound from "use-sound";
 
 // https://stackoverflow.com/questions/56153797/horizontal-scrolling-on-react-component-using-vertical-mouse-wheel
 function useHorizontalScroll() {
@@ -41,6 +43,7 @@ function useHorizontalScroll() {
 
 function ArticleDesktop() {
   const scrollRef = useHorizontalScroll();
+  const [playPop] = useSound(popSound);
   return (
     <div
       ref={scrollRef}
@@ -58,7 +61,7 @@ function ArticleDesktop() {
         <DedicatedToTheirCareDesktop />
         <ComeAndGoDesktop />
         <ConclusionDesktop />
-        <NavLink to="/map">
+        <NavLink to="/map" onMouseEnter={playPop} onClick={playPop}>
           <img src={Map} className={styles.map} />
           <img src={MapHover} className={`${styles.map} ${styles.mapHover}`} />
         </NavLink>
@@ -70,6 +73,7 @@ function ArticleDesktop() {
 const ArticleMain = () => {
   const [startPressed, setStartPressed] = useState(false);
   const isDesktop = useMediaQuery({ query: "(min-width: 501px)" });
+  const [playPop] = useSound(popSound);
   if (isDesktop) {
     if (!startPressed) {
       return (
@@ -97,7 +101,7 @@ const ArticleMain = () => {
       <DedicatedToTheirCareMobile />
       <ComeAndGoMobile />
       <ConclusionMobile />
-      <NavLink to="/map">
+      <NavLink to="/map" onClick={playPop}>
         <img
           src={MapMobile}
           style={{

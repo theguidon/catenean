@@ -93,9 +93,6 @@ const Conclusion = () => {
         <img src={cat2} />
       </motion.article>
       <section className={creditStyles.buttons}>
-        <NavLink to="/game" className={creditStyles.button}>
-          Play game
-        </NavLink>
         <NavLink to="/map" className={creditStyles.button}>
           View map
         </NavLink>

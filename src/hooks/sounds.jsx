@@ -5,6 +5,9 @@ import paperSound3 from "../assets/sounds/sfx/paper_sound_3.wav";
 import meowSound1 from "../assets/sounds/sfx/meow1.mp3";
 import meowSound2 from "../assets/sounds/sfx/meow2.m4a";
 import meowSound3 from "../assets/sounds/sfx/meow3.m4a";
+import boingSound1 from "../assets/sounds/sfx/boing1.mp3";
+import boingSound2 from "../assets/sounds/sfx/boing2.m4a";
+import boingSound3 from "../assets/sounds/sfx/boing3.m4a";
 import bg1 from "../assets/sounds/music/bg1.mp3";
 import bg2 from "../assets/sounds/music/bg2.mp3";
 import bg3 from "../assets/sounds/music/bg3.mp3";
@@ -23,6 +26,14 @@ export function Meows() {
   const [meow3] = useSound(meowSound3);
 
   return [meow1, meow2, meow3];
+}
+
+export function Boings() {
+  const [boing1] = useSound(boingSound1);
+  const [boing2] = useSound(boingSound2);
+  const [boing3] = useSound(boingSound3);
+
+  return [boing1, boing2, boing3];
 }
 
 export function BGM({ id, src }) {

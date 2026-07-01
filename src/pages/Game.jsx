@@ -566,67 +566,69 @@ export default function Game() {
           />
         )}
       </section>
-      <section className={styles.resultsScreen}>
-        <h1>You’ve found all the cats—well done!</h1>
-        <h2>Let’s hope they don’t get into any more trouble next time.</h2>
-        <p style={{ marginTop: "3vh" }}>Your Time</p>
-        <p>
-          {timerRef.current && padNumber(timerRef.current.getMinutes())}:
-          {timerRef.current && padNumber(timerRef.current.getSeconds())}
-        </p>
-        <section
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            height: "40vh",
-            position: "relative",
-            marginTop: "3vh",
-          }}
-        >
-          <img
-            src={RedFlower}
+      {showResultsScreen && (
+        <section className={styles.resultsScreen}>
+          <h1>You’ve found all the cats—well done!</h1>
+          <h2>Let’s hope they don’t get into any more trouble next time.</h2>
+          <p style={{ marginTop: "3vh" }}>Your Time</p>
+          <p>
+            {timerRef.current && padNumber(timerRef.current.getMinutes())}:
+            {timerRef.current && padNumber(timerRef.current.getSeconds())}
+          </p>
+          <section
             style={{
-              position: "absolute",
-              height: "40%",
-              bottom: "0",
-              left: "-20%",
+              display: "flex",
+              justifyContent: "center",
+              height: "40vh",
+              position: "relative",
+              marginTop: "3vh",
             }}
-          />
-          <img src={ThreeCats} style={{ height: "100%" }} />
-          <img
-            src={YellowFlower}
-            style={{
-              position: "absolute",
-              height: "40%",
-              bottom: 0,
-              right: "-13%",
-            }}
-          />
-          <img
-            src={RedFlower}
-            style={{
-              position: "absolute",
-              height: "40%",
-              bottom: "-9%",
-              right: "8%",
-            }}
-          />
-        </section>
-        <section style={{ display: "flex", gap: "1em" }}>
-          <Link to="/">
+          >
+            <img
+              src={RedFlower}
+              style={{
+                position: "absolute",
+                height: "40%",
+                bottom: "0",
+                left: "-20%",
+              }}
+            />
+            <img src={ThreeCats} style={{ height: "100%" }} />
+            <img
+              src={YellowFlower}
+              style={{
+                position: "absolute",
+                height: "40%",
+                bottom: 0,
+                right: "-13%",
+              }}
+            />
+            <img
+              src={RedFlower}
+              style={{
+                position: "absolute",
+                height: "40%",
+                bottom: "-9%",
+                right: "8%",
+              }}
+            />
+          </section>
+          <section style={{ display: "flex", gap: "1em" }}>
+            <Link to="/">
+              <CatButton
+                onClick={null}
+                text={"Back to Home"}
+                style={{ width: "25em", height: "8em" }}
+              />
+            </Link>
             <CatButton
               onClick={null}
-              text={"Back to Home"}
+              text={"Share"}
               style={{ width: "25em", height: "8em" }}
             />
-          </Link>
-          <CatButton
-            onClick={null}
-            text={"Share"}
-            style={{ width: "25em", height: "8em" }}
-          />
+          </section>
         </section>
-      </section>
+      )}
     </>
   );
 }

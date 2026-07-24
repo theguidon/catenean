@@ -506,6 +506,9 @@ export default function Game() {
 
   return (
     <>
+      <Link to="/" className={styles.exitBtn} style={{ color: "#205950" }}>
+        x
+      </Link>
       <section className={styles.gameArea}>
         <GameTable
           openOptionsModal={openOptionsModal}
@@ -522,13 +525,6 @@ export default function Game() {
               <img src={QMark} />
             </button>
             <section style={{ display: "flex", alignItems: "center" }}>
-              <Link
-                to="/"
-                className={styles.exitBtn}
-                style={{ color: "#205950" }}
-              >
-                x
-              </Link>
               <CatButton
                 onClick={() => {
                   checkAllAnswers();

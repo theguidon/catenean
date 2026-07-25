@@ -6,8 +6,11 @@ import ThreeCats from "../assets/images/three-cats.png";
 import Next from "../assets/images/game/Next.svg";
 import { Link } from "react-router";
 import { motion, easeInOut } from "motion/react";
+import { useBoings } from "../hooks/sounds.jsx";
+import { bounceTransition } from "../utils/constants.js";
 
 export function GamePage1() {
+  const boings = useBoings();
   const paragraphs = [
     "Roaming the Ateneo's countless hallways and sleeping in the snuggest of nooks and crannies, the Cateneans make their presence known as members of our very community.",
     "With curiosity and chaos coursing through their veins, our furry friends can't help but stick their whiskers into the farthest spots and corners, as if in a quest for treasures and treats!",
@@ -45,10 +48,20 @@ export function GamePage1() {
         className={styles.pageButtons}
       >
         <Link to="/game/intro">
-          <img src={Back} />
+          <motion.img
+            whileHover={{ scale: [1, 1.1] }}
+            onMouseEnter={boings[Math.floor(Math.random() * 3)]}
+            transition={bounceTransition}
+            src={Back}
+          />
         </Link>
         <Link to="/game/intro/2">
-          <img src={Next} />
+          <motion.img
+            whileHover={{ scale: [1, 1.1] }}
+            onMouseEnter={boings[Math.floor(Math.random() * 3)]}
+            transition={bounceTransition}
+            src={Next}
+          />
         </Link>
       </motion.section>
     </>
@@ -56,18 +69,31 @@ export function GamePage1() {
 }
 
 export function GamePage2() {
+  const boings = useBoings();
   return (
     <>
-      <Ellipses style={{ width: "80%", position: "relative", bottom: "9vh" }}>
-        <p
+      <Ellipses
+        style={{
+          width: "80%",
+          position: "relative",
+          bottom: "-2vh",
+          textAlign: "center",
+        }}
+      >
+        <h1
           style={{
             fontFamily: "Solway",
             fontWeight: "bold",
-            fontSize: "3.5em",
+            fontSize: "2.5em",
           }}
         >
           &ldquo;Meow, it seems as though we have wandered a bit too far this
           time! Would you be so kind as to lead us back home?&rdquo;
+        </h1>
+        <p style={{ marginTop: "2vh" }}>
+          With the Cateneans scattered around campus, let&apos;s guide them back
+          with this handy list of clues and match our feline friends to their
+          respective homes.
         </p>
       </Ellipses>
       <motion.img
@@ -75,7 +101,7 @@ export function GamePage2() {
         animate={{ opacity: 1 }}
         transition={{ ease: easeInOut, duration: 0.5, delay: 0.75 }}
         src={ThreeCats}
-        style={{ position: "absolute", bottom: "-3vh", height: "70vh" }}
+        style={{ position: "absolute", bottom: "-7vh", height: "70vh" }}
       />
       <motion.section
         initial={{ opacity: 0 }}
@@ -84,10 +110,20 @@ export function GamePage2() {
         className={styles.pageButtons}
       >
         <Link to="/game/intro/1">
-          <img src={Back} />
+          <motion.img
+            whileHover={{ scale: [1, 1.1] }}
+            onMouseEnter={boings[Math.floor(Math.random() * 3)]}
+            transition={bounceTransition}
+            src={Back}
+          />
         </Link>
         <Link to="/game/play">
-          <img src={Next} />
+          <motion.img
+            whileHover={{ scale: [1, 1.1] }}
+            onMouseEnter={boings[Math.floor(Math.random() * 3)]}
+            transition={bounceTransition}
+            src={Next}
+          />
         </Link>
       </motion.section>
     </>

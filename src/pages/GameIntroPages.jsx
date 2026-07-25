@@ -49,6 +49,7 @@ export function GamePage1() {
       >
         <Link to="/game/intro">
           <motion.img
+            initial={{ scale: 1 }}
             whileHover={{ scale: [1, 1.1] }}
             onMouseEnter={boings[Math.floor(Math.random() * 3)]}
             transition={bounceTransition}
@@ -57,6 +58,7 @@ export function GamePage1() {
         </Link>
         <Link to="/game/intro/2">
           <motion.img
+            initial={{ scale: 1 }}
             whileHover={{ scale: [1, 1.1] }}
             onMouseEnter={boings[Math.floor(Math.random() * 3)]}
             transition={bounceTransition}
@@ -111,6 +113,7 @@ export function GamePage2() {
       >
         <Link to="/game/intro/1">
           <motion.img
+            initial={{ scale: 1 }}
             whileHover={{ scale: [1, 1.1] }}
             onMouseEnter={boings[Math.floor(Math.random() * 3)]}
             transition={bounceTransition}
@@ -119,6 +122,7 @@ export function GamePage2() {
         </Link>
         <Link to="/game/play">
           <motion.img
+            initial={{ scale: 1 }}
             whileHover={{ scale: [1, 1.1] }}
             onMouseEnter={boings[Math.floor(Math.random() * 3)]}
             transition={bounceTransition}

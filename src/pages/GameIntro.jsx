@@ -6,12 +6,23 @@ import CatSitting from "../assets/images/Cat (Sitting).svg";
 import FoodBowl from "../assets/images/Food Bowl.svg";
 import { Link } from "react-router";
 import { motion, easeInOut, MotionConfig, spring } from "motion/react";
+import { useBoings } from "../hooks/sounds.jsx";
+import { bounceTransition } from "../utils/constants.js";
 
 function CatButton() {
+  const boings = useBoings();
   return (
-    <Link to="/game/intro/1" className={styles.catButton}>
-      <img src={ears} />
-      <p>Start Game</p>
+    <Link to="/game/intro/1">
+      <motion.div
+        className={styles.catButton}
+        initial={{ scale: 1 }}
+        whileHover={{ scale: [1, 1.1] }}
+        onMouseEnter={boings[Math.floor(Math.random() * 3)]}
+        transition={bounceTransition}
+      >
+        <img src={ears} />
+        <p>Start Game</p>
+      </motion.div>
     </Link>
   );
 }

@@ -4,6 +4,9 @@ import ears from "../assets/images/cats/illustrations/Ears.svg";
 import CatHouse from "../assets/images/Cat House.svg";
 import CatSitting from "../assets/images/Cat (Sitting).svg";
 import FoodBowl from "../assets/images/Food Bowl.svg";
+import Grass from "../assets/images/game/grass.svg";
+import RedFlower from "../assets/images/red-flower.svg";
+import YellowFlower from "../assets/images/yellow-flower.svg";
 import { Link } from "react-router";
 import { motion, easeInOut, MotionConfig, spring } from "motion/react";
 import { useBoings } from "../hooks/sounds.jsx";
@@ -75,6 +78,7 @@ export default function GameIntro() {
           animate={bounceAnimation.animate}
           transition={bounceAnimation.transition}
         >
+          <motion.img src={Grass} className={styles.grass} />
           <motion.img
             src={CatHouse}
             className={styles.catHouse}
@@ -89,6 +93,31 @@ export default function GameIntro() {
             src={FoodBowl}
             className={styles.foodBowl}
             transition={{ ...bounceAnimation.transition, delay: 1.5 }}
+          />
+          <motion.img
+            src={RedFlower}
+            className={styles.flower}
+            style={{ left: "0vw" }}
+          />
+          <motion.img
+            src={RedFlower}
+            className={styles.flower}
+            style={{ right: "0vw", bottom: "8vh" }}
+          />
+          <motion.img
+            src={YellowFlower}
+            className={styles.flower}
+            style={{ right: "20vw", bottom: "10vh" }}
+          />
+          <motion.img
+            src={RedFlower}
+            className={styles.flower}
+            style={{ right: "35vw", bottom: "13vh" }}
+          />
+          <motion.img
+            src={YellowFlower}
+            className={styles.flower}
+            style={{ left: "10vw", bottom: "5vh", zIndex: 2 }}
           />
         </MotionConfig>
       </section>

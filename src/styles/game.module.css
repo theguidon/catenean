@@ -84,22 +84,41 @@ p {
   bottom: 8%;
   display: flex;
   align-items: flex-end;
+  pointer-events: none;
 }
 
 .catHouse {
   height: 80%;
+  z-index: 2;
 }
 
 .catSit {
   height: 50%;
   position: relative;
   right: 20%;
+  z-index: 2;
 }
 
 .foodBowl {
   height: 12%;
   position: relative;
   right: 20%;
+  z-index: 2;
+}
+
+.grass {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+.flower {
+  position: fixed;
+  height: 12vh;
+  z-index: 1;
+  animation: 3s ease-in-out 0s infinite alternate-reverse flowerSway;
+  transform-origin: bottom center;
 }
 
 .pageButtons {
@@ -493,5 +512,15 @@ li.clearedClue {
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes flowerSway {
+  0% {
+    transform: rotate(1deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
   }
 }

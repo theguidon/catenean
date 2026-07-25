@@ -47,7 +47,7 @@ export default function GameIntro() {
           right: "10%",
         }}
       >
-        <h1>
+        <h1 style={{ fontSize: "4em" }}>
           Find Meow
           <br />
           way back home

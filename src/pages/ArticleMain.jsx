@@ -19,6 +19,7 @@ import MapMobile from "../assets/images/mobile-map.svg";
 import { BgMusic1 } from "../hooks/sounds.jsx";
 import popSound from "../assets/sounds/sfx/pop.m4a";
 import useSound from "use-sound";
+import MenuBar from "../components/MenuBar.jsx";
 
 // https://stackoverflow.com/questions/56153797/horizontal-scrolling-on-react-component-using-vertical-mouse-wheel
 function useHorizontalScroll() {
@@ -61,10 +62,18 @@ function ArticleDesktop() {
         <DedicatedToTheirCareDesktop />
         <ComeAndGoDesktop />
         <ConclusionDesktop />
+        {/*
         <NavLink to="/map" onMouseEnter={playPop} onClick={playPop}>
           <img src={Map} className={styles.map} />
           <img src={MapHover} className={`${styles.map} ${styles.mapHover}`} />
         </NavLink>
+        */}
+        <MenuBar
+          icons={[
+            { img: Map, link: "/map" },
+            { img: Map, link: "/map" },
+          ]}
+        />
       </main>
     </div>
   );

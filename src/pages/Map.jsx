@@ -14,7 +14,10 @@ import smallCloud1 from "../assets/Map/Map_Images/small cloud 1.svg";
 import smallCloud2 from "../assets/Map/Map_Images/small cloud 2.svg";
 import smallCloud3 from "../assets/Map/Map_Images/small cloud 3.svg";
 import Article from "../assets/images/article.svg";
-import ArticleHover from "../assets/images/article-hover.svg";
+import ArticleHover from "../assets/images/article_hover_notext.svg";
+import Game from "../assets/images/game.svg";
+import GameHover from "../assets/images/game-hover.svg";
+import MenuBar from "../components/MenuBar.jsx";
 import ArticleMobile from "../assets/images/mobile-article.svg";
 import { BgMusic2 } from "../hooks/sounds.jsx";
 import { Link } from "react-router";
@@ -307,13 +310,22 @@ const DesktopMap = () => {
           </main>
         </TransformComponent>
       </TransformWrapper>
-      <Link to="/" onMouseEnter={playPop} onClick={playPop}>
-        <img src={Article} className={styles.articleBtn} />
-        <img
-          src={ArticleHover}
-          className={`${styles.articleBtn} ${styles.articleBtnHover}`}
-        />
-      </Link>
+      <MenuBar
+        icons={[
+          {
+            defaultImg: Article,
+            hoverImg: ArticleHover,
+            label: "Article",
+            link: "/",
+          },
+          {
+            defaultImg: Game,
+            hoverImg: GameHover,
+            label: "Game",
+            link: "/game/intro",
+          },
+        ]}
+      />
       <BgMusic2 />
     </>
   );

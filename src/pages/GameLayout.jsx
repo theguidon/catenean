@@ -3,6 +3,11 @@ import CloudLeft from "../assets/images/game/CloudLeft.svg";
 import CloudRight from "../assets/images/game/CloudRight.svg";
 import styles from "../styles/game.module.css";
 import { BgMusic3 } from "../hooks/sounds.jsx";
+import Map from "../assets/images/map.svg";
+import MapHover from "../assets/images/map-hover.svg";
+import Article from "../assets/images/article.svg";
+import ArticleHover from "../assets/images/article_hover_notext.svg";
+import MenuBar from "../components/MenuBar.jsx";
 
 export function GameIntroLayout() {
   return (
@@ -39,6 +44,22 @@ export function GameIntroLayout() {
           top: "-5vh",
           animationDelay: -2,
         }}
+      />
+      <MenuBar
+        icons={[
+          {
+            defaultImg: Article,
+            hoverImg: ArticleHover,
+            label: "Article",
+            link: "/",
+          },
+          {
+            defaultImg: Map,
+            hoverImg: MapHover,
+            label: "Map",
+            link: "/map",
+          },
+        ]}
       />
     </>
   );

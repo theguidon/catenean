@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from "react-router";
 import ArticleMain from "./pages/ArticleMain.jsx";
 import BuildingWriteup from "./pages/BuildingWriteup.jsx";
 import Game from "./pages/Game.jsx";
@@ -43,6 +48,10 @@ let router = createBrowserRouter([
         Component: GameLayout,
         children: [
           {
+            index: true,
+            Component: () => <Navigate to="/game/intro" />,
+          },
+          {
             path: "intro",
             Component: GameIntroLayout,
             children: [
@@ -65,6 +74,10 @@ let router = createBrowserRouter([
             Component: Game,
           },
         ],
+      },
+      {
+        path: "/game/*",
+        Component: () => <Navigate to="/game/intro" />,
       },
     ],
   },

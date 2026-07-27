@@ -15,10 +15,13 @@ import ConclusionMobile from "../components/mainarticle/ConclusionMobile.jsx";
 import { NavLink } from "react-router";
 import Map from "../assets/images/map.svg";
 import MapHover from "../assets/images/map-hover.svg";
+import Game from "../assets/images/game.svg";
+import GameHover from "../assets/images/game-hover.svg";
 import MapMobile from "../assets/images/mobile-map.svg";
 import { BgMusic1 } from "../hooks/sounds.jsx";
 import popSound from "../assets/sounds/sfx/pop.m4a";
 import useSound from "use-sound";
+import MenuBar from "../components/MenuBar.jsx";
 
 // https://stackoverflow.com/questions/56153797/horizontal-scrolling-on-react-component-using-vertical-mouse-wheel
 function useHorizontalScroll() {
@@ -61,10 +64,23 @@ function ArticleDesktop() {
         <DedicatedToTheirCareDesktop />
         <ComeAndGoDesktop />
         <ConclusionDesktop />
+        {/*
         <NavLink to="/map" onMouseEnter={playPop} onClick={playPop}>
           <img src={Map} className={styles.map} />
           <img src={MapHover} className={`${styles.map} ${styles.mapHover}`} />
         </NavLink>
+        */}
+        <MenuBar
+          icons={[
+            { defaultImg: Map, hoverImg: MapHover, label: "Map", link: "/map" },
+            {
+              defaultImg: Game,
+              hoverImg: GameHover,
+              label: "Game",
+              link: "/game/intro",
+            },
+          ]}
+        />
       </main>
     </div>
   );

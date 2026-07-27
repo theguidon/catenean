@@ -25,6 +25,25 @@ function MenuButton({ isOpen, toggleOpen }) {
   );
 }
 
+function MenuItem({ isOpen, defaultImg, hoverImg, label, link }) {
+  return (
+    <Link
+      to={link}
+      className={styles.menuItem}
+      style={{
+        marginRight: isOpen ? "2em" : "-5vw",
+        position: "relative",
+        left: isOpen ? "2em" : 0,
+        transform: `scale(${isOpen ? 1 : 0})`,
+      }}
+    >
+      <img src={defaultImg} />
+      <img src={hoverImg} className={styles.hoverItem} />
+      <p>{label}</p>
+    </Link>
+  );
+}
+
 export default function MenuBar({ icons }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -34,18 +53,14 @@ export default function MenuBar({ icons }) {
         backgroundColor: isOpen ? "rgba(255,255,236,0.8)" : "transparent",
       }}
     >
-      {icons.map(({ img, link }) => (
-        <Link
-          to={link}
-          style={{
-            marginRight: isOpen ? "2em" : "-5vw",
-            position: "relative",
-            left: isOpen ? "2em" : 0,
-            transform: `scale(${isOpen ? 1 : 0})`,
-          }}
-        >
-          <img src={img} />
-        </Link>
+      {icons.map(({ defaultImg, hoverImg, label, link }) => (
+        <MenuItem
+          isOpen={isOpen}
+          link={link}
+          label={label}
+          defaultImg={defaultImg}
+          hoverImg={hoverImg}
+        />
       ))}
       <MenuButton isOpen={isOpen} toggleOpen={() => setIsOpen(!isOpen)} />
     </section>

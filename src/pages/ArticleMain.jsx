@@ -15,6 +15,8 @@ import ConclusionMobile from "../components/mainarticle/ConclusionMobile.jsx";
 import { NavLink } from "react-router";
 import Map from "../assets/images/map.svg";
 import MapHover from "../assets/images/map-hover.svg";
+import Game from "../assets/images/game.svg";
+import GameHover from "../assets/images/game-hover.svg";
 import MapMobile from "../assets/images/mobile-map.svg";
 import { BgMusic1 } from "../hooks/sounds.jsx";
 import popSound from "../assets/sounds/sfx/pop.m4a";
@@ -70,8 +72,13 @@ function ArticleDesktop() {
         */}
         <MenuBar
           icons={[
-            { img: Map, link: "/map" },
-            { img: Map, link: "/map" },
+            { defaultImg: Map, hoverImg: MapHover, label: "Map", link: "/map" },
+            {
+              defaultImg: Game,
+              hoverImg: GameHover,
+              label: "Game",
+              link: "/game/intro",
+            },
           ]}
         />
       </main>

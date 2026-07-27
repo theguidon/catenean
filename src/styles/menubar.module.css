@@ -15,8 +15,8 @@
 }
 
 .menubar > * {
-  aspect-ratio: 1 / 1;
   width: 5em;
+  height: fit-content;
   transition:
     margin-right 250ms cubic-bezier(0.8, -0.4, 0.5, 1),
     transform 250ms cubic-bezier(0.8, -0.4, 0.5, 1);
@@ -28,8 +28,8 @@
 }
 
 button.menuButton {
-  width: 5.5em;
-  height: 5.5em;
+  width: 5em;
+  height: 5em;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   background-color: #f9f4eb;
@@ -39,6 +39,7 @@ button.menuButton {
   place-items: center;
   position: relative;
   left: 15%;
+  top: 1vh;
 }
 
 .menuButton img {
@@ -46,4 +47,40 @@ button.menuButton {
   width: 50%;
   object-fit: contain;
   transition: all 250ms cubic-bezier(0.8, -0.4, 0.5, 1);
+}
+
+.menuItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4em min-content;
+  place-items: center;
+}
+
+.menuItem * {
+  grid-column: 1;
+  transition: all 150ms ease-in-out;
+}
+
+.menuItem img {
+  height: 100%;
+  grid-row: 1 / 2;
+}
+
+.menuItem p {
+  grid-row: 2 / 3;
+  font-size: 1.5em;
+  font-family: "Solway";
+  font-weight: bold;
+  color: #f9f4eb;
+  -webkit-text-stroke: 5px #a56953;
+  paint-order: stroke fill;
+}
+
+.menuItem .hoverItem {
+  opacity: 0;
+}
+
+.menuItem:hover .hoverItem {
+  opacity: 1;
 }

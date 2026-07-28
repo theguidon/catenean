@@ -3,10 +3,20 @@ import styles from "../styles/menubar.module.css";
 import { useState } from "react";
 import Menu from "../assets/images/menu_icon.svg";
 import Close from "../assets/images/close_icon.svg";
+import boingSound from "../assets/sounds/sfx/boing2.m4a";
+import uiPop1 from "../assets/sounds/sfx/pop.m4a";
+import useSound from "use-sound";
 
 function MenuButton({ isOpen, toggleOpen }) {
+  const [boing] = useSound(boingSound);
   return (
-    <button className={styles.menuButton} onClick={toggleOpen}>
+    <button
+      className={styles.menuButton}
+      onClick={() => {
+        toggleOpen();
+        boing();
+      }}
+    >
       <img
         src={Menu}
         style={{
@@ -26,10 +36,12 @@ function MenuButton({ isOpen, toggleOpen }) {
 }
 
 function MenuItem({ isOpen, defaultImg, hoverImg, label, link }) {
+  const [popSound] = useSound(uiPop1);
   return (
     <Link
       to={link}
       className={styles.menuItem}
+      onMouseEnter={popSound}
       style={{
         marginRight: isOpen ? "2em" : "-5vw",
         position: "relative",

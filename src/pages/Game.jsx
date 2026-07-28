@@ -18,6 +18,11 @@ import { Link } from "react-router";
 import ThreeCats from "../assets/images/three-cats-cropped.png";
 import RedFlower from "../assets/images/red-flower.svg";
 import YellowFlower from "../assets/images/yellow-flower.svg";
+import { useBoings } from "../hooks/sounds.jsx";
+import { bounceTransition } from "../utils/constants.js";
+import popSound from "../assets/sounds/sfx/pop.m4a";
+import useSound from "use-sound";
+import { motion } from "motion/react";
 
 const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
 
@@ -228,15 +233,20 @@ const initialAnswers = {
 };
 
 function CatButton({ onClick, text, style }) {
+  const boings = useBoings();
   return (
-    <button
+    <motion.button
       onClick={onClick}
       className={styles.catButton}
       style={{ margin: 0, ...style }}
+      initial={{ scale: 1 }}
+      whileHover={{ scale: [1, 1.1] }}
+      onMouseEnter={boings[Math.floor(Math.random() * 3)]}
+      transition={bounceTransition}
     >
-      <img src={ears} />
-      <p style={{ padding: "20px 0", lineHeight: "1" }}>{text}</p>
-    </button>
+      <img src={ears} style={{ width: "50%" }} />
+      <p style={{ padding: "0.5em", lineHeight: "1" }}>{text}</p>
+    </motion.button>
   );
 }
 
@@ -246,11 +256,14 @@ function OptionsModal({ trait, cat, options, closeOptionsModal, setAnswer }) {
     closeOptionsModal();
   }
 
+  const [pop] = useSound(popSound);
+
   return (
     <section className={`${styles.fullScreenLayer} ${styles.optionsLayer}`}>
       <div
         className={styles.fullScreenLayer}
         style={{ background: "rgba(0,0,0,0.3)" }}
+        onClick={closeOptionsModal}
       />
       <section className={styles.optionsLabel}>
         <p>{`${trait} of ${cat}`}</p>
@@ -259,7 +272,10 @@ function OptionsModal({ trait, cat, options, closeOptionsModal, setAnswer }) {
         {options &&
           options.map((option) => (
             <button
-              onClick={() => onOptionClick(option)}
+              onClick={() => {
+                onOptionClick(option);
+                pop();
+              }}
               className={styles.optionButton}
             >
               {["Location", "Picture"].includes(trait) ? (
@@ -324,12 +340,17 @@ export function GameTable({
           key={`${name}-pic`}
           style={{
             gridColumn: ix + 2,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             background: hasAnswer("Picture", name)
               ? `no-repeat center / cover url(${getAnswer("Picture", name)})`
               : "#d9d9d9",
           }}
           className={`${styles.picFrame} ${submitClicked && isChecked("Picture", name) ? (checkAnswer("Picture", name) ? styles.correctFrame : styles.wrongFrame) : ""}`}
-        />
+        >
+          {!hasAnswer("Picture", name) && <p>?</p>}
+        </button>
       ))}
       {catNames.map((name, ix) => (
         <section
@@ -430,6 +451,7 @@ export default function Game() {
   const [submitClicked, setSubmitClicked] = useState(false);
   const [showResultsScreen, setShowResultsScreen] = useState(false);
   const timerRef = useRef(null);
+  const [pop] = useSound(popSound);
 
   function openOptionsModal(cat, trait) {
     setCurrentCat(cat);
@@ -506,7 +528,7 @@ export default function Game() {
 
   return (
     <>
-      <Link to="/" className={styles.exitBtn} style={{ color: "#205950" }}>
+      <Link to="/" onMouseEnter={pop} className={styles.exitBtn}>
         x
       </Link>
       <section className={styles.gameArea}>
@@ -521,10 +543,10 @@ export default function Game() {
         <section className={styles.menuSide}>
           <section className={styles.gameOpts}>
             <Timer ref={timerRef} />
-            <button className={styles.instructionBtn}>
-              <img src={QMark} />
-            </button>
-            <section style={{ display: "flex", alignItems: "center" }}>
+            <section style={{ display: "flex", gap: 12, alignItems: "center" }}>
+              <button className={styles.instructionBtn} onMouseEnter={pop}>
+                <img src={QMark} />
+              </button>
               <CatButton
                 onClick={() => {
                   checkAllAnswers();

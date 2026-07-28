@@ -173,11 +173,25 @@ p {
   z-index: 1;
   position: relative;
   top: 1em;
-  transition: border-color 100ms ease-in-out;
+  transition: border-color 150ms ease-in-out;
 }
 
 .picFrame:hover {
   border-color: #389c8c;
+}
+
+.picFrame p {
+  font-weight: bold;
+  font-size: 5em;
+  padding: 0;
+  margin: 0;
+  font-family: "Solway";
+  color: #999999;
+  transition: color 150ms ease-in-out;
+}
+
+.picFrame:hover p {
+  color: #777777;
 }
 
 .nameHeader,
@@ -280,7 +294,7 @@ p {
 
 .checklist p {
   font-size: 1.4em;
-  font-family: "Gelagio", serif;
+  font-family: "Rethink Sans", serif;
 }
 
 li.clearedClue {
@@ -295,7 +309,7 @@ li.clearedClue {
 .checklist li {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .checklist li::before {
@@ -347,10 +361,16 @@ li.clearedClue {
 
 .instructionBtn {
   height: 5em;
-  background: #3b756c;
+  background-color: #3b756c;
   position: relative;
   top: 0.2em;
   margin-right: 0.5em;
+  transition: all 150ms ease-in-out;
+}
+
+.instructionBtn:hover {
+  background-color: #205950;
+  scale: 1.15;
 }
 
 .instructionBtn > img {
@@ -363,12 +383,18 @@ li.clearedClue {
   position: absolute;
   top: 1vh;
   left: 1vw;
-  background: #ffffec;
+  background-color: #ffffec;
   height: 1.7em;
   font-family: "Solway";
   font-weight: bold;
   font-size: 2.5em;
   color: #205950;
+  transition: all 150ms ease-in-out;
+}
+
+.exitBtn:hover {
+  color: #ffffec;
+  background-color: #205950;
 }
 
 .timer {

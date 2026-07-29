@@ -550,6 +550,10 @@ li.clearedClue {
   color: #205950;
 }
 
+.resultsScreenshot {
+  z-index: 20;
+}
+
 @keyframes bob {
   0% {
     transform: translateY(-0.5rem);

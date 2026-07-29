@@ -23,6 +23,7 @@ import { bounceTransition } from "../utils/constants.js";
 import popSound from "../assets/sounds/sfx/pop.m4a";
 import useSound from "use-sound";
 import { motion } from "motion/react";
+import html2canvas from "html2canvas";
 
 const catNames = ["Dongyan", "Hakaw", "One Eye", "Ponpon", "Princess"];
 
@@ -582,6 +583,46 @@ export default function Game() {
     return answers[trait][cat].correct;
   }
 
+  function downloadImage() {
+    const resultsDiv = document.getElementById("resultsScreenshot");
+    html2canvas(resultsDiv).then((canvas) => {
+      const resultsLink = document.createElement("a");
+      resultsLink.download = "Find Meow way back home.png";
+      resultsLink.href = canvas.toDataURL("image/png", 1);
+      resultsLink.click();
+    });
+  }
+
+  function shareResult() {
+    if (navigator.share && navigator.canShare) {
+      const resultsDiv = document.getElementById("resultsScreenshot");
+      html2canvas(resultsDiv).then((canvas) => {
+        canvas.toBlob(
+          (blob) => {
+            const shareData = {
+              title: "Find Meow way back home",
+              files: [
+                new File([blob], "Find Meow way back home.png", {
+                  type: blob.type,
+                }),
+              ],
+            };
+
+            if (navigator.canShare(shareData)) {
+              navigator.share(shareData).catch(() => downloadImage());
+            } else {
+              downloadImage();
+            }
+          },
+          "image/png",
+          1,
+        );
+      });
+    } else {
+      downloadImage();
+    }
+  }
+
   return (
     <>
       <Link to="/" onMouseEnter={pop} className={styles.exitBtn}>
@@ -648,67 +689,116 @@ export default function Game() {
         )}
       </section>
       {showResultsScreen && (
-        <section className={styles.resultsScreen}>
-          <h1>You’ve found all the cats—well done!</h1>
-          <h2>Let’s hope they don’t get into any more trouble next time.</h2>
-          <p style={{ marginTop: "3vh" }}>Your Time</p>
-          <p>
-            {timerRef.current && padNumber(timerRef.current.getMinutes())}:
-            {timerRef.current && padNumber(timerRef.current.getSeconds())}
-          </p>
-          <section
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              height: "40vh",
-              position: "relative",
-              marginTop: "3vh",
-            }}
-          >
-            <img
-              src={RedFlower}
+        <>
+          <section id="resultsScreenshot" className={`${styles.resultsScreen}`}>
+            <h1>You’ve found all the cats—well done!</h1>
+            <h2>Let’s hope they don’t get into any more trouble next time.</h2>
+            <p style={{ marginTop: "3vh" }}>Your Time</p>
+            <p>
+              {timerRef.current && padNumber(timerRef.current.getMinutes())}:
+              {timerRef.current && padNumber(timerRef.current.getSeconds())}
+            </p>
+            <section
               style={{
-                position: "absolute",
-                height: "40%",
-                bottom: "0",
-                left: "-20%",
+                display: "flex",
+                justifyContent: "center",
+                height: "40vh",
+                position: "relative",
+                marginTop: "3vh",
               }}
-            />
-            <img src={ThreeCats} style={{ height: "100%" }} />
-            <img
-              src={YellowFlower}
-              style={{
-                position: "absolute",
-                height: "40%",
-                bottom: 0,
-                right: "-13%",
-              }}
-            />
-            <img
-              src={RedFlower}
-              style={{
-                position: "absolute",
-                height: "40%",
-                bottom: "-9%",
-                right: "8%",
-              }}
-            />
-          </section>
-          <section style={{ display: "flex", gap: "5em" }}>
-            <Link to="/">
-              <CatButton
-                onClick={null}
-                text={"Back to Home"}
-                style={{ width: "30em", height: "8em" }}
+            >
+              <img
+                src={RedFlower}
+                style={{
+                  position: "absolute",
+                  height: "40%",
+                  bottom: "0",
+                  left: "-20%",
+                }}
               />
-            </Link>
-            <CatButton
-              onClick={null}
-              text={"Share"}
-              style={{ width: "25em", height: "8em" }}
-            />
+              <img src={ThreeCats} style={{ height: "100%" }} />
+              <img
+                src={YellowFlower}
+                style={{
+                  position: "absolute",
+                  height: "40%",
+                  bottom: 0,
+                  right: "-13%",
+                }}
+              />
+              <img
+                src={RedFlower}
+                style={{
+                  position: "absolute",
+                  height: "40%",
+                  bottom: "-9%",
+                  right: "8%",
+                }}
+              />
+            </section>
           </section>
-        </section>
+          <section className={styles.resultsScreen}>
+            <h1>You’ve found all the cats—well done!</h1>
+            <h2>Let’s hope they don’t get into any more trouble next time.</h2>
+            <p style={{ marginTop: "3vh" }}>Your Time</p>
+            <p>
+              {timerRef.current && padNumber(timerRef.current.getMinutes())}:
+              {timerRef.current && padNumber(timerRef.current.getSeconds())}
+            </p>
+            <section
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                height: "40vh",
+                position: "relative",
+                marginTop: "3vh",
+              }}
+            >
+              <img
+                src={RedFlower}
+                style={{
+                  position: "absolute",
+                  height: "40%",
+                  bottom: "0",
+                  left: "-20%",
+                }}
+              />
+              <img src={ThreeCats} style={{ height: "100%" }} />
+              <img
+                src={YellowFlower}
+                style={{
+                  position: "absolute",
+                  height: "40%",
+                  bottom: 0,
+                  right: "-13%",
+                }}
+              />
+              <img
+                src={RedFlower}
+                style={{
+                  position: "absolute",
+                  height: "40%",
+                  bottom: "-9%",
+                  right: "8%",
+                }}
+              />
+            </section>
+            <section style={{ display: "flex", gap: "5em" }}>
+              <Link to="/">
+                <CatButton
+                  onClick={null}
+                  text={"Back to Home"}
+                  style={{ width: "30em", height: "8em" }}
+                />
+              </Link>
+              <CatButton
+                onClick={downloadImage}
+                text={"Share"}
+                style={{ width: "25em", height: "8em" }}
+              />
+            </section>
+          </section>
+        </>
       )}
     </>
   );

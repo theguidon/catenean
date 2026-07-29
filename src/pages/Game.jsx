@@ -293,6 +293,50 @@ function OptionsModal({ trait, cat, options, closeOptionsModal, setAnswer }) {
   );
 }
 
+function InstructionsModal({ closeInstructionsModal }) {
+  return (
+    <section className={`${styles.fullScreenLayer} ${styles.optionsLayer}`}>
+      <div
+        className={styles.fullScreenLayer}
+        style={{ background: "rgba(0,0,0,0.3)" }}
+        onClick={closeInstructionsModal}
+      />
+      <section
+        className={styles.optionsLabel}
+        style={{ backgroundColor: "#8e7264" }}
+      >
+        <p>How to Play</p>
+      </section>
+      <section className={`${styles.optionsModal} ${styles.instructionsList}`}>
+        <ol>
+          <li>
+            <p>
+              Inspired by{" "}
+              <a href="https://www.geeksforgeeks.org/aptitude/puzzle-the-einsteins-puzzle/">
+                Einstein&apos;s Puzzle
+              </a>
+              , exercise your brain muscles to decode which descriptions fit
+              which Catenean!
+            </p>
+          </li>
+          <li>
+            <p>
+              Using the provided clues, drag and drop our furry friends to their
+              respective buildings.
+            </p>
+          </li>
+          <li>
+            <p>
+              Read the clues carefully! They may reveal certain quirks and
+              details about the Cateneans and their homes.
+            </p>
+          </li>
+        </ol>
+      </section>
+    </section>
+  );
+}
+
 // might make state a reducer
 // make component for the cells im kms
 export function GameTable({
@@ -303,11 +347,15 @@ export function GameTable({
   isChecked,
   submitClicked,
 }) {
+  const [pop] = useSound(popSound);
   function GameCell({ trait, name, placeholder }) {
     return (
       <button
         key={`${trait}-${name}`}
-        onClick={() => openOptionsModal(name, trait)}
+        onClick={() => {
+          pop();
+          openOptionsModal(name, trait);
+        }}
         className={`${styles.catCell} ${submitClicked && isChecked(trait, name) ? (checkAnswer(trait, name) ? styles.correctCell : styles.wrongCell) : ""}`}
       >
         {hasAnswer(trait, name) ? (
@@ -336,7 +384,10 @@ export function GameTable({
     <section className={styles.gameTable}>
       {catNames.map((name, ix) => (
         <button
-          onClick={() => openOptionsModal(name, "Picture")}
+          onClick={() => {
+            openOptionsModal(name, "Picture");
+            pop();
+          }}
           key={`${name}-pic`}
           style={{
             gridColumn: ix + 2,
@@ -447,6 +498,7 @@ export default function Game() {
   const [currentCat, setCurrentCat] = useState("Dongyan");
   const [currentTrait, setCurrentTrait] = useState("Fave Spot");
   const [showOptionsModal, setShowOptionsModal] = useState(false);
+  const [showInstructionsModal, setShowInstructionsModal] = useState(false);
   const [answers, setAnswers] = useState(initialAnswers);
   const [submitClicked, setSubmitClicked] = useState(false);
   const [showResultsScreen, setShowResultsScreen] = useState(false);
@@ -461,6 +513,10 @@ export default function Game() {
 
   function closeOptionsModal() {
     setShowOptionsModal(false);
+  }
+
+  function closeInstructionsModal() {
+    setShowInstructionsModal(false);
   }
 
   function clearExistingAnswer(trait, cat, answer) {
@@ -544,7 +600,11 @@ export default function Game() {
           <section className={styles.gameOpts}>
             <Timer ref={timerRef} />
             <section style={{ display: "flex", gap: 12, alignItems: "center" }}>
-              <button className={styles.instructionBtn} onMouseEnter={pop}>
+              <button
+                className={styles.instructionBtn}
+                onMouseEnter={pop}
+                onClick={() => setShowInstructionsModal(true)}
+              >
                 <img src={QMark} />
               </button>
               <CatButton
@@ -582,6 +642,9 @@ export default function Game() {
             closeOptionsModal={closeOptionsModal}
             setAnswer={setAnswer}
           />
+        )}
+        {showInstructionsModal && (
+          <InstructionsModal closeInstructionsModal={closeInstructionsModal} />
         )}
       </section>
       {showResultsScreen && (
@@ -631,12 +694,12 @@ export default function Game() {
               }}
             />
           </section>
-          <section style={{ display: "flex", gap: "1em" }}>
+          <section style={{ display: "flex", gap: "5em" }}>
             <Link to="/">
               <CatButton
                 onClick={null}
                 text={"Back to Home"}
-                style={{ width: "25em", height: "8em" }}
+                style={{ width: "30em", height: "8em" }}
               />
             </Link>
             <CatButton

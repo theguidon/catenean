@@ -531,6 +531,25 @@ li.clearedClue {
   line-height: 1.5rem;
 }
 
+.instructionsList {
+  background-color: #ffffec;
+  border: 12px solid #b18e7d;
+  padding: 5%;
+}
+
+.instructionsList ol {
+  max-width: 900px;
+}
+
+.instructionsList li::marker {
+  font-family: "Rethink Sans", sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 8px;
+  display: inline-block;
+  color: #205950;
+}
+
 @keyframes bob {
   0% {
     transform: translateY(-0.5rem);
